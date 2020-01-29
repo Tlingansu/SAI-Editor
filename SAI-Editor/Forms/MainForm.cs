@@ -808,7 +808,7 @@ namespace SAI_Editor.Forms
 
         private void smartAIWikiToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SAI_Editor_Manager.Instance.StartProcess("http://collab.kpsn.org/display/tc/smart_scripts");
+            SAI_Editor_Manager.Instance.StartProcess("https://trinitycore.atlassian.net/wiki/spaces/tc/pages/2130108/smart+scripts");
         }
 
         private async void generateSQLToolStripMenuItem_Click(object sender, EventArgs e)

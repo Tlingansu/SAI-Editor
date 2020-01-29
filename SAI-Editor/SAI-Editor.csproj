@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SAI_Editor</RootNamespace>
     <AssemblyName>SAI-Editor</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -88,9 +89,7 @@
     <Compile Include="Classes\CustomControls\CustomPanel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Classes\CustomControls\CustomTabControl.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="Classes\CustomControls\CustomTabControl.cs" />
     <Compile Include="Classes\CustomControls\LabelWithTooltip.cs">
       <SubType>Component</SubType>
     </Compile>
