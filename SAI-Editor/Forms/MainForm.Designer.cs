@@ -107,6 +107,7 @@
             this.menuItemViewAllPastebins = new System.Windows.Forms.ToolStripMenuItem();
             this.otherToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.smartAIWikiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.smartAIWikiToolStripMenuItemCustom = new System.Windows.Forms.ToolStripMenuItem();
             this.feedbackbugsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemReportIssue = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemGiveFeedback = new System.Windows.Forms.ToolStripMenuItem();
@@ -916,7 +917,8 @@
             // otherToolStripMenuItem
             // 
             this.otherToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.smartAIWikiToolStripMenuItem});
+            this.smartAIWikiToolStripMenuItem,
+            this.smartAIWikiToolStripMenuItemCustom});
             this.otherToolStripMenuItem.Name = "otherToolStripMenuItem";
             this.otherToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
             this.otherToolStripMenuItem.Text = "Other";
@@ -927,6 +929,13 @@
             this.smartAIWikiToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.smartAIWikiToolStripMenuItem.Text = "SmartAI Wiki (TC)";
             this.smartAIWikiToolStripMenuItem.Click += new System.EventHandler(this.smartAIWikiToolStripMenuItem_Click);
+            // 
+            // smartAIWikiToolStripMenuItemCustom
+            // 
+            this.smartAIWikiToolStripMenuItemCustom.Name = "smartAIWikiToolStripMenuItemCustom";
+            this.smartAIWikiToolStripMenuItemCustom.Size = new System.Drawing.Size(168, 22);
+            this.smartAIWikiToolStripMenuItemCustom.Text = "SmartAI Wiki (Rushor Custom)";
+            this.smartAIWikiToolStripMenuItemCustom.Click += new System.EventHandler(this.smartAIWikiToolStripMenuItemCustom_Click);
             // 
             // feedbackbugsToolStripMenuItem
             // 
@@ -2815,6 +2824,7 @@
         public System.Windows.Forms.ToolTip LoadTooltip;
         public System.Windows.Forms.ToolStripMenuItem otherToolStripMenuItem;
         public System.Windows.Forms.ToolStripMenuItem smartAIWikiToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem smartAIWikiToolStripMenuItemCustom;
         public System.Windows.Forms.ToolStripMenuItem menuItemGenerateSql;
         public System.Windows.Forms.ToolStripMenuItem menuItemGenerateCommentListView;
         public System.Windows.Forms.ToolStripMenuItem menuItemLoadSelectedEntryListView;
