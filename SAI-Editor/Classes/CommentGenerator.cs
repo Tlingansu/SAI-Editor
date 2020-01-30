@@ -223,6 +223,7 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_GAME_EVENT_STOP, "Stop game event _actionParamTwo_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_GAME_EVENT_START, "Start game event _actionParamTwo_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_START_CLOSEST_WAYPOINT, "Pick Closest Waypoint _actionParamOne_ _actionParamTwo_ _actionParamThree_ _actionParamFour_ _actionParamFive_ _actionParamSix_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_RANDOM_SOUND, "Play Random Sound _actionParamOne_ _actionParamTwo_ _actionParamThree_ _actionParamFour_ _PlayRandomSoundTarget_ in _actionParamSix_ yards distance");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_CORPSE_DELAY, "Set Corpse Delay _actionParamOne_ seconds");
             smartActionStrings.Add(SmartAction.SMART_ACTION_MOVE_HOME_POS, "Move to Homeposition Point _actionParamOne_");
         }
@@ -878,6 +879,14 @@ namespace SAI_Editor.Classes
                         fullLine = fullLine.Replace("_mountToEntryOrModelActionParams_", "Mount To Model " + smartScript.action_param2);
                     else
                         fullLine = fullLine.Replace("_mountToEntryOrModelActionParams_", "Dismount");
+                }
+
+                if (fullLine.Contains("_PlayRandomSoundTarget_"))
+                {
+                    if (smartScript.action_param5 == 1)
+                        fullLine = fullLine.Replace("_PlayRandomSoundTarget_", "to self");
+                    else
+                        fullLine = fullLine.Replace("_PlayRandomSoundTarget_", "to all");
                 }
 
                 if (fullLine.Contains("_startOrStopBasedOnTargetType_"))

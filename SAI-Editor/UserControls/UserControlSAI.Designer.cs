@@ -504,7 +504,7 @@
             "ACTION_GAME_EVENT_START",
             "ACTION_START_CLOSEST_WAYPOINT",
             "ACTION_MOVE_OFFSET",
-            "ACTION_UNUSED_1",
+            "ACTION_ACTION_RANDOM_SOUND",
             "ACTION_SET_SET_CORPSE_DELAY",
             "ACTION_UNUSED_2",
             "ACTION_MOVE_HOME_POS"});
