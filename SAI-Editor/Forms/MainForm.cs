@@ -826,6 +826,11 @@ namespace SAI_Editor.Forms
             SAI_Editor_Manager.Instance.StartProcess("https://trinitycore.atlassian.net/wiki/spaces/tc/pages/2130008/creature+template");
         }
 
+        private void ItemTemplateWikiToolStripMenuItemCustom_Click(object sender, EventArgs e)
+        {
+            SAI_Editor_Manager.Instance.StartProcess("https://trinitycore.atlassian.net/wiki/spaces/tc/pages/2130222/item+template");
+        }
+
         private async void generateSQLToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (SAI_Editor_Manager.FormState != FormState.FormStateMain)

@@ -110,6 +110,7 @@
             this.smartAIWikiToolStripMenuItemCustom = new System.Windows.Forms.ToolStripMenuItem();
             this.GameobjectTemplateWikiToolStripMenuItemCustom = new System.Windows.Forms.ToolStripMenuItem();
             this.CreatureTemplateWikiToolStripMenuItemCustom = new System.Windows.Forms.ToolStripMenuItem();
+            this.ItemTemplateWikiToolStripMenuItemCustom = new System.Windows.Forms.ToolStripMenuItem();
             this.feedbackbugsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemReportIssue = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -921,7 +922,8 @@
             this.smartAIWikiToolStripMenuItem,
             this.smartAIWikiToolStripMenuItemCustom,
             this.GameobjectTemplateWikiToolStripMenuItemCustom,
-            this.CreatureTemplateWikiToolStripMenuItemCustom});
+            this.CreatureTemplateWikiToolStripMenuItemCustom,
+            this.ItemTemplateWikiToolStripMenuItemCustom});
             this.otherToolStripMenuItem.Name = "otherToolStripMenuItem";
             this.otherToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
             this.otherToolStripMenuItem.Text = "Other";
@@ -953,6 +955,13 @@
             this.CreatureTemplateWikiToolStripMenuItemCustom.Size = new System.Drawing.Size(168, 22);
             this.CreatureTemplateWikiToolStripMenuItemCustom.Text = "Creature Template Wiki (TC)";
             this.CreatureTemplateWikiToolStripMenuItemCustom.Click += new System.EventHandler(this.CreatureTemplateWikiToolStripMenuItemCustom_Click);
+            // 
+            // ItemTemplateWikiToolStripMenuItemCustom
+            // 
+            this.ItemTemplateWikiToolStripMenuItemCustom.Name = "ItemTemplateWikiToolStripMenuItemCustom";
+            this.ItemTemplateWikiToolStripMenuItemCustom.Size = new System.Drawing.Size(168, 22);
+            this.ItemTemplateWikiToolStripMenuItemCustom.Text = "Item Template Wiki (TC)";
+            this.ItemTemplateWikiToolStripMenuItemCustom.Click += new System.EventHandler(this.ItemTemplateWikiToolStripMenuItemCustom_Click);
             // 
             // feedbackbugsToolStripMenuItem
             // 
@@ -2836,6 +2845,7 @@
         public System.Windows.Forms.ToolStripMenuItem smartAIWikiToolStripMenuItemCustom;
         public System.Windows.Forms.ToolStripMenuItem GameobjectTemplateWikiToolStripMenuItemCustom;
         public System.Windows.Forms.ToolStripMenuItem CreatureTemplateWikiToolStripMenuItemCustom;
+        public System.Windows.Forms.ToolStripMenuItem ItemTemplateWikiToolStripMenuItemCustom;
         public System.Windows.Forms.ToolStripMenuItem menuItemGenerateSql;
         public System.Windows.Forms.ToolStripMenuItem menuItemGenerateCommentListView;
         public System.Windows.Forms.ToolStripMenuItem menuItemLoadSelectedEntryListView;
