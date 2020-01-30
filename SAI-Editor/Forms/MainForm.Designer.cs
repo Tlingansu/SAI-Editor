@@ -108,9 +108,9 @@
             this.otherToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.smartAIWikiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.smartAIWikiToolStripMenuItemCustom = new System.Windows.Forms.ToolStripMenuItem();
+            this.GameobjectTemplateWikiToolStripMenuItemCustom = new System.Windows.Forms.ToolStripMenuItem();
             this.feedbackbugsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemReportIssue = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuItemGiveFeedback = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStripListView = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -918,7 +918,8 @@
             // 
             this.otherToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.smartAIWikiToolStripMenuItem,
-            this.smartAIWikiToolStripMenuItemCustom});
+            this.smartAIWikiToolStripMenuItemCustom,
+            this.GameobjectTemplateWikiToolStripMenuItemCustom});
             this.otherToolStripMenuItem.Name = "otherToolStripMenuItem";
             this.otherToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
             this.otherToolStripMenuItem.Text = "Other";
@@ -937,14 +938,20 @@
             this.smartAIWikiToolStripMenuItemCustom.Text = "SmartAI Wiki (Rushor Custom)";
             this.smartAIWikiToolStripMenuItemCustom.Click += new System.EventHandler(this.smartAIWikiToolStripMenuItemCustom_Click);
             // 
+            // GameobjectTemplateWikiToolStripMenuItemCustom
+            // 
+            this.GameobjectTemplateWikiToolStripMenuItemCustom.Name = "GameobjectTemplateWikiToolStripMenuItemCustom";
+            this.GameobjectTemplateWikiToolStripMenuItemCustom.Size = new System.Drawing.Size(168, 22);
+            this.GameobjectTemplateWikiToolStripMenuItemCustom.Text = "Gameobject Template Wiki (TC)";
+            this.GameobjectTemplateWikiToolStripMenuItemCustom.Click += new System.EventHandler(this.GameobjectTemplateWikiToolStripMenuItemCustom_Click);
+            // 
             // feedbackbugsToolStripMenuItem
             // 
             this.feedbackbugsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuItemReportIssue,
-            this.menuItemGiveFeedback});
+            this.menuItemReportIssue});
             this.feedbackbugsToolStripMenuItem.Name = "feedbackbugsToolStripMenuItem";
             this.feedbackbugsToolStripMenuItem.Size = new System.Drawing.Size(100, 20);
-            this.feedbackbugsToolStripMenuItem.Text = "Feedback/bugs";
+            this.feedbackbugsToolStripMenuItem.Text = "Issues";
             // 
             // menuItemReportIssue
             // 
@@ -952,13 +959,6 @@
             this.menuItemReportIssue.Size = new System.Drawing.Size(200, 22);
             this.menuItemReportIssue.Text = "I want to report an issue";
             this.menuItemReportIssue.Click += new System.EventHandler(this.menuItemReportIssue_Click);
-            // 
-            // menuItemGiveFeedback
-            // 
-            this.menuItemGiveFeedback.Name = "menuItemGiveFeedback";
-            this.menuItemGiveFeedback.Size = new System.Drawing.Size(200, 22);
-            this.menuItemGiveFeedback.Text = "I want to give feedback";
-            this.menuItemGiveFeedback.Click += new System.EventHandler(this.menuItemGiveFeedback_Click);
             // 
             // aboutToolStripMenuItem
             // 
@@ -2825,6 +2825,7 @@
         public System.Windows.Forms.ToolStripMenuItem otherToolStripMenuItem;
         public System.Windows.Forms.ToolStripMenuItem smartAIWikiToolStripMenuItem;
         public System.Windows.Forms.ToolStripMenuItem smartAIWikiToolStripMenuItemCustom;
+        public System.Windows.Forms.ToolStripMenuItem GameobjectTemplateWikiToolStripMenuItemCustom;
         public System.Windows.Forms.ToolStripMenuItem menuItemGenerateSql;
         public System.Windows.Forms.ToolStripMenuItem menuItemGenerateCommentListView;
         public System.Windows.Forms.ToolStripMenuItem menuItemLoadSelectedEntryListView;
@@ -3027,7 +3028,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripMenuItem feedbackbugsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem menuItemReportIssue;
-        private System.Windows.Forms.ToolStripMenuItem menuItemGiveFeedback;
         private System.Windows.Forms.ToolStripMenuItem menuItemRevertQuery;
         private System.Windows.Forms.ToolStripMenuItem menuItemViewAllPastebins;
     }

@@ -816,6 +816,11 @@ namespace SAI_Editor.Forms
             SAI_Editor_Manager.Instance.StartProcess("https://gist.github.com/Rushor/ff4f61986737f85e2c6707cacf87fb8d");
         }
 
+        private void GameobjectTemplateWikiToolStripMenuItemCustom_Click(object sender, EventArgs e)
+        {
+            SAI_Editor_Manager.Instance.StartProcess("https://trinitycore.atlassian.net/wiki/spaces/tc/pages/2130143/gameobject+template");
+        }
+
         private async void generateSQLToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (SAI_Editor_Manager.FormState != FormState.FormStateMain)
@@ -1381,7 +1386,7 @@ namespace SAI_Editor.Forms
 
         private void menuItemReportIssue_Click(object sender, EventArgs e)
         {
-            SAI_Editor_Manager.Instance.StartProcess("https://github.com/Discover-/SAI-Editor/issues/new");
+            SAI_Editor_Manager.Instance.StartProcess("https://github.com/Rushor/SAI-Editor/issues/new");
         }
 
         private void menuItemGiveFeedback_Click(object sender, EventArgs e)
