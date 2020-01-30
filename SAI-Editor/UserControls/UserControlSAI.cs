@@ -748,6 +748,12 @@ namespace SAI_Editor
                     buttonActionParamFiveSearch.Visible = true;
                     buttonActionParamSixSearch.Visible = true;
                     break;
+                case SmartAction.SMART_ACTION_RANDOM_SOUND: //! Sound entry
+                    buttonActionParamOneSearch.Visible = true;
+                    buttonActionParamTwoSearch.Visible = true;
+                    buttonActionParamThreeSearch.Visible = true;
+                    buttonActionParamFourSearch.Visible = true;
+                    break;
                 case SmartAction.SMART_ACTION_EQUIP:
                     buttonActionParamOneSearch.Visible = true; //! Equipment entry
                     buttonActionParamThreeSearch.Visible = true; //! Item entry 1
@@ -795,7 +801,7 @@ namespace SAI_Editor
                 case SmartAction.SMART_ACTION_REMOVE_NPC_FLAG: //! Npc flags
                 case SmartAction.SMART_ACTION_INSTALL_AI_TEMPLATE: //! AI template
                 case SmartAction.SMART_ACTION_GAME_EVENT_START: //! Game event entry
-                case SmartAction.SMART_ACTION_GAME_EVENT_STOP: //! Game event entry
+                case SmartAction.SMART_ACTION_GAME_EVENT_STOP: //! Game event entry                
                     buttonActionParamOneSearch.Visible = true;
                     break;
             }
@@ -1738,6 +1744,9 @@ namespace SAI_Editor
                 case SmartAction.SMART_ACTION_START_CLOSEST_WAYPOINT:
                     ShowSearchFromDatabaseForm(textBoxToChange, DatabaseSearchFormType.DatabaseSearchFormTypeWaypoint);
                     break;
+                case SmartAction.SMART_ACTION_RANDOM_SOUND:
+                    ShowSearchFromDatabaseForm(textBoxToChange, DatabaseSearchFormType.DatabaseSearchFormTypeSound);
+                    break;
             }
         }
 
@@ -1850,6 +1859,9 @@ namespace SAI_Editor
                 case SmartAction.SMART_ACTION_START_CLOSEST_WAYPOINT:
                     ShowSearchFromDatabaseForm(textBoxToChange, DatabaseSearchFormType.DatabaseSearchFormTypeWaypoint);
                     break;
+                case SmartAction.SMART_ACTION_RANDOM_SOUND:
+                    ShowSearchFromDatabaseForm(textBoxToChange, DatabaseSearchFormType.DatabaseSearchFormTypeSound);
+                    break;
             }
         }
 
@@ -1877,6 +1889,9 @@ namespace SAI_Editor
                 case SmartAction.SMART_ACTION_START_CLOSEST_WAYPOINT:
                     ShowSearchFromDatabaseForm(textBoxToChange, DatabaseSearchFormType.DatabaseSearchFormTypeWaypoint);
                     break;
+                case SmartAction.SMART_ACTION_RANDOM_SOUND:
+                    ShowSearchFromDatabaseForm(textBoxToChange, DatabaseSearchFormType.DatabaseSearchFormTypeSound);
+                    break;
             }
         }
 
@@ -1903,6 +1918,9 @@ namespace SAI_Editor
                     break;
                 case SmartAction.SMART_ACTION_START_CLOSEST_WAYPOINT:
                     ShowSearchFromDatabaseForm(textBoxToChange, DatabaseSearchFormType.DatabaseSearchFormTypeWaypoint);
+                    break;
+                case SmartAction.SMART_ACTION_RANDOM_SOUND:
+                    ShowSearchFromDatabaseForm(textBoxToChange, DatabaseSearchFormType.DatabaseSearchFormTypeSound);
                     break;
             }
         }
