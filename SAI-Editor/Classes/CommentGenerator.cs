@@ -223,7 +223,8 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_GAME_EVENT_STOP, "Stop game event _actionParamTwo_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_GAME_EVENT_START, "Start game event _actionParamTwo_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_START_CLOSEST_WAYPOINT, "Pick Closest Waypoint _actionParamOne_ _actionParamTwo_ _actionParamThree_ _actionParamFour_ _actionParamFive_ _actionParamSix_");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_SET_RESPAWN_TIME, "Set Respawn Time _actionParamOne_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_SET_CORPSE_DELAY, "Set Corpse Delay _actionParamOne_ seconds");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_MOVE_HOME_POS, "Move to Homeposition Point _actionParamOne_");
         }
 
         public async Task<string> GenerateCommentFor(SmartScript smartScript, EntryOrGuidAndSourceType entryOrGuidAndSourceType, bool forced = false, SmartScript smartScriptLink = null)

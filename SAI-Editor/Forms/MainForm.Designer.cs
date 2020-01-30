@@ -1460,8 +1460,9 @@
             "ACTION_REMOVE_POWER",
             "ACTION_MOVE_OFFSET",
             "ACTION_UNUSED_1",
+            "ACTION_SET_SET_CORPSE_DELAY",
             "ACTION_UNUSED_2",
-            "ACTION_ACTION_SET_RESPAWN_TIME"});
+            "ACTION_MOVE_HOME_POS"});
             this.comboBoxActionType.Location = new System.Drawing.Point(59, 45);
             this.comboBoxActionType.Name = "comboBoxActionType";
             this.comboBoxActionType.Size = new System.Drawing.Size(235, 21);
