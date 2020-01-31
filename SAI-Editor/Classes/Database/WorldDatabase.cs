@@ -333,32 +333,32 @@ namespace SAI_Editor.Classes.Database
 
         public async Task<string> GetQuestTitleById(int id)
         {
-            DataTable dt = await ExecuteQuery("SELECT title FROM quest_template WHERE id = '" + id + "'");
+            DataTable dt = await ExecuteQuery("SELECT LogTitle FROM quest_template WHERE id = '" + id + "'");
 
             if (dt.Rows.Count == 0)
                 return String.Empty;
 
-            return dt.Rows[0]["title"].ToString();
+            return dt.Rows[0]["LogTitle"].ToString();
         }
 
         public async Task<string> GetQuestTitleByCriteria(int requiredNpcOrGo1, int requiredNpcOrGo2, int requiredNpcOrGo3, int requiredNpcOrGo4)
         {
-            DataTable dt = await ExecuteQuery("SELECT title FROM quest_template WHERE (RequiredNpcOrGo1 = '" + requiredNpcOrGo1 + "' OR " + "RequiredNpcOrGo1 = '" + requiredNpcOrGo2 + "' OR " + "RequiredNpcOrGo2 = '" + requiredNpcOrGo3 + "' OR " + "RequiredNpcOrGo3 = '" + requiredNpcOrGo3 + "' OR " + "RequiredNpcOrGo4 = '" + requiredNpcOrGo4 + "')");
+            DataTable dt = await ExecuteQuery("SELECT LogTitle FROM quest_template WHERE (RequiredNpcOrGo1 = '" + requiredNpcOrGo1 + "' OR " + "RequiredNpcOrGo1 = '" + requiredNpcOrGo2 + "' OR " + "RequiredNpcOrGo2 = '" + requiredNpcOrGo3 + "' OR " + "RequiredNpcOrGo3 = '" + requiredNpcOrGo3 + "' OR " + "RequiredNpcOrGo4 = '" + requiredNpcOrGo4 + "')");
 
             if (dt.Rows.Count == 0)
                 return String.Empty;
 
-            return dt.Rows[0]["title"].ToString();
+            return dt.Rows[0]["LogTitle"].ToString();
         }
 
         public async Task<string> GetQuestTitleByCriteria(int requiredNpcOrGo1, int requiredNpcOrGo2, int requiredNpcOrGo3, int requiredNpcOrGo4, int requiredSpellCast1)
         {
-            DataTable dt = await ExecuteQuery("SELECT title FROM quest_template WHERE (RequiredNpcOrGo1 = '" + requiredNpcOrGo1 + "' OR " + "RequiredNpcOrGo1 = '" + requiredNpcOrGo2 + "' OR " + "RequiredNpcOrGo2 = '" + requiredNpcOrGo3 + "' OR " + "RequiredNpcOrGo3 = '" + requiredNpcOrGo3 + "' OR " + "RequiredNpcOrGo4 = '" + requiredNpcOrGo4 + "') AND RequiredSpellCast1 = '" + requiredSpellCast1 + "'");
+            DataTable dt = await ExecuteQuery("SELECT LogTitle FROM quest_template WHERE (RequiredNpcOrGo1 = '" + requiredNpcOrGo1 + "' OR " + "RequiredNpcOrGo1 = '" + requiredNpcOrGo2 + "' OR " + "RequiredNpcOrGo2 = '" + requiredNpcOrGo3 + "' OR " + "RequiredNpcOrGo3 = '" + requiredNpcOrGo3 + "' OR " + "RequiredNpcOrGo4 = '" + requiredNpcOrGo4 + "') AND RequiredSpellCast1 = '" + requiredSpellCast1 + "'");
 
             if (dt.Rows.Count == 0)
                 return String.Empty;
 
-            return dt.Rows[0]["title"].ToString();
+            return dt.Rows[0]["LogTitle"].ToString();
         }
 
         public async Task<string> GetItemNameById(int entry)

@@ -131,7 +131,7 @@ namespace SAI_Editor.Forms.SearchForms
                     listViewEntryResults.Columns.Add("Name", 284);
                     comboBoxSearchType.Items.Add("Quest id");
                     comboBoxSearchType.Items.Add("Quest name");
-                    baseQuery = "SELECT id, title FROM quest_template";
+                    baseQuery = "SELECT id, LogTitle FROM quest_template";
                     useWorldDatabase = true;
                     break;
                 case DatabaseSearchFormType.DatabaseSearchFormTypeMap:
