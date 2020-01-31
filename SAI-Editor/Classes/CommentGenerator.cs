@@ -113,7 +113,7 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_TALK, "Say Line _actionParamOne_ for duration _actionParamTwo_ _UseTalkTarget_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_FACTION, "Set Faction _actionParamOne_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_MORPH_TO_ENTRY_OR_MODEL, "_morphToEntryOrModelActionParams_");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_SOUND, "Play Sound _actionParamOne_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_SOUND, "Play _PlaySoundDistance_ _actionParamOne_ _PlaySoundTarget_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_EMOTE, "Play Emote _actionParamOne_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_FAIL_QUEST, "Fail Quest '_questNameActionParamOne_'");
             smartActionStrings.Add(SmartAction.SMART_ACTION_ADD_QUEST, "Add Quest '_questNameActionParamOne_'");
@@ -903,6 +903,22 @@ namespace SAI_Editor.Classes
                         fullLine = fullLine.Replace("_PlayRandomSoundDistance_", "direct random sound");
                     else if (smartScript.action_param6 == 1)
                         fullLine = fullLine.Replace("_PlayRandomSoundDistance_", "distance random sound");
+                }
+
+                if (fullLine.Contains("_PlaySoundDistance_"))
+                {
+                    if (smartScript.action_param3 == 0)
+                        fullLine = fullLine.Replace("_PlaySoundDistance_", "direct sound");
+                    else if (smartScript.action_param3 == 1)
+                        fullLine = fullLine.Replace("_PlaySoundDistance_", "distance sound");
+                }
+
+                if (fullLine.Contains("_PlaySoundTarget_"))
+                {
+                    if (smartScript.action_param2 == 1)
+                        fullLine = fullLine.Replace("_PlaySoundTarget_", "to self");
+                    else
+                        fullLine = fullLine.Replace("_PlaySoundTarget_", "to all");
                 }
 
                 if (fullLine.Contains("_startOrStopBasedOnTargetType_"))
