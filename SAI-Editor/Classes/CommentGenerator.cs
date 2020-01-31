@@ -110,7 +110,7 @@ namespace SAI_Editor.Classes
 
             //! Filling up actions
             smartActionStrings.Add(SmartAction.SMART_ACTION_NONE, "No Action Type");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_TALK, "Say Line _actionParamOne_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_TALK, "Say Line _actionParamOne_ for duration _actionParamTwo_ _UseTalkTarget_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_FACTION, "Set Faction _actionParamOne_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_MORPH_TO_ENTRY_OR_MODEL, "_morphToEntryOrModelActionParams_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SOUND, "Play Sound _actionParamOne_");
@@ -888,7 +888,15 @@ namespace SAI_Editor.Classes
                     else
                         fullLine = fullLine.Replace("_PlayRandomSoundTarget_", "to all");
                 }
-                
+
+                if (fullLine.Contains("_UseTalkTarget_"))
+                {
+                    if (smartScript.action_param3 == 1)
+                        fullLine = fullLine.Replace("_UseTalkTarget_", "with using Talktarget");
+                    else
+                        fullLine = fullLine.Replace("_UseTalkTarget_", "not using Talktarget");
+                }
+
                 if (fullLine.Contains("_PlayRandomSoundDistance_"))
                 {
                     if (smartScript.action_param6 == 0)
