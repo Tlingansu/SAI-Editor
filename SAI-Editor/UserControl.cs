@@ -713,7 +713,7 @@ namespace SAI_Editor
                 case SmartAction.SMART_ACTION_EMOTE: //! Emote entry
                 case SmartAction.SMART_ACTION_SET_EMOTE_STATE: //! Emote entry
                 case SmartAction.SMART_ACTION_FAIL_QUEST: //! Quest entry
-                case SmartAction.SMART_ACTION_ADD_QUEST: //! Quest entry
+                case SmartAction.SMART_ACTION_OFFER_QUEST: //! Quest entry
                 case SmartAction.SMART_ACTION_CALL_AREAEXPLOREDOREVENTHAPPENS: //! Quest entry
                 case SmartAction.SMART_ACTION_CALL_GROUPEVENTHAPPENS: //! Quest entry
                 case SmartAction.SMART_ACTION_SET_REACT_STATE: //! Reactstate

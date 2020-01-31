@@ -116,7 +116,7 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_SOUND, "Play _PlaySoundDistance_ _actionParamOne_ _PlaySoundTarget_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_EMOTE, "Play Emote _actionParamOne_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_FAIL_QUEST, "Fail Quest '_questNameActionParamOne_'");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_ADD_QUEST, "Add Quest '_questNameActionParamOne_'");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_OFFER_QUEST, "Add Quest '_questNameActionParamOne_' _addQuestDirectly_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_REACT_STATE, "Set Reactstate _reactStateParamOne_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_ACTIVATE_GOBJECT, "Activate Gameobject");
             smartActionStrings.Add(SmartAction.SMART_ACTION_RANDOM_EMOTE, "Play Random Emote (_actionRandomParameters_)");
@@ -919,6 +919,14 @@ namespace SAI_Editor.Classes
                         fullLine = fullLine.Replace("_PlaySoundTarget_", "to self");
                     else
                         fullLine = fullLine.Replace("_PlaySoundTarget_", "to all");
+                }
+
+                if (fullLine.Contains("_addQuestDirectly_"))
+                {
+                    if (smartScript.action_param2 == 1)
+                        fullLine = fullLine.Replace("_addQuestDirectly_", "directly without previous condition");
+                    else
+                        fullLine = fullLine.Replace("_addQuestDirectly_", "not directly with previous condition");
                 }
 
                 if (fullLine.Contains("_startOrStopBasedOnTargetType_"))

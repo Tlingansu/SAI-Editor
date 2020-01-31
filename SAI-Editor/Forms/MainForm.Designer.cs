@@ -1354,7 +1354,7 @@
             "ACTION_SOUND",
             "ACTION_PLAY_EMOTE",
             "ACTION_FAIL_QUEST",
-            "ACTION_ADD_QUEST",
+            "ACTION_OFFER_QUEST",
             "ACTION_SET_REACT_STATE",
             "ACTION_ACTIVATE_GOBJECT",
             "ACTION_RANDOM_EMOTE",
