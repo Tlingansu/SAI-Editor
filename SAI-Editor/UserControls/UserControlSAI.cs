@@ -2575,10 +2575,10 @@ namespace SAI_Editor
                         if (originalEntryIsGuid)
                         {
                             int actualEntry = await SAI_Editor_Manager.Instance.worldDatabase.GetCreatureIdByGuid(-originalEntryOrGuidAndSourceType.entryOrGuid);
-                            generatedSql += "UPDATE `creature_template` SET `AIName`=" + '"' + "SmartAI" + '"' + " WHERE `entry`=" + actualEntry + ";\n";
+                            generatedSql += "UPDATE `creature_template` SET `AIName`=" + '"' + "SmartAI" + '"' + " , `scriptname` =" + '"' + '"' + " WHERE `entry`= " + actualEntry + ";\n";
                         }
                         else
-                            generatedSql += "UPDATE `creature_template` SET `AIName`=" + '"' + "SmartAI" + '"' + " WHERE `entry`=" + sourceSet + ";\n";
+                            generatedSql += "UPDATE `creature_template` SET `AIName`=" + '"' + "SmartAI" + '"' + " , `scriptname` =" + '"' + '"' + " WHERE `entry`= " + sourceSet + ";\n";
 
                         break;
                     case SourceTypes.SourceTypeGameobject:
