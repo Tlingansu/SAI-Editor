@@ -121,7 +121,7 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_ACTIVATE_GOBJECT, "Activate Gameobject");
             smartActionStrings.Add(SmartAction.SMART_ACTION_RANDOM_EMOTE, "Play Random Emote (_actionRandomParameters_)");
             smartActionStrings.Add(SmartAction.SMART_ACTION_CAST, "Cast '_spellNameActionParamOne_' with CastFlag: _actionParamTwo_ and TriggerFlag: _actionParamThree_ (TargetLimit: _actionParamFour_)");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_SUMMON_CREATURE, "Summon Creature '_creatureNameActionParamOne_'");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_SUMMON_CREATURE, "Summon Creature '_creatureNameActionParamOne_' for _actionParamThree_ milliseconds _AttackInvoker_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_THREAT_SINGLE_PCT, "Set Single Threat _actionParamOne_-_actionParamTwo_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_THREAT_ALL_PCT, "Set All Threat _actionParamOne_-_actionParamTwo_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_CALL_AREAEXPLOREDOREVENTHAPPENS, "Quest Credit '_questNameActionParamOne_'");
@@ -927,6 +927,14 @@ namespace SAI_Editor.Classes
                         fullLine = fullLine.Replace("_addQuestDirectly_", "directly without previous condition");
                     else
                         fullLine = fullLine.Replace("_addQuestDirectly_", "not directly with previous condition");
+                }
+
+                if (fullLine.Contains("_AttackInvoker_"))
+                {
+                    if (smartScript.action_param4 == 1)
+                        fullLine = fullLine.Replace("_AttackInvoker_", "and attack Invoker");
+                    else
+                        fullLine = fullLine.Replace("_AttackInvoker_", "");
                 }
 
                 if (fullLine.Contains("_startOrStopBasedOnTargetType_"))
