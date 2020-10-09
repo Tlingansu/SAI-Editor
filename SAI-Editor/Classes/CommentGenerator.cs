@@ -226,7 +226,7 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_RANDOM_SOUND, "Play _PlayRandomSoundDistance_ _actionParamOne_ _actionParamTwo_ _actionParamThree_ _actionParamFour_ _PlayRandomSoundTarget_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_CORPSE_DELAY, "Set Corpse Delay _actionParamOne_ seconds");
             smartActionStrings.Add(SmartAction.SMART_ACTION_DISABLE_EVADE, "Disable Evade");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_MOVE_HOME_POS, "Move to Homeposition Point _actionParamOne_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_GO_SET_GO_STATE, "Set gameobject state _SetgoStateActionParamOne_");
         }
 
         public async Task<string> GenerateCommentFor(SmartScript smartScript, EntryOrGuidAndSourceType entryOrGuidAndSourceType, bool forced = false, SmartScript smartScriptLink = null)
@@ -648,6 +648,25 @@ namespace SAI_Editor.Classes
                             break;
                         default:
                             fullLine = fullLine.Replace("_goStateActionParamOne_", "<Unknown Gameobject State>");
+                            break;
+                    }
+                }
+
+                if (fullLine.Contains("_SetgoStateActionParamOne_"))
+                {
+                    switch (smartScript.action_param1)
+                    {
+                        case 0:
+                            fullLine = fullLine.Replace("_SetgoStateActionParamOne_", "GO_STATE_ACTIVE");
+                            break;
+                        case 1:
+                            fullLine = fullLine.Replace("_SetgoStateActionParamOne_", "GO_STATE_READY");
+                            break;
+                        case 2:
+                            fullLine = fullLine.Replace("_SetgoStateActionParamOne_", "GO_STATE_ACTIVE_ALTERNATIVE");
+                            break;
+                        default:
+                            fullLine = fullLine.Replace("_SetgoStateActionParamOne_", "<Unknown Gameobject State>");
                             break;
                     }
                 }
