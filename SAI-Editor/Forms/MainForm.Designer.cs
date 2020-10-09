@@ -1462,7 +1462,8 @@
             "ACTION_RANDOM_SOUND",
             "ACTION_SET_SET_CORPSE_DELAY",
             "ACTION_DISABLE_EVADE",
-            "ACTION_GO_SET_GO_STATE"});
+            "ACTION_GO_SET_GO_STATE",
+            "ACTION_SET_CAN_FLY"});
             this.comboBoxActionType.Location = new System.Drawing.Point(59, 45);
             this.comboBoxActionType.Name = "comboBoxActionType";
             this.comboBoxActionType.Size = new System.Drawing.Size(235, 21);

@@ -255,6 +255,7 @@ namespace SAI_Editor.Enumerators
         SMART_ACTION_SET_CORPSE_DELAY = 116,
         SMART_ACTION_DISABLE_EVADE = 117,
         SMART_ACTION_GO_SET_GO_STATE = 118,
+        SMART_ACTION_SET_CAN_FLY = 119,
         SMART_ACTION_MAX,
     }
 
