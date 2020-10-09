@@ -225,6 +225,7 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_START_CLOSEST_WAYPOINT, "Pick Closest Waypoint _actionParamOne_ _actionParamTwo_ _actionParamThree_ _actionParamFour_ _actionParamFive_ _actionParamSix_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_RANDOM_SOUND, "Play _PlayRandomSoundDistance_ _actionParamOne_ _actionParamTwo_ _actionParamThree_ _actionParamFour_ _PlayRandomSoundTarget_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_CORPSE_DELAY, "Set Corpse Delay _actionParamOne_ seconds");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_DISABLE_EVADE, "Disable Evade");
             smartActionStrings.Add(SmartAction.SMART_ACTION_MOVE_HOME_POS, "Move to Homeposition Point _actionParamOne_");
         }
 

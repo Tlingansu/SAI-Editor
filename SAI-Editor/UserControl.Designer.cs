@@ -503,7 +503,7 @@
             "ACTION_MOVE_OFFSET",
             "ACTION_ACTION_RANDOM_SOUND",
             "ACTION_SET_SET_CORPSE_DELAY",
-            "ACTION_UNUSED_2",
+            "ACTION_DISABLE_EVADE",
             "ACTION_MOVE_HOME_POS"});
             this.comboBoxActionType.Location = new System.Drawing.Point(59, 45);
             this.comboBoxActionType.Name = "comboBoxActionType";
