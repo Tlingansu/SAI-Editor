@@ -109,6 +109,7 @@
             this.smartAIWikiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.smartAIWikiToolStripMenuItemCustom = new System.Windows.Forms.ToolStripMenuItem();
             this.GameobjectTemplateWikiToolStripMenuItemCustom = new System.Windows.Forms.ToolStripMenuItem();
+            this.GameobjectTemplateAddonWikiToolStripMenuItemCustom = new System.Windows.Forms.ToolStripMenuItem();
             this.CreatureTemplateWikiToolStripMenuItemCustom = new System.Windows.Forms.ToolStripMenuItem();
             this.ItemTemplateWikiToolStripMenuItemCustom = new System.Windows.Forms.ToolStripMenuItem();
             this.feedbackbugsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -922,6 +923,7 @@
             this.smartAIWikiToolStripMenuItem,
             this.smartAIWikiToolStripMenuItemCustom,
             this.GameobjectTemplateWikiToolStripMenuItemCustom,
+            this.GameobjectTemplateAddonWikiToolStripMenuItemCustom,
             this.CreatureTemplateWikiToolStripMenuItemCustom,
             this.ItemTemplateWikiToolStripMenuItemCustom});
             this.otherToolStripMenuItem.Name = "otherToolStripMenuItem";
@@ -948,6 +950,13 @@
             this.GameobjectTemplateWikiToolStripMenuItemCustom.Size = new System.Drawing.Size(168, 22);
             this.GameobjectTemplateWikiToolStripMenuItemCustom.Text = "Gameobject Template Wiki (TC)";
             this.GameobjectTemplateWikiToolStripMenuItemCustom.Click += new System.EventHandler(this.GameobjectTemplateWikiToolStripMenuItemCustom_Click);
+            // 
+            // GameobjectTemplateAddonWikiToolStripMenuItemCustom
+            // 
+            this.GameobjectTemplateAddonWikiToolStripMenuItemCustom.Name = "GameobjectTemplateAddonWikiToolStripMenuItemCustom";
+            this.GameobjectTemplateAddonWikiToolStripMenuItemCustom.Size = new System.Drawing.Size(168, 22);
+            this.GameobjectTemplateAddonWikiToolStripMenuItemCustom.Text = "Gameobject Template Addon Wiki (TC)";
+            this.GameobjectTemplateAddonWikiToolStripMenuItemCustom.Click += new System.EventHandler(this.GameobjectTemplateAddonWikiToolStripMenuItemCustom_Click);
             // 
             // CreatureTemplateWikiToolStripMenuItemCustom
             // 
@@ -2853,6 +2862,7 @@
         public System.Windows.Forms.ToolStripMenuItem smartAIWikiToolStripMenuItem;
         public System.Windows.Forms.ToolStripMenuItem smartAIWikiToolStripMenuItemCustom;
         public System.Windows.Forms.ToolStripMenuItem GameobjectTemplateWikiToolStripMenuItemCustom;
+        public System.Windows.Forms.ToolStripMenuItem GameobjectTemplateAddonWikiToolStripMenuItemCustom;
         public System.Windows.Forms.ToolStripMenuItem CreatureTemplateWikiToolStripMenuItemCustom;
         public System.Windows.Forms.ToolStripMenuItem ItemTemplateWikiToolStripMenuItemCustom;
         public System.Windows.Forms.ToolStripMenuItem menuItemGenerateSql;

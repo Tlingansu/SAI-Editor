@@ -821,6 +821,11 @@ namespace SAI_Editor.Forms
             SAI_Editor_Manager.Instance.StartProcess("https://trinitycore.atlassian.net/wiki/spaces/tc/pages/2130143/gameobject+template");
         }
 
+        private void GameobjectTemplateAddonWikiToolStripMenuItemCustom_Click(object sender, EventArgs e)
+        {
+            SAI_Editor_Manager.Instance.StartProcess("https://trinitycore.atlassian.net/wiki/spaces/tc/pages/46235672/gameobject+template+addon");
+        }
+
         private void CreatureTemplateWikiToolStripMenuItemCustom_Click(object sender, EventArgs e)
         {
             SAI_Editor_Manager.Instance.StartProcess("https://trinitycore.atlassian.net/wiki/spaces/tc/pages/2130008/creature+template");
