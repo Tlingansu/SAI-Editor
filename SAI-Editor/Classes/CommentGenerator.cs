@@ -226,11 +226,12 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_RANDOM_SOUND, "Play _PlayRandomSoundDistance_ _actionParamOne_ _actionParamTwo_ _actionParamThree_ _actionParamFour_ _PlayRandomSoundTarget_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_CORPSE_DELAY, "Set Corpse Delay _actionParamOne_ seconds");
             smartActionStrings.Add(SmartAction.SMART_ACTION_DISABLE_EVADE, "Disable Evade");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_GO_SET_GO_STATE, "Set gameobject state _SetgoStateActionParamOne_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_GO_SET_GO_STATE, "Set Gameobject State _SetgoStateActionParamOne_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_CAN_FLY, "Set can Fly _onOffActionParamOne_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_REMOVE_AURAS_BY_TYPE, "Remove Aura Type: _actionParamOne_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_SIGHT_DIST, "Set Sight Distance _actionParamOne_ yards");
             smartActionStrings.Add(SmartAction.SMART_ACTION_FLEE, "Set Flee Motiontype for _actionParamOne_ milliseconds");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_ADD_THREAT, "Add _actionParamOne_ threat, Remove _actionParamTwo_ threat");
         }
 
         public async Task<string> GenerateCommentFor(SmartScript smartScript, EntryOrGuidAndSourceType entryOrGuidAndSourceType, bool forced = false, SmartScript smartScriptLink = null)
