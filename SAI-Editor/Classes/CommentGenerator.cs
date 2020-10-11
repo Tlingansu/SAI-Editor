@@ -230,6 +230,7 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_CAN_FLY, "Set can Fly _onOffActionParamOne_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_REMOVE_AURAS_BY_TYPE, "Remove Aura Type: _actionParamOne_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_SIGHT_DIST, "Set Sight Distance _actionParamOne_ yards");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_FLEE, "Set Flee Motiontype for _actionParamOne_ milliseconds");
         }
 
         public async Task<string> GenerateCommentFor(SmartScript smartScript, EntryOrGuidAndSourceType entryOrGuidAndSourceType, bool forced = false, SmartScript smartScriptLink = null)
@@ -1040,8 +1041,11 @@ namespace SAI_Editor.Classes
                         }
                     }
 
-                    if (((event_flags & SmartEventFlags.EVENT_FLAG_DEBUG_ONLY) != 0))
-                        fullLine += " (Debug)";
+                    if (((event_flags & SmartEventFlags.EVENT_FLAG_DONT_RESET) != 0))
+                        fullLine += " (No Reset)";
+
+                    if (((event_flags & SmartEventFlags.EVENT_FLAG_WHILE_CHARMED) != 0))
+                        fullLine += " (While Charmed)";
                 }
 
                 return fullLine;

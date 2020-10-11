@@ -510,7 +510,8 @@
             "ACTION_GO_SET_GO_STATE",
             "ACTION_SET_CAN_FLY",
             "ACTION_REMOVE_AURAS_BY_TYPE",
-            "ACTION_SET_SIGHT_DIST"});
+            "ACTION_SET_SIGHT_DIST",
+            "ACTION_FLEE"});
             this.comboBoxActionType.Location = new System.Drawing.Point(59, 45);
             this.comboBoxActionType.Name = "comboBoxActionType";
             this.comboBoxActionType.Size = new System.Drawing.Size(235, 21);

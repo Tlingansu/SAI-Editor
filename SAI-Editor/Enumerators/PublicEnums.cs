@@ -258,6 +258,7 @@ namespace SAI_Editor.Enumerators
         SMART_ACTION_SET_CAN_FLY = 119,
         SMART_ACTION_REMOVE_AURAS_BY_TYPE = 120,
         SMART_ACTION_SET_SIGHT_DIST = 121,
+        SMART_ACTION_FLEE = 122,
         SMART_ACTION_MAX,
     }
 
@@ -443,6 +444,8 @@ namespace SAI_Editor.Enumerators
         EVENT_FLAG_NORMAL_RAID        = 0x08,
         EVENT_FLAG_HEROIC_RAID        = 0x10,
         EVENT_FLAG_DEBUG_ONLY         = 0x80,
+        EVENT_FLAG_DONT_RESET         = 0x100,
+        EVENT_FLAG_WHILE_CHARMED      = 0x200,
     }
 
     [Flags]
