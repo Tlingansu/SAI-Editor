@@ -828,7 +828,7 @@ namespace SAI_Editor.Forms
 
         private void CreatureTemplateWikiToolStripMenuItemCustom_Click(object sender, EventArgs e)
         {
-            SAI_Editor_Manager.Instance.StartProcess("https://trinitycore.atlassian.net/wiki/spaces/tc/pages/2130008/creature+template");
+            SAI_Editor_Manager.Instance.StartProcess("https://trinitycore.atlassian.net/wiki/spaces/tc/pages/1200128167/creature+template+3.3.5a");
         }
 
         private void ItemTemplateWikiToolStripMenuItemCustom_Click(object sender, EventArgs e)
