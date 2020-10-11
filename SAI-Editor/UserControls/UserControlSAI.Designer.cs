@@ -513,7 +513,8 @@
             "ACTION_SET_SIGHT_DIST",
             "ACTION_FLEE",
             "ACTION_ADD_THREAT",
-            "ACTION_LOAD_EQUIPMENT"});
+            "ACTION_LOAD_EQUIPMENT",
+            "ACTION_TRIGGER_RANDOM_TIMED_EVENT"});
             this.comboBoxActionType.Location = new System.Drawing.Point(59, 45);
             this.comboBoxActionType.Name = "comboBoxActionType";
             this.comboBoxActionType.Size = new System.Drawing.Size(235, 21);

@@ -233,6 +233,7 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_FLEE, "Set Flee Motiontype for _actionParamOne_ milliseconds");
             smartActionStrings.Add(SmartAction.SMART_ACTION_ADD_THREAT, "Add _actionParamOne_ threat, Remove _actionParamTwo_ threat");
             smartActionStrings.Add(SmartAction.SMART_ACTION_LOAD_EQUIPMENT, "Load Equipment ID _actionParamOne_ _forcedUnforcedActionParamTwo_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_TRIGGER_RANDOM_TIMED_EVENT, "Trigger Random Timed Event between _actionParamOne_ and _actionParamTwo_");
         }
 
         public async Task<string> GenerateCommentFor(SmartScript smartScript, EntryOrGuidAndSourceType entryOrGuidAndSourceType, bool forced = false, SmartScript smartScriptLink = null)
