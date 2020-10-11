@@ -111,7 +111,10 @@
             this.GameobjectTemplateWikiToolStripMenuItemCustom = new System.Windows.Forms.ToolStripMenuItem();
             this.GameobjectTemplateAddonWikiToolStripMenuItemCustom = new System.Windows.Forms.ToolStripMenuItem();
             this.CreatureTemplateWikiToolStripMenuItemCustom = new System.Windows.Forms.ToolStripMenuItem();
+            this.CreatureAddonWikiToolStripMenuItemCustom = new System.Windows.Forms.ToolStripMenuItem();
             this.ItemTemplateWikiToolStripMenuItemCustom = new System.Windows.Forms.ToolStripMenuItem();
+            this.QuestTemplateWikiToolStripMenuItemCustom = new System.Windows.Forms.ToolStripMenuItem();
+            this.QuestTemplateAddonWikiToolStripMenuItemCustom = new System.Windows.Forms.ToolStripMenuItem();
             this.feedbackbugsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemReportIssue = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -925,7 +928,10 @@
             this.GameobjectTemplateWikiToolStripMenuItemCustom,
             this.GameobjectTemplateAddonWikiToolStripMenuItemCustom,
             this.CreatureTemplateWikiToolStripMenuItemCustom,
-            this.ItemTemplateWikiToolStripMenuItemCustom});
+            this.CreatureAddonWikiToolStripMenuItemCustom,
+            this.ItemTemplateWikiToolStripMenuItemCustom,
+            this.QuestTemplateWikiToolStripMenuItemCustom,
+            this.QuestTemplateAddonWikiToolStripMenuItemCustom});
             this.otherToolStripMenuItem.Name = "otherToolStripMenuItem";
             this.otherToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
             this.otherToolStripMenuItem.Text = "Other";
@@ -965,12 +971,33 @@
             this.CreatureTemplateWikiToolStripMenuItemCustom.Text = "Creature Template Wiki (TC)";
             this.CreatureTemplateWikiToolStripMenuItemCustom.Click += new System.EventHandler(this.CreatureTemplateWikiToolStripMenuItemCustom_Click);
             // 
+            // CreatureAddonWikiToolStripMenuItemCustom
+            // 
+            this.CreatureAddonWikiToolStripMenuItemCustom.Name = "CreatureAddonWikiToolStripMenuItemCustom";
+            this.CreatureAddonWikiToolStripMenuItemCustom.Size = new System.Drawing.Size(168, 22);
+            this.CreatureAddonWikiToolStripMenuItemCustom.Text = "Creature Addon Wiki (TC)";
+            this.CreatureAddonWikiToolStripMenuItemCustom.Click += new System.EventHandler(this.CreatureAddonWikiToolStripMenuItemCustom_Click);
+            // 
             // ItemTemplateWikiToolStripMenuItemCustom
             // 
             this.ItemTemplateWikiToolStripMenuItemCustom.Name = "ItemTemplateWikiToolStripMenuItemCustom";
             this.ItemTemplateWikiToolStripMenuItemCustom.Size = new System.Drawing.Size(168, 22);
             this.ItemTemplateWikiToolStripMenuItemCustom.Text = "Item Template Wiki (TC)";
             this.ItemTemplateWikiToolStripMenuItemCustom.Click += new System.EventHandler(this.ItemTemplateWikiToolStripMenuItemCustom_Click);
+            // 
+            // QuestTemplateWikiToolStripMenuItemCustom
+            // 
+            this.QuestTemplateWikiToolStripMenuItemCustom.Name = "QuestTemplateWikiToolStripMenuItemCustom";
+            this.QuestTemplateWikiToolStripMenuItemCustom.Size = new System.Drawing.Size(168, 22);
+            this.QuestTemplateWikiToolStripMenuItemCustom.Text = "Quest Template Wiki (TC)";
+            this.QuestTemplateWikiToolStripMenuItemCustom.Click += new System.EventHandler(this.QuestTemplateWikiToolStripMenuItemCustom_Click);
+            // 
+            // QuestTemplateAddonWikiToolStripMenuItemCustom
+            // 
+            this.QuestTemplateAddonWikiToolStripMenuItemCustom.Name = "QuestTemplateAddonWikiToolStripMenuItemCustom";
+            this.QuestTemplateAddonWikiToolStripMenuItemCustom.Size = new System.Drawing.Size(168, 22);
+            this.QuestTemplateAddonWikiToolStripMenuItemCustom.Text = "Quest Template Addon Wiki (TC)";
+            this.QuestTemplateAddonWikiToolStripMenuItemCustom.Click += new System.EventHandler(this.QuestTemplateAddonWikiToolStripMenuItemCustom_Click);
             // 
             // feedbackbugsToolStripMenuItem
             // 
@@ -2864,7 +2891,10 @@
         public System.Windows.Forms.ToolStripMenuItem GameobjectTemplateWikiToolStripMenuItemCustom;
         public System.Windows.Forms.ToolStripMenuItem GameobjectTemplateAddonWikiToolStripMenuItemCustom;
         public System.Windows.Forms.ToolStripMenuItem CreatureTemplateWikiToolStripMenuItemCustom;
+        public System.Windows.Forms.ToolStripMenuItem CreatureAddonWikiToolStripMenuItemCustom;
         public System.Windows.Forms.ToolStripMenuItem ItemTemplateWikiToolStripMenuItemCustom;
+        public System.Windows.Forms.ToolStripMenuItem QuestTemplateWikiToolStripMenuItemCustom;
+        public System.Windows.Forms.ToolStripMenuItem QuestTemplateAddonWikiToolStripMenuItemCustom;
         public System.Windows.Forms.ToolStripMenuItem menuItemGenerateSql;
         public System.Windows.Forms.ToolStripMenuItem menuItemGenerateCommentListView;
         public System.Windows.Forms.ToolStripMenuItem menuItemLoadSelectedEntryListView;

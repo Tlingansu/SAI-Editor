@@ -831,9 +831,24 @@ namespace SAI_Editor.Forms
             SAI_Editor_Manager.Instance.StartProcess("https://trinitycore.atlassian.net/wiki/spaces/tc/pages/1200128167/creature+template+3.3.5a");
         }
 
+        private void CreatureAddonWikiToolStripMenuItemCustom_Click(object sender, EventArgs e)
+        {
+            SAI_Editor_Manager.Instance.StartProcess("https://trinitycore.atlassian.net/wiki/spaces/tc/pages/2130001/creature+addon");
+        }
+
         private void ItemTemplateWikiToolStripMenuItemCustom_Click(object sender, EventArgs e)
         {
             SAI_Editor_Manager.Instance.StartProcess("https://trinitycore.atlassian.net/wiki/spaces/tc/pages/2130222/item+template");
+        }
+
+        private void QuestTemplateWikiToolStripMenuItemCustom_Click(object sender, EventArgs e)
+        {
+            SAI_Editor_Manager.Instance.StartProcess("https://trinitycore.atlassian.net/wiki/spaces/tc/pages/2130261/quest+template");
+        }
+
+        private void QuestTemplateAddonWikiToolStripMenuItemCustom_Click(object sender, EventArgs e)
+        {
+            SAI_Editor_Manager.Instance.StartProcess("https://trinitycore.atlassian.net/wiki/spaces/tc/pages/34897928/quest+template+addon");
         }
 
         private async void generateSQLToolStripMenuItem_Click(object sender, EventArgs e)
