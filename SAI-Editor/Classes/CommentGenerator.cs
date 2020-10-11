@@ -228,6 +228,7 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_DISABLE_EVADE, "Disable Evade");
             smartActionStrings.Add(SmartAction.SMART_ACTION_GO_SET_GO_STATE, "Set gameobject state _SetgoStateActionParamOne_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_CAN_FLY, "Set can Fly _onOffActionParamOne_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_REMOVE_AURAS_BY_TYPE, "Remove Aura Type: _actionParamOne_");
         }
 
         public async Task<string> GenerateCommentFor(SmartScript smartScript, EntryOrGuidAndSourceType entryOrGuidAndSourceType, bool forced = false, SmartScript smartScriptLink = null)
