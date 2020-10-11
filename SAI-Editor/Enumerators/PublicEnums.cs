@@ -257,6 +257,7 @@ namespace SAI_Editor.Enumerators
         SMART_ACTION_GO_SET_GO_STATE = 118,
         SMART_ACTION_SET_CAN_FLY = 119,
         SMART_ACTION_REMOVE_AURAS_BY_TYPE = 120,
+        SMART_ACTION_SET_SIGHT_DIST = 121,
         SMART_ACTION_MAX,
     }
 
