@@ -509,7 +509,8 @@
             "ACTION_REMOVE_AURAS_BY_TYPE",
             "ACTION_SET_SIGHT_DIST",
             "ACTION_FLEE",
-            "ACTION_ADD_THREAT"});
+            "ACTION_ADD_THREAT",
+            "ACTION_LOAD_EQUIPMENT"});
             this.comboBoxActionType.Location = new System.Drawing.Point(59, 45);
             this.comboBoxActionType.Name = "comboBoxActionType";
             this.comboBoxActionType.Size = new System.Drawing.Size(235, 21);

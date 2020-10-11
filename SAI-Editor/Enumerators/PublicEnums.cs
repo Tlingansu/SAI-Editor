@@ -260,6 +260,7 @@ namespace SAI_Editor.Enumerators
         SMART_ACTION_SET_SIGHT_DIST = 121,
         SMART_ACTION_FLEE = 122,
         SMART_ACTION_ADD_THREAT = 123,
+        SMART_ACTION_LOAD_EQUIPMENT = 124,
         SMART_ACTION_MAX,
     }
 

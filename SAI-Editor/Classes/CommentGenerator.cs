@@ -232,6 +232,7 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_SIGHT_DIST, "Set Sight Distance _actionParamOne_ yards");
             smartActionStrings.Add(SmartAction.SMART_ACTION_FLEE, "Set Flee Motiontype for _actionParamOne_ milliseconds");
             smartActionStrings.Add(SmartAction.SMART_ACTION_ADD_THREAT, "Add _actionParamOne_ threat, Remove _actionParamTwo_ threat");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_LOAD_EQUIPMENT, "Load Equipment ID _actionParamOne_ _forcedUnforcedActionParamTwo_");
         }
 
         public async Task<string> GenerateCommentFor(SmartScript smartScript, EntryOrGuidAndSourceType entryOrGuidAndSourceType, bool forced = false, SmartScript smartScriptLink = null)
@@ -573,6 +574,14 @@ namespace SAI_Editor.Classes
                         fullLine = fullLine.Replace("_onOffActionParamOne_", "On");
                     else
                         fullLine = fullLine.Replace("_onOffActionParamOne_", "Off");
+                }
+
+                if (fullLine.Contains("_forcedUnforcedActionParamTwo_"))
+                {
+                    if (smartScript.action_param2 == 1)
+                        fullLine = fullLine.Replace("_forcedUnforcedActionParamTwo_", "(Forced)");
+                    else
+                        fullLine = fullLine.Replace("_forcedUnforcedActionParamTwo_", "(Default)");
                 }
 
                 if (fullLine.Contains("_gameobjectNameActionParamOne_"))
