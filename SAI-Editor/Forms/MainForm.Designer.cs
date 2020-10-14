@@ -1496,7 +1496,7 @@
             "ACTION_REMOVE_POWER",
             "ACTION_MOVE_OFFSET",
             "ACTION_RANDOM_SOUND",
-            "ACTION_SET_SET_CORPSE_DELAY",
+            "ACTION_SET_CORPSE_DELAY",
             "ACTION_DISABLE_EVADE",
             "ACTION_GO_SET_GO_STATE",
             "ACTION_SET_CAN_FLY",
