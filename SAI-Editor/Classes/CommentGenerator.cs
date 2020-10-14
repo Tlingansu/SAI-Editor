@@ -235,6 +235,7 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_LOAD_EQUIPMENT, "Load Equipment ID _actionParamOne_ _forcedUnforcedActionParamTwo_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_TRIGGER_RANDOM_TIMED_EVENT, "Trigger Random Timed Event between _actionParamOne_ and _actionParamTwo_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_REMOVE_ALL_GAMEOBJECTS, "Removes all gameobjects related to the unit");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_PAUSE_MOVEMENT, "Pause Movement (Movementslot: _MovementSlotActionParamOne_, PauseTime: _actionParamTwo_ ms, _forcedUnforcedActionParamThree_)");
         }
 
         public async Task<string> GenerateCommentFor(SmartScript smartScript, EntryOrGuidAndSourceType entryOrGuidAndSourceType, bool forced = false, SmartScript smartScriptLink = null)
@@ -550,6 +551,25 @@ namespace SAI_Editor.Classes
                     }
                 }
 
+                if (fullLine.Contains("_MovementSlotActionParamOne_"))
+                {
+                    switch (smartScript.action_param1)
+                    {
+                        case 0:
+                            fullLine = fullLine.Replace("_MovementSlotActionParamOne_", "Default");
+                            break;
+                        case 1:
+                            fullLine = fullLine.Replace("_MovementSlotActionParamOne_", "Active");
+                            break;
+                        case 2:
+                            fullLine = fullLine.Replace("_MovementSlotActionParamOne_", "Controlled");
+                            break;
+                        default:
+                            fullLine = fullLine.Replace("_MovementSlotActionParamOne_", "<Unknown MovementSlot>");
+                            break;
+                    }
+                }
+
                 if (fullLine.Contains("_forceDespawnActionParamOne_"))
                 {
                     if (smartScript.action_param1 > 2)
@@ -584,6 +604,14 @@ namespace SAI_Editor.Classes
                         fullLine = fullLine.Replace("_forcedUnforcedActionParamTwo_", "(Forced)");
                     else
                         fullLine = fullLine.Replace("_forcedUnforcedActionParamTwo_", "(Default)");
+                }
+
+                if (fullLine.Contains("_forcedUnforcedActionParamThree_"))
+                {
+                    if (smartScript.action_param3 == 1)
+                        fullLine = fullLine.Replace("_forcedUnforcedActionParamThree_", "(Forced)");
+                    else
+                        fullLine = fullLine.Replace("_forcedUnforcedActionParamThree_", "(Default)");
                 }
 
                 if (fullLine.Contains("_gameobjectNameActionParamOne_"))
