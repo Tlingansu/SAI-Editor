@@ -236,6 +236,9 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_TRIGGER_RANDOM_TIMED_EVENT, "Trigger Random Timed Event between _actionParamOne_ and _actionParamTwo_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_REMOVE_ALL_GAMEOBJECTS, "Removes all gameobjects related to the unit");
             smartActionStrings.Add(SmartAction.SMART_ACTION_PAUSE_MOVEMENT, "Pause Movement (Movementslot: _MovementSlotActionParamOne_, PauseTime: _actionParamTwo_ ms, _forcedUnforcedActionParamThree_)");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_PLAY_ANIMKIT, "Play Animationkit (ID: _actionParamOne_, Type: _AnimKitTypeActionParamTwo_)");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_SCENE_PLAY, "Play Scene ID _actionParamOne_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_SCENE_CANCEL, "Cancel Scene ID _actionParamOne_");
         }
 
         public async Task<string> GenerateCommentFor(SmartScript smartScript, EntryOrGuidAndSourceType entryOrGuidAndSourceType, bool forced = false, SmartScript smartScriptLink = null)
@@ -566,6 +569,28 @@ namespace SAI_Editor.Classes
                             break;
                         default:
                             fullLine = fullLine.Replace("_MovementSlotActionParamOne_", "<Unknown MovementSlot>");
+                            break;
+                    }
+                }
+
+                if(fullLine.Contains("_AnimKitTypeActionParamTwo_"))
+                {
+                    switch (smartScript.action_param2)
+                    {
+                        case 0:
+                            fullLine = fullLine.Replace("_AnimKitTypeActionParamTwo_", "oneShot");
+                            break;
+                        case 1:
+                            fullLine = fullLine.Replace("_AnimKitTypeActionParamTwo_", "aiAnim");
+                            break;
+                        case 2:
+                            fullLine = fullLine.Replace("_AnimKitTypeActionParamTwo_", "meleeAnim");
+                            break;
+                        case 3:
+                            fullLine = fullLine.Replace("_AnimKitTypeActionParamTwo_", "movementAnim");
+                            break;
+                        default:
+                            fullLine = fullLine.Replace("_AnimKitTypeActionParamTwo_", "<Unknown AnimationKitType>");
                             break;
                     }
                 }

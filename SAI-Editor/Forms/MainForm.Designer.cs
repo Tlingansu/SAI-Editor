@@ -1507,7 +1507,10 @@
             "ACTION_LOAD_EQUIPMENT",
             "ACTION_TRIGGER_RANDOM_TIMED_EVENT",
             "ACTION_REMOVE_ALL_GAMEOBJECTS",
-            "ACTION_PAUSE_MOVEMENT"});
+            "ACTION_PAUSE_MOVEMENT",
+            "ACTION_PLAY_ANIMKIT",
+            "ACTION_SCENE_PLAY",
+            "ACTION_SCENE_CANCEL"});
             this.comboBoxActionType.Location = new System.Drawing.Point(59, 45);
             this.comboBoxActionType.Name = "comboBoxActionType";
             this.comboBoxActionType.Size = new System.Drawing.Size(235, 21);
