@@ -105,7 +105,7 @@ namespace SAI_Editor.Classes
             smartEventStrings.Add(SmartEvent.SMART_EVENT_ON_SPELLCLICK, "On Spellclick");
             smartEventStrings.Add(SmartEvent.SMART_EVENT_DISTANCE_CREATURE, "On Distance To Creature");
             smartEventStrings.Add(SmartEvent.SMART_EVENT_DISTANCE_GAMEOBJECT, "On Distance To GameObject");
-            smartEventStrings.Add(SmartEvent.SMART_EVENT_COUNTER_SET, "On Counter Set");
+            smartEventStrings.Add(SmartEvent.SMART_EVENT_COUNTER_SET, "On Counter Set _eventParamOne_ _eventParamTwo_");
             smartEventStrings.Add(SmartEvent.SMART_EVENT_LINK, "_previousLineComment_");
 
             //! Filling up actions
@@ -240,6 +240,7 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_PLAY_ANIMKIT, "Play Animationkit (ID: _actionParamOne_, Type: _AnimKitTypeActionParamTwo_)");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SCENE_PLAY, "Play Scene ID _actionParamOne_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SCENE_CANCEL, "Cancel Scene ID _actionParamOne_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_SPAWN_SPAWNGROUP, "Spawn Creaturegroup ID _actionParamOne_ (Min Secs: _actionParamTwo_, Max Secs: _actionParamThree_, Spawnflags: _actionParamFour_)");            
         }
 
         public async Task<string> GenerateCommentFor(SmartScript smartScript, EntryOrGuidAndSourceType entryOrGuidAndSourceType, bool forced = false, SmartScript smartScriptLink = null)

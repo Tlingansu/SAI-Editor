@@ -267,6 +267,7 @@ namespace SAI_Editor.Enumerators
         SMART_ACTION_PLAY_ANIMKIT = 128,
         SMART_ACTION_SCENE_PLAY = 129,
         SMART_ACTION_SCENE_CANCEL = 130,
+        SMART_ACTION_SPAWN_SPAWNGROUP = 131,
         SMART_ACTION_MAX,
     }
 
