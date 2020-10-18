@@ -1511,7 +1511,8 @@
             "ACTION_PLAY_ANIMKIT",
             "ACTION_SCENE_PLAY",
             "ACTION_SCENE_CANCEL",
-            "SMART_ACTION_SPAWN_SPAWNGROUP"});
+            "ACTION_SPAWN_SPAWNGROUP",
+            "ACTION_DESPAWN_SPAWNGROUP"});
             this.comboBoxActionType.Location = new System.Drawing.Point(59, 45);
             this.comboBoxActionType.Name = "comboBoxActionType";
             this.comboBoxActionType.Size = new System.Drawing.Size(235, 21);
