@@ -245,6 +245,8 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_RESPAWN_BY_SPAWNID, "Respawn SpawnID _actionParamTwo_ with SpawnType _actionParamOne_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_INVOKER_CAST_, "Cast '_spellNameActionParamOne_' with CastFlag: _actionParamTwo_ and TriggerFlag: _actionParamThree_ (TargetLimit: _actionParamFour_)");
             smartActionStrings.Add(SmartAction.SMART_ACTION_PLAY_CINEMATIC, "Play Cinematic Entry: _actionParamOne_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_SET_MOVEMENT_SPEED, "Set Creature Movement Speed (MovementType: _actionParamOne_, SpeedInteger: _actionParamTwo_, SpeedFraction: _actionParamThree_)");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_PLAY_SPELL_VISUAL_KIT, "Play Spell Visual Kit ID: _actionParamOne_");
         }
 
         public async Task<string> GenerateCommentFor(SmartScript smartScript, EntryOrGuidAndSourceType entryOrGuidAndSourceType, bool forced = false, SmartScript smartScriptLink = null)
