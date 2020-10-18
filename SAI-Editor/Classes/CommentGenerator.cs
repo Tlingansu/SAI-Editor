@@ -242,6 +242,7 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_SCENE_CANCEL, "Cancel Scene ID _actionParamOne_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SPAWN_SPAWNGROUP, "Spawn Spawngroup ID _actionParamOne_ (Min Secs: _actionParamTwo_, Max Secs: _actionParamThree_, Spawnflags: _actionParamFour_)");
             smartActionStrings.Add(SmartAction.SMART_ACTION_DESPAWN_SPAWNGROUP, "Despawn Spawngroup ID _actionParamOne_ (Min Secs: _actionParamTwo_, Max Secs: _actionParamThree_, Spawnflags: _actionParamFour_)");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_RESPAWN_BY_SPAWNID, "Respawn SpawnID _actionParamTwo_ with SpawnType _actionParamOne_");
         }
 
         public async Task<string> GenerateCommentFor(SmartScript smartScript, EntryOrGuidAndSourceType entryOrGuidAndSourceType, bool forced = false, SmartScript smartScriptLink = null)
