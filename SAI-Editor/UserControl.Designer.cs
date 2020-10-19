@@ -523,7 +523,8 @@
             "ACTION_INVOKER_CAST_",
             "ACTION_PLAY_CINEMATIC",
             "ACTION_SET_MOVEMENT_SPEED",
-            "ACTION_PLAY_SPELL_VISUAL_KIT"});
+            "ACTION_PLAY_SPELL_VISUAL_KIT",
+            "ACTION_OVERRIDE_LIGHT"});
             this.comboBoxActionType.Location = new System.Drawing.Point(59, 45);
             this.comboBoxActionType.Name = "comboBoxActionType";
             this.comboBoxActionType.Size = new System.Drawing.Size(235, 21);

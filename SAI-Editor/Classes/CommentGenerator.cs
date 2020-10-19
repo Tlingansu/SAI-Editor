@@ -247,6 +247,7 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_PLAY_CINEMATIC, "Play Cinematic Entry: _actionParamOne_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_MOVEMENT_SPEED, "Set Creature Movement Speed (MovementType: _actionParamOne_, SpeedInteger: _actionParamTwo_, SpeedFraction: _actionParamThree_)");
             smartActionStrings.Add(SmartAction.SMART_ACTION_PLAY_SPELL_VISUAL_KIT, "Play Spell Visual Kit ID: _actionParamOne_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_OVERRIDE_LIGHT, "Set Zone Override Light in ZoneID: _actionParamOne_ with LightID: _actionParamTwo_ (FadeInTime: _actionParamThree_)");
         }
 
         public async Task<string> GenerateCommentFor(SmartScript smartScript, EntryOrGuidAndSourceType entryOrGuidAndSourceType, bool forced = false, SmartScript smartScriptLink = null)
@@ -375,7 +376,12 @@ namespace SAI_Editor.Classes
                 if (fullLine.Contains("_spellNameActionParamOne_"))
                 {
                     if (smartScript.action_param1.ToString() != "0")
-                        fullLine = fullLine.Replace("_spellNameActionParamOne_", await sqliteDatabase.GetSpellNameById(smartScript.action_param1));
+                    {
+                        if (smartScript.action_param1 > 80864/*WotlK Default Value*/)
+                            fullLine = fullLine.Replace("_spellNameActionParamOne_", "Spell" + smartScript.action_param1.ToString());
+                        else
+                            fullLine = fullLine.Replace("_spellNameActionParamOne_", await sqliteDatabase.GetSpellNameById(smartScript.action_param1));
+                    }
                     else
                         fullLine = fullLine.Replace(" '_spellNameActionParamOne_'", String.Empty);
                 }
