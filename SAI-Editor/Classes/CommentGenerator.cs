@@ -316,6 +316,7 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_UNUSED_204, "Set ");
             smartActionStrings.Add(SmartAction.SMART_ACTION_CHECK_DUPLICATE_AND_DESPAWN, "Check for _actionParamThree_ Creature(s) with Entry: _actionParamOne_ in _actionParamTwo_ yards range and evade");
             smartActionStrings.Add(SmartAction.SMART_ACTION_UNUSED_206, "Set ");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_CHECK_HOMEDIST_AND_EVADE, "Evade after moving _actionParamOne_ yards away from HomePosition"); 
         }
 
         public async Task<string> GenerateCommentFor(SmartScript smartScript, EntryOrGuidAndSourceType entryOrGuidAndSourceType, bool forced = false, SmartScript smartScriptLink = null)
