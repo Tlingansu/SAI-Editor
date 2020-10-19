@@ -588,7 +588,9 @@
             "ACTION_UNUSED_199",
             "ACTION_SET_CREATURE_RESPAWN_TIME",
             "ACTION_MOVE_HOME_POS",
-            "ACTION_LOAD_GRID"});
+            "ACTION_LOAD_GRID",
+            "ACTION_UNUSED_203",
+            "ACTION_UNUSED_204"});
             this.comboBoxActionType.Location = new System.Drawing.Point(59, 45);
             this.comboBoxActionType.Name = "comboBoxActionType";
             this.comboBoxActionType.Size = new System.Drawing.Size(235, 21);

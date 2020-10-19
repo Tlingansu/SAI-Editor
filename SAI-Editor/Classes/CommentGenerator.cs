@@ -312,6 +312,8 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_CREATURE_RESPAWN_TIME, "Set Creature Respawntime to _actionParamOne_ seconds");
             smartActionStrings.Add(SmartAction.SMART_ACTION_MOVE_HOME_POS, "Move to Homeposition (PointID: _actionParamOne_, Pathfinding: _enabledDisabledActionParamTwo_)");
             smartActionStrings.Add(SmartAction.SMART_ACTION_LOAD_GRID, "Load Grid CellX: _LoadGridXTargetType_ CellY: _LoadGridYTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_UNUSED_203, "Set ");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_UNUSED_204, "Set ");
         }
 
         public async Task<string> GenerateCommentFor(SmartScript smartScript, EntryOrGuidAndSourceType entryOrGuidAndSourceType, bool forced = false, SmartScript smartScriptLink = null)
