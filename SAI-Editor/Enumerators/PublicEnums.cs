@@ -338,6 +338,7 @@ namespace SAI_Editor.Enumerators
         SMART_ACTION_UNUSED_199 = 199,
         SMART_ACTION_SET_CREATURE_RESPAWN_TIME = 200,
         SMART_ACTION_MOVE_HOME_POS = 201,
+        SMART_ACTION_LOAD_GRID = 202,
         SMART_ACTION_MAX,
     }
 

@@ -311,6 +311,7 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_UNUSED_199, "Set ");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_CREATURE_RESPAWN_TIME, "Set Creature Respawntime to _actionParamOne_ seconds");
             smartActionStrings.Add(SmartAction.SMART_ACTION_MOVE_HOME_POS, "Move to Homeposition (PointID: _actionParamOne_, Pathfinding: _enabledDisabledActionParamTwo_)");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_LOAD_GRID, "Load Grid CellX: _LoadGridXTargetType_ CellY: _LoadGridYTargetType_");
         }
 
         public async Task<string> GenerateCommentFor(SmartScript smartScript, EntryOrGuidAndSourceType entryOrGuidAndSourceType, bool forced = false, SmartScript smartScriptLink = null)
@@ -761,6 +762,26 @@ namespace SAI_Editor.Classes
                             break;
                         default:
                             fullLine = fullLine.Replace("_updateAiTemplateActionParamOne_", "<_updateAiTemplateActionParamOne_ Unknown ai template>");
+                            break;
+                    }
+                }
+
+                if (fullLine.Contains("_LoadGridXTargetType_"))
+                {
+                    switch ((SmartTarget)smartScript.target_type)
+                    {
+                        case SmartTarget.SMART_TARGET_POSITION:
+                            fullLine = fullLine.Replace("_LoadGridXTargetType_", smartScript.target_x.ToString());
+                            break;
+                    }
+                }
+
+                if (fullLine.Contains("_LoadGridYTargetType_"))
+                {
+                    switch ((SmartTarget)smartScript.target_type)
+                    {
+                        case SmartTarget.SMART_TARGET_POSITION:
+                            fullLine = fullLine.Replace("_LoadGridYTargetType_", smartScript.target_y.ToString());
                             break;
                     }
                 }
