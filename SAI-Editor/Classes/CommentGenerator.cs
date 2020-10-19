@@ -309,6 +309,8 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_UNUSED_197, "Set ");
             smartActionStrings.Add(SmartAction.SMART_ACTION_UNUSED_198, "Set ");
             smartActionStrings.Add(SmartAction.SMART_ACTION_UNUSED_199, "Set ");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_SET_CREATURE_RESPAWN_TIME, "Set Creature Respawntime to _actionParamOne_ seconds");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_MOVE_HOME_POS, "Move to Homeposition (PointID: _actionParamOne_, Pathfinding: _enabledDisabledActionParamTwo_)");
         }
 
         public async Task<string> GenerateCommentFor(SmartScript smartScript, EntryOrGuidAndSourceType entryOrGuidAndSourceType, bool forced = false, SmartScript smartScriptLink = null)
@@ -696,6 +698,14 @@ namespace SAI_Editor.Classes
                         fullLine = fullLine.Replace("_onOffActionParamOne_", "On");
                     else
                         fullLine = fullLine.Replace("_onOffActionParamOne_", "Off");
+                }
+
+                if (fullLine.Contains("_enabledDisabledActionParamTwo_"))
+                {
+                    if (smartScript.action_param2 == 1)
+                        fullLine = fullLine.Replace("_enabledDisabledActionParamTwo_", "Disabled");
+                    else
+                        fullLine = fullLine.Replace("_enabledDisabledActionParamTwo_", "Enabled");
                 }
 
                 if (fullLine.Contains("_forcedUnforcedActionParamTwo_"))
