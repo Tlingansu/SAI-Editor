@@ -314,6 +314,7 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_LOAD_GRID, "Load Grid CellX: _LoadGridXTargetType_ CellY: _LoadGridYTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_UNUSED_203, "Set ");
             smartActionStrings.Add(SmartAction.SMART_ACTION_UNUSED_204, "Set ");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_CHECK_DUPLICATE_AND_DESPAWN, "Check for _actionParamThree_ Creature(s) with Entry: _actionParamOne_ in _actionParamTwo_ yards range and evade");
         }
 
         public async Task<string> GenerateCommentFor(SmartScript smartScript, EntryOrGuidAndSourceType entryOrGuidAndSourceType, bool forced = false, SmartScript smartScriptLink = null)

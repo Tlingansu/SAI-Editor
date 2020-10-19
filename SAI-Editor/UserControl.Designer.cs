@@ -590,7 +590,8 @@
             "ACTION_MOVE_HOME_POS",
             "ACTION_LOAD_GRID",
             "ACTION_UNUSED_203",
-            "ACTION_UNUSED_204"});
+            "ACTION_UNUSED_204",
+            "ACTION_CHECK_DUPLICATE_AND_DESPAWN"});
             this.comboBoxActionType.Location = new System.Drawing.Point(59, 45);
             this.comboBoxActionType.Name = "comboBoxActionType";
             this.comboBoxActionType.Size = new System.Drawing.Size(235, 21);
