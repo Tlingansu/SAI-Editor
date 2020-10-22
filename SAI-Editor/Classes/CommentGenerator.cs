@@ -314,7 +314,7 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_LOAD_GRID, "Load Grid CellX: _LoadGridXTargetType_ CellY: _LoadGridYTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_STORE_EVENT_PHASE, "Store current Event Phase");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_STORED_EVENT_PHASE, "Load stored Event Phase");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_CHECK_DUPLICATE_AND_DESPAWN, "Check for _actionParamThree_ Creature(s) with Entry: _actionParamOne_ in _actionParamTwo_ yards range and evade");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_CHECK_DUPLICATE_AND_DESPAWN, "If more than _actionParamThree_ Creature(s) with Entry: _actionParamOne_ in _actionParamTwo_ yards range, creature will despawn");
             smartActionStrings.Add(SmartAction.SMART_ACTION_UNUSED_206, "Set ");
             smartActionStrings.Add(SmartAction.SMART_ACTION_CHECK_HOMEDIST_AND_EVADE, "Evade after moving _actionParamOne_ yards away from HomePosition");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_SPEED_RATE, "Set Speed Rate (Speed Walk Rate: _checkSpeedWalkActionParamOne_, Speed Run Rate: _checkSpeedRunActionParamTwo_");
