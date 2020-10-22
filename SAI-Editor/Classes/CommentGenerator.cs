@@ -316,7 +316,8 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_UNUSED_204, "Set ");
             smartActionStrings.Add(SmartAction.SMART_ACTION_CHECK_DUPLICATE_AND_DESPAWN, "Check for _actionParamThree_ Creature(s) with Entry: _actionParamOne_ in _actionParamTwo_ yards range and evade");
             smartActionStrings.Add(SmartAction.SMART_ACTION_UNUSED_206, "Set ");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_CHECK_HOMEDIST_AND_EVADE, "Evade after moving _actionParamOne_ yards away from HomePosition"); 
+            smartActionStrings.Add(SmartAction.SMART_ACTION_CHECK_HOMEDIST_AND_EVADE, "Evade after moving _actionParamOne_ yards away from HomePosition");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_SET_SPEED_RATE, "Set Speed Rate (Speed Walk Rate: _checkSpeedWalkActionParamOne_, Speed Run Rate: _checkSpeedRunActionParamTwo_");
         }
 
         public async Task<string> GenerateCommentFor(SmartScript smartScript, EntryOrGuidAndSourceType entryOrGuidAndSourceType, bool forced = false, SmartScript smartScriptLink = null)
@@ -712,6 +713,22 @@ namespace SAI_Editor.Classes
                         fullLine = fullLine.Replace("_enabledDisabledActionParamTwo_", "Disabled");
                     else
                         fullLine = fullLine.Replace("_enabledDisabledActionParamTwo_", "Enabled");
+                }
+
+                if (fullLine.Contains("_checkSpeedWalkActionParamOne_"))
+                {
+                    if (smartScript.action_param1 > 0)
+                        fullLine = fullLine.Replace("_checkSpeedWalkActionParamOne_", smartScript.action_param1.ToString());
+                    else
+                        fullLine = fullLine.Replace("_checkSpeedWalkActionParamOne_", "Speed Walk Rate not set");
+                }
+
+                if (fullLine.Contains("_checkSpeedRunActionParamTwo_"))
+                {
+                    if (smartScript.action_param2 > 0)
+                        fullLine = fullLine.Replace("_checkSpeedRunActionParamTwo_", smartScript.action_param2.ToString());
+                    else
+                        fullLine = fullLine.Replace("_checkSpeedRunActionParamTwo_", "Speed Run Rate not set");
                 }
 
                 if (fullLine.Contains("_forcedUnforcedActionParamTwo_"))
