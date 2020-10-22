@@ -326,7 +326,8 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_MOVE_TO_POS_TARGET, "Move selected target to Position (PointID: _actionParamOne_, Pathfinding: _enabledDisabledActionParamThree_)");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SAVE_CHECKPOINT, "Save Checkpoint Position");
             smartActionStrings.Add(SmartAction.SMART_ACTION_CROSS_CAST_IN_COMBAT, "Cross Cast '_spellNameActionParamOne_'");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_EXIT_VEHICLE, "Exit Vehicle");            
+            smartActionStrings.Add(SmartAction.SMART_ACTION_EXIT_VEHICLE, "Exit Vehicle");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_SET_HEALTH, "Set Health");            
         }
 
         public async Task<string> GenerateCommentFor(SmartScript smartScript, EntryOrGuidAndSourceType entryOrGuidAndSourceType, bool forced = false, SmartScript smartScriptLink = null)
