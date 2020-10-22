@@ -322,6 +322,7 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_HOVER, "Set Hover State: _onOffActionParamOne_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_UNUSED_211, "Set ");
             smartActionStrings.Add(SmartAction.SMART_ACTION_UNUSED_212, "Set ");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_PAUSE_WAYPOINT_DATA_MOVEMENT, "_pauseUnPauseActionParamOne_ Waypoint-Data Movement");            
         }
 
         public async Task<string> GenerateCommentFor(SmartScript smartScript, EntryOrGuidAndSourceType entryOrGuidAndSourceType, bool forced = false, SmartScript smartScriptLink = null)
@@ -709,6 +710,14 @@ namespace SAI_Editor.Classes
                         fullLine = fullLine.Replace("_onOffActionParamOne_", "On");
                     else
                         fullLine = fullLine.Replace("_onOffActionParamOne_", "Off");
+                }
+
+                if (fullLine.Contains("_pauseUnPauseActionParamOne_"))
+                {
+                    if (smartScript.action_param1 == 1)
+                        fullLine = fullLine.Replace("_pauseUnPauseActionParamOne_", "Pause");
+                    else
+                        fullLine = fullLine.Replace("_pauseUnPauseActionParamOne_", "UnPause");
                 }
 
                 if (fullLine.Contains("_enabledDisabledActionParamTwo_"))
