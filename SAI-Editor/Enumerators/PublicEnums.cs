@@ -346,6 +346,7 @@ namespace SAI_Editor.Enumerators
         SMART_ACTION_CHECK_HOMEDIST_AND_EVADE = 207,
         SMART_ACTION_SET_SPEED_RATE = 208,
         SMART_ACTION_LOAD_WP_PATH = 209,
+        SMART_ACTION_SET_HOVER = 210,
         SMART_ACTION_MAX,
     }
 
