@@ -602,7 +602,9 @@
             "ACTION_SET_HOVER",
             "ACTION_UNUSED_211",
             "ACTION_UNUSED_212",
-            "ACTION_PAUSE_WAYPOINT_DATA_MOVEMENT"});
+            "ACTION_PAUSE_WAYPOINT_DATA_MOVEMENT",
+            "ACTION_MOVE_TO_POS_TARGET",
+            "ACTION_SAVE_CHECKPOINT"});
             this.comboBoxActionType.Location = new System.Drawing.Point(59, 45);
             this.comboBoxActionType.Name = "comboBoxActionType";
             this.comboBoxActionType.Size = new System.Drawing.Size(235, 21);

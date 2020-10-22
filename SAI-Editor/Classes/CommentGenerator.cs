@@ -310,7 +310,7 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_UNUSED_198, "Set ");
             smartActionStrings.Add(SmartAction.SMART_ACTION_UNUSED_199, "Set ");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_CREATURE_RESPAWN_TIME, "Set Creature Respawntime to _actionParamOne_ seconds");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_MOVE_HOME_POS, "Move to Homeposition (PointID: _actionParamOne_, Pathfinding: _enabledDisabledActionParamTwo_)");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_MOVE_HOME_POS, "Move to Homeposition (PointID: _actionParamOne_, Pathfinding: _enabledDisabledActionParamThree_)");
             smartActionStrings.Add(SmartAction.SMART_ACTION_LOAD_GRID, "Load Grid CellX: _LoadGridXTargetType_ CellY: _LoadGridYTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_STORE_EVENT_PHASE, "Store current Event Phase");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_STORED_EVENT_PHASE, "Load stored Event Phase");
@@ -322,7 +322,9 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_HOVER, "Set Hover State: _onOffActionParamOne_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_UNUSED_211, "Set ");
             smartActionStrings.Add(SmartAction.SMART_ACTION_UNUSED_212, "Set ");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_PAUSE_WAYPOINT_DATA_MOVEMENT, "_pauseUnPauseActionParamOne_ Waypoint-Data Movement");            
+            smartActionStrings.Add(SmartAction.SMART_ACTION_PAUSE_WAYPOINT_DATA_MOVEMENT, "_pauseUnPauseActionParamOne_ Waypoint-Data Movement");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_MOVE_TO_POS_TARGET, "Move selected target to Position (PointID: _actionParamOne_, Pathfinding: _enabledDisabledActionParamThree_)");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_SAVE_CHECKPOINT, "Save Checkpoint Position");            
         }
 
         public async Task<string> GenerateCommentFor(SmartScript smartScript, EntryOrGuidAndSourceType entryOrGuidAndSourceType, bool forced = false, SmartScript smartScriptLink = null)
@@ -720,12 +722,12 @@ namespace SAI_Editor.Classes
                         fullLine = fullLine.Replace("_pauseUnPauseActionParamOne_", "UnPause");
                 }
 
-                if (fullLine.Contains("_enabledDisabledActionParamTwo_"))
+                if (fullLine.Contains("_enabledDisabledActionParamThree_"))
                 {
-                    if (smartScript.action_param2 == 1)
-                        fullLine = fullLine.Replace("_enabledDisabledActionParamTwo_", "Disabled");
+                    if (smartScript.action_param3 == 1)
+                        fullLine = fullLine.Replace("_enabledDisabledActionParamThree_", "Disabled");
                     else
-                        fullLine = fullLine.Replace("_enabledDisabledActionParamTwo_", "Enabled");
+                        fullLine = fullLine.Replace("_enabledDisabledActionParamThree_", "Enabled");
                 }
 
                 if (fullLine.Contains("_checkSpeedWalkActionParamOne_"))
