@@ -589,14 +589,16 @@
             "ACTION_SET_CREATURE_RESPAWN_TIME",
             "ACTION_MOVE_HOME_POS",
             "ACTION_LOAD_GRID",
-            "ACTION_UNUSED_203",
-            "ACTION_UNUSED_204",
+            "ACTION_STORE_EVENT_PHASE",
+            "ACTION_SET_STORED_EVENT_PHASE",
             "ACTION_CHECK_DUPLICATE_AND_DESPAWN",
             "ACTION_UNUSED_206",
             "ACTION_CHECK_HOMEDIST_AND_EVADE",
             "ACTION_SET_SPEED_RATE",
             "ACTION_LOAD_WP_PATH",
-            "ACTION_SET_HOVER"});
+            "ACTION_SET_HOVER",
+            "ACTION_UNUSED_211",
+            "ACTION_UNUSED_212"});
             this.comboBoxActionType.Location = new System.Drawing.Point(59, 45);
             this.comboBoxActionType.Name = "comboBoxActionType";
             this.comboBoxActionType.Size = new System.Drawing.Size(235, 21);

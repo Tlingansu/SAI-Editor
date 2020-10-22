@@ -312,14 +312,16 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_CREATURE_RESPAWN_TIME, "Set Creature Respawntime to _actionParamOne_ seconds");
             smartActionStrings.Add(SmartAction.SMART_ACTION_MOVE_HOME_POS, "Move to Homeposition (PointID: _actionParamOne_, Pathfinding: _enabledDisabledActionParamTwo_)");
             smartActionStrings.Add(SmartAction.SMART_ACTION_LOAD_GRID, "Load Grid CellX: _LoadGridXTargetType_ CellY: _LoadGridYTargetType_");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_UNUSED_203, "Set ");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_UNUSED_204, "Set ");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_STORE_EVENT_PHASE, "Store current Event Phase");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_SET_STORED_EVENT_PHASE, "Load stored Event Phase");
             smartActionStrings.Add(SmartAction.SMART_ACTION_CHECK_DUPLICATE_AND_DESPAWN, "Check for _actionParamThree_ Creature(s) with Entry: _actionParamOne_ in _actionParamTwo_ yards range and evade");
             smartActionStrings.Add(SmartAction.SMART_ACTION_UNUSED_206, "Set ");
             smartActionStrings.Add(SmartAction.SMART_ACTION_CHECK_HOMEDIST_AND_EVADE, "Evade after moving _actionParamOne_ yards away from HomePosition");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_SPEED_RATE, "Set Speed Rate (Speed Walk Rate: _checkSpeedWalkActionParamOne_, Speed Run Rate: _checkSpeedRunActionParamTwo_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_LOAD_WP_PATH, "Load Waypoint-Data ID: _actionParamOne_ (AddonPath: _actionParamTwo_, Repeatable: _actionParamThree_)");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_HOVER, "Set Hover State: _onOffActionParamOne_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_UNUSED_211, "Set ");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_UNUSED_212, "Set ");
         }
 
         public async Task<string> GenerateCommentFor(SmartScript smartScript, EntryOrGuidAndSourceType entryOrGuidAndSourceType, bool forced = false, SmartScript smartScriptLink = null)
