@@ -1588,7 +1588,8 @@
             "ACTION_CHECK_DUPLICATE_AND_DESPAWN",
             "ACTION_UNUSED_206",
             "ACTION_CHECK_HOMEDIST_AND_EVADE",
-            "ACTION_SET_SPEED_RATE"});
+            "ACTION_SET_SPEED_RATE",
+            "ACTION_LOAD_WP_PATH"});
             this.comboBoxActionType.Location = new System.Drawing.Point(59, 45);
             this.comboBoxActionType.Name = "comboBoxActionType";
             this.comboBoxActionType.Size = new System.Drawing.Size(235, 21);
