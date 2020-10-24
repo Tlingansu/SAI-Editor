@@ -327,7 +327,8 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_SAVE_CHECKPOINT, "Save Checkpoint Position");
             smartActionStrings.Add(SmartAction.SMART_ACTION_CROSS_CAST_IN_COMBAT, "Cross Cast '_spellNameActionParamOne_'");
             smartActionStrings.Add(SmartAction.SMART_ACTION_EXIT_VEHICLE, "Exit Vehicle");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_SET_HEALTH, "Set Health");            
+            smartActionStrings.Add(SmartAction.SMART_ACTION_SET_HEALTH, "Set Health");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_STOP_MOTION, "Stop Motion (StopMovement: _actionParamOne_, MovementExpired: _actionParamTwo_)");
         }
 
         public async Task<string> GenerateCommentFor(SmartScript smartScript, EntryOrGuidAndSourceType entryOrGuidAndSourceType, bool forced = false, SmartScript smartScriptLink = null)

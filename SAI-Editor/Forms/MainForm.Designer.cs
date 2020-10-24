@@ -1598,7 +1598,8 @@
             "ACTION_SAVE_CHECKPOINT",
             "ACTION_CROSS_CAST_IN_COMBAT",
             "ACTION_EXIT_VEHICLE",
-            "ACTION_SET_HEALTH"});
+            "ACTION_SET_HEALTH",
+            "ACTION_STOP_MOTION"});
             this.comboBoxActionType.Location = new System.Drawing.Point(59, 45);
             this.comboBoxActionType.Name = "comboBoxActionType";
             this.comboBoxActionType.Size = new System.Drawing.Size(235, 21);
