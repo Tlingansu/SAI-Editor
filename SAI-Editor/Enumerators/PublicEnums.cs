@@ -356,6 +356,7 @@ namespace SAI_Editor.Enumerators
         SMART_ACTION_EXIT_VEHICLE = 217,
         SMART_ACTION_SET_HEALTH = 218,
         SMART_ACTION_STOP_MOTION = 219,
+        SMART_ACTION_LOAD_TEMPLATE = 220,
         SMART_ACTION_MAX,
     }
 
