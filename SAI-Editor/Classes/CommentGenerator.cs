@@ -129,14 +129,14 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_EMOTE_STATE, "Set Emote State _actionParamOne_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_UNIT_FLAG, "Set Flag_getUnitFlags_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_REMOVE_UNIT_FLAG, "Remove Flag_getUnitFlags_");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_AUTO_ATTACK, "_startOrStopActionParamOne_ Attacking");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_AUTO_ATTACK, "_enableDisableActionParamOne_ Auto Attack");
             smartActionStrings.Add(SmartAction.SMART_ACTION_COMBAT_MOVEMENT, "_enableDisableActionParamOne_ Combat Movement");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_EVENT_PHASE, "Set Event Phase _actionParamOne_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_INC_EVENT_PHASE, "_incrementOrDecrementActionParamOne_ Phase");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_EVADE, "Evade");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_FLEE_FOR_ASSIST, "Flee For Assist");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_CALL_GROUPEVENTHAPPENS, "Quest Credit '_questNameActionParamOne_'");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_CALL_CASTEDCREATUREORGO, "Quest Credit '_questNameCastCreatureOrGo_'");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_EVADE, "Evade and move _RespawnHomePosActionParamOne_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_FLEE_FOR_ASSIST, "Flee For Assist _AddEmoteTextActionParamOne_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_CALL_GROUPEVENTHAPPENS, "Call GroupEventHappens for quest: '_questNameActionParamOne_'");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_COMBAT_STOP, "Stop Combat");
             smartActionStrings.Add(SmartAction.SMART_ACTION_REMOVEAURASFROMSPELL, "Remove Aura '_spellNameActionParamOne_'");
             smartActionStrings.Add(SmartAction.SMART_ACTION_FOLLOW, "_startOrStopBasedOnTargetType_ Follow _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_RANDOM_PHASE, "Set Random Phase(_actionRandomParameters_)");
@@ -621,20 +621,28 @@ namespace SAI_Editor.Classes
                     fullLine = fullLine.Replace("_getNpcFlags_", " " + commentNpcFlag);
                 }
 
-                if (fullLine.Contains("_startOrStopActionParamOne_"))
-                {
-                    if (smartScript.action_param1.ToString() == "0")
-                        fullLine = fullLine.Replace("_startOrStopActionParamOne_", "Stop");
-                    else //! Even if above 1 or below 0 we start attacking/allow-combat-movement
-                        fullLine = fullLine.Replace("_startOrStopActionParamOne_", "Start");
-                }
-
                 if (fullLine.Contains("_enableDisableActionParamOne_"))
                 {
                     if (smartScript.action_param1.ToString() == "0")
                         fullLine = fullLine.Replace("_enableDisableActionParamOne_", "Disable");
                     else
                         fullLine = fullLine.Replace("_enableDisableActionParamOne_", "Enable");
+                }
+
+                if (fullLine.Contains("_RespawnHomePosActionParamOne_"))
+                {
+                    if (smartScript.action_param1.ToString() == "0")
+                        fullLine = fullLine.Replace("_RespawnHomePosActionParamOne_", "to Respawnposition");
+                    else if (smartScript.action_param1.ToString() == "1")
+                        fullLine = fullLine.Replace("_RespawnHomePosActionParamOne_", "to last stored Homeposition");
+                }
+
+                if (fullLine.Contains("_AddEmoteTextActionParamOne_"))
+                {
+                    if (smartScript.action_param1.ToString() == "0")
+                        fullLine = fullLine.Replace("_AddEmoteTextActionParamOne_", "without Emotetext");
+                    else if (smartScript.action_param1.ToString() == "1")
+                        fullLine = fullLine.Replace("_AddEmoteTextActionParamOne_", "With Emotetext");
                 }
 
                 if (fullLine.Contains("_OnResetOnInitializeActionParamOne_"))

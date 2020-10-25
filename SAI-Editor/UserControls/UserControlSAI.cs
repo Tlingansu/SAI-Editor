@@ -710,7 +710,6 @@ namespace SAI_Editor
             {
                 case SmartAction.SMART_ACTION_CAST: //! Spell entry & Cast flags
                 case SmartAction.SMART_ACTION_INVOKER_CAST: //! Spell entry & Cast flags
-                case SmartAction.SMART_ACTION_CALL_CASTEDCREATUREORGO: //! Creature entry & Spell entry
                 case SmartAction.SMART_ACTION_SUMMON_CREATURE: //! Creature entry & Summon type
                 case SmartAction.SMART_ACTION_SET_UNIT_FIELD_BYTES_1: //! Bytes1flags & Type
                 case SmartAction.SMART_ACTION_REMOVE_UNIT_FIELD_BYTES_1: //! Bytes1flags & Type
@@ -1638,7 +1637,6 @@ namespace SAI_Editor
                     break;
                 case SmartAction.SMART_ACTION_MORPH_TO_ENTRY_OR_MODEL:
                 case SmartAction.SMART_ACTION_SUMMON_CREATURE:
-                case SmartAction.SMART_ACTION_CALL_CASTEDCREATUREORGO:
                 case SmartAction.SMART_ACTION_KILLED_MONSTER:
                 case SmartAction.SMART_ACTION_UPDATE_TEMPLATE:
                 case SmartAction.SMART_ACTION_MOUNT_TO_ENTRY_OR_MODEL:
@@ -1814,7 +1812,6 @@ namespace SAI_Editor
                     ShowSearchFromDatabaseForm(textBoxToChange, DatabaseSearchFormType.DatabaseSearchFormTypeQuest);
                     break;
                 case SmartAction.SMART_ACTION_INTERRUPT_SPELL:
-                case SmartAction.SMART_ACTION_CALL_CASTEDCREATUREORGO:
                     ShowSearchFromDatabaseForm(textBoxToChange, DatabaseSearchFormType.DatabaseSearchFormTypeSpell);
                     break;
                 case SmartAction.SMART_ACTION_SUMMON_CREATURE:
