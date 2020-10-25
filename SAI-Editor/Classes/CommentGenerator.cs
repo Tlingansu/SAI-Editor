@@ -343,6 +343,9 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_ZONE_UNDER_ATTACK, "Set Zone Under Attack");
             smartActionStrings.Add(SmartAction.SMART_ACTION_REMOVE_LOOT_MODE, "Remove Loot Mode: _actionParamOne_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_REPUTATION_GAIN, "_enableDisableActionParamOne_ Reputation Gain");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_ADD_LOOT_MODE, "Add Loot Mode: _actionParamOne_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_SET_COUNTER_RESET_OPTION, "_OnResetOnInitializeActionParamOne_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_GO_DELETE, "Delete Gameobject");
         }
 
         public async Task<string> GenerateCommentFor(SmartScript smartScript, EntryOrGuidAndSourceType entryOrGuidAndSourceType, bool forced = false, SmartScript smartScriptLink = null)
@@ -630,8 +633,16 @@ namespace SAI_Editor.Classes
                 {
                     if (smartScript.action_param1.ToString() == "0")
                         fullLine = fullLine.Replace("_enableDisableActionParamOne_", "Disable");
-                    else //! Even if above 1 or below 0 we start attacking/allow-combat-movement
+                    else
                         fullLine = fullLine.Replace("_enableDisableActionParamOne_", "Enable");
+                }
+
+                if (fullLine.Contains("_OnResetOnInitializeActionParamOne_"))
+                {
+                    if (smartScript.action_param1.ToString() == "0")
+                        fullLine = fullLine.Replace("_OnResetOnInitializeActionParamOne_", "Set Counter Reset on Reset of creature only");
+                    else if (smartScript.action_param1.ToString() == "1")
+                        fullLine = fullLine.Replace("_OnResetOnInitializeActionParamOne_", "Set Counter Reset on Initialize of creature only");
                 }
 
                 if (fullLine.Contains("_incrementOrDecrementActionParamOne_"))

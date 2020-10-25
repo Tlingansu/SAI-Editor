@@ -619,7 +619,10 @@
             "ACTION_SET_EVENT_PHASE_RESET",
             "ACTION_ZONE_UNDER_ATTACK",
             "ACTION_REMOVE_LOOT_MODE",
-            "ACTION_SET_REPUTATION_GAIN"});
+            "ACTION_SET_REPUTATION_GAIN",
+            "ACTION_ADD_LOOT_MODE",
+            "ACTION_SET_COUNTER_RESET_OPTION",
+            "ACTION_GO_DELETE"});
             this.comboBoxActionType.Location = new System.Drawing.Point(59, 45);
             this.comboBoxActionType.Name = "comboBoxActionType";
             this.comboBoxActionType.Size = new System.Drawing.Size(235, 21);
