@@ -334,6 +334,7 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_DESPAWN_CREATUREGROUP, "Despawn CreatureGroup ID _actionParamOne_ (Min Secs: _actionParamTwo_, Max Secs: _actionParamThree_, Spawnflags: _actionParamFour_)");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SPAWN_GAMEOBJECTGROUP, "Spawn GameobjectGroup ID _actionParamOne_ (Min Secs: _actionParamTwo_, Max Secs: _actionParamThree_, Spawnflags: _actionParamFour_)");
             smartActionStrings.Add(SmartAction.SMART_ACTION_DESPAWN_GAMEOBJECTGROUP, "Despawn GameobjectGroup ID _actionParamOne_ (Min Secs: _actionParamTwo_, Max Secs: _actionParamThree_, Spawnflags: _actionParamFour_)");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_SET_UNIT_MOVEMENT_FLAGS, "Set Unit Movement Flags: _actionParamOne_");            
         }
 
         public async Task<string> GenerateCommentFor(SmartScript smartScript, EntryOrGuidAndSourceType entryOrGuidAndSourceType, bool forced = false, SmartScript smartScriptLink = null)
