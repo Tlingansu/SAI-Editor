@@ -338,6 +338,8 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_COMBAT_DISTANCE, "Set Combat Distance: _actionParamOne_ Yard(s)");
             smartActionStrings.Add(SmartAction.SMART_ACTION_ADD_IMMUNITY, "Add Immunity ID: _actionParamOne_, Immunity Type: _actionParamTwo_, Immunity Value: _actionParamThree_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_REMOVE_IMMUNITY, "Remove Immunity ID: _actionParamOne_, Immunity Type: _actionParamTwo_, Immunity Value: _actionParamThree_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_MOVE_FALL, "Move Fall");
+            
         }
 
         public async Task<string> GenerateCommentFor(SmartScript smartScript, EntryOrGuidAndSourceType entryOrGuidAndSourceType, bool forced = false, SmartScript smartScriptLink = null)

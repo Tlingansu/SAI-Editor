@@ -614,7 +614,8 @@
             "ACTION_SET_UNIT_MOVEMENT_FLAGS",
             "ACTION_SET_COMBAT_DISTANCE",
             "ACTION_ADD_IMMUNITY",
-            "ACTION_REMOVE_IMMUNITY"});
+            "ACTION_REMOVE_IMMUNITY",
+            "ACTION_MOVE_FALL"});
             this.comboBoxActionType.Location = new System.Drawing.Point(59, 45);
             this.comboBoxActionType.Name = "comboBoxActionType";
             this.comboBoxActionType.Size = new System.Drawing.Size(235, 21);
