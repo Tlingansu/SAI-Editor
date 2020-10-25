@@ -336,7 +336,8 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_DESPAWN_GAMEOBJECTGROUP, "Despawn GameobjectGroup ID _actionParamOne_ (Min Secs: _actionParamTwo_, Max Secs: _actionParamThree_, Spawnflags: _actionParamFour_)");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_UNIT_MOVEMENT_FLAGS, "Set Unit Movement Flags: _actionParamOne_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_COMBAT_DISTANCE, "Set Combat Distance: _actionParamOne_ Yard(s)");
-            
+            smartActionStrings.Add(SmartAction.SMART_ACTION_ADD_IMMUNITY, "Add Immunity ID: _actionParamOne_, Immunity Type: _actionParamTwo_, Immunity Value: _actionParamThree_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_REMOVE_IMMUNITY, "Remove Immunity ID: _actionParamOne_, Immunity Type: _actionParamTwo_, Immunity Value: _actionParamThree_");
         }
 
         public async Task<string> GenerateCommentFor(SmartScript smartScript, EntryOrGuidAndSourceType entryOrGuidAndSourceType, bool forced = false, SmartScript smartScriptLink = null)
