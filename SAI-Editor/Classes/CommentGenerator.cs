@@ -341,9 +341,8 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_MOVE_FALL, "Move Fall");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_EVENT_PHASE_RESET, "_EnableDisablePhaseResetActionParamOne_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_ZONE_UNDER_ATTACK, "Set Zone Under Attack");
-            
-
-
+            smartActionStrings.Add(SmartAction.SMART_ACTION_REMOVE_LOOT_MODE, "Remove Loot Mode: _actionParamOne_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_SET_REPUTATION_GAIN, "_enableDisableActionParamOne_ Reputation Gain");
         }
 
         public async Task<string> GenerateCommentFor(SmartScript smartScript, EntryOrGuidAndSourceType entryOrGuidAndSourceType, bool forced = false, SmartScript smartScriptLink = null)
