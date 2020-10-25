@@ -331,7 +331,9 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_STOP_MOTION, "Stop Motion (StopMovement: _actionParamOne_, MovementExpired: _actionParamTwo_)");
             smartActionStrings.Add(SmartAction.SMART_ACTION_LOAD_TEMPLATE, "Load SAI Template: _actionParamOne_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SPAWN_CREATUREGROUP, "Spawn CreatureGroup ID _actionParamOne_ (Min Secs: _actionParamTwo_, Max Secs: _actionParamThree_, Spawnflags: _actionParamFour_)");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_DESPAWN_CREATUREGROUP, "Despawn CreatureGroup ID _actionParamOne_ (Min Secs: _actionParamTwo_, Max Secs: _actionParamThree_, Spawnflags: _actionParamFour_)");            
+            smartActionStrings.Add(SmartAction.SMART_ACTION_DESPAWN_CREATUREGROUP, "Despawn CreatureGroup ID _actionParamOne_ (Min Secs: _actionParamTwo_, Max Secs: _actionParamThree_, Spawnflags: _actionParamFour_)");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_SPAWN_GAMEOBJECTGROUP, "Spawn GameobjectGroup ID _actionParamOne_ (Min Secs: _actionParamTwo_, Max Secs: _actionParamThree_, Spawnflags: _actionParamFour_)");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_DESPAWN_GAMEOBJECTGROUP, "Despawn GameobjectGroup ID _actionParamOne_ (Min Secs: _actionParamTwo_, Max Secs: _actionParamThree_, Spawnflags: _actionParamFour_)");
         }
 
         public async Task<string> GenerateCommentFor(SmartScript smartScript, EntryOrGuidAndSourceType entryOrGuidAndSourceType, bool forced = false, SmartScript smartScriptLink = null)
