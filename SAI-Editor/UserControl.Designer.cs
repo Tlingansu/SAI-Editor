@@ -611,7 +611,8 @@
             "ACTION_DESPAWN_CREATUREGROUP",
             "ACTION_SPAWN_GAMEOBJECTGROUP",
             "ACTION_DESPAWN_GAMEOBJECTGROUP",
-            "ACTION_SET_UNIT_MOVEMENT_FLAGS"});
+            "ACTION_SET_UNIT_MOVEMENT_FLAGS",
+            "ACTION_SET_COMBAT_DISTANCE"});
             this.comboBoxActionType.Location = new System.Drawing.Point(59, 45);
             this.comboBoxActionType.Name = "comboBoxActionType";
             this.comboBoxActionType.Size = new System.Drawing.Size(235, 21);
