@@ -339,7 +339,11 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_ADD_IMMUNITY, "Add Immunity ID: _actionParamOne_, Immunity Type: _actionParamTwo_, Immunity Value: _actionParamThree_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_REMOVE_IMMUNITY, "Remove Immunity ID: _actionParamOne_, Immunity Type: _actionParamTwo_, Immunity Value: _actionParamThree_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_MOVE_FALL, "Move Fall");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_SET_EVENT_PHASE_RESET, "_EnableDisablePhaseResetActionParamOne_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_ZONE_UNDER_ATTACK, "Set Zone Under Attack");
             
+
+
         }
 
         public async Task<string> GenerateCommentFor(SmartScript smartScript, EntryOrGuidAndSourceType entryOrGuidAndSourceType, bool forced = false, SmartScript smartScriptLink = null)
@@ -735,6 +739,14 @@ namespace SAI_Editor.Classes
                         fullLine = fullLine.Replace("_pauseUnPauseActionParamOne_", "Pause");
                     else
                         fullLine = fullLine.Replace("_pauseUnPauseActionParamOne_", "UnPause");
+                }
+
+                if (fullLine.Contains("_EnableDisablePhaseResetActionParamOne_"))
+                {
+                    if (smartScript.action_param1 == 1)
+                        fullLine = fullLine.Replace("_EnableDisablePhaseResetActionParamOne_", "Enable Event-Phase-Reset on SAI-Reset");
+                    else if (smartScript.action_param1 == 0)
+                        fullLine = fullLine.Replace("_EnableDisablePhaseResetActionParamOne_", "Disable Event-Phase-Reset on SAI-Reset");
                 }
 
                 if (fullLine.Contains("_enabledDisabledActionParamThree_"))

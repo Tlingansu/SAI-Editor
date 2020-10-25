@@ -615,7 +615,9 @@
             "ACTION_SET_COMBAT_DISTANCE",
             "ACTION_ADD_IMMUNITY",
             "ACTION_REMOVE_IMMUNITY",
-            "ACTION_MOVE_FALL"});
+            "ACTION_MOVE_FALL",
+            "ACTION_SET_EVENT_PHASE_RESET",
+            "ACTION_ZONE_UNDER_ATTACK"});
             this.comboBoxActionType.Location = new System.Drawing.Point(59, 45);
             this.comboBoxActionType.Name = "comboBoxActionType";
             this.comboBoxActionType.Size = new System.Drawing.Size(235, 21);
