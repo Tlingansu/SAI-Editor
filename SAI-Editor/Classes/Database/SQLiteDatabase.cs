@@ -48,16 +48,6 @@ namespace SAI_Editor.Classes.Database
             return (from DataRow row in dt.Rows select BuildTargetTypeInformation(row)).ToList();
         }
 
-        public async Task<string> GetSpellNameById(int id)
-        {
-            DataTable dt = await ExecuteQuery("SELECT spellName FROM " + SAI_Editor_Manager.GetSpellTableName() + " WHERE id = '" + id + "'");
-
-            if (dt.Rows.Count == 0)
-                return "Spell";
-
-            return (string)dt.Rows[0]["spellName"]; //! Always take first index; should not be possible to have multiple instances per id, but still
-        }
-
         private EventTypeInformation BuildEventTypeInformation(DataRow row)
         {
             var eventTypeInformation = new EventTypeInformation();

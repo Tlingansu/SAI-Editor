@@ -426,7 +426,7 @@ namespace SAI_Editor.Classes
                 if (fullLine.Contains("_spellNameEventParamOne_"))
                 {
                     if (smartScript.event_param1 > 0)
-                        fullLine = fullLine.Replace("_spellNameEventParamOne_", await sqliteDatabase.GetSpellNameById(smartScript.event_param1));
+                        fullLine = fullLine.Replace("_spellNameEventParamOne_", await worldDatabase.GetSpellNameById(smartScript.event_param1));
                     else
                         fullLine = fullLine.Replace(" '_spellNameEventParamOne_'", String.Empty);
                 }
@@ -434,7 +434,7 @@ namespace SAI_Editor.Classes
                 if (fullLine.Contains("_targetCastingSpellName_"))
                 {
                     if (smartScript.event_param3.ToString() != "0")
-                        fullLine = fullLine.Replace("_targetCastingSpellName_", await sqliteDatabase.GetSpellNameById(smartScript.event_param3));
+                        fullLine = fullLine.Replace("_targetCastingSpellName_", await worldDatabase.GetSpellNameById(smartScript.event_param3));
                     else
                         fullLine = fullLine.Replace(" '_targetCastingSpellName_'", String.Empty);
                 }
@@ -474,12 +474,7 @@ namespace SAI_Editor.Classes
                 if (fullLine.Contains("_spellNameActionParamOne_"))
                 {
                     if (smartScript.action_param1.ToString() != "0")
-                    {
-                        if (smartScript.action_param1 > 80864/*WotlK Default Value*/)
-                            fullLine = fullLine.Replace("_spellNameActionParamOne_", "Spell" + smartScript.action_param1.ToString());
-                        else
-                            fullLine = fullLine.Replace("_spellNameActionParamOne_", await sqliteDatabase.GetSpellNameById(smartScript.action_param1));
-                    }
+                        fullLine = fullLine.Replace("_spellNameActionParamOne_", await worldDatabase.GetSpellNameById(smartScript.action_param1));
                     else
                         fullLine = fullLine.Replace(" '_spellNameActionParamOne_'", String.Empty);
                 }
@@ -487,7 +482,7 @@ namespace SAI_Editor.Classes
                 if (fullLine.Contains("_spellNameActionParamTwo_"))
                 {
                     if (smartScript.action_param2.ToString() != "0")
-                        fullLine = fullLine.Replace("_spellNameActionParamTwo_", await sqliteDatabase.GetSpellNameById(smartScript.action_param2));
+                        fullLine = fullLine.Replace("_spellNameActionParamTwo_", await worldDatabase.GetSpellNameById(smartScript.action_param2));
                     else
                         fullLine = fullLine.Replace(" '_spellNameActionParamTwo_'", String.Empty);
                 }

@@ -361,6 +361,16 @@ namespace SAI_Editor.Classes.Database
             return dt.Rows[0]["LogTitle"].ToString();
         }
 
+        public async Task<string> GetSpellNameById(int id)
+        {
+            DataTable dt = await ExecuteQuery("SELECT spellname0 FROM spell WHERE id = '" + id + "'");
+
+            if (dt.Rows.Count == 0)
+                return "spellname0";
+
+            return (string)dt.Rows[0]["spellname0"]; //! Always take first index; should not be possible to have multiple instances per id, but still
+        }
+
         public async Task<string> GetItemNameById(int entry)
         {
             DataTable dt = await ExecuteQuery("SELECT name FROM item_template WHERE entry = '" + entry + "'");
