@@ -143,9 +143,9 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_RANDOM_PHASE_RANGE, "Set Phase Random Between _actionParamOne_-_actionParamTwo_ -- Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_RESET_GOBJECT, "Reset Gameobject -- Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_CALL_KILLEDMONSTER, "Call KilledMonsterCredit '_questNameKillCredit_' -- Target: _getTargetType_");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_SET_INST_DATA, "Set Instance Data _actionParamOne_ to _actionParamTwo_ -- Target: _getTargetType_");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_SET_INST_DATA64, "Set Instance Data _actionParamOne_ -- Target: _getTargetType_");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_UPDATE_TEMPLATE, "Update Template To '_creatureNameActionParamOne_' -- Target: _getTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_SET_INST_DATA, "_setDataSetBossStateActionParamThree_ _actionParamOne_ to _actionParamTwo_ -- Target: _getTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_SET_INST_DATA64, "Set Guid Data _actionParamOne_ -- Target: _getTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_UPDATE_TEMPLATE, "Update Template To '_creatureNameActionParamOne_' (_updateLevelActionParamTwo_)-- Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_DIE, "Kill Self -- Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_IN_COMBAT_WITH_ZONE, "Set In Combat With Zone -- Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_CALL_FOR_HELP, "Call For Help -- Target: _getTargetType_");
@@ -744,6 +744,22 @@ namespace SAI_Editor.Classes
                         fullLine = fullLine.Replace("_onOffActionParamOne_", "On");
                     else
                         fullLine = fullLine.Replace("_onOffActionParamOne_", "Off");
+                }
+
+                if (fullLine.Contains("_setDataSetBossStateActionParamThree_"))
+                {
+                    if (smartScript.action_param3 == 1)
+                        fullLine = fullLine.Replace("_setDataSetBossStateActionParamThree_", "SetBossState");
+                    else
+                        fullLine = fullLine.Replace("_setDataSetBossStateActionParamThree_", "SetData");
+                }
+
+                if (fullLine.Contains("_updateLevelActionParamTwo_"))
+                {
+                    if (smartScript.action_param2 == 1)
+                        fullLine = fullLine.Replace("_updateLevelActionParamTwo_", "Update Level");
+                    else
+                        fullLine = fullLine.Replace("_updateLevelActionParamTwo_", "Do not Update Level");
                 }
 
                 if (fullLine.Contains("_pauseUnPauseActionParamOne_"))
