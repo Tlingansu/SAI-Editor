@@ -142,7 +142,7 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_RANDOM_PHASE, "Set Random Phase(_actionRandomParameters_) -- Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_RANDOM_PHASE_RANGE, "Set Phase Random Between _actionParamOne_-_actionParamTwo_ -- Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_RESET_GOBJECT, "Reset Gameobject -- Target: _getTargetType_");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_KILLED_MONSTER, "Quest Credit '_questNameKillCredit_' -- Target: _getTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_CALL_KILLEDMONSTER, "Call KilledMonsterCredit '_questNameKillCredit_' -- Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_INST_DATA, "Set Instance Data _actionParamOne_ to _actionParamTwo_ -- Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_INST_DATA64, "Set Instance Data _actionParamOne_ -- Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_UPDATE_TEMPLATE, "Update Template To '_creatureNameActionParamOne_' -- Target: _getTargetType_");

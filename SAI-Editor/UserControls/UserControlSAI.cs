@@ -769,7 +769,7 @@ namespace SAI_Editor
                 case SmartAction.SMART_ACTION_SET_REACT_STATE: //! Reactstate
                 case SmartAction.SMART_ACTION_SOUND: //! Sound entry
                 case SmartAction.SMART_ACTION_MORPH_TO_ENTRY_OR_MODEL: //! Creature entry
-                case SmartAction.SMART_ACTION_KILLED_MONSTER: //! Creature entry
+                case SmartAction.SMART_ACTION_CALL_KILLEDMONSTER: //! Creature entry
                 case SmartAction.SMART_ACTION_UPDATE_TEMPLATE: //! Creature entry
                 case SmartAction.SMART_ACTION_MOUNT_TO_ENTRY_OR_MODEL: //! Creature entry
                 case SmartAction.SMART_ACTION_GO_SET_LOOT_STATE: //! Gameobject state
@@ -1637,7 +1637,7 @@ namespace SAI_Editor
                     break;
                 case SmartAction.SMART_ACTION_MORPH_TO_ENTRY_OR_MODEL:
                 case SmartAction.SMART_ACTION_SUMMON_CREATURE:
-                case SmartAction.SMART_ACTION_KILLED_MONSTER:
+                case SmartAction.SMART_ACTION_CALL_KILLEDMONSTER:
                 case SmartAction.SMART_ACTION_UPDATE_TEMPLATE:
                 case SmartAction.SMART_ACTION_MOUNT_TO_ENTRY_OR_MODEL:
                     ShowSearchFromDatabaseForm(textBoxToChange, DatabaseSearchFormType.DatabaseSearchFormTypeCreatureEntry);

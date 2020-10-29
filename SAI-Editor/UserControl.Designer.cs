@@ -525,7 +525,7 @@
             "ACTION_SET_MOVEMENT_SPEED",
             "ACTION_PLAY_SPELL_VISUAL_KIT",
             "ACTION_OVERRIDE_LIGHT",
-            "ACTION_OVERRIDE_WEATHER"
+            "ACTION_OVERRIDE_WEATHER",
             "ACTION_UNUSED_140",
             "ACTION_UNUSED_141",
             "ACTION_UNUSED_142",
