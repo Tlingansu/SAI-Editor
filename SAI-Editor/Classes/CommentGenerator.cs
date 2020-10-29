@@ -147,8 +147,8 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_INST_DATA64, "Set Guid Data _actionParamOne_ -- Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_UPDATE_TEMPLATE, "Update Template To '_creatureNameActionParamOne_' (_updateLevelActionParamTwo_)-- Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_DIE, "Kill Self -- Target: _getTargetType_");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_SET_IN_COMBAT_WITH_ZONE, "Set In Combat With Zone -- Target: _getTargetType_");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_CALL_FOR_HELP, "Call For Help -- Target: _getTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_SET_IN_COMBAT_WITH_ZONE, "Call Set In Combat With Zone -- Target: _getTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_CALL_FOR_HELP, "Call for Help within _actionParamOne_ yards radius _addEmoteTexts_ -- Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_SHEATH, "Set Sheath _sheathActionParamOne_ -- Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_FORCE_DESPAWN, "Despawn _forceDespawnActionParamOne_ -- Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_INVINCIBILITY_HP_LEVEL, "_invincibilityHpActionParamsOneTwo_ -- Target: _getTargetType_");
@@ -315,7 +315,7 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_STORE_EVENT_PHASE, "Store current Event Phase -- Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_STORED_EVENT_PHASE, "Load stored Event Phase -- Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_CHECK_DUPLICATE_AND_DESPAWN, "If more than _actionParamThree_ Creature(s) with Entry: _actionParamOne_ in _actionParamTwo_ yards range, creature will despawn -- Target: _getTargetType_");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_UNUSED_206, "Set  -- Target: _getTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_DISMOUNT, "Dismount -- Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_CHECK_HOMEDIST_AND_EVADE, "Evade after moving _actionParamOne_ yards away from HomePosition -- Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_SPEED_RATE, "Set Speed Rate (Speed Walk Rate: _checkSpeedWalkActionParamOne_, Speed Run Rate: _checkSpeedRunActionParamTwo_ -- Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_LOAD_WP_PATH, "Load Waypoint-Data ID: _actionParamOne_ (AddonPath: _actionParamTwo_, _unrepeatableRepeatableActionParamThree_) -- Target: _getTargetType_");
@@ -729,11 +729,11 @@ namespace SAI_Editor.Classes
                 if (fullLine.Contains("_invincibilityHpActionParamsOneTwo_"))
                 {
                     if (smartScript.action_param1 > 0)
-                        fullLine = fullLine.Replace("_invincibilityHpActionParamsOneTwo_", "Set Invincibility Hp " + smartScript.action_param1.ToString());
+                        fullLine = fullLine.Replace("_invincibilityHpActionParamsOneTwo_", "Set Invincibility at " + smartScript.action_param1.ToString() + " HP");
                     else if (smartScript.action_param2 > 0)
-                        fullLine = fullLine.Replace("_invincibilityHpActionParamsOneTwo_", "Set Invincibility Hp " + smartScript.action_param2 + "%");
+                        fullLine = fullLine.Replace("_invincibilityHpActionParamsOneTwo_", "Set Invincibility at " + smartScript.action_param2 + " percent HP");
                     else if (smartScript.action_param1 == 0 && smartScript.action_param2 == 0)
-                        fullLine = fullLine.Replace("_invincibilityHpActionParamsOneTwo_", "Reset Invincibility Hp");
+                        fullLine = fullLine.Replace("_invincibilityHpActionParamsOneTwo_", "Reset Invincibility HP");
                     else
                         fullLine = fullLine.Replace("_invincibilityHpActionParamsOneTwo_", "<Unsupported parameters>");
                 }
@@ -760,6 +760,14 @@ namespace SAI_Editor.Classes
                         fullLine = fullLine.Replace("_updateLevelActionParamTwo_", "Update Level");
                     else
                         fullLine = fullLine.Replace("_updateLevelActionParamTwo_", "Do not Update Level");
+                }
+
+                if (fullLine.Contains("_addEmoteTexts_"))
+                {
+                    if (smartScript.action_param2 == 1)
+                        fullLine = fullLine.Replace("_addEmoteTexts_", "(Add Emote Text)");
+                    else
+                        fullLine = fullLine.Replace("_addEmoteTexts_", "");
                 }
 
                 if (fullLine.Contains("_pauseUnPauseActionParamOne_"))
