@@ -162,7 +162,7 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_SUMMON_GO, "Summon Gameobject '_gameobjectNameActionParamOne_' for _actionParamTwo_ seconds - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_KILL_UNIT, "Kill Unit - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_ACTIVATE_TAXI, "Activate Taxi Path _actionParamOne_ - Target: _getTargetType_");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_WP_START, "Start Waypoint - Target: _getTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_WP_START, "Start Waypoint Entry: _actionParamTwo_ (Run: _onOffActionParamOne_, Repeatable Path: _onOffActionParamThree_, Quest-ID: _actionParamFour_, Reactstate: _reactStateParamSix_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_WP_PAUSE, "Pause Waypoint - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_WP_STOP, "Stop Waypoint - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_ADD_ITEM, "Add Item _addItemBasedOnActionParams_ - Target: _getTargetType_");
@@ -515,6 +515,25 @@ namespace SAI_Editor.Classes
                     }
                 }
 
+                if (fullLine.Contains("_reactStateParamSix_"))
+                {
+                    switch (smartScript.action_param1)
+                    {
+                        case 0:
+                            fullLine = fullLine.Replace("_reactStateParamSix_", "Passive");
+                            break;
+                        case 1:
+                            fullLine = fullLine.Replace("_reactStateParamSix_", "Defensive");
+                            break;
+                        case 2:
+                            fullLine = fullLine.Replace("_reactStateParamSix_", "Aggressive");
+                            break;
+                        default:
+                            fullLine = fullLine.Replace("_reactStateParamSix_", "<Unknown Reactstate>");
+                            break;
+                    }
+                }
+
                 if (fullLine.Contains("_actionRandomParameters_"))
                 {
                     string randomEmotes = smartScript.action_param1 + ", " + smartScript.action_param2;
@@ -744,6 +763,14 @@ namespace SAI_Editor.Classes
                         fullLine = fullLine.Replace("_onOffActionParamOne_", "On");
                     else
                         fullLine = fullLine.Replace("_onOffActionParamOne_", "Off");
+                }
+
+                if (fullLine.Contains("_onOffActionParamThree_"))
+                {
+                    if (smartScript.action_param3 == 1)
+                        fullLine = fullLine.Replace("_onOffActionParamThree_", "On");
+                    else
+                        fullLine = fullLine.Replace("_onOffActionParamThree_", "Off");
                 }
 
                 if (fullLine.Contains("_setDataSetBossStateActionParamThree_"))
