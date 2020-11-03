@@ -165,8 +165,8 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_WP_START, "Start Waypoint Entry: _actionParamTwo_ (Run: _onOffActionParamOne_, Repeatable Path: _onOffActionParamThree_, Quest-ID: _actionParamFour_, Reactstate: _reactStateParamSix_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_WP_PAUSE, "Pause Waypoint for _actionParamOne_ milliseconds - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_WP_STOP, "Stop Waypoint - Target: _getTargetType_");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_ADD_ITEM, "Add Item _addItemBasedOnActionParams_ - Target: _getTargetType_");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_REMOVE_ITEM, "Remove Item _addItemBasedOnActionParams_ - Target: _getTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_ADD_ITEM, "Add _actionParamTwo_ time(s) Item _addItemBasedOnActionParams_ - Target: _getTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_REMOVE_ITEM, "Remove _actionParamTwo_ time(s) Item _addItemBasedOnActionParams_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_INSTALL_AI_TEMPLATE, "Install _updateAiTemplateActionParamOne_ Template - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_RUN, "Set Run _onOffActionParamOne_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_FLY, "Set Fly _onOffActionParamOne_ - Target: _getTargetType_");
