@@ -160,7 +160,7 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_ACTIVE, "Set Active _onOffActionParamOne_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_ATTACK_START, "Attack Start - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SUMMON_GO, "Summon Gameobject '_gameobjectNameActionParamOne_' for _actionParamTwo_ seconds - Target: _getTargetType_");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_KILL_UNIT, "Kill Target - Target: _getTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_KILL_UNIT, "Kill Unit - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_ACTIVATE_TAXI, "Activate Taxi Path _actionParamOne_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_WP_START, "Start Waypoint - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_WP_PAUSE, "Pause Waypoint - Target: _getTargetType_");
