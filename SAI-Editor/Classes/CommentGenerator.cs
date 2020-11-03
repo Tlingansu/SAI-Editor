@@ -163,7 +163,7 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_KILL_UNIT, "Kill Unit - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_ACTIVATE_TAXI, "Activate Taxi Path _actionParamOne_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_WP_START, "Start Waypoint Entry: _actionParamTwo_ (Run: _onOffActionParamOne_, Repeatable Path: _onOffActionParamThree_, Quest-ID: _actionParamFour_, Reactstate: _reactStateParamSix_ - Target: _getTargetType_");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_WP_PAUSE, "Pause Waypoint - Target: _getTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_WP_PAUSE, "Pause Waypoint for _actionParamOne_ milliseconds - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_WP_STOP, "Stop Waypoint - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_ADD_ITEM, "Add Item _addItemBasedOnActionParams_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_REMOVE_ITEM, "Remove Item _addItemBasedOnActionParams_ - Target: _getTargetType_");
