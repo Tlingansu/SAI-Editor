@@ -446,7 +446,7 @@
             "ACTION_REMOVE_ITEM",
             "ACTION_INSTALL_AI_TEMPLATE",
             "ACTION_SET_RUN",
-            "ACTION_SET_FLY",
+            "ACTION_SET_DISABLE_GRAVITY",
             "ACTION_SET_SWIM",
             "ACTION_TELEPORT",
             "ACTION_UNUSED_63",

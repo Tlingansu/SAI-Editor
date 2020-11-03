@@ -169,7 +169,7 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_REMOVE_ITEM, "Remove _actionParamTwo_ time(s) Item _addItemBasedOnActionParams_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_INSTALL_AI_TEMPLATE, "Install _updateAiTemplateActionParamOne_ Template - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_RUN, "Set Run _onOffActionParamOne_ - Target: _getTargetType_");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_SET_FLY, "Set Fly _onOffActionParamOne_ - Target: _getTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_SET_DISABLE_GRAVITY, "Set DisableGravity _onOffActionParamOne_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_SWIM, "Set Swim _onOffActionParamOne_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_TELEPORT, "Teleport - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_STORE_TARGET_LIST, "Store Targetlist - Target: _getTargetType_");
