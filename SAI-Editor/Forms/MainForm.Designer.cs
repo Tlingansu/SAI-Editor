@@ -1447,6 +1447,7 @@
             "ACTION_SET_SWIM",
             "ACTION_TELEPORT",
             "ACTION_STORE_VARIABLE_DECIMAL",
+            "ACTION_SET_COUNTER",
             "ACTION_STORE_TARGET_LIST",
             "ACTION_WP_RESUME",
             "ACTION_SET_ORIENTATION",

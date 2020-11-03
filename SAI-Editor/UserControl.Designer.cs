@@ -449,7 +449,7 @@
             "ACTION_SET_DISABLE_GRAVITY",
             "ACTION_SET_SWIM",
             "ACTION_TELEPORT",
-            "ACTION_UNUSED_63",
+            "ACTION_SET_COUNTER",
             "ACTION_STORE_TARGET_LIST",
             "ACTION_WP_RESUME",
             "ACTION_SET_ORIENTATION",
