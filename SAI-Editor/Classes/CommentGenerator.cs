@@ -174,7 +174,7 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_TELEPORT, "Teleport - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_COUNTER, "Set Counter-ID: _actionParamOne_ Value: _actionParamTwo_, Reset: _onOffActionParamThree_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_STORE_TARGET_LIST, "Store Targetlist _actionParamOne_ - Target: _getTargetType_");            
-            smartActionStrings.Add(SmartAction.SMART_ACTION_WP_RESUME, "Resume Waypoint - Target: _getTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_WP_RESUME, "Resume Waypoint Path - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_ORIENTATION, "Set Orientation _setOrientationTargetType_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_CREATE_TIMED_EVENT, "Create Timed Event - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_PLAYMOVIE, "Play Movie _actionParamOne_ - Target: _getTargetType_");
