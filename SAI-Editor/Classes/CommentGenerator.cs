@@ -346,6 +346,7 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_ADD_LOOT_MODE, "Add Loot Mode: _actionParamOne_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_COUNTER_RESET_OPTION, "_OnResetOnInitializeActionParamOne_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_GO_DELETE, "Delete Gameobject - Target: _getTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_SET_LEVEL, "Set Level _actionParamOne_ - Target: _getTargetType_");
         }
 
         public async Task<string> GenerateCommentFor(SmartScript smartScript, EntryOrGuidAndSourceType entryOrGuidAndSourceType, bool forced = false, SmartScript smartScriptLink = null)
@@ -1439,6 +1440,8 @@ namespace SAI_Editor.Classes
                     return "Closest Friendly Unit";
                 case SmartTarget.SMART_TARGET_LOOT_RECIPIENTS:
                     return "Loot Recipients";
+                case SmartTarget.SMART_TARGET_STORED:
+                    return "Stored Target";
                 default:
                     return "<unsupported target type>";
             }

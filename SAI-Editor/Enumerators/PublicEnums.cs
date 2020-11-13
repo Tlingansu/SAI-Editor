@@ -373,6 +373,7 @@ namespace SAI_Editor.Enumerators
         SMART_ACTION_ADD_LOOT_MODE = 234,
         SMART_ACTION_SET_COUNTER_RESET_OPTION = 235,
         SMART_ACTION_GO_DELETE = 236,
+        SMART_ACTION_SET_LEVEL = 237,
         SMART_ACTION_MAX,
     }
 
