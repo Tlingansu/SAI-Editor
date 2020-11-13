@@ -312,8 +312,8 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_CREATURE_RESPAWN_TIME, "Set Creature Respawntime to _actionParamOne_ seconds - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_MOVE_HOME_POS, "Move to Homeposition (PointID: _actionParamOne_, Pathfinding: _enabledDisabledActionParamThree_) - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_LOAD_GRID, "Load Grid CellX: _LoadGridXTargetType_ CellY: _LoadGridYTargetType_ - Target: _getTargetType_");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_STORE_EVENT_PHASE, "Store current Event Phase - Target: _getTargetType_");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_SET_STORED_EVENT_PHASE, "Load stored Event Phase - Target: _getTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_STORE_EVENT_PHASE, "Store Current Event Phase - Target: _getTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_SET_STORED_EVENT_PHASE, "Load Stored Event Phase - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_CHECK_DUPLICATE_AND_DESPAWN, "If more than _actionParamThree_ Creature(s) with Entry: _actionParamOne_ in _actionParamTwo_ yards range, creature will despawn - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_DISMOUNT, "Dismount - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_CHECK_HOMEDIST_AND_EVADE, "Evade after moving _actionParamOne_ yards away from HomePosition - Target: _getTargetType_");
