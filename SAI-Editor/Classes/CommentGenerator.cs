@@ -188,7 +188,7 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_OVERRIDE_SCRIPT_BASE_OBJECT, "Override Script Base Object - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_RESET_SCRIPT_BASE_OBJECT, "Reset Script Base Object - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_CALL_SCRIPT_RESET, "Reset All Scripts - Target: _getTargetType_");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_SET_RANGED_MOVEMENT, "Set Ranged Movement - Target: _getTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_SET_RANGED_MOVEMENT, "Set Ranged Movement (Attack Distance: _actionParamOne_, Attack Angle: _actionParamTwo_) - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_CALL_TIMED_ACTIONLIST, "Run Script - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_NPC_FLAG, "Set Npc Flag_getNpcFlags_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_ADD_NPC_FLAG, "Add Npc Flag_getNpcFlags_ - Target: _getTargetType_");
