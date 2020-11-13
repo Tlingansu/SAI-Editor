@@ -180,7 +180,7 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_PLAYMOVIE, "Play Movie _actionParamOne_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_MOVE_TO_POS, "Move To _getTargetType_ (Transport: _actionParamTwo_, Pathfinding: _enabledDisabledActionParamThree_, Contactdistance: _actionParamFour_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_RESPAWN_TARGET, "Respawn _getTargetType_");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_EQUIP, "Change Equipment - Target: _getTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_EQUIP, "Change Equip Template Entry: _actionParamOne_ (Slotmask: _actionParamTwo_, Item Entry 1: _actionParamThree_, Item Entry 2: _actionParamFour_, Item Entry 3: _actionParamFive_)  - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_CLOSE_GOSSIP, "Close Gossip - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_TRIGGER_TIMED_EVENT, "Trigger Timed Event _actionParamOne_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_REMOVE_TIMED_EVENT, "Remove Timed Event _actionParamOne_ - Target: _getTargetType_");
