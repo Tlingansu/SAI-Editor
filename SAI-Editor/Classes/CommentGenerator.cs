@@ -320,7 +320,7 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_SPEED_RATE, "Set Speed Rate (Speed Walk Rate: _checkSpeedWalkActionParamOne_, Speed Run Rate: _checkSpeedRunActionParamTwo_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_LOAD_WP_PATH, "Load Waypoint-Data ID: _actionParamOne_ (AddonPath: _actionParamTwo_, _unrepeatableRepeatableActionParamThree_) - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_HOVER, "Set Hover State: _onOffActionParamOne_ - Target: _getTargetType_");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_UNUSED_211, "Set  - Target: _getTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_CAST_RANDOM_SPELL, "Cast Random Spell (Spell ID 1: '_spellNameActionParamOne_', Spell ID 2: '_spellNameActionParamTwo_', Spell ID 3: '_spellNameActionParamThree_', Spell ID 4: '_spellNameActionParamFour_', Spell ID 5: '_spellNameActionParamFive_', CastFlags: _actionParamSix_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_COMBAT_STOP_WITH_PETS, "Combat Stop with Pets - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_PAUSE_WAYPOINT_DATA_MOVEMENT, "_pauseUnPauseActionParamOne_ Waypoint-Data Movement - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_MOVE_TO_POS_TARGET, "Move selected target to Position (PointID: _actionParamOne_, Pathfinding: _enabledDisabledActionParamThree_) - Target: _getTargetType_");
@@ -485,6 +485,30 @@ namespace SAI_Editor.Classes
                         fullLine = fullLine.Replace("_spellNameActionParamTwo_", await worldDatabase.GetSpellNameById(smartScript.action_param2));
                     else
                         fullLine = fullLine.Replace(" '_spellNameActionParamTwo_'", String.Empty);
+                }
+
+                if (fullLine.Contains("_spellNameActionParamThree_"))
+                {
+                    if (smartScript.action_param3.ToString() != "0")
+                        fullLine = fullLine.Replace("_spellNameActionParamThree_", await worldDatabase.GetSpellNameById(smartScript.action_param3));
+                    else
+                        fullLine = fullLine.Replace(" '_spellNameActionParamThree_'", String.Empty);
+                }
+
+                if (fullLine.Contains("_spellNameActionParamFour_"))
+                {
+                    if (smartScript.action_param4.ToString() != "0")
+                        fullLine = fullLine.Replace("_spellNameActionParamFour_", await worldDatabase.GetSpellNameById(smartScript.action_param4));
+                    else
+                        fullLine = fullLine.Replace(" '_spellNameActionParamFour_'", String.Empty);
+                }
+
+                if (fullLine.Contains("_spellNameActionParamFive_"))
+                {
+                    if (smartScript.action_param5.ToString() != "0")
+                        fullLine = fullLine.Replace("_spellNameActionParamFive_", await worldDatabase.GetSpellNameById(smartScript.action_param5));
+                    else
+                        fullLine = fullLine.Replace(" '_spellNameActionParamFive_'", String.Empty);
                 }
 
                 if (fullLine.Contains("_questNameActionParamOne_"))
