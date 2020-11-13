@@ -1593,7 +1593,7 @@
             "ACTION_LOAD_WP_PATH",
             "ACTION_SET_HOVER",
             "ACTION_UNUSED_211",
-            "ACTION_UNUSED_212",
+            "ACTION_COMBAT_STOP_WITH_PETS",
             "ACTION_PAUSE_WAYPOINT_DATA_MOVEMENT",
             "ACTION_MOVE_TO_POS_TARGET",
             "ACTION_SAVE_CHECKPOINT",
