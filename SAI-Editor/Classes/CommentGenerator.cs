@@ -347,6 +347,7 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_COUNTER_RESET_OPTION, "_OnResetOnInitializeActionParamOne_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_GO_DELETE, "Delete Gameobject - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_LEVEL, "Set Level _actionParamOne_ - Target: _getTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_SET_OBJECT_SCALE, "Set Object Scale _actionParamOne_ - Target: _getTargetType_");
         }
 
         public async Task<string> GenerateCommentFor(SmartScript smartScript, EntryOrGuidAndSourceType entryOrGuidAndSourceType, bool forced = false, SmartScript smartScriptLink = null)
