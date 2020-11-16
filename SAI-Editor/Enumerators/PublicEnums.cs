@@ -375,6 +375,7 @@ namespace SAI_Editor.Enumerators
         SMART_ACTION_GO_DELETE = 236,
         SMART_ACTION_SET_LEVEL = 237,
         SMART_ACTION_SET_CREATURE_SCALE = 238,
+        SMART_ACTION_SET_FEATHER_FALL = 239,
         SMART_ACTION_MAX,
     }
 

@@ -624,7 +624,8 @@
             "ACTION_SET_COUNTER_RESET_OPTION",
             "ACTION_GO_DELETE",
             "ACTION_SET_LEVEL",
-            "ACTION_SET_CREATURE_SCALE"});
+            "ACTION_SET_CREATURE_SCALE",
+            "ACTION_SET_FEATHER_FALL"});
             this.comboBoxActionType.Location = new System.Drawing.Point(59, 45);
             this.comboBoxActionType.Name = "comboBoxActionType";
             this.comboBoxActionType.Size = new System.Drawing.Size(235, 21);
