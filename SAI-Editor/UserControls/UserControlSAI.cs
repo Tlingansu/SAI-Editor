@@ -801,6 +801,7 @@ namespace SAI_Editor
                 case SmartAction.SMART_ACTION_INSTALL_AI_TEMPLATE: //! AI template
                 case SmartAction.SMART_ACTION_GAME_EVENT_START: //! Game event entry
                 case SmartAction.SMART_ACTION_GAME_EVENT_STOP: //! Game event entry                
+                case SmartAction.SMART_ACTION_SET_MELEE_DAMAGE_SCHOOL: //! Spell school
                     buttonActionParamOneSearch.Visible = true;
                     break;
             }
@@ -1745,6 +1746,9 @@ namespace SAI_Editor
                 case SmartAction.SMART_ACTION_RANDOM_SOUND:
                     ShowSearchFromDatabaseForm(textBoxToChange, DatabaseSearchFormType.DatabaseSearchFormTypeSound);
                     break;
+                case SmartAction.SMART_ACTION_SET_MELEE_DAMAGE_SCHOOL:
+                    ShowSelectForm("SpellSchools", textBoxToChange);
+                    break;                    
             }
         }
 
