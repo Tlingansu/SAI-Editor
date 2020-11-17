@@ -352,6 +352,7 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_WATER_WALKING, "Set Water Walking _onOffActionParamOne_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_MELEE_DAMAGE_SCHOOL, "Set Melee Damage School Type: _MeleeDamageSchoolActionParamOne_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_UNIT_STATE, "_addRemoveActionParamOne_ Unit State: _UnitStateActionParamTwo_ - Target: _getTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_RESET_LOOT_MODE, "Reset Loot Mode - Target: _getTargetType_");
         }
 
         public async Task<string> GenerateCommentFor(SmartScript smartScript, EntryOrGuidAndSourceType entryOrGuidAndSourceType, bool forced = false, SmartScript smartScriptLink = null)
