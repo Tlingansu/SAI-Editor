@@ -72,6 +72,7 @@ namespace SAI_Editor.Classes
             { "TempSummonType", typeof(SingleSelectForm<TempSummonType>)},
             { "SpellEffIndex", typeof(SingleSelectForm<SpellEffIndex>)},
             { "SpellSchools", typeof(SingleSelectForm<SpellSchools>)},
+            { "UnitStates", typeof(SingleSelectForm<UnitStates>)},
             { "SpellCastResult", typeof(SingleSelectForm<SpellCastResult>)},
             { "SpellCustomErrors", typeof(SingleSelectForm<SpellCustomErrors>)},
             { "ReputationRank", typeof(SingleSelectForm<ReputationRank>)},

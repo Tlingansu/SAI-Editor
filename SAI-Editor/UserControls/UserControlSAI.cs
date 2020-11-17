@@ -759,6 +759,9 @@ namespace SAI_Editor
                     buttonActionParamFourSearch.Visible = true; //! Item entry 2
                     buttonActionParamFiveSearch.Visible = true; //! Item entry 3
                     break;
+                case SmartAction.SMART_ACTION_SET_UNIT_STATE:
+                    buttonActionParamTwoSearch.Visible = true;
+                    break;
                 case SmartAction.SMART_ACTION_SET_FACTION: //! Faction entry
                 case SmartAction.SMART_ACTION_EMOTE: //! Emote entry
                 case SmartAction.SMART_ACTION_SET_EMOTE_STATE: //! Emote entry
@@ -1862,6 +1865,9 @@ namespace SAI_Editor
                     break;
                 case SmartAction.SMART_ACTION_RANDOM_SOUND:
                     ShowSearchFromDatabaseForm(textBoxToChange, DatabaseSearchFormType.DatabaseSearchFormTypeSound);
+                    break;
+                case SmartAction.SMART_ACTION_SET_UNIT_STATE:
+                    ShowSelectForm("UnitStates", textBoxToChange);
                     break;
             }
         }

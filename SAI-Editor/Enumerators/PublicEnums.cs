@@ -821,6 +821,39 @@ namespace SAI_Editor.Enumerators
         SPELL_SCHOOL_ARCANE                 = 6
     }
 
+    public enum UnitStates
+    {
+        UNIT_STATE_DIED                  = 1,                     // player has fake death aura
+        UNIT_STATE_MELEE_ATTACKING       = 2,                     // player is melee attacking someone
+        UNIT_STATE_CHARMED               = 4,                     // having any kind of charm aura on self
+        UNIT_STATE_STUNNED               = 8,
+        UNIT_STATE_ROAMING               = 16,
+        UNIT_STATE_CHASE                 = 32,
+        //UNIT_STATE_SEARCHING           = 0x00000040,
+        UNIT_STATE_FLEEING               = 128,
+        UNIT_STATE_IN_FLIGHT             = 256,                     // player is in flight mode
+        UNIT_STATE_FOLLOW                = 512,
+        UNIT_STATE_ROOT                  = 1024,
+        UNIT_STATE_CONFUSED              = 2048,
+        UNIT_STATE_DISTRACTED            = 4096,
+        UNIT_STATE_ISOLATED              = 8192,                     // area auras do not affect other players
+        UNIT_STATE_ATTACK_PLAYER         = 16384,
+        UNIT_STATE_CASTING               = 32768,
+        UNIT_STATE_POSSESSED             = 65536,
+        UNIT_STATE_CHARGING              = 131072,
+        UNIT_STATE_JUMPING               = 262144,
+        UNIT_STATE_MOVE                  = 1048576,
+        UNIT_STATE_ROTATING              = 2097152,
+        UNIT_STATE_EVADE                 = 4194304,
+        UNIT_STATE_ROAMING_MOVE          = 8388608,
+        UNIT_STATE_CONFUSED_MOVE         = 16777216,
+        UNIT_STATE_FLEEING_MOVE          = 33554432,
+        UNIT_STATE_CHASE_MOVE            = 67108864,
+        UNIT_STATE_FOLLOW_MOVE           = 134217728,
+        UNIT_STATE_IGNORE_PATHFINDING    = 268435456,                 // do not use pathfinding in any MovementGenerator
+        UNIT_STATE_DIFFERENT_PATHFINDING = 536870912,                 // do not call NormalizePath, do not add CollisioHeight
+    }
+
     public enum SheathState
     {
         SHEATH_STATE_UNARMED  = 0,                              // non prepared weapon

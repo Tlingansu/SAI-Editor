@@ -1212,6 +1212,7 @@ namespace SAI_Editor.Forms
             {"Search for sheath states", typeof(SingleSelectForm<SheathState>)},
             {"Search for movement generator types", typeof(SingleSelectForm<MovementGeneratorType>)},
             {"Search for spell schools", typeof(SingleSelectForm<SpellSchools>)},
+            {"Search for unit states", typeof(SingleSelectForm<UnitStates>)},
             {"Search for power types", typeof(SingleSelectForm<PowerTypes>)},
             {"Search for unit stand state types", typeof(SingleSelectForm<UnitStandStateType>)},
             {"Search for temp summon types", typeof(SingleSelectForm<TempSummonType>)},
