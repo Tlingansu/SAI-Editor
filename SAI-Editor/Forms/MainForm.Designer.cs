@@ -1624,7 +1624,8 @@
             "ACTION_SET_WATER_WALKING",
             "ACTION_SET_MELEE_DAMAGE_SCHOOL",
             "ACTION_SET_UNIT_STATE",
-            "ACTION_RESET_LOOT_MODE"});
+            "ACTION_RESET_LOOT_MODE",
+            "ACTION_SET_LOOT_MODE"});
             this.comboBoxActionType.Location = new System.Drawing.Point(59, 45);
             this.comboBoxActionType.Name = "comboBoxActionType";
             this.comboBoxActionType.Size = new System.Drawing.Size(235, 21);
