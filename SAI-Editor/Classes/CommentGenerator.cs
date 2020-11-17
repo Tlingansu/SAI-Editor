@@ -350,6 +350,7 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_CREATURE_SCALE, "Set Creature Scale _actionParamOne_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_FEATHER_FALL, "Set Feather Fall _onOffActionParamOne_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_WATER_WALKING, "Set Water Walking _onOffActionParamOne_ - Target: _getTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_SET_MELEE_DAMAGE_SCHOOL, "Set Melee Damage School: _MeleeDamageSchoolActionParamOne_ - Target: _getTargetType_");
         }
 
         public async Task<string> GenerateCommentFor(SmartScript smartScript, EntryOrGuidAndSourceType entryOrGuidAndSourceType, bool forced = false, SmartScript smartScriptLink = null)
@@ -743,7 +744,7 @@ namespace SAI_Editor.Classes
                     }
                 }
 
-                if(fullLine.Contains("_AnimKitTypeActionParamTwo_"))
+                if (fullLine.Contains("_AnimKitTypeActionParamTwo_"))
                 {
                     switch (smartScript.action_param2)
                     {
@@ -761,6 +762,37 @@ namespace SAI_Editor.Classes
                             break;
                         default:
                             fullLine = fullLine.Replace("_AnimKitTypeActionParamTwo_", "<Unknown AnimationKitType>");
+                            break;
+                    }
+                }
+
+                if (fullLine.Contains("_MeleeDamageSchoolActionParamOne_"))
+                {
+                    switch (smartScript.action_param1)
+                    {
+                        case 0:
+                            fullLine = fullLine.Replace("_MeleeDamageSchoolActionParamOne_", "SPELL_SCHOOL_NORMAL");
+                            break;
+                        case 1:
+                            fullLine = fullLine.Replace("_MeleeDamageSchoolActionParamOne_", "SPELL_SCHOOL_HOLY");
+                            break;
+                        case 2:
+                            fullLine = fullLine.Replace("_MeleeDamageSchoolActionParamOne_", "SPELL_SCHOOL_FIRE");
+                            break;
+                        case 3:
+                            fullLine = fullLine.Replace("_MeleeDamageSchoolActionParamOne_", "SPELL_SCHOOL_NATURE");
+                            break;
+                        case 4:
+                            fullLine = fullLine.Replace("_MeleeDamageSchoolActionParamOne_", "SPELL_SCHOOL_FROST");
+                            break;
+                        case 5:
+                            fullLine = fullLine.Replace("_MeleeDamageSchoolActionParamOne_", "SPELL_SCHOOL_SHADOW");
+                            break;
+                        case 6:
+                            fullLine = fullLine.Replace("_MeleeDamageSchoolActionParamOne_", "SPELL_SCHOOL_ARCANE");
+                            break;
+                        default:
+                            fullLine = fullLine.Replace("_MeleeDamageSchoolActionParamOne_", "SPELL_SCHOOL_UNKNOWN");
                             break;
                     }
                 }
