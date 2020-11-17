@@ -351,6 +351,7 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_FEATHER_FALL, "Set Feather Fall _onOffActionParamOne_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_WATER_WALKING, "Set Water Walking _onOffActionParamOne_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_MELEE_DAMAGE_SCHOOL, "Set Melee Damage School Type: _MeleeDamageSchoolActionParamOne_ - Target: _getTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_SET_UNIT_STATE, "_addRemoveActionParamOne_ Unit State: _UnitStateActionParamTwo_ - Target: _getTargetType_");
         }
 
         public async Task<string> GenerateCommentFor(SmartScript smartScript, EntryOrGuidAndSourceType entryOrGuidAndSourceType, bool forced = false, SmartScript smartScriptLink = null)
@@ -793,6 +794,108 @@ namespace SAI_Editor.Classes
                             break;
                         default:
                             fullLine = fullLine.Replace("_MeleeDamageSchoolActionParamOne_", "SPELL_SCHOOL_UNKNOWN");
+                            break;
+                    }
+                }
+
+                if (fullLine.Contains("_addRemoveActionParamOne_"))
+                {
+                    if (smartScript.action_param1 == 1)
+                        fullLine = fullLine.Replace("_addRemoveActionParamOne_", "Apply");
+                    else
+                        fullLine = fullLine.Replace("_addRemoveActionParamOne_", "Unapply");
+                }
+
+                if (fullLine.Contains("_UnitStateActionParamTwo_"))
+                {
+                    switch (smartScript.action_param2)
+                    {
+                        case 1:
+                            fullLine = fullLine.Replace("_UnitStateActionParamTwo_", "UNIT_STATE_DIED");
+                            break;
+                        case 2:
+                            fullLine = fullLine.Replace("_UnitStateActionParamTwo_", "UNIT_STATE_MELEE_ATTACKING");
+                            break;
+                        case 4:
+                            fullLine = fullLine.Replace("_UnitStateActionParamTwo_", "UNIT_STATE_CHARMED");
+                            break;
+                        case 8:
+                            fullLine = fullLine.Replace("_UnitStateActionParamTwo_", "UNIT_STATE_STUNNED");
+                            break;
+                        case 16:
+                            fullLine = fullLine.Replace("_UnitStateActionParamTwo_", "UNIT_STATE_ROAMING");
+                            break;
+                        case 32:
+                            fullLine = fullLine.Replace("_UnitStateActionParamTwo_", "UNIT_STATE_CHASE");
+                            break;
+                        case 128:
+                            fullLine = fullLine.Replace("_UnitStateActionParamTwo_", "UNIT_STATE_FLEEING");
+                            break;
+                        case 256:
+                            fullLine = fullLine.Replace("_UnitStateActionParamTwo_", "UNIT_STATE_IN_FLIGHT");
+                            break;
+                        case 512:
+                            fullLine = fullLine.Replace("_UnitStateActionParamTwo_", "UNIT_STATE_FOLLOW");
+                            break;
+                        case 1024:
+                            fullLine = fullLine.Replace("_UnitStateActionParamTwo_", "UNIT_STATE_ROOT");
+                            break;
+                        case 2048:
+                            fullLine = fullLine.Replace("_UnitStateActionParamTwo_", "UNIT_STATE_CONFUSED");
+                            break;
+                        case 4096:
+                            fullLine = fullLine.Replace("_UnitStateActionParamTwo_", "UNIT_STATE_DISTRACTED");
+                            break;
+                        case 8192:
+                            fullLine = fullLine.Replace("_UnitStateActionParamTwo_", "UNIT_STATE_ISOLATED");
+                            break;
+                        case 16384:
+                            fullLine = fullLine.Replace("_UnitStateActionParamTwo_", "UNIT_STATE_ATTACK_PLAYER");
+                            break;
+                        case 32768:
+                            fullLine = fullLine.Replace("_UnitStateActionParamTwo_", "UNIT_STATE_CASTING");
+                            break;
+                        case 65536:
+                            fullLine = fullLine.Replace("_UnitStateActionParamTwo_", "UNIT_STATE_POSSESSED");
+                            break;
+                        case 131072:
+                            fullLine = fullLine.Replace("_UnitStateActionParamTwo_", "UNIT_STATE_CHARGING");
+                            break;
+                        case 262144:
+                            fullLine = fullLine.Replace("_UnitStateActionParamTwo_", "UNIT_STATE_JUMPING");
+                            break;
+                        case 1048576:
+                            fullLine = fullLine.Replace("_UnitStateActionParamTwo_", "UNIT_STATE_MOVE");
+                            break;
+                        case 2097152:
+                            fullLine = fullLine.Replace("_UnitStateActionParamTwo_", "UNIT_STATE_ROTATING");
+                            break;
+                        case 4194304:
+                            fullLine = fullLine.Replace("_UnitStateActionParamTwo_", "UNIT_STATE_EVADE");
+                            break;
+                        case 8388608:
+                            fullLine = fullLine.Replace("_UnitStateActionParamTwo_", "UNIT_STATE_ROAMING_MOVE");
+                            break;
+                        case 16777216:
+                            fullLine = fullLine.Replace("_UnitStateActionParamTwo_", "UNIT_STATE_CONFUSED_MOVE");
+                            break;
+                        case 33554432:
+                            fullLine = fullLine.Replace("_UnitStateActionParamTwo_", "UNIT_STATE_FLEEING_MOVE");
+                            break;
+                        case 67108864:
+                            fullLine = fullLine.Replace("_UnitStateActionParamTwo_", "UNIT_STATE_CHASE_MOVE");
+                            break;
+                        case 134217728:
+                            fullLine = fullLine.Replace("_UnitStateActionParamTwo_", "UNIT_STATE_FOLLOW_MOVE");
+                            break;
+                        case 268435456:
+                            fullLine = fullLine.Replace("_UnitStateActionParamTwo_", "UNIT_STATE_IGNORE_PATHFINDING");
+                            break;
+                        case 536870912:
+                            fullLine = fullLine.Replace("_UnitStateActionParamTwo_", "UNIT_STATE_DIFFERENT_PATHFINDING");
+                            break;
+                        default:
+                            fullLine = fullLine.Replace("_UnitStateActionParamTwo_", "UNIT_STATE_UNKOWN");
                             break;
                     }
                 }

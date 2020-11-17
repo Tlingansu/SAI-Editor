@@ -627,7 +627,8 @@
             "ACTION_SET_CREATURE_SCALE",
             "ACTION_SET_FEATHER_FALL",
             "ACTION_SET_WATER_WALKING",
-            "SMART_ACTION_SET_MELEE_DAMAGE_SCHOOL"});
+            "ACTION_SET_MELEE_DAMAGE_SCHOOL",
+            "ACTION_SET_UNIT_STATE"});
             this.comboBoxActionType.Location = new System.Drawing.Point(59, 45);
             this.comboBoxActionType.Name = "comboBoxActionType";
             this.comboBoxActionType.Size = new System.Drawing.Size(235, 21);
