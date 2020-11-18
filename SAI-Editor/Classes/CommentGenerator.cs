@@ -189,7 +189,7 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_RESET_SCRIPT_BASE_OBJECT, "Reset Script Base Object - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_CALL_SCRIPT_RESET, "Reset All Scripts - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_RANGED_MOVEMENT, "Set Ranged Movement (Attack Distance: _actionParamOne_, Attack Angle: _actionParamTwo_) - Target: _getTargetType_");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_CALL_TIMED_ACTIONLIST, "Run Script - Target: _getTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_CALL_TIMED_ACTIONLIST, "Call Actionlist _actionParamOne_ (TimerType: _TimerTypeActionParamTwo_) - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_NPC_FLAG, "Set Npc Flag_getNpcFlags_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_ADD_NPC_FLAG, "Add Npc Flag_getNpcFlags_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_REMOVE_NPC_FLAG, "Remove Npc Flag_getNpcFlags_ - Target: _getTargetType_");
@@ -743,6 +743,25 @@ namespace SAI_Editor.Classes
                             break;
                         default:
                             fullLine = fullLine.Replace("_MovementSlotActionParamOne_", "<Unknown MovementSlot>");
+                            break;
+                    }
+                }
+
+                if (fullLine.Contains("_TimerTypeActionParamTwo_"))
+                {
+                    switch (smartScript.action_param2)
+                    {
+                        case 0:
+                            fullLine = fullLine.Replace("_TimerTypeActionParamTwo_", "Out of Combat");
+                            break;
+                        case 1:
+                            fullLine = fullLine.Replace("_TimerTypeActionParamTwo_", "In Combat");
+                            break;
+                        case 2:
+                            fullLine = fullLine.Replace("_TimerTypeActionParamTwo_", "Always");
+                            break;
+                        default:
+                            fullLine = fullLine.Replace("_TimerTypeActionParamTwo_", "<Unknown TimerType>");
                             break;
                     }
                 }
