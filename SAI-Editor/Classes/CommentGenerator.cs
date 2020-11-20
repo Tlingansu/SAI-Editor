@@ -1633,6 +1633,8 @@ namespace SAI_Editor.Classes
                     return "Loot Recipients";
                 case SmartTarget.SMART_TARGET_STORED:
                     return "Stored Target";
+                case SmartTarget.SMART_TARGET_FARTHEST:
+                    return "Farthest Target";
                 default:
                     return "<unsupported target type>";
             }
