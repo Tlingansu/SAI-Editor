@@ -216,7 +216,7 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_GO_FLAG, "Set Gameobject Flag_getGoFlags_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_ADD_GO_FLAG, "Add Gameobject Flag_getGoFlags_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_REMOVE_GO_FLAG, "Remove Gameobject Flag_getGoFlags_ - Target: _getTargetType_");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_SUMMON_CREATURE_GROUP, "Summon Creature Group _actionParamOne_ - Target: _getTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_SUMMON_CREATURE_GROUP, "Summon Creature Group _actionParamOne_ _AttackInvokerCreatureGroupActionParamTwo_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_POWER, "Set _powerTypeActionParamOne_ To _actionParamTwo_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_ADD_POWER, "Add _actionParamTwo_ _powerTypeActionParamOne_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_REMOVE_POWER, "Remove _actionParamTwo_ _powerTypeActionParamOne_ - Target: _getTargetType_");
@@ -1011,6 +1011,14 @@ namespace SAI_Editor.Classes
                         fullLine = fullLine.Replace("_SpellInterruptInstanceActionParamOne_", "instantly.");
                     else
                         fullLine = fullLine.Replace("_SpellInterruptInstanceActionParamOne_", "not instantly.");
+                }
+
+                if (fullLine.Contains("_AttackInvokerCreatureGroupActionParamTwo_"))
+                {
+                    if (smartScript.action_param2 > 0)
+                        fullLine = fullLine.Replace("_AttackInvokerCreatureGroupActionParamTwo_", "(Attack Invoker)");
+                    else
+                        fullLine = fullLine.Replace("_AttackInvokerCreatureGroupActionParamTwo_", "(Do not attack Invoker)");
                 }
 
                 if (fullLine.Contains("_EnableDisablePhaseResetActionParamOne_"))
