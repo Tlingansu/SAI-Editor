@@ -222,7 +222,7 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_REMOVE_POWER, "Remove _actionParamTwo_ _powerTypeActionParamOne_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_GAME_EVENT_STOP, "Stop game event _actionParamTwo_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_GAME_EVENT_START, "Start game event _actionParamTwo_ - Target: _getTargetType_");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_START_CLOSEST_WAYPOINT, "Pick Closest Waypoint _actionParamOne_ _actionParamTwo_ _actionParamThree_ _actionParamFour_ _actionParamFive_ _actionParamSix_ - Target: _getTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_START_CLOSEST_WAYPOINT, "Move to closest Waypoint _actionParamOne_ _actionParamTwo_ _actionParamThree_ _actionParamFour_ _actionParamFive_ _actionParamSix_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_MOVE_OFFSET, "Move Offset - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_RANDOM_SOUND, "Play _PlayRandomSoundDistance_ _actionParamOne_ _actionParamTwo_ _actionParamThree_ _actionParamFour_ _PlayRandomSoundTarget_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_CORPSE_DELAY, "Set Corpse Delay _actionParamOne_ seconds - Target: _getTargetType_");
