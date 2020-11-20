@@ -201,7 +201,7 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_RANDOM_MOVE, "_startStopActionParamOne_ Random Movement (Radius: _actionParamOne_) - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_UNIT_FIELD_BYTES_1, "Set Flag _getBytes1Flags_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_REMOVE_UNIT_FIELD_BYTES_1, "Remove Flag _getBytes1Flags_ - Target: _getTargetType_");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_INTERRUPT_SPELL, "Interrupt Spell '_spellNameActionParamTwo_' - Target: _getTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_INTERRUPT_SPELL, "Interrupt Spell '_spellNameActionParamTwo_' _SpellInterruptDelayActionParamOne_ _SpellInterruptInstanceActionParamOne_  - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SEND_GO_CUSTOM_ANIM, "Send Custom Animation _actionParamOne_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_DYNAMIC_FLAG, "Set Dynamic Flag_getDynamicFlags_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_ADD_DYNAMIC_FLAG, "Add Dynamic Flag_getDynamicFlags_ - Target: _getTargetType_");
@@ -995,6 +995,22 @@ namespace SAI_Editor.Classes
                         fullLine = fullLine.Replace("_startStopActionParamOne_", "Start");
                     else
                         fullLine = fullLine.Replace("_startStopActionParamOne_", "Stop");
+                }
+
+                if (fullLine.Contains("_SpellInterruptDelayActionParamOne_"))
+                {
+                    if (smartScript.action_param1 > 0)
+                        fullLine = fullLine.Replace("_SpellInterruptDelayActionParamOne_", "with Delay");
+                    else
+                        fullLine = fullLine.Replace("_SpellInterruptDelayActionParamOne_", "without Delay");
+                }
+
+                if (fullLine.Contains("_SpellInterruptInstanceActionParamOne_"))
+                {
+                    if (smartScript.action_param3 > 0)
+                        fullLine = fullLine.Replace("_SpellInterruptInstanceActionParamOne_", "instantly.");
+                    else
+                        fullLine = fullLine.Replace("_SpellInterruptInstanceActionParamOne_", "not instantly.");
                 }
 
                 if (fullLine.Contains("_EnableDisablePhaseResetActionParamOne_"))
