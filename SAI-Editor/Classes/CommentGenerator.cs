@@ -195,10 +195,10 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_REMOVE_NPC_FLAG, "Remove Npc Flag_getNpcFlags_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SIMPLE_TALK, "Simple Talk Line _actionParamOne_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_INVOKER_CAST, "Invoker Cast '_spellNameActionParamOne_' with CastFlag: _actionParamTwo_ and TriggerFlag: _actionParamThree_ (TargetLimit: _actionParamFour_) - Target: _getTargetType_");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_CROSS_CAST, "Cross Cast '_spellNameActionParamOne_' - Target: _getTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_CROSS_CAST, "Cross Cast '_spellNameActionParamOne_' with CastFlag: _actionParamTwo_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_CALL_RANDOM_TIMED_ACTIONLIST, "Run Random Script - Target: _getTargetType_");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_CALL_RANDOM_RANGE_TIMED_ACTIONLIST, "Run Random Script - Target: _getTargetType_");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_RANDOM_MOVE, "Start Random Movement - Target: _getTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_CALL_RANDOM_RANGE_TIMED_ACTIONLIST, "Run Random Script between Script: _actionParamOne_ and Script: _actionParamTwo_ - Target: _getTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_RANDOM_MOVE, "_startStopActionParamOne_ Random Movement (Radius: _actionParamOne_) - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_UNIT_FIELD_BYTES_1, "Set Flag _getBytes1Flags_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_REMOVE_UNIT_FIELD_BYTES_1, "Remove Flag _getBytes1Flags_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_INTERRUPT_SPELL, "Interrupt Spell '_spellNameActionParamTwo_' - Target: _getTargetType_");
@@ -987,6 +987,14 @@ namespace SAI_Editor.Classes
                         fullLine = fullLine.Replace("_pauseUnPauseActionParamOne_", "Pause");
                     else
                         fullLine = fullLine.Replace("_pauseUnPauseActionParamOne_", "UnPause");
+                }
+
+                if (fullLine.Contains("_startStopActionParamOne_"))
+                {
+                    if (smartScript.action_param1 > 0)
+                        fullLine = fullLine.Replace("_startStopActionParamOne_", "Start");
+                    else
+                        fullLine = fullLine.Replace("_startStopActionParamOne_", "Stop");
                 }
 
                 if (fullLine.Contains("_EnableDisablePhaseResetActionParamOne_"))
