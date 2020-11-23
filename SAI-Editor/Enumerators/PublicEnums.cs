@@ -131,6 +131,7 @@ namespace SAI_Editor.Enumerators
         SMART_EVENT_DISTANCE_CREATURE = 75,
         SMART_EVENT_DISTANCE_GAMEOBJECT = 76,
         SMART_EVENT_COUNTER_SET = 77,
+        SMART_EVENT_SCENE_START = 78,
         SMART_EVENT_MAX,
     }
 
