@@ -927,7 +927,8 @@
             "EVENT_DISTANCE_GAMEOBJECT",
             "EVENT_COUNTER_SET",
             "EVENT_SCENE_START",
-            "EVENT_SCENE_TRIGGER"});
+            "EVENT_SCENE_TRIGGER",
+            "EVENT_SCENE_CANCEL"});
             this.comboBoxEventType.Location = new System.Drawing.Point(59, 18);
             this.comboBoxEventType.Name = "comboBoxEventType";
             this.comboBoxEventType.Size = new System.Drawing.Size(235, 21);

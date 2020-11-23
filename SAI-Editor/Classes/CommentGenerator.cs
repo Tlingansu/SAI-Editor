@@ -108,6 +108,7 @@ namespace SAI_Editor.Classes
             smartEventStrings.Add(SmartEvent.SMART_EVENT_COUNTER_SET, "On Counter Set _eventParamOne_ _eventParamTwo_");
             smartEventStrings.Add(SmartEvent.SMART_EVENT_SCENE_START, "On Scene _eventParamOne_ Start");
             smartEventStrings.Add(SmartEvent.SMART_EVENT_SCENE_TRIGGER, "On Scene _eventParamOne_ Trigger");
+            smartEventStrings.Add(SmartEvent.SMART_EVENT_SCENE_CANCEL, "On Scene _eventParamOne_ Cancel");
             smartEventStrings.Add(SmartEvent.SMART_EVENT_LINK, "_previousLineComment_");
 
             //! Filling up actions
