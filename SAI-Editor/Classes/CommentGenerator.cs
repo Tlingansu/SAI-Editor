@@ -107,6 +107,7 @@ namespace SAI_Editor.Classes
             smartEventStrings.Add(SmartEvent.SMART_EVENT_DISTANCE_GAMEOBJECT, "On Distance To GameObject");
             smartEventStrings.Add(SmartEvent.SMART_EVENT_COUNTER_SET, "On Counter Set _eventParamOne_ _eventParamTwo_");
             smartEventStrings.Add(SmartEvent.SMART_EVENT_SCENE_START, "On Scene _eventParamOne_ Start");
+            smartEventStrings.Add(SmartEvent.SMART_EVENT_SCENE_TRIGGER, "On Scene _eventParamOne_ Trigger");
             smartEventStrings.Add(SmartEvent.SMART_EVENT_LINK, "_previousLineComment_");
 
             //! Filling up actions
