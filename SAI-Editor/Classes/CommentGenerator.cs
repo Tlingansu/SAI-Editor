@@ -847,25 +847,25 @@ namespace SAI_Editor.Classes
                     switch (smartScript.action_param1)
                     {
                         case 0:
-                            fullLine = fullLine.Replace("_MeleeDamageSchoolActionParamOne_", "SPELL_SCHOOL_NORMAL");
+                            fullLine = fullLine.Replace("_MeleeDamageSchoolActionParamOne_", "Normal");
                             break;
                         case 1:
-                            fullLine = fullLine.Replace("_MeleeDamageSchoolActionParamOne_", "SPELL_SCHOOL_HOLY");
+                            fullLine = fullLine.Replace("_MeleeDamageSchoolActionParamOne_", "Holy");
                             break;
                         case 2:
-                            fullLine = fullLine.Replace("_MeleeDamageSchoolActionParamOne_", "SPELL_SCHOOL_FIRE");
+                            fullLine = fullLine.Replace("_MeleeDamageSchoolActionParamOne_", "Fire");
                             break;
                         case 3:
-                            fullLine = fullLine.Replace("_MeleeDamageSchoolActionParamOne_", "SPELL_SCHOOL_NATURE");
+                            fullLine = fullLine.Replace("_MeleeDamageSchoolActionParamOne_", "Nature");
                             break;
                         case 4:
-                            fullLine = fullLine.Replace("_MeleeDamageSchoolActionParamOne_", "SPELL_SCHOOL_FROST");
+                            fullLine = fullLine.Replace("_MeleeDamageSchoolActionParamOne_", "Frost");
                             break;
                         case 5:
-                            fullLine = fullLine.Replace("_MeleeDamageSchoolActionParamOne_", "SPELL_SCHOOL_SHADOW");
+                            fullLine = fullLine.Replace("_MeleeDamageSchoolActionParamOne_", "Shadow");
                             break;
                         case 6:
-                            fullLine = fullLine.Replace("_MeleeDamageSchoolActionParamOne_", "SPELL_SCHOOL_ARCANE");
+                            fullLine = fullLine.Replace("_MeleeDamageSchoolActionParamOne_", "Arcane");
                             break;
                         default:
                             fullLine = fullLine.Replace("_MeleeDamageSchoolActionParamOne_", "SPELL_SCHOOL_UNKNOWN");
