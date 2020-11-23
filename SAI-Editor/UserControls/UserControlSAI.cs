@@ -832,6 +832,7 @@ namespace SAI_Editor
                 case SmartTarget.SMART_TARGET_GAMEOBJECT_RANGE: //! Gameobject entry
                 case SmartTarget.SMART_TARGET_GAMEOBJECT_DISTANCE: //! Gameobject entry
                 case SmartTarget.SMART_TARGET_CLOSEST_GAMEOBJECT: //! Gameobject entry
+                case SmartTarget.SMART_TARGET_CLOSEST_UNSPAWNED_GAMEOBJECT: //! Gameobject entry
                     buttonTargetParamOneSearch.Visible = true;
                     break;
             }
@@ -1576,6 +1577,7 @@ namespace SAI_Editor
                 case SmartTarget.SMART_TARGET_GAMEOBJECT_RANGE:
                 case SmartTarget.SMART_TARGET_GAMEOBJECT_DISTANCE:
                 case SmartTarget.SMART_TARGET_CLOSEST_GAMEOBJECT: //! Gameobject entry
+                case SmartTarget.SMART_TARGET_CLOSEST_UNSPAWNED_GAMEOBJECT: //! Gameobject entry
                     ShowSearchFromDatabaseForm(textBoxToChange, DatabaseSearchFormType.DatabaseSearchFormTypeGameobjectEntry);
                     break;
                 case SmartTarget.SMART_TARGET_GAMEOBJECT_GUID: //! Gameobject guid

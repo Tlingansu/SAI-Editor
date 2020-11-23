@@ -355,7 +355,8 @@
             "TARGET_CLOSEST_FRIENDLY",
             "TARGET_LOOT_RECIPIENTS",
             "TARGET_FARTHEST",
-            "TARGET_VEHICLE_PASSENGER"});
+            "TARGET_VEHICLE_PASSENGER",
+            "TARGET_CLOSEST_UNSPAWNED_GAMEOBJECT"});
             this.comboBoxTargetType.Location = new System.Drawing.Point(59, 72);
             this.comboBoxTargetType.Name = "comboBoxTargetType";
             this.comboBoxTargetType.Size = new System.Drawing.Size(235, 21);

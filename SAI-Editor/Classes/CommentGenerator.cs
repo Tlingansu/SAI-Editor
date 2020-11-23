@@ -1693,8 +1693,10 @@ namespace SAI_Editor.Classes
                     return "Farthest Target";
                 case SmartTarget.SMART_TARGET_VEHICLE_PASSENGER:
                     return "Vehicle Passenger";
+                case SmartTarget.SMART_TARGET_CLOSEST_UNSPAWNED_GAMEOBJECT:
+                    return "Closest Unspawned Gameobject '" + await worldDatabase.GetGameobjectNameById(smartScript.target_param1) + "'";
                 default:
-                    return "<unsupported target type>";
+                    return "<Unsupported Target Type>";
             }
         }
     }
