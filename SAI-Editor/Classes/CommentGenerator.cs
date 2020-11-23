@@ -1040,7 +1040,7 @@ namespace SAI_Editor.Classes
                     if (smartScript.action_param1 == 1)
                         fullLine = fullLine.Replace("_pauseUnPauseActionParamOne_", "Pause");
                     else
-                        fullLine = fullLine.Replace("_pauseUnPauseActionParamOne_", "UnPause");
+                        fullLine = fullLine.Replace("_pauseUnPauseActionParamOne_", "Unpause");
                 }
 
                 if (fullLine.Contains("_startStopActionParamOne_"))
