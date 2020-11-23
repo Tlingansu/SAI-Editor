@@ -1844,6 +1844,9 @@ namespace SAI_Editor
                 case SmartAction.SMART_ACTION_RANDOM_SOUND:
                     ShowSearchFromDatabaseForm(textBoxToChange, DatabaseSearchFormType.DatabaseSearchFormTypeSound);
                     break;
+                case SmartAction.SMART_ACTION_CAST:
+                    ShowSelectForm("TriggerCastFlags", textBoxToChange);
+                    break;
             }
         }
 

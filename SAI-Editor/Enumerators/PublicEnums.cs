@@ -857,6 +857,33 @@ namespace SAI_Editor.Enumerators
         UNIT_STATE_DIFFERENT_PATHFINDING = 536870912,                 // do not call NormalizePath, do not add CollisioHeight
     }
 
+    enum TriggerCastFlags
+    {
+        TRIGGERED_NONE                                = 0,   //! Not triggered
+        TRIGGERED_IGNORE_GCD                          = 1,   //! Will ignore GCD
+        TRIGGERED_IGNORE_SPELL_AND_CATEGORY_CD        = 2,   //! Will ignore Spell and Category cooldowns
+        TRIGGERED_IGNORE_POWER_AND_REAGENT_COST       = 4,   //! Will ignore power and reagent cost
+        TRIGGERED_IGNORE_CAST_ITEM                    = 8,   //! Will not take away cast item or update related achievement criteria
+        TRIGGERED_IGNORE_AURA_SCALING                 = 16,   //! Will ignore aura scaling
+        TRIGGERED_IGNORE_CAST_IN_PROGRESS             = 32,   //! Will not check if a current cast is in progress
+        TRIGGERED_IGNORE_COMBO_POINTS                 = 64,   //! Will ignore combo point requirement
+        TRIGGERED_CAST_DIRECTLY                       = 128,   //! In Spell::prepare, will be cast directly without setting containers for executed spell
+        TRIGGERED_IGNORE_AURA_INTERRUPT_FLAGS         = 256,   //! Will ignore interruptible aura's at cast
+        TRIGGERED_IGNORE_SET_FACING                   = 512,   //! Will not adjust facing to target (if any)
+        TRIGGERED_IGNORE_SHAPESHIFT                   = 1024,   //! Will ignore shapeshift checks
+        TRIGGERED_IGNORE_CASTER_AURASTATE             = 2048,   //! Will ignore caster aura states including combat requirements and death state
+        TRIGGERED_DISALLOW_PROC_EVENTS                = 4096,   //! Disallows proc events from triggered spell (default)
+        TRIGGERED_IGNORE_CASTER_MOUNTED_OR_ON_VEHICLE = 8192,   //! Will ignore mounted/on vehicle restrictions
+                                                                      // reuse                                        = 0x00004000,
+                                                                      // reuse                                        = 0x00008000,
+        TRIGGERED_IGNORE_CASTER_AURAS                 = 65536,   //! Will ignore caster aura restrictions or requirements
+        TRIGGERED_DONT_RESET_PERIODIC_TIMER           = 131072,   //! Will allow periodic aura timers to keep ticking (instead of resetting)
+        TRIGGERED_DONT_REPORT_CAST_ERROR              = 262144,   //! Will return SPELL_FAILED_DONT_REPORT in CheckCast functions
+
+        // debug flags (used with .cast triggered commands)
+        TRIGGERED_IGNORE_EQUIPPED_ITEM_REQUIREMENT    = 524288,   //! Will ignore equipped item requirements
+    };
+
     public enum SheathState
     {
         SHEATH_STATE_UNARMED  = 0,                              // non prepared weapon
