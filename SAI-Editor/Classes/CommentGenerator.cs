@@ -1670,7 +1670,9 @@ namespace SAI_Editor.Classes
                 case SmartTarget.SMART_TARGET_INVOKER_PARTY:
                     return "Invoker's Party";
                 case SmartTarget.SMART_TARGET_PLAYER_RANGE:
+                    return "Range Player";
                 case SmartTarget.SMART_TARGET_PLAYER_DISTANCE:
+                    return "Distance Player";
                 case SmartTarget.SMART_TARGET_CLOSEST_PLAYER:
                     return "Closest Player";
                 case SmartTarget.SMART_TARGET_ACTION_INVOKER_VEHICLE:
@@ -1689,6 +1691,8 @@ namespace SAI_Editor.Classes
                     return "Stored Target";
                 case SmartTarget.SMART_TARGET_FARTHEST:
                     return "Farthest Target";
+                case SmartTarget.SMART_TARGET_VEHICLE_PASSENGER:
+                    return "Vehicle Passenger";
                 default:
                     return "<unsupported target type>";
             }
