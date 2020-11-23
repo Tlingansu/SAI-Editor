@@ -1762,6 +1762,7 @@ namespace SAI_Editor
                 case SmartAction.SMART_ACTION_INVOKER_CAST:
                 case SmartAction.SMART_ACTION_CROSS_CAST:
                 case SmartAction.SMART_ACTION_INVOKER_CAST_:
+                case SmartAction.SMART_ACTION_CROSS_CAST_IN_COMBAT:
                     ShowSelectForm("SmartCastFlags", textBoxToChange);
                     break;
                 case SmartAction.SMART_ACTION_WP_STOP:

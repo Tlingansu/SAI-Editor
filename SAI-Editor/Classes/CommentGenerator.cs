@@ -325,7 +325,7 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_PAUSE_WAYPOINT_DATA_MOVEMENT, "_pauseUnPauseActionParamOne_ Waypoint-Data Movement - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_MOVE_TO_POS_TARGET, "Move selected target to Position - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SAVE_CHECKPOINT, "Save Checkpoint Position - Target: _getTargetType_");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_CROSS_CAST_IN_COMBAT, "Cross Cast '_spellNameActionParamOne_' - Target: _getTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_CROSS_CAST_IN_COMBAT, "Cross Cast '_spellNameActionParamOne_' with CastFlag:_getCastFlags_ in Combat - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_EXIT_VEHICLE, "Exit Vehicle - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_HEALTH, "Set Health - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_STOP_MOTION, "Stop Motion (StopMovement: _actionParamOne_, MovementExpired: _actionParamTwo_) - Target: _getTargetType_");
