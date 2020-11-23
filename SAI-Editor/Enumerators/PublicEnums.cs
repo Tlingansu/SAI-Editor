@@ -135,6 +135,7 @@ namespace SAI_Editor.Enumerators
         SMART_EVENT_SCENE_TRIGGER = 79,
         SMART_EVENT_SCENE_CANCEL = 80,
         SMART_EVENT_SCENE_COMPLETE = 81,
+        SMART_EVENT_SUMMONED_UNIT_DIES = 82,
         SMART_EVENT_MAX,
     }
 
