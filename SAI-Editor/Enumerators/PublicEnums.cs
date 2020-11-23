@@ -857,7 +857,8 @@ namespace SAI_Editor.Enumerators
         UNIT_STATE_DIFFERENT_PATHFINDING = 536870912,                 // do not call NormalizePath, do not add CollisioHeight
     }
 
-    enum TriggerCastFlags
+    [Flags]
+    public enum TriggerCastFlags
     {
         TRIGGERED_NONE                                = 0,   //! Not triggered
         TRIGGERED_IGNORE_GCD                          = 1,   //! Will ignore GCD

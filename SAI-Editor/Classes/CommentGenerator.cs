@@ -120,7 +120,7 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_REACT_STATE, "Set Reactstate _reactStateParamOne_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_ACTIVATE_GOBJECT, "Activate Gameobject - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_RANDOM_EMOTE, "Play Random Emote (_actionRandomParameters_) - Target: _getTargetType_");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_CAST, "Cast '_spellNameActionParamOne_' with CastFlag: _actionParamTwo_ and TriggerFlag: _actionParamThree_ (TargetLimit: _actionParamFour_) - Target: _getTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_CAST, "Cast '_spellNameActionParamOne_' with CastFlag: Flag_getCastFlags_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SUMMON_CREATURE, "Summon Creature '_creatureNameActionParamOne_' for _actionParamThree_ milliseconds _AttackInvoker_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_THREAT_SINGLE_PCT, "Set Threat _actionParamOne_-_actionParamTwo_ on single target - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_THREAT_ALL_PCT, "Set Threat _actionParamOne_-_actionParamTwo_ on all units in threatlist - Target: _getTargetType_");
@@ -624,6 +624,57 @@ namespace SAI_Editor.Classes
                         fullLine = fullLine.Replace("_getUnitFlags_", "s_getUnitFlags_");
 
                     fullLine = fullLine.Replace("_getUnitFlags_", " " + commentUnitFlag);
+                }
+
+                if (fullLine.Contains("_getTriggerCastFlags_"))
+                {
+                    string commentTriggerCastFlag = "";
+                    int triggercastFlags = smartScript.action_param1;
+
+                    if ((triggercastFlags & (int)TriggerCastFlags.TRIGGERED_NONE) != 0) commentTriggerCastFlag += "TRIGGERED_NONE & ";
+                    if ((triggercastFlags & (int)TriggerCastFlags.TRIGGERED_IGNORE_GCD) != 0) commentTriggerCastFlag += "TRIGGERED_IGNORE_GCD & ";
+                    if ((triggercastFlags & (int)TriggerCastFlags.TRIGGERED_IGNORE_SPELL_AND_CATEGORY_CD) != 0) commentTriggerCastFlag += "TRIGGERED_IGNORE_SPELL_AND_CATEGORY_CD & ";
+                    if ((triggercastFlags & (int)TriggerCastFlags.TRIGGERED_IGNORE_POWER_AND_REAGENT_COST) != 0) commentTriggerCastFlag += "TRIGGERED_IGNORE_POWER_AND_REAGENT_COST & ";
+                    if ((triggercastFlags & (int)TriggerCastFlags.TRIGGERED_IGNORE_CAST_ITEM) != 0) commentTriggerCastFlag += "TRIGGERED_IGNORE_CAST_ITEM & ";
+                    if ((triggercastFlags & (int)TriggerCastFlags.TRIGGERED_IGNORE_AURA_SCALING) != 0) commentTriggerCastFlag += "TRIGGERED_IGNORE_AURA_SCALING & ";
+                    if ((triggercastFlags & (int)TriggerCastFlags.TRIGGERED_IGNORE_CAST_IN_PROGRESS) != 0) commentTriggerCastFlag += "TRIGGERED_IGNORE_CAST_IN_PROGRESS & ";
+                    if ((triggercastFlags & (int)TriggerCastFlags.TRIGGERED_IGNORE_COMBO_POINTS) != 0) commentTriggerCastFlag += "TRIGGERED_IGNORE_COMBO_POINTS & ";
+                    if ((triggercastFlags & (int)TriggerCastFlags.TRIGGERED_CAST_DIRECTLY) != 0) commentTriggerCastFlag += "TRIGGERED_CAST_DIRECTLY & ";
+                    if ((triggercastFlags & (int)TriggerCastFlags.TRIGGERED_IGNORE_AURA_INTERRUPT_FLAGS) != 0) commentTriggerCastFlag += "TRIGGERED_IGNORE_AURA_INTERRUPT_FLAGS & ";
+                    if ((triggercastFlags & (int)TriggerCastFlags.TRIGGERED_IGNORE_SET_FACING) != 0) commentTriggerCastFlag += "TRIGGERED_IGNORE_SET_FACING & ";
+                    if ((triggercastFlags & (int)TriggerCastFlags.TRIGGERED_IGNORE_SHAPESHIFT) != 0) commentTriggerCastFlag += "TRIGGERED_IGNORE_SHAPESHIFT & ";
+                    if ((triggercastFlags & (int)TriggerCastFlags.TRIGGERED_IGNORE_CASTER_AURASTATE) != 0) commentTriggerCastFlag += "TRIGGERED_IGNORE_CASTER_AURASTATE & ";
+                    if ((triggercastFlags & (int)TriggerCastFlags.TRIGGERED_DISALLOW_PROC_EVENTS) != 0) commentTriggerCastFlag += "TRIGGERED_DISALLOW_PROC_EVENTS & ";
+                    if ((triggercastFlags & (int)TriggerCastFlags.TRIGGERED_IGNORE_CASTER_MOUNTED_OR_ON_VEHICLE) != 0) commentTriggerCastFlag += "TRIGGERED_IGNORE_CASTER_MOUNTED_OR_ON_VEHICLE & ";
+                    if ((triggercastFlags & (int)TriggerCastFlags.TRIGGERED_IGNORE_CASTER_AURAS) != 0) commentTriggerCastFlag += "TRIGGERED_IGNORE_CASTER_AURAS & ";
+                    if ((triggercastFlags & (int)TriggerCastFlags.TRIGGERED_DONT_RESET_PERIODIC_TIMER) != 0) commentTriggerCastFlag += "TRIGGERED_DONT_RESET_PERIODIC_TIMER & ";
+                    if ((triggercastFlags & (int)TriggerCastFlags.TRIGGERED_DONT_REPORT_CAST_ERROR) != 0) commentTriggerCastFlag += "TRIGGERED_DONT_REPORT_CAST_ERROR & ";
+
+                    commentTriggerCastFlag = commentTriggerCastFlag.Trim(new[] { ' ', '&', ' ' }); //! Trim last ' & ' from the comment..
+
+                    if (commentTriggerCastFlag.Contains("&"))
+                        fullLine = fullLine.Replace("_getTriggerCastFlags_", "s_getTriggerCastFlags_");
+
+                    fullLine = fullLine.Replace("_getTriggerCastFlags_", " " + commentTriggerCastFlag);
+                }
+
+                if (fullLine.Contains("_getCastFlags_"))
+                {
+                    string commentCastFlag = "";
+                    int castFlags = smartScript.action_param2;
+
+                    if ((castFlags & (int)SmartCastFlags.SMARTCAST_NONE) != 0) commentCastFlag += "None & ";
+                    if ((castFlags & (int)SmartCastFlags.SMARTCAST_INTERRUPT_PREVIOUS) != 0) commentCastFlag += "Interrupt Previous & ";
+                    if ((castFlags & (int)SmartCastFlags.SMARTCAST_TRIGGERED) != 0) commentCastFlag += "Triggered & ";
+                    if ((castFlags & (int)SmartCastFlags.SMARTCAST_AURA_NOT_PRESENT) != 0) commentCastFlag += "Aura Not Present & ";
+                    if ((castFlags & (int)SmartCastFlags.SMARTCAST_COMBAT_MOVE) != 0) commentCastFlag += "CmC & ";
+
+                    commentCastFlag = commentCastFlag.Trim(new[] { ' ', '&', ' ' }); //! Trim last ' & ' from the comment..
+
+                    if (commentCastFlag.Contains("&"))
+                        fullLine = fullLine.Replace("_getCastFlags_", "s_getCastFlags_");
+
+                    fullLine = fullLine.Replace("_getCastFlags_", " " + commentCastFlag);
                 }
 
                 if (fullLine.Contains("_getNpcFlags_"))
