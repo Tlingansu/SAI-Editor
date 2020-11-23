@@ -806,6 +806,7 @@ namespace SAI_Editor
                 case SmartAction.SMART_ACTION_GAME_EVENT_START: //! Game event entry
                 case SmartAction.SMART_ACTION_GAME_EVENT_STOP: //! Game event entry                
                 case SmartAction.SMART_ACTION_SET_MELEE_DAMAGE_SCHOOL: //! Spell school
+                case SmartAction.SMART_ACTION_REMOVE_AURAS_BY_TYPE: //! Aura Types
                     buttonActionParamOneSearch.Visible = true;
                     break;
             }
@@ -1752,7 +1753,10 @@ namespace SAI_Editor
                     break;
                 case SmartAction.SMART_ACTION_SET_MELEE_DAMAGE_SCHOOL:
                     ShowSelectForm("SpellSchools", textBoxToChange);
-                    break;                    
+                    break;
+                case SmartAction.SMART_ACTION_REMOVE_AURAS_BY_TYPE:
+                    ShowSelectForm("AuraTypes", textBoxToChange);
+                    break;
             }
         }
 

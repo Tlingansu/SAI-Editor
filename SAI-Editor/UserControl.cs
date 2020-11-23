@@ -1697,6 +1697,9 @@ namespace SAI_Editor
                 case SmartAction.SMART_ACTION_SET_MELEE_DAMAGE_SCHOOL:
                     ShowSelectForm("SpellSchools", textBoxToChange);
                     break;
+                case SmartAction.SMART_ACTION_REMOVE_AURAS_BY_TYPE:
+                    ShowSelectForm("AuraTypes", textBoxToChange);
+                    break;
             }
         }
 

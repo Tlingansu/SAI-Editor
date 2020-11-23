@@ -73,6 +73,7 @@ namespace SAI_Editor.Classes
             { "SpellEffIndex", typeof(SingleSelectForm<SpellEffIndex>)},
             { "SpellSchools", typeof(SingleSelectForm<SpellSchools>)},
             { "UnitStates", typeof(SingleSelectForm<UnitStates>)},
+            { "AuraTypes", typeof(SingleSelectForm<AuraTypes>)},
             { "TriggerCastFlags", typeof(SingleSelectForm<TriggerCastFlags>)},
             { "SpellCastResult", typeof(SingleSelectForm<SpellCastResult>)},
             { "SpellCustomErrors", typeof(SingleSelectForm<SpellCustomErrors>)},
