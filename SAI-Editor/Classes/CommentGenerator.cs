@@ -120,7 +120,7 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_REACT_STATE, "Set Reactstate _reactStateParamOne_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_ACTIVATE_GOBJECT, "Activate Gameobject - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_RANDOM_EMOTE, "Play Random Emote (_actionRandomParameters_) - Target: _getTargetType_");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_CAST, "Cast '_spellNameActionParamOne_' with CastFlag: Flag_getCastFlags_ - Target: _getTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_CAST, "Cast '_spellNameActionParamOne_' with CastFlag:_getCastFlags_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SUMMON_CREATURE, "Summon Creature '_creatureNameActionParamOne_' for _actionParamThree_ milliseconds _AttackInvoker_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_THREAT_SINGLE_PCT, "Set Threat _actionParamOne_-_actionParamTwo_ on single target - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_THREAT_ALL_PCT, "Set Threat _actionParamOne_-_actionParamTwo_ on all units in threatlist - Target: _getTargetType_");
@@ -194,8 +194,8 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_ADD_NPC_FLAG, "Add Npc Flag_getNpcFlags_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_REMOVE_NPC_FLAG, "Remove Npc Flag_getNpcFlags_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SIMPLE_TALK, "Simple Talk Line _actionParamOne_ - Target: _getTargetType_");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_INVOKER_CAST, "Invoker Cast '_spellNameActionParamOne_' with CastFlag: Flag_getCastFlags_ - Target: _getTargetType_");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_CROSS_CAST, "Cross Cast '_spellNameActionParamOne_' with CastFlag: _actionParamTwo_ - Target: _getTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_INVOKER_CAST, "Invoker Cast '_spellNameActionParamOne_' with CastFlag:_getCastFlags_ - Target: _getTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_CROSS_CAST, "Cross Cast '_spellNameActionParamOne_' with CastFlag:_getCastFlags_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_CALL_RANDOM_TIMED_ACTIONLIST, "Run Random Script - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_CALL_RANDOM_RANGE_TIMED_ACTIONLIST, "Run Random Script between Script: _actionParamOne_ and Script: _actionParamTwo_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_RANDOM_MOVE, "_startStopActionParamOne_ Random Movement (Radius: _actionParamOne_) - Target: _getTargetType_");
