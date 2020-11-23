@@ -194,7 +194,7 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_ADD_NPC_FLAG, "Add Npc Flag_getNpcFlags_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_REMOVE_NPC_FLAG, "Remove Npc Flag_getNpcFlags_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SIMPLE_TALK, "Simple Talk Line _actionParamOne_ - Target: _getTargetType_");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_INVOKER_CAST, "Invoker Cast '_spellNameActionParamOne_' with CastFlag: _actionParamTwo_ and TriggerFlag: _actionParamThree_ (TargetLimit: _actionParamFour_) - Target: _getTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_INVOKER_CAST, "Invoker Cast '_spellNameActionParamOne_' with CastFlag: Flag_getCastFlags_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_CROSS_CAST, "Cross Cast '_spellNameActionParamOne_' with CastFlag: _actionParamTwo_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_CALL_RANDOM_TIMED_ACTIONLIST, "Run Random Script - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_CALL_RANDOM_RANGE_TIMED_ACTIONLIST, "Run Random Script between Script: _actionParamOne_ and Script: _actionParamTwo_ - Target: _getTargetType_");
@@ -587,6 +587,9 @@ namespace SAI_Editor.Classes
 
                 if (fullLine.Contains("_creatureNameActionParamOne_"))
                     fullLine = fullLine.Replace("_creatureNameActionParamOne_", await worldDatabase.GetCreatureNameById(smartScript.action_param1));
+
+                if (fullLine.Contains("_eventnameActionParamOne_"))
+                    fullLine = fullLine.Replace("_eventnameActionParamOne_", await worldDatabase.GetEventNameById(smartScript.action_param1));
 
                 if (fullLine.Contains("_getUnitFlags_"))
                 {

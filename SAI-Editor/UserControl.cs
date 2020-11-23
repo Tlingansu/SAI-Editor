@@ -666,6 +666,7 @@ namespace SAI_Editor
                 case SmartAction.SMART_ACTION_RANDOM_PHASE_RANGE: //! Event phase 1 & 2
                     buttonActionParamOneSearch.Visible = true;
                     buttonActionParamTwoSearch.Visible = true;
+                    buttonActionParamThreeSearch.Visible = true;
                     break;
                 case SmartAction.SMART_ACTION_CROSS_CAST:
                     buttonActionParamOneSearch.Visible = true; //! Spell entry
@@ -1845,6 +1846,9 @@ namespace SAI_Editor
                     ShowSearchFromDatabaseForm(textBoxToChange, DatabaseSearchFormType.DatabaseSearchFormTypeSound);
                     break;
                 case SmartAction.SMART_ACTION_CAST:
+                    ShowSelectForm("TriggerCastFlags", textBoxToChange);
+                    break;
+                case SmartAction.SMART_ACTION_INVOKER_CAST:
                     ShowSelectForm("TriggerCastFlags", textBoxToChange);
                     break;
             }

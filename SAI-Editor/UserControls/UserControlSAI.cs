@@ -1903,6 +1903,9 @@ namespace SAI_Editor
                 case SmartAction.SMART_ACTION_CAST:
                     ShowSelectForm("TriggerCastFlags", textBoxToChange);
                     break;
+                case SmartAction.SMART_ACTION_INVOKER_CAST:
+                    ShowSelectForm("TriggerCastFlags", textBoxToChange);
+                    break;
             }
         }
 

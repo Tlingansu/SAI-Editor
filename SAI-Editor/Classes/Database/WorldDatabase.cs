@@ -153,6 +153,16 @@ namespace SAI_Editor.Classes.Database
             return dt.Rows[0]["name"].ToString();
         }
 
+        public async Task<string> GetEventNameById(int id)
+        {
+            DataTable dt = await ExecuteQuery("SELECT description FROM game_event WHERE eventEntry = '" + id + "'");
+
+            if (dt.Rows.Count == 0)
+                return String.Empty;
+
+            return dt.Rows[0]["description"].ToString();
+        }
+
         public async Task<string> GetCreatureNameByGuid(int guid)
         {
             DataTable dt = await ExecuteQuery("SELECT `name` FROM creature_template WHERE entry = '" + await GetCreatureIdByGuid(guid) + "'");
