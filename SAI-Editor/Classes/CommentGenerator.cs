@@ -178,7 +178,7 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_ORIENTATION, "Set Orientation _setOrientationTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_CREATE_TIMED_EVENT, "Create Timed Event ID: _actionParamOne_ (InitialMin: _actionParamTwo_, InitialMax: _actionParamThree_, RepeatMin: _actionParamFour_, RepeatMax: _actionParamFive_, Chance: _actionParamSix_) - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_PLAYMOVIE, "Play Movie _actionParamOne_ - Target: _getTargetType_");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_MOVE_TO_POS, "Move To _getTargetType_ (Transport: _actionParamTwo_, Pathfinding: _enabledDisabledActionParamThree_, Contactdistance: _actionParamFour_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_MOVE_TO_POS, "Move To _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_RESPAWN_TARGET, "Respawn _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_EQUIP, "Change Equip Template Entry: _actionParamOne_ (Slotmask: _actionParamTwo_, Item Entry 1: _actionParamThree_, Item Entry 2: _actionParamFour_, Item Entry 3: _actionParamFive_)  - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_CLOSE_GOSSIP, "Close Gossip - Target: _getTargetType_");
@@ -323,7 +323,7 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_CAST_RANDOM_SPELL, "Cast Random Spell (Spell ID 1: '_spellNameActionParamOne_', Spell ID 2: '_spellNameActionParamTwo_', Spell ID 3: '_spellNameActionParamThree_', Spell ID 4: '_spellNameActionParamFour_', Spell ID 5: '_spellNameActionParamFive_', CastFlags: _actionParamSix_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_COMBAT_STOP_WITH_PETS, "Combat Stop with Pets - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_PAUSE_WAYPOINT_DATA_MOVEMENT, "_pauseUnPauseActionParamOne_ Waypoint-Data Movement - Target: _getTargetType_");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_MOVE_TO_POS_TARGET, "Move selected target to Position (PointID: _actionParamOne_, Pathfinding: _enabledDisabledActionParamThree_) - Target: _getTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_MOVE_TO_POS_TARGET, "Move selected target to Position - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SAVE_CHECKPOINT, "Save Checkpoint Position - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_CROSS_CAST_IN_COMBAT, "Cross Cast '_spellNameActionParamOne_' - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_EXIT_VEHICLE, "Exit Vehicle - Target: _getTargetType_");
