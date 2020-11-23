@@ -760,8 +760,12 @@ namespace SAI_Editor
                     buttonActionParamFourSearch.Visible = true; //! Item entry 2
                     buttonActionParamFiveSearch.Visible = true; //! Item entry 3
                     break;
-                case SmartAction.SMART_ACTION_SET_UNIT_STATE:
+                case SmartAction.SMART_ACTION_SET_UNIT_STATE:                
                     buttonActionParamTwoSearch.Visible = true;
+                    break;
+                case SmartAction.SMART_ACTION_INVOKER_CAST_:
+                    buttonActionParamTwoSearch.Visible = true;
+                    buttonActionParamThreeSearch.Visible = true;
                     break;
                 case SmartAction.SMART_ACTION_SET_FACTION: //! Faction entry
                 case SmartAction.SMART_ACTION_EMOTE: //! Emote entry
@@ -1818,6 +1822,7 @@ namespace SAI_Editor
                 case SmartAction.SMART_ACTION_CAST:
                 case SmartAction.SMART_ACTION_INVOKER_CAST:
                 case SmartAction.SMART_ACTION_CROSS_CAST:
+                case SmartAction.SMART_ACTION_INVOKER_CAST_:
                     ShowSelectForm("SmartCastFlags", textBoxToChange);
                     break;
                 case SmartAction.SMART_ACTION_WP_STOP:
@@ -1908,6 +1913,9 @@ namespace SAI_Editor
                     ShowSelectForm("TriggerCastFlags", textBoxToChange);
                     break;
                 case SmartAction.SMART_ACTION_INVOKER_CAST:
+                    ShowSelectForm("TriggerCastFlags", textBoxToChange);
+                    break;
+                case SmartAction.SMART_ACTION_INVOKER_CAST_:
                     ShowSelectForm("TriggerCastFlags", textBoxToChange);
                     break;
             }
