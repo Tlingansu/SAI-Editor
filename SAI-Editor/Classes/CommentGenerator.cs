@@ -125,7 +125,7 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_REACT_STATE, "Set Reactstate _reactStateParamOne_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_ACTIVATE_GOBJECT, "Activate Gameobject - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_RANDOM_EMOTE, "Play Random Emote (_actionRandomParameters_) - Target: _getTargetType_");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_CAST, "Cast '_spellNameActionParamOne_' with CastFlag:_getCastFlags_ - Target: _getTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_CAST, "Cast '_spellNameActionParamOne_' _getCastFlags_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SUMMON_CREATURE, "Summon Creature '_creatureNameActionParamOne_' for _actionParamThree_ milliseconds _AttackInvoker_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_THREAT_SINGLE_PCT, "Set Threat _actionParamOne_-_actionParamTwo_ on single target - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_THREAT_ALL_PCT, "Set Threat _actionParamOne_-_actionParamTwo_ on all units in threatlist - Target: _getTargetType_");
@@ -199,8 +199,8 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_ADD_NPC_FLAG, "Add Npc Flag_getNpcFlags_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_REMOVE_NPC_FLAG, "Remove Npc Flag_getNpcFlags_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SIMPLE_TALK, "Simple Talk Line _actionParamOne_ - Target: _getTargetType_");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_INVOKER_CAST, "Invoker Cast '_spellNameActionParamOne_' with CastFlag:_getCastFlags_ - Target: _getTargetType_");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_CROSS_CAST, "Cross Cast '_spellNameActionParamOne_' with CastFlag:_getCastFlags_ - Target: _getTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_INVOKER_CAST, "Invoker Cast '_spellNameActionParamOne_' _getCastFlags_ - Target: _getTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_CROSS_CAST, "Cross Cast '_spellNameActionParamOne_' _getCastFlags_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_CALL_RANDOM_TIMED_ACTIONLIST, "Run Random Script - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_CALL_RANDOM_RANGE_TIMED_ACTIONLIST, "Run Random Script between Script: _actionParamOne_ and Script: _actionParamTwo_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_RANDOM_MOVE, "_startStopActionParamOne_ Random Movement (Radius: _actionParamOne_) - Target: _getTargetType_");
@@ -248,7 +248,7 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_SPAWN_SPAWNGROUP, "Spawn Spawngroup ID _actionParamOne_ (Min Secs: _actionParamTwo_, Max Secs: _actionParamThree_, Spawnflags: _actionParamFour_) - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_DESPAWN_SPAWNGROUP, "Despawn Spawngroup ID _actionParamOne_ (Min Secs: _actionParamTwo_, Max Secs: _actionParamThree_, Spawnflags: _actionParamFour_) - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_RESPAWN_BY_SPAWNID, "Respawn SpawnID _actionParamTwo_ with SpawnType _actionParamOne_ - Target: _getTargetType_");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_INVOKER_CAST_, "Cast '_spellNameActionParamOne_' with CastFlag:_getCastFlags_ - Target: _getTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_INVOKER_CAST_, "Cast '_spellNameActionParamOne_' _getCastFlags_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_PLAY_CINEMATIC, "Play Cinematic Entry: _actionParamOne_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_MOVEMENT_SPEED, "Set Creature Movement Speed (MovementType: _actionParamOne_, SpeedInteger: _actionParamTwo_, SpeedFraction: _actionParamThree_) - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_PLAY_SPELL_VISUAL_KIT, "Play Spell Visual Kit ID: _actionParamOne_ - Target: _getTargetType_");
@@ -330,7 +330,7 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_PAUSE_WAYPOINT_DATA_MOVEMENT, "_pauseUnPauseActionParamOne_ Waypoint-Data Movement - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_MOVE_TO_POS_TARGET, "Move selected target to Position - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SAVE_CHECKPOINT, "Save Checkpoint Position - Target: _getTargetType_");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_CROSS_CAST_IN_COMBAT, "Cross Cast '_spellNameActionParamOne_' with CastFlag:_getCastFlags_ in Combat - Target: _getTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_CROSS_CAST_IN_COMBAT, "Cross Cast '_spellNameActionParamOne_' _getCastFlags_ in Combat - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_EXIT_VEHICLE, "Exit Vehicle - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_HEALTH, "Set Health - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_STOP_MOTION, "Stop Motion (StopMovement: _actionParamOne_, MovementExpired: _actionParamTwo_) - Target: _getTargetType_");
@@ -671,7 +671,6 @@ namespace SAI_Editor.Classes
                     string commentCastFlag = "";
                     int castFlags = smartScript.action_param2;
 
-                    if ((castFlags & (int)SmartCastFlags.SMARTCAST_NONE) != 0) commentCastFlag += "None & ";
                     if ((castFlags & (int)SmartCastFlags.SMARTCAST_INTERRUPT_PREVIOUS) != 0) commentCastFlag += "Interrupt Previous & ";
                     if ((castFlags & (int)SmartCastFlags.SMARTCAST_TRIGGERED) != 0) commentCastFlag += "Triggered & ";
                     if ((castFlags & (int)SmartCastFlags.SMARTCAST_AURA_NOT_PRESENT) != 0) commentCastFlag += "Aura Not Present & ";
@@ -680,7 +679,7 @@ namespace SAI_Editor.Classes
                     commentCastFlag = commentCastFlag.Trim(new[] { ' ', '&', ' ' }); //! Trim last ' & ' from the comment..
 
                     if (commentCastFlag.Contains("&"))
-                        fullLine = fullLine.Replace("_getCastFlags_", "s_getCastFlags_");
+                        fullLine = fullLine.Replace("_getCastFlags_", "with CastFlags_getCastFlags_");
 
                     fullLine = fullLine.Replace("_getCastFlags_", " " + commentCastFlag);
                 }
