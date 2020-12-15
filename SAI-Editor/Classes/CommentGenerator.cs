@@ -325,7 +325,7 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_SPEED_RATE, "Set Speed Rate (Speed Walk Rate: _checkSpeedWalkActionParamOne_, Speed Run Rate: _checkSpeedRunActionParamTwo_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_LOAD_WP_PATH, "Load Waypoint-Data ID: _actionParamOne_ (AddonPath: _actionParamTwo_, _unrepeatableRepeatableActionParamThree_) - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_HOVER, "Set Hover State: _onOffActionParamOne_ - Target: _getTargetType_");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_CAST_RANDOM_SPELL, "Cast Random Spell (Spell ID 1: '_spellNameActionParamOne_', Spell ID 2: '_spellNameActionParamTwo_', Spell ID 3: '_spellNameActionParamThree_', Spell ID 4: '_spellNameActionParamFour_', Spell ID 5: '_spellNameActionParamFive_', CastFlags: _actionParamSix_ - Target: _getTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_CAST_RANDOM_SPELL, "Cast Random Spell (Spell ID 1: '_spellNameActionParamOne_', Spell ID 2: '_spellNameActionParamTwo_', Spell ID 3: '_spellNameActionParamThree_', Spell ID 4: '_spellNameActionParamFour_', Cast Flags: '_actionParamFive_', Trigger Flags: _actionParamSix_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_COMBAT_STOP_WITH_PETS, "Combat Stop with Pets - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_PAUSE_WAYPOINT_DATA_MOVEMENT, "_pauseUnPauseActionParamOne_ Waypoint-Data Movement - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_MOVE_TO_POS_TARGET, "Move selected target to Position - Target: _getTargetType_");
@@ -996,7 +996,7 @@ namespace SAI_Editor.Classes
                     else if (smartScript.action_param1 == 0 && smartScript.action_param2 == 0)
                         fullLine = fullLine.Replace("_invincibilityHpActionParamsOneTwo_", "Reset Invincibility HP");
                     else
-                        fullLine = fullLine.Replace("_invincibilityHpActionParamsOneTwo_", "<Unsupported parameters>");
+                        fullLine = fullLine.Replace("_invincibilityHpActionParamsOneTwo_", "<Please Insert parameters>");
                 }
 
                 if (fullLine.Contains("_onOffActionParamOne_"))
@@ -1700,7 +1700,7 @@ namespace SAI_Editor.Classes
                 case SmartTarget.SMART_TARGET_CLOSEST_UNSPAWNED_GAMEOBJECT:
                     return "Closest Unspawned Gameobject '" + await worldDatabase.GetGameobjectNameById(smartScript.target_param1) + "'";
                 default:
-                    return "<Unsupported Target Type>";
+                    return "<Please Insert Target Type>";
             }
         }
     }
