@@ -387,6 +387,7 @@ namespace SAI_Editor.Enumerators
         SMART_ACTION_RESET_LOOT_MODE = 243,
         SMART_ACTION_SET_LOOT_MODE = 244,
         SMART_ACTION_MOVE_SPAWN_POS = 245,
+        SMART_ACTION_SET_FLY_MODE = 246,
         SMART_ACTION_MAX,
     }
 

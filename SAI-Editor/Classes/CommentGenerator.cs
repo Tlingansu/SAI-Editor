@@ -360,6 +360,7 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_RESET_LOOT_MODE, "Reset Loot Mode - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_LOOT_MODE, "Set Loot Mode: _actionParamOne_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_MOVE_SPAWN_POS, "Move to Respawn Position (PointID: _actionParamOne_, Pathfinding: _enabledDisabledActionParamThree_) - Target: _getTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_SET_FLY_MODE, "_enableDisableActionParamOne_ Fly Mode - Target: _getTargetType_");
         }
 
         public async Task<string> GenerateCommentFor(SmartScript smartScript, EntryOrGuidAndSourceType entryOrGuidAndSourceType, bool forced = false, SmartScript smartScriptLink = null)
