@@ -320,7 +320,7 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_STORE_EVENT_PHASE, "Store Current Event Phase - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_STORED_EVENT_PHASE, "Load Stored Event Phase - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_CHECK_DUPLICATE_AND_DESPAWN, "If more than _actionParamThree_ Creature(s) with Entry: _actionParamOne_ in _actionParamTwo_ yards range, creature will despawn - Target: _getTargetType_");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_DISMOUNT, "Dismount - Target: _getTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_DISMOUNT, "Dismount _DespawnCurrentPetsParamOne_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_CHECK_HOMEDIST_AND_EVADE, "Evade after moving _actionParamOne_ yards away from HomePosition - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_SPEED_RATE, "Set Speed Rate (Speed Walk Rate: _checkSpeedWalkActionParamOne_, Speed Run Rate: _checkSpeedRunActionParamTwo_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_LOAD_WP_PATH, "Load Waypoint-Data ID: _actionParamOne_ (AddonPath: _actionParamTwo_, _unrepeatableRepeatableActionParamThree_) - Target: _getTargetType_");
@@ -1046,7 +1046,7 @@ namespace SAI_Editor.Classes
                     if (smartScript.action_param1 == 1)
                         fullLine = fullLine.Replace("_pauseUnPauseActionParamOne_", "Pause");
                     else
-                        fullLine = fullLine.Replace("_pauseUnPauseActionParamOne_", "Unpause");
+                        fullLine = fullLine.Replace("_pauseUnPauseActionParamOne_", "Resume");
                 }
 
                 if (fullLine.Contains("_startStopActionParamOne_"))
@@ -1095,6 +1095,14 @@ namespace SAI_Editor.Classes
                         fullLine = fullLine.Replace("_enabledDisabledActionParamThree_", "Disabled");
                     else
                         fullLine = fullLine.Replace("_enabledDisabledActionParamThree_", "Enabled");
+                }
+
+                if (fullLine.Contains("_DespawnCurrentPetsParamOne_"))
+                {
+                    if (smartScript.action_param1 >= 1)
+                        fullLine = fullLine.Replace("_DespawnCurrentPetsParamOne_", "and Despawn all current Pets");
+                    else
+                        fullLine = fullLine.Replace("_DespawnCurrentPetsParamOne_", "");
                 }
 
                 if (fullLine.Contains("_checkSpeedWalkActionParamOne_"))
