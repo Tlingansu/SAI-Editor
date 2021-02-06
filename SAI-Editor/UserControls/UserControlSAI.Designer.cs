@@ -368,7 +368,7 @@
             "TARGET_UNUSED_7",
             "TARGET_UNUSED_8",
             "TARGET_UNUSED_9",
-            "SMART_TARGET_SUMMON"});
+            "TARGET_SUMMON"});
             this.comboBoxTargetType.Location = new System.Drawing.Point(59, 72);
             this.comboBoxTargetType.Name = "comboBoxTargetType";
             this.comboBoxTargetType.Size = new System.Drawing.Size(235, 21);
