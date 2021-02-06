@@ -1717,6 +1717,8 @@ namespace SAI_Editor.Classes
                     return "Vehicle Passenger";
                 case SmartTarget.SMART_TARGET_CLOSEST_UNSPAWNED_GAMEOBJECT:
                     return "Closest Unspawned Gameobject '" + await worldDatabase.GetGameobjectNameById(smartScript.target_param1) + "'";
+                case SmartTarget.SMART_TARGET_SUMMON:
+                    return "Summon";
                 default:
                     return "<Please Insert Target Type>";
             }
