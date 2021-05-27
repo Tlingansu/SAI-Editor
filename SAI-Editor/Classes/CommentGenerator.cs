@@ -438,6 +438,9 @@ namespace SAI_Editor.Classes
                 if (fullLine.Contains("_eventParamFour_"))
                     fullLine = fullLine.Replace("_eventParamFour_", smartScript.event_param4.ToString());
 
+                if (fullLine.Contains("_eventParamFive_"))
+                    fullLine = fullLine.Replace("_eventParamFive_", smartScript.event_param5.ToString());
+
                 if (fullLine.Contains("_spellNameEventParamOne_"))
                 {
                     if (smartScript.event_param1 > 0)

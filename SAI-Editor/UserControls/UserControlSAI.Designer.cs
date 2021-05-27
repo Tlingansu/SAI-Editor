@@ -76,9 +76,11 @@
             this.buttonEventParamThreeSearch = new System.Windows.Forms.Button();
             this.buttonEventParamTwoSearch = new System.Windows.Forms.Button();
             this.buttonEventParamOneSearch = new System.Windows.Forms.Button();
+            this.labelEventParam5 = new SAI_Editor.Classes.CustomControls.LabelWithTooltip();
             this.labelEventParam4 = new SAI_Editor.Classes.CustomControls.LabelWithTooltip();
             this.labelEventParam3 = new SAI_Editor.Classes.CustomControls.LabelWithTooltip();
             this.labelEventParam2 = new SAI_Editor.Classes.CustomControls.LabelWithTooltip();
+            this.textBoxEventParam5 = new System.Windows.Forms.TextBox();
             this.textBoxEventParam4 = new System.Windows.Forms.TextBox();
             this.textBoxEventParam3 = new System.Windows.Forms.TextBox();
             this.textBoxEventParam2 = new System.Windows.Forms.TextBox();
@@ -1062,9 +1064,11 @@
             this.tabPageEvent.Controls.Add(this.buttonEventParamThreeSearch);
             this.tabPageEvent.Controls.Add(this.buttonEventParamTwoSearch);
             this.tabPageEvent.Controls.Add(this.buttonEventParamOneSearch);
+            this.tabPageEvent.Controls.Add(this.labelEventParam5);
             this.tabPageEvent.Controls.Add(this.labelEventParam4);
             this.tabPageEvent.Controls.Add(this.labelEventParam3);
             this.tabPageEvent.Controls.Add(this.labelEventParam2);
+            this.tabPageEvent.Controls.Add(this.textBoxEventParam5);
             this.tabPageEvent.Controls.Add(this.textBoxEventParam4);
             this.tabPageEvent.Controls.Add(this.textBoxEventParam3);
             this.tabPageEvent.Controls.Add(this.textBoxEventParam2);
@@ -1121,6 +1125,17 @@
             this.buttonEventParamOneSearch.Visible = false;
             this.buttonEventParamOneSearch.Click += new System.EventHandler(this.buttonEventParamOneSearch_Click);
             // 
+            // labelEventParam5
+            // 
+            this.labelEventParam5.AutoSize = true;
+            this.labelEventParam5.Location = new System.Drawing.Point(1, 111);
+            this.labelEventParam5.Name = "labelEventParam5";
+            this.labelEventParam5.Size = new System.Drawing.Size(46, 13);
+            this.labelEventParam5.TabIndex = 23;
+            this.labelEventParam5.Text = "Param 5";
+            this.labelEventParam5.TooltipParameterId = 4;
+            this.labelEventParam5.MouseEnter += new System.EventHandler(this.labelEventParams_MouseEnter);
+            // 
             // labelEventParam4
             // 
             this.labelEventParam4.AutoSize = true;
@@ -1153,6 +1168,15 @@
             this.labelEventParam2.Text = "Param 2";
             this.labelEventParam2.TooltipParameterId = 2;
             this.labelEventParam2.MouseEnter += new System.EventHandler(this.labelEventParams_MouseEnter);
+            // 
+            // textBoxEventParam5
+            // 
+            this.textBoxEventParam5.Location = new System.Drawing.Point(144, 108);
+            this.textBoxEventParam5.Name = "textBoxEventParam5";
+            this.textBoxEventParam5.Size = new System.Drawing.Size(70, 20);
+            this.textBoxEventParam5.TabIndex = 94;
+            this.textBoxEventParam5.Text = "0";
+            this.textBoxEventParam5.Leave += new System.EventHandler(this.textBoxEventParam5_Leave);
             // 
             // textBoxEventParam4
             // 
@@ -1912,9 +1936,11 @@
         public System.Windows.Forms.Button buttonEventParamThreeSearch;
         public System.Windows.Forms.Button buttonEventParamTwoSearch;
         public System.Windows.Forms.Button buttonEventParamOneSearch;
+        public Classes.CustomControls.LabelWithTooltip labelEventParam5;
         public Classes.CustomControls.LabelWithTooltip labelEventParam4;
         public Classes.CustomControls.LabelWithTooltip labelEventParam3;
         public Classes.CustomControls.LabelWithTooltip labelEventParam2;
+        public System.Windows.Forms.TextBox textBoxEventParam5;
         public System.Windows.Forms.TextBox textBoxEventParam4;
         public System.Windows.Forms.TextBox textBoxEventParam3;
         public System.Windows.Forms.TextBox textBoxEventParam2;

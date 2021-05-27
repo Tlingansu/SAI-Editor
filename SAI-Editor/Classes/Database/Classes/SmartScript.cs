@@ -14,6 +14,7 @@
         public int event_param2 { get; set; }
         public int event_param3 { get; set; }
         public int event_param4 { get; set; }
+        public int event_param5 { get; set; }
         public int action_type { get; set; }
         public int action_param1 { get; set; }
         public int action_param2 { get; set; }
@@ -50,6 +51,7 @@
             newSmartScript.event_param2 = smartScript.event_param2;
             newSmartScript.event_param3 = smartScript.event_param3;
             newSmartScript.event_param4 = smartScript.event_param4;
+            newSmartScript.event_param5 = smartScript.event_param5;
             newSmartScript.action_type = smartScript.action_type;
             newSmartScript.action_param1 = smartScript.action_param1;
             newSmartScript.action_param2 = smartScript.action_param2;
@@ -84,6 +86,7 @@
             newSmartScript.event_param2 = event_param2;
             newSmartScript.event_param3 = event_param3;
             newSmartScript.event_param4 = event_param4;
+            newSmartScript.event_param5 = event_param5;
             newSmartScript.action_type = action_type;
             newSmartScript.action_param1 = action_param1;
             newSmartScript.action_param2 = action_param2;

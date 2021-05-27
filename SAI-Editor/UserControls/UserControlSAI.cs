@@ -570,10 +570,12 @@ namespace SAI_Editor
                 textBoxEventParam2.Text = selectedScript.event_param2.ToString();
                 textBoxEventParam3.Text = selectedScript.event_param3.ToString();
                 textBoxEventParam4.Text = selectedScript.event_param4.ToString();
+                textBoxEventParam5.Text = selectedScript.event_param5.ToString();
                 labelEventParam1.Text = SAI_Editor_Manager.Instance.GetParameterStringById(event_type, 1, ScriptTypeId.ScriptTypeEvent);
                 labelEventParam2.Text = SAI_Editor_Manager.Instance.GetParameterStringById(event_type, 2, ScriptTypeId.ScriptTypeEvent);
                 labelEventParam3.Text = SAI_Editor_Manager.Instance.GetParameterStringById(event_type, 3, ScriptTypeId.ScriptTypeEvent);
                 labelEventParam4.Text = SAI_Editor_Manager.Instance.GetParameterStringById(event_type, 4, ScriptTypeId.ScriptTypeEvent);
+                labelEventParam5.Text = SAI_Editor_Manager.Instance.GetParameterStringById(event_type, 5, ScriptTypeId.ScriptTypeEvent);
 
                 if (!Settings.Default.ShowTooltipsStaticly)
                 {
@@ -1202,6 +1204,7 @@ namespace SAI_Editor
             newSmartScript.event_param2 = CustomConverter.ToInt32(textBoxEventParam2.Text);
             newSmartScript.event_param3 = CustomConverter.ToInt32(textBoxEventParam3.Text);
             newSmartScript.event_param4 = CustomConverter.ToInt32(textBoxEventParam4.Text);
+            newSmartScript.event_param5 = CustomConverter.ToInt32(textBoxEventParam5.Text);
             newSmartScript.action_type = CustomConverter.ToInt32(textBoxActionType.Text);
             newSmartScript.action_param1 = CustomConverter.ToInt32(textBoxActionParam1.Text);
             newSmartScript.action_param2 = CustomConverter.ToInt32(textBoxActionParam2.Text);
@@ -2324,6 +2327,16 @@ namespace SAI_Editor
             }
         }
 
+        private async void textBoxEventParam5_Leave(object sender, EventArgs e)
+        {
+            if (customObjectListView.SelectedObjects.Count > 0)
+            {
+                ListViewList.SelectedScript.event_param5 = CustomConverter.ToInt32(textBoxEventParam5.Text);
+                ListViewList.ReplaceScript(ListViewList.SelectedScript);
+                await GenerateCommentForSmartScript(ListViewList.SelectedScript);
+            }
+        }
+
         private async void textBoxActionParam1_Leave(object sender, EventArgs e)
         {
             if ((SmartAction)comboBoxActionType.SelectedIndex == SmartAction.SMART_ACTION_INSTALL_AI_TEMPLATE)
@@ -2750,7 +2763,7 @@ namespace SAI_Editor
                 }
             }
 
-            generatedSql += "INSERT INTO `smart_scripts` (`entryorguid`,`source_type`,`id`,`link`,`event_type`,`event_phase_mask`,`event_chance`,`event_flags`,`event_param1`,`event_param2`,`event_param3`,`event_param4`,`action_type`,`action_param1`,`action_param2`,`action_param3`,`action_param4`,`action_param5`,`action_param6`,`target_type`,`target_param1`,`target_param2`,`target_param3`,`target_x`,`target_y`,`target_z`,`target_o`,`comment`) VALUES\n";
+            generatedSql += "INSERT INTO `smart_scripts` (`entryorguid`,`source_type`,`id`,`link`,`event_type`,`event_phase_mask`,`event_chance`,`event_flags`,`event_param1`,`event_param2`,`event_param3`,`event_param4`,`event_param5`,`action_type`,`action_param1`,`action_param2`,`action_param3`,`action_param4`,`action_param5`,`action_param6`,`target_type`,`target_param1`,`target_param2`,`target_param3`,`target_x`,`target_y`,`target_z`,`target_o`,`comment`) VALUES\n";
 
             List<SmartScript> smartScripts = ListViewList.SmartScripts;
             smartScripts = smartScripts.OrderBy(smartScript => smartScript.entryorguid).ToList();
@@ -2763,11 +2776,12 @@ namespace SAI_Editor
                 if (originalEntryOrGuidAndSourceType.entryOrGuid != smartScripts[i].entryorguid)
                     actualSourceSet = smartScripts[i].entryorguid.ToString();
 
-                int[] eventParameters = new int[4];
+                int[] eventParameters = new int[5];
                 eventParameters[0] = smartScript.event_param1;
                 eventParameters[1] = smartScript.event_param2;
                 eventParameters[2] = smartScript.event_param3;
                 eventParameters[3] = smartScript.event_param4;
+                eventParameters[4] = smartScript.event_param5;
 
                 int[] actionParameters = new int[6];
                 actionParameters[0] = smartScript.action_param1;
@@ -2804,7 +2818,7 @@ namespace SAI_Editor
 
                 generatedSql += "(" + actualSourceSet + "," + smartScript.source_type + "," + smartScript.id + "," + smartScript.link + "," + smartScript.event_type + "," +
                                               smartScript.event_phase_mask + "," + smartScript.event_chance + "," + smartScript.event_flags + "," + eventParameters[0] + "," +
-                                              eventParameters[1] + "," + eventParameters[2] + "," + eventParameters[3] + "," + smartScript.action_type + "," +
+                                              eventParameters[1] + "," + eventParameters[2] + "," + eventParameters[3] + "," + eventParameters[4] + "," + smartScript.action_type + "," +
                                               actionParameters[0] + "," + actionParameters[1] + "," + actionParameters[2] + "," + actionParameters[3] + "," +
                                               actionParameters[4] + "," + actionParameters[5] + "," + smartScript.target_type + "," + targetParameters[0] + "," +
                                               targetParameters[1] + "," + targetParameters[2] + "," + target_x + "," + target_y + "," + target_z + "," + target_o + "," +
@@ -3106,6 +3120,7 @@ namespace SAI_Editor
             properties.Add("event_param2");
             properties.Add("event_param3");
             properties.Add("event_param4");
+            properties.Add("event_param5");
             properties.Add("action_param1");
             properties.Add("action_param2");
             properties.Add("action_param3");

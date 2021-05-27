@@ -426,6 +426,7 @@ namespace SAI_Editor.Classes.Database
             smartScript.event_param2 = row["event_param2"] != DBNull.Value ? CustomConverter.ToInt32(row["event_param2"]) : 0;
             smartScript.event_param3 = row["event_param3"] != DBNull.Value ? CustomConverter.ToInt32(row["event_param3"]) : 0;
             smartScript.event_param4 = row["event_param4"] != DBNull.Value ? CustomConverter.ToInt32(row["event_param4"]) : 0;
+            smartScript.event_param5 = row["event_param5"] != DBNull.Value ? CustomConverter.ToInt32(row["event_param5"]) : 0;
             smartScript.action_type = row["action_type"] != DBNull.Value ? CustomConverter.ToInt32(row["action_type"]) : 0;
             smartScript.action_param1 = row["action_param1"] != DBNull.Value ? CustomConverter.ToInt32(row["action_param1"]) : 0;
             smartScript.action_param2 = row["action_param2"] != DBNull.Value ? CustomConverter.ToInt32(row["action_param2"]) : 0;
