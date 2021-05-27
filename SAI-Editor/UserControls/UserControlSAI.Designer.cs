@@ -1133,7 +1133,7 @@
             this.labelEventParam5.Size = new System.Drawing.Size(46, 13);
             this.labelEventParam5.TabIndex = 23;
             this.labelEventParam5.Text = "Param 5";
-            this.labelEventParam5.TooltipParameterId = 4;
+            this.labelEventParam5.TooltipParameterId = 5;
             this.labelEventParam5.MouseEnter += new System.EventHandler(this.labelEventParams_MouseEnter);
             // 
             // labelEventParam4

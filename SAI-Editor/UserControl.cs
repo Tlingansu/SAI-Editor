@@ -188,6 +188,7 @@ namespace SAI_Editor
             labelEventParam2.Text = SAI_Editor_Manager.Instance.GetParameterStringById(event_type, 2, ScriptTypeId.ScriptTypeEvent);
             labelEventParam3.Text = SAI_Editor_Manager.Instance.GetParameterStringById(event_type, 3, ScriptTypeId.ScriptTypeEvent);
             labelEventParam4.Text = SAI_Editor_Manager.Instance.GetParameterStringById(event_type, 4, ScriptTypeId.ScriptTypeEvent);
+            labelEventParam5.Text = SAI_Editor_Manager.Instance.GetParameterStringById(event_type, 5, ScriptTypeId.ScriptTypeEvent);
 
             if (!Settings.Default.ShowTooltipsStaticly)
             {
@@ -196,6 +197,7 @@ namespace SAI_Editor
                 AddTooltip(labelEventParam2, labelEventParam2.Text, SAI_Editor_Manager.Instance.GetParameterTooltipById(event_type, 2, ScriptTypeId.ScriptTypeEvent));
                 AddTooltip(labelEventParam3, labelEventParam3.Text, SAI_Editor_Manager.Instance.GetParameterTooltipById(event_type, 3, ScriptTypeId.ScriptTypeEvent));
                 AddTooltip(labelEventParam4, labelEventParam4.Text, SAI_Editor_Manager.Instance.GetParameterTooltipById(event_type, 4, ScriptTypeId.ScriptTypeEvent));
+                AddTooltip(labelEventParam5, labelEventParam5.Text, SAI_Editor_Manager.Instance.GetParameterTooltipById(event_type, 5, ScriptTypeId.ScriptTypeEvent));
             }
 
             //! Action parameters
