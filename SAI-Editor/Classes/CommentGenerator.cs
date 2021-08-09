@@ -1684,13 +1684,17 @@ namespace SAI_Editor.Classes
                 case SmartTarget.SMART_TARGET_POSITION:
                     return "Position";
                 case SmartTarget.SMART_TARGET_CREATURE_RANGE:
+                    return "Creature Range '" + await worldDatabase.GetCreatureNameById(smartScript.target_param1) + "'";
                 case SmartTarget.SMART_TARGET_CREATURE_DISTANCE:
+                    return "Creature Distance '" + await worldDatabase.GetCreatureNameById(smartScript.target_param1) + "'";
                 case SmartTarget.SMART_TARGET_CLOSEST_CREATURE:
                     return "Closest Creature '" + await worldDatabase.GetCreatureNameById(smartScript.target_param1) + "'";
                 case SmartTarget.SMART_TARGET_CREATURE_GUID:
-                    return "Closest Creature '" + await worldDatabase.GetCreatureNameByGuid(smartScript.target_param1) + "'";
+                    return "Creature Guid '" + await worldDatabase.GetCreatureNameByGuid(smartScript.target_param1) + "'";
                 case SmartTarget.SMART_TARGET_GAMEOBJECT_RANGE:
+                    return "Gameobject Range '" + await worldDatabase.GetGameobjectNameById(smartScript.target_param1) + "'";
                 case SmartTarget.SMART_TARGET_GAMEOBJECT_DISTANCE:
+                    return "Gameobject Distance '" + await worldDatabase.GetGameobjectNameById(smartScript.target_param1) + "'";
                 case SmartTarget.SMART_TARGET_CLOSEST_GAMEOBJECT:
                     return "Closest Gameobject '" + await worldDatabase.GetGameobjectNameById(smartScript.target_param1) + "'";
                 case SmartTarget.SMART_TARGET_GAMEOBJECT_GUID:
