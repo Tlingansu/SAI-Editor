@@ -468,6 +468,9 @@ namespace SAI_Editor.Classes
                 if (fullLine.Contains("_hasAuraEventParamOne_"))
                     fullLine = fullLine.Replace("_hasAuraEventParamOne_", smartScript.event_param1 > 0 ? "Has Aura" : "Aura Not Present");
 
+                if (fullLine.Contains("_npcNameFirstParam_"))
+                    fullLine = fullLine.Replace("_npcNameFirstParam_", smartScript.event_param1 > 0 ? await worldDatabase.GetCreatureNameById(smartScript.event_param1) : "Any Creature");
+
                 //! Action type
                 fullLine += " - " + smartActionStrings[(SmartAction)smartScript.action_type];
 
