@@ -1143,6 +1143,13 @@ namespace SAI_Editor.Enumerators
         GO_STATE_DESTROYED = 2                         // show the object in-game as already used and not yet reset (e.g. door opened by a cannon blast)
     }
 
+    public enum HostilityModes
+    {
+        HOSTILE_MODE_HOSTILE     = 0,                  // Enable Event if creature reacts to other creature: Hostile       
+        HOSTILE_MODE_NOT_HOSTILE = 1,                  // Enable Event if creature reacts to other creature: Not hostile (not that Friendly and Not hostile have different meanings)
+        HOSTILE_MODE_ANY         = 2                   // Enable Event if creature reacts to other creature: Any, as in both Hostile and Not hostile
+    }
+
     public enum MovementGeneratorType
     {
         IDLE_MOTION_TYPE      = 0,                              // IdleMovementGenerator.h

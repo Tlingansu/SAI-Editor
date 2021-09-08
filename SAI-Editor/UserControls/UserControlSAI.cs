@@ -687,6 +687,8 @@ namespace SAI_Editor
                 case SmartEvent.SMART_EVENT_GAME_EVENT_START: //! Game event entry
                 case SmartEvent.SMART_EVENT_GAME_EVENT_END: //! Game event entry
                 case SmartEvent.SMART_EVENT_MOVEMENTINFORM: //! Movement type
+                case SmartEvent.SMART_EVENT_OOC_LOS: //! Hostility Modes
+                case SmartEvent.SMART_EVENT_IC_LOS: //! Hostility Modes
                 case SmartEvent.SMART_EVENT_FRIENDLY_MISSING_BUFF: //! Spell id
                 case SmartEvent.SMART_EVENT_HAS_AURA: //! Spell id
                 case SmartEvent.SMART_EVENT_TARGET_BUFFED: //! Spell id
@@ -1505,6 +1507,10 @@ namespace SAI_Editor
                     break;
                 case SmartEvent.SMART_EVENT_DISTANCE_GAMEOBJECT: //! Gameobject guid
                     ShowSearchFromDatabaseForm(textBoxToChange, DatabaseSearchFormType.DatabaseSearchFormTypeGameobjectGuid);
+                    break;
+                case SmartEvent.SMART_EVENT_OOC_LOS: //! Hostility Modes
+                case SmartEvent.SMART_EVENT_IC_LOS: //! Hostility Modes
+                    ShowSelectForm("HostilityModes", textBoxToChange);
                     break;
             }
         }

@@ -647,6 +647,8 @@ namespace SAI_Editor
                 case SmartEvent.SMART_EVENT_ACCEPTED_QUEST: //! Quest id
                 case SmartEvent.SMART_EVENT_REWARD_QUEST: //! Quest id
                 case SmartEvent.SMART_EVENT_RECEIVE_EMOTE: //! Emote id
+                case SmartEvent.SMART_EVENT_OOC_LOS: //! Hostility Modes
+                case SmartEvent.SMART_EVENT_IC_LOS: //! Hostility Modes
                     buttonEventParamOneSearch.Visible = true;
                     break;
                 case SmartEvent.SMART_EVENT_TEXT_OVER: //! Creature entry
@@ -1421,6 +1423,10 @@ namespace SAI_Editor
                     break;
                 case SmartEvent.SMART_EVENT_GO_STATE_CHANGED: //! Go state
                     ShowSelectForm("GoStates", textBoxToChange);
+                    break;
+                case SmartEvent.SMART_EVENT_OOC_LOS: //! Hostility Modes
+                case SmartEvent.SMART_EVENT_IC_LOS: //! Hostility Modes
+                    ShowSelectForm("HostilityModes", textBoxToChange);
                     break;
                 case SmartEvent.SMART_EVENT_GAME_EVENT_START: //! Game event entry
                 case SmartEvent.SMART_EVENT_GAME_EVENT_END: //! Game event entry

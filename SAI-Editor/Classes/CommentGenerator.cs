@@ -37,7 +37,7 @@ namespace SAI_Editor.Classes
             smartEventStrings.Add(SmartEvent.SMART_EVENT_HEALT_PCT, "Between _eventParamOne_-_eventParamTwo_% Health");
             smartEventStrings.Add(SmartEvent.SMART_EVENT_MANA_PCT, "Between _eventParamOne_-_eventParamTwo_% Mana");
             smartEventStrings.Add(SmartEvent.SMART_EVENT_RANGE, "Within _eventParamOne_-_eventParamTwo_ Range");
-            smartEventStrings.Add(SmartEvent.SMART_EVENT_OOC_LOS, "Within _eventParamOne_-_eventParamTwo_ Range Out of Combat LoS");
+            smartEventStrings.Add(SmartEvent.SMART_EVENT_OOC_LOS, "Within _eventParamTwo_ Range Out of Combat LoS (HostilityMode: _HostilityModeEventParamOne_)");
             smartEventStrings.Add(SmartEvent.SMART_EVENT_TARGET_HEALTH_PCT, "Target Between _eventParamOne_-_eventParamTwo_% Health");
             smartEventStrings.Add(SmartEvent.SMART_EVENT_FRIENDLY_HEALTH, "Friendly At _eventParamOne_ Health");
             smartEventStrings.Add(SmartEvent.SMART_EVENT_TARGET_MANA_PCT, "Target Between _eventParamOne_-_eventParamTwo_% Mana");
@@ -71,7 +71,7 @@ namespace SAI_Editor.Classes
             smartEventStrings.Add(SmartEvent.SMART_EVENT_REWARD_QUEST, "On Quest '_questNameEventParamOne_' Finished");
             smartEventStrings.Add(SmartEvent.SMART_EVENT_REACHED_HOME, "On Reached Home");
             smartEventStrings.Add(SmartEvent.SMART_EVENT_RESET, "On Reset");
-            smartEventStrings.Add(SmartEvent.SMART_EVENT_IC_LOS, "In Combat LoS");
+            smartEventStrings.Add(SmartEvent.SMART_EVENT_IC_LOS, "Within _eventParamTwo_ Range In Combat LoS (HostilityMode: _HostilityModeEventParamOne_)");
             smartEventStrings.Add(SmartEvent.SMART_EVENT_PASSENGER_BOARDED, "On Passenger Boarded");
             smartEventStrings.Add(SmartEvent.SMART_EVENT_PASSENGER_REMOVED, "On Passenger Removed");
             smartEventStrings.Add(SmartEvent.SMART_EVENT_CHARMED, "On Charmed");
@@ -464,6 +464,25 @@ namespace SAI_Editor.Classes
                         fullLine = fullLine.Replace(" '_questNameEventParamOne_'", String.Empty);
                     else
                         fullLine = fullLine.Replace("_questNameEventParamOne_", await worldDatabase.GetQuestTitleById(smartScript.event_param1));
+                }
+
+                if (fullLine.Contains("_HostilityModeEventParamOne_"))
+                {
+                    switch (smartScript.event_param1)
+                    {
+                        case 0:
+                            fullLine = fullLine.Replace("_HostilityModeEventParamOne_", "Hostile");
+                            break;
+                        case 1:
+                            fullLine = fullLine.Replace("_HostilityModeEventParamOne_", "Not Hostile");
+                            break;
+                        case 2:
+                            fullLine = fullLine.Replace("_HostilityModeEventParamOne_", "Any");
+                            break;
+                        default:
+                            fullLine = fullLine.Replace("_HostilityModeEventParamOne_", "<Unknown Hostile Mode");
+                            break;
+                    }
                 }
 
                 if (fullLine.Contains("_hasAuraEventParamOne_"))
