@@ -361,6 +361,7 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_LOOT_MODE, "Set Loot Mode: _actionParamOne_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_MOVE_SPAWN_POS, "Move to Respawn Position (PointID: _actionParamOne_, Pathfinding: _enabledDisabledActionParamThree_) - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_FLY_MODE, "_enableDisableActionParamOne_ Fly Mode - Target: _getTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_MOVE_CIRCLE_PATH, "Move Circle Path around Position XYZ (Radius: _actionParamOne_, Clockwise _ClockWiseActionParamTwo_, Stepcount: _actionParamThree_) - Target: _getTargetType_");
         }
 
         public async Task<string> GenerateCommentFor(SmartScript smartScript, EntryOrGuidAndSourceType entryOrGuidAndSourceType, bool forced = false, SmartScript smartScriptLink = null)
@@ -739,6 +740,16 @@ namespace SAI_Editor.Classes
                         fullLine = fullLine.Replace("_enableDisableActionParamOne_", "Disable");
                     else
                         fullLine = fullLine.Replace("_enableDisableActionParamOne_", "Enable");
+                }
+
+                if (fullLine.Contains("_ClockWiseActionParamTwo_"))
+                {
+                    if (smartScript.action_param2.ToString() == "0")
+                        fullLine = fullLine.Replace("_ClockWiseActionParamTwo_", "Disabled");
+                    else if (smartScript.action_param2.ToString() == "1")
+                        fullLine = fullLine.Replace("_ClockWiseActionParamTwo_", "Enabled");
+                    else 
+                        fullLine = fullLine.Replace("_ClockWiseActionParamTwo_", "Wrong Value (0/1 only)");
                 }
 
                 if (fullLine.Contains("_RespawnHomePosActionParamOne_"))

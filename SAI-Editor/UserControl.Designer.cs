@@ -646,7 +646,8 @@
             "ACTION_RESET_LOOT_MODE",
             "ACTION_SET_LOOT_MODE",
             "ACTION_MOVE_SPAWN_POS",
-            "ACTION_SET_FLY_MODE"});
+            "ACTION_SET_FLY_MODE",
+            "ACTION_MOVE_CIRCLE_PATH"});
             this.comboBoxActionType.Location = new System.Drawing.Point(59, 45);
             this.comboBoxActionType.Name = "comboBoxActionType";
             this.comboBoxActionType.Size = new System.Drawing.Size(235, 21);
