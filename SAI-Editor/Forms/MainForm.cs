@@ -1208,6 +1208,7 @@ namespace SAI_Editor.Forms
             {"Search for SAI target types", typeof(SingleSelectForm<SmartTarget>)},
             {"Search for SAI actionlist timer update types", typeof(SingleSelectForm<SmartActionlistTimerUpdateType>)},
             {"Search for gameobject states", typeof(SingleSelectForm<GoStates>)},
+            {"Search for gameobjects states", typeof(SingleSelectForm<SetGoStates>)},
             {"Search for react states", typeof(SingleSelectForm<ReactState>)},
             {"Search for sheath states", typeof(SingleSelectForm<SheathState>)},
             {"Search for movement generator types", typeof(SingleSelectForm<MovementGeneratorType>)},

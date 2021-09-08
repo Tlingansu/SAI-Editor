@@ -283,8 +283,8 @@ namespace SAI_Editor.Enumerators
         SMART_ACTION_OVERRIDE_WEATHER = 139,
         SMART_ACTION_SET_AI_ANIM_KIT = 140,
         SMART_ACTION_SET_HOVER = 141,
-        SMART_ACTION_UNUSED_142 = 142,
-        SMART_ACTION_UNUSED_143 = 143,
+        SMART_ACTION_SET_HEALTH_PCT = 142,
+        SMART_ACTION_CREATE_CONVERSATION = 143,
         SMART_ACTION_UNUSED_144 = 144,
         SMART_ACTION_UNUSED_145 = 145,
         SMART_ACTION_UNUSED_146 = 146,
@@ -1136,6 +1136,13 @@ namespace SAI_Editor.Enumerators
         GO_STATE_DEACTIVATED                = 3,
     }
 
+    public enum SetGoStates
+    {
+        GO_STATE_ACTIVE    = 0,                        // show in world as used and not reset (closed door open)
+        GO_STATE_READY     = 1,                        // show in world as ready (closed door close)
+        GO_STATE_DESTROYED = 2                         // show the object in-game as already used and not yet reset (e.g. door opened by a cannon blast)
+    }
+
     public enum MovementGeneratorType
     {
         IDLE_MOTION_TYPE      = 0,                              // IdleMovementGenerator.h
@@ -1229,7 +1236,7 @@ namespace SAI_Editor.Enumerators
         // debug flags (used with .cast triggered commands)
         TRIGGERED_IGNORE_EQUIPPED_ITEM_REQUIREMENT    = 524288,   //! Will ignore equipped item requirements
     };
-
+    
     public enum SheathState
     {
         SHEATH_STATE_UNARMED  = 0,                              // non prepared weapon

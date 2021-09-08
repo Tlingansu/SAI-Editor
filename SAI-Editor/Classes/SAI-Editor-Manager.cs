@@ -75,6 +75,7 @@ namespace SAI_Editor.Classes
             { "UnitStates", typeof(SingleSelectForm<UnitStates>)},
             { "AuraTypes", typeof(SingleSelectForm<AuraTypes>)},
             { "TriggerCastFlags", typeof(SingleSelectForm<TriggerCastFlags>)},
+            { "SetGoStates", typeof(SingleSelectForm<SetGoStates>)},
             { "SpellCastResult", typeof(SingleSelectForm<SpellCastResult>)},
             { "SpellCustomErrors", typeof(SingleSelectForm<SpellCustomErrors>)},
             { "ReputationRank", typeof(SingleSelectForm<ReputationRank>)},

@@ -256,8 +256,8 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_OVERRIDE_WEATHER, "Set Zone Weather in ZoneID: _actionParamOne_ with WeatherID: _actionParamTwo_ (WeatherGrade: _actionParamThree_) - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_AI_ANIM_KIT, "Set AI Animation Kit _actionParamOne_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_HOVER, "Set Hover State: _onOffActionParamOne_ - Target: _getTargetType_");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_UNUSED_142, "Set  - Target: _getTargetType_");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_UNUSED_143, "Set  - Target: _getTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_SET_HEALTH_PCT, "Set Health Percent: _actionParamOne_ - Target: _getTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_CREATE_CONVERSATION, "Create Conversation ID: _actionParamOne_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_UNUSED_144, "Set  - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_UNUSED_145, "Set  - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_UNUSED_146, "Set  - Target: _getTargetType_");
@@ -1269,13 +1269,13 @@ namespace SAI_Editor.Classes
                     switch (smartScript.action_param1)
                     {
                         case 0:
-                            fullLine = fullLine.Replace("_SetgoStateActionParamOne_", "GO_STATE_ACTIVE");
+                            fullLine = fullLine.Replace("_SetgoStateActionParamOne_", "GO_STATE_ACTIVE (0)");
                             break;
                         case 1:
-                            fullLine = fullLine.Replace("_SetgoStateActionParamOne_", "GO_STATE_READY");
+                            fullLine = fullLine.Replace("_SetgoStateActionParamOne_", "GO_STATE_READY (1)");
                             break;
                         case 2:
-                            fullLine = fullLine.Replace("_SetgoStateActionParamOne_", "GO_STATE_ACTIVE_ALTERNATIVE");
+                            fullLine = fullLine.Replace("_SetgoStateActionParamOne_", "GO_STATE_DESTROYED (2)"); 
                             break;
                         default:
                             fullLine = fullLine.Replace("_SetgoStateActionParamOne_", "<Unknown Gameobject State>");

@@ -802,6 +802,7 @@ namespace SAI_Editor
                 case SmartAction.SMART_ACTION_SET_GO_FLAG: //! Gameobject flags
                 case SmartAction.SMART_ACTION_ADD_GO_FLAG: //! Gameobject flags
                 case SmartAction.SMART_ACTION_REMOVE_GO_FLAG: //! Gameobject flags
+                case SmartAction.SMART_ACTION_GO_SET_GO_STATE: //! Gameobject state
                 case SmartAction.SMART_ACTION_SET_DYNAMIC_FLAG: //! Dynamic flags
                 case SmartAction.SMART_ACTION_ADD_DYNAMIC_FLAG: //! Dynamic flags
                 case SmartAction.SMART_ACTION_REMOVE_DYNAMIC_FLAG: //! Dynamic flags
@@ -1707,6 +1708,9 @@ namespace SAI_Editor
                 case SmartAction.SMART_ACTION_ADD_GO_FLAG:
                 case SmartAction.SMART_ACTION_REMOVE_GO_FLAG:
                     ShowSelectForm("GoFlags", textBoxToChange);
+                    break;
+                case SmartAction.SMART_ACTION_GO_SET_GO_STATE:
+                    ShowSelectForm("SetGoStates", textBoxToChange);
                     break;
                 case SmartAction.SMART_ACTION_SET_DYNAMIC_FLAG:
                 case SmartAction.SMART_ACTION_ADD_DYNAMIC_FLAG:
