@@ -80,7 +80,7 @@ namespace SAI_Editor.Classes
             smartEventStrings.Add(SmartEvent.SMART_EVENT_AI_INIT, "On Initialize");
             smartEventStrings.Add(SmartEvent.SMART_EVENT_WAYPOINT_START, "On Waypoint Started");
             smartEventStrings.Add(SmartEvent.SMART_EVENT_TRANSPORT_ADDPLAYER, "On Transport Player Added");
-            smartEventStrings.Add(SmartEvent.SMART_EVENT_TRANSPORT_ADDCREATURE, "On Transport Creature Added");
+            smartEventStrings.Add(SmartEvent.SMART_EVENT_TRANSPORT_ADDCREATURE, "On Transport Creature _npcNameFirstParam_ Added");
             smartEventStrings.Add(SmartEvent.SMART_EVENT_TRANSPORT_REMOVE_PLAYER, "On Transport Player Removed");
             smartEventStrings.Add(SmartEvent.SMART_EVENT_TRANSPORT_RELOCATE, "On Transport Relocate");
             smartEventStrings.Add(SmartEvent.SMART_EVENT_INSTANCE_PLAYER_ENTER, "On Instance Player Enter");
