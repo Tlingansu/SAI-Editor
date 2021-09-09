@@ -180,7 +180,7 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_COUNTER, "Set Counter-ID: _actionParamOne_ Value: _actionParamTwo_, Reset: _onOffActionParamThree_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_STORE_TARGET_LIST, "Store Targetlist _actionParamOne_ - Target: _getTargetType_");            
             smartActionStrings.Add(SmartAction.SMART_ACTION_WP_RESUME, "Resume Waypoint Path - Target: _getTargetType_");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_SET_ORIENTATION, "Set Orientation _setOrientationTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_SET_ORIENTATION, "Set Orientation to _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_CREATE_TIMED_EVENT, "Create Timed Event ID: _actionParamOne_ (InitialMin: _actionParamTwo_, InitialMax: _actionParamThree_, RepeatMin: _actionParamFour_, RepeatMax: _actionParamFive_, Chance: _actionParamSix_) - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_PLAYMOVIE, "Play Movie _actionParamOne_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_MOVE_TO_POS, "Move To _getTargetType_");
@@ -1257,22 +1257,6 @@ namespace SAI_Editor.Classes
                     {
                         case SmartTarget.SMART_TARGET_POSITION:
                             fullLine = fullLine.Replace("_LoadGridYTargetType_", smartScript.target_y.ToString());
-                            break;
-                    }
-                }
-
-                if (fullLine.Contains("_setOrientationTargetType_"))
-                {
-                    switch ((SmartTarget)smartScript.target_type)
-                    {
-                        case SmartTarget.SMART_TARGET_SELF:
-                            fullLine = fullLine.Replace("_setOrientationTargetType_", "to Home Position");
-                            break;
-                        case SmartTarget.SMART_TARGET_POSITION:
-                            fullLine = fullLine.Replace("_setOrientationTargetType_", smartScript.target_o.ToString());
-                            break;
-                        default:
-                            fullLine = fullLine.Replace("_setOrientationTargetType_", "to Targettype");
                             break;
                     }
                 }
