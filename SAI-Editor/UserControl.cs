@@ -643,14 +643,15 @@ namespace SAI_Editor
                 case SmartEvent.SMART_EVENT_HAS_AURA: //! Spell id
                 case SmartEvent.SMART_EVENT_TARGET_BUFFED: //! Spell id
                 case SmartEvent.SMART_EVENT_SUMMON_DESPAWNED: //! Creature entry
-                case SmartEvent.EVENT_TRANSPORT_ADDCREATURE: //! Creature entry
+                case SmartEvent.SMART_EVENT_TRANSPORT_ADDCREATURE: //! Creature entry
                 case SmartEvent.SMART_EVENT_SUMMONED_UNIT: //! Creature entry
                 case SmartEvent.SMART_EVENT_ACCEPTED_QUEST: //! Quest id
                 case SmartEvent.SMART_EVENT_REWARD_QUEST: //! Quest id
                 case SmartEvent.SMART_EVENT_RECEIVE_EMOTE: //! Emote id
                 case SmartEvent.SMART_EVENT_OOC_LOS: //! Hostility Modes
                 case SmartEvent.SMART_EVENT_IC_LOS: //! Hostility Modes
-                case SmartEvent.EVENT_INSTANCE_PLAYER_ENTER: //! Team Ids
+                case SmartEvent.SMART_EVENT_INSTANCE_PLAYER_ENTER: //! Team Ids
+                case SmartEvent.SMART_EVENT_SUMMONED_UNIT_DIES: //! Creature entry
                     buttonEventParamOneSearch.Visible = true;
                     break;
                 case SmartEvent.SMART_EVENT_TEXT_OVER: //! Creature entry
@@ -1418,7 +1419,8 @@ namespace SAI_Editor
                     break;
                 case SmartEvent.SMART_EVENT_SUMMON_DESPAWNED: //! Creature entry
                 case SmartEvent.SMART_EVENT_SUMMONED_UNIT: //! Creature entry
-                case SmartEvent.EVENT_TRANSPORT_ADDCREATURE: //! Creature entry
+                case SmartEvent.SMART_EVENT_TRANSPORT_ADDCREATURE: //! Creature entry
+                case SmartEvent.SMART_EVENT_SUMMONED_UNIT_DIES: //! Creature entry
                     ShowSearchFromDatabaseForm(textBoxToChange, DatabaseSearchFormType.DatabaseSearchFormTypeCreatureEntry);
                     break;
                 case SmartEvent.SMART_EVENT_AREATRIGGER_ONTRIGGER: //! Areatrigger entry

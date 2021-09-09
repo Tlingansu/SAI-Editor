@@ -699,6 +699,7 @@ namespace SAI_Editor
                 case SmartEvent.SMART_EVENT_REWARD_QUEST: //! Quest id
                 case SmartEvent.SMART_EVENT_RECEIVE_EMOTE: //! Emote id
                 case SmartEvent.SMART_EVENT_INSTANCE_PLAYER_ENTER: // ! Team IDs
+                case SmartEvent.SMART_EVENT_SUMMONED_UNIT_DIES: //! Creature entry
                     buttonEventParamOneSearch.Visible = true;
                     break;
                 case SmartEvent.SMART_EVENT_TEXT_OVER: //! Creature entry
@@ -1480,6 +1481,7 @@ namespace SAI_Editor
                 case SmartEvent.SMART_EVENT_SUMMON_DESPAWNED: //! Creature entry
                 case SmartEvent.SMART_EVENT_SUMMONED_UNIT: //! Creature entry
                 case SmartEvent.SMART_EVENT_TRANSPORT_ADDCREATURE: //! Creature entry
+                case SmartEvent.SMART_EVENT_SUMMONED_UNIT_DIES: //! Creature entry
                     ShowSearchFromDatabaseForm(textBoxToChange, DatabaseSearchFormType.DatabaseSearchFormTypeCreatureEntry);
                     break;
                 case SmartEvent.SMART_EVENT_AREATRIGGER_ONTRIGGER: //! Areatrigger entry
