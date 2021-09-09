@@ -698,6 +698,7 @@ namespace SAI_Editor
                 case SmartEvent.SMART_EVENT_ACCEPTED_QUEST: //! Quest id
                 case SmartEvent.SMART_EVENT_REWARD_QUEST: //! Quest id
                 case SmartEvent.SMART_EVENT_RECEIVE_EMOTE: //! Emote id
+                case SmartEvent.SMART_EVENT_INSTANCE_PLAYER_ENTER: // ! Team IDs
                     buttonEventParamOneSearch.Visible = true;
                     break;
                 case SmartEvent.SMART_EVENT_TEXT_OVER: //! Creature entry
@@ -1513,6 +1514,9 @@ namespace SAI_Editor
                 case SmartEvent.SMART_EVENT_OOC_LOS: //! Hostility Modes
                 case SmartEvent.SMART_EVENT_IC_LOS: //! Hostility Modes
                     ShowSelectForm("HostilityModes", textBoxToChange);
+                    break;
+                case SmartEvent.SMART_EVENT_INSTANCE_PLAYER_ENTER: //! Team Ids
+                    ShowSelectForm("TeamIDs", textBoxToChange);
                     break;
             }
         }

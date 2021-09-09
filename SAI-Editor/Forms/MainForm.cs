@@ -1210,6 +1210,7 @@ namespace SAI_Editor.Forms
             {"Search for gameobject states", typeof(SingleSelectForm<GoStates>)},
             {"Search for gameobjects states", typeof(SingleSelectForm<SetGoStates>)},
             {"Search for Hostility Modes", typeof(SingleSelectForm<HostilityModes>)},
+            {"Search for Team", typeof(SingleSelectForm<TeamIDs>)},
             {"Search for react states", typeof(SingleSelectForm<ReactState>)},
             {"Search for sheath states", typeof(SingleSelectForm<SheathState>)},
             {"Search for movement generator types", typeof(SingleSelectForm<MovementGeneratorType>)},

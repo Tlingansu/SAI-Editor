@@ -650,6 +650,7 @@ namespace SAI_Editor
                 case SmartEvent.SMART_EVENT_RECEIVE_EMOTE: //! Emote id
                 case SmartEvent.SMART_EVENT_OOC_LOS: //! Hostility Modes
                 case SmartEvent.SMART_EVENT_IC_LOS: //! Hostility Modes
+                case SmartEvent.EVENT_INSTANCE_PLAYER_ENTER: //! Team Ids
                     buttonEventParamOneSearch.Visible = true;
                     break;
                 case SmartEvent.SMART_EVENT_TEXT_OVER: //! Creature entry
@@ -1429,6 +1430,9 @@ namespace SAI_Editor
                 case SmartEvent.SMART_EVENT_OOC_LOS: //! Hostility Modes
                 case SmartEvent.SMART_EVENT_IC_LOS: //! Hostility Modes
                     ShowSelectForm("HostilityModes", textBoxToChange);
+                    break;
+                case SmartEvent.EVENT_INSTANCE_PLAYER_ENTER: // ! Team IDs
+                    ShowSelectForm("TeamIDs", textBoxToChange);
                     break;
                 case SmartEvent.SMART_EVENT_GAME_EVENT_START: //! Game event entry
                 case SmartEvent.SMART_EVENT_GAME_EVENT_END: //! Game event entry

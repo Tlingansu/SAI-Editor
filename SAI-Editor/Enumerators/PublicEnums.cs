@@ -1150,6 +1150,18 @@ namespace SAI_Editor.Enumerators
         HOSTILE_MODE_ANY         = 2                   // Enable Event if creature reacts to other creature: Any, as in both Hostile and Not hostile
     }
 
+    public enum TeamIDs
+    {
+        HORDE                      = 67,
+        ALLIANCE                   = 469,
+        //TEAM_STEAMWHEEDLE_CARTEL = 169,                       // not used in code
+        //TEAM_ALLIANCE_FORCES     = 891,
+        //TEAM_HORDE_FORCES        = 892,
+        //TEAM_SANCTUARY           = 936,
+        //TEAM_OUTLAND             = 980,
+        TEAM_ANY                   = 0                            // if ReputationListId > 0 && Flags != FACTION_FLAG_TEAM_HEADER
+    }
+
     public enum MovementGeneratorType
     {
         IDLE_MOTION_TYPE      = 0,                              // IdleMovementGenerator.h

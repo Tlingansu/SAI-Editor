@@ -83,7 +83,7 @@ namespace SAI_Editor.Classes
             smartEventStrings.Add(SmartEvent.SMART_EVENT_TRANSPORT_ADDCREATURE, "On Transport Creature _npcNameFirstParam_ Added");
             smartEventStrings.Add(SmartEvent.SMART_EVENT_TRANSPORT_REMOVE_PLAYER, "On Transport Player Removed");
             smartEventStrings.Add(SmartEvent.SMART_EVENT_TRANSPORT_RELOCATE, "On Transport Relocate");
-            smartEventStrings.Add(SmartEvent.SMART_EVENT_INSTANCE_PLAYER_ENTER, "On Instance Player Enter");
+            smartEventStrings.Add(SmartEvent.SMART_EVENT_INSTANCE_PLAYER_ENTER, "On Instance Player Enter (Team: _TeamEventParamOne_)");
             smartEventStrings.Add(SmartEvent.SMART_EVENT_AREATRIGGER_ONTRIGGER, "On Trigger");
             smartEventStrings.Add(SmartEvent.SMART_EVENT_QUEST_ACCEPTED, "On Quest Accepted");
             smartEventStrings.Add(SmartEvent.SMART_EVENT_QUEST_OBJ_COMPLETION, "On Quest Object Completed");
@@ -481,6 +481,25 @@ namespace SAI_Editor.Classes
                             break;
                         default:
                             fullLine = fullLine.Replace("_HostilityModeEventParamOne_", "<Unknown Hostile Mode");
+                            break;
+                    }
+                }
+
+                if (fullLine.Contains("_TeamEventParamOne_"))
+                {
+                    switch (smartScript.event_param1)
+                    {
+                        case 67:
+                            fullLine = fullLine.Replace("_TeamEventParamOne_", "Horde");
+                            break;
+                        case 469:
+                            fullLine = fullLine.Replace("_TeamEventParamOne_", "Alliance");
+                            break;
+                        case 0:
+                            fullLine = fullLine.Replace("_TeamEventParamOne_", "Any");
+                            break;
+                        default:
+                            fullLine = fullLine.Replace("_TeamEventParamOne_", "<Unknown Team");
                             break;
                     }
                 }
