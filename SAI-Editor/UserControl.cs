@@ -669,7 +669,6 @@ namespace SAI_Editor
             {
                 case SmartAction.SMART_ACTION_CAST: //! Spell entry & Cast flags
                 case SmartAction.SMART_ACTION_INVOKER_CAST: //! Spell entry & Cast flags
-                case SmartAction.SMART_ACTION_RANDOM_PHASE_RANGE: //! Event phase 1 & 2
                     buttonActionParamOneSearch.Visible = true;
                     buttonActionParamTwoSearch.Visible = true;
                     buttonActionParamThreeSearch.Visible = true;
@@ -677,6 +676,7 @@ namespace SAI_Editor
                 case SmartAction.SMART_ACTION_SUMMON_CREATURE: //! Creature entry & Summon type
                 case SmartAction.SMART_ACTION_SET_UNIT_FIELD_BYTES_1: //! Bytes1flags & Type
                 case SmartAction.SMART_ACTION_REMOVE_UNIT_FIELD_BYTES_1: //! Bytes1flags & Type
+                case SmartAction.SMART_ACTION_RANDOM_PHASE_RANGE: //! Event phase min + Event phase max
                     buttonActionParamOneSearch.Visible = true;
                     buttonActionParamTwoSearch.Visible = true;
                     break;
