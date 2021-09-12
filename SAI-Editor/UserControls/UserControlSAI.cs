@@ -823,6 +823,7 @@ namespace SAI_Editor
                 case SmartAction.SMART_ACTION_SET_MELEE_DAMAGE_SCHOOL: //! Spell school
                 case SmartAction.SMART_ACTION_REMOVE_AURAS_BY_TYPE: //! Aura Types
                 case SmartAction.SMART_ACTION_OVERRIDE_LIGHT: //! Zone
+                case SmartAction.SMART_ACTION_OVERRIDE_WEATHER: //! Zone
                     buttonActionParamOneSearch.Visible = true;
                     break;
             }
@@ -1779,16 +1780,17 @@ namespace SAI_Editor
                 case SmartAction.SMART_ACTION_START_CLOSEST_WAYPOINT:
                     ShowSearchFromDatabaseForm(textBoxToChange, DatabaseSearchFormType.DatabaseSearchFormTypeWaypoint);
                     break;
-                case SmartAction.SMART_ACTION_RANDOM_SOUND:
+                case SmartAction.SMART_ACTION_RANDOM_SOUND: //! Sound
                     ShowSearchFromDatabaseForm(textBoxToChange, DatabaseSearchFormType.DatabaseSearchFormTypeSound);
                     break;
-                case SmartAction.SMART_ACTION_SET_MELEE_DAMAGE_SCHOOL:
+                case SmartAction.SMART_ACTION_SET_MELEE_DAMAGE_SCHOOL: //! SpellSchools
                     ShowSelectForm("SpellSchools", textBoxToChange);
                     break;
-                case SmartAction.SMART_ACTION_REMOVE_AURAS_BY_TYPE:
+                case SmartAction.SMART_ACTION_REMOVE_AURAS_BY_TYPE: //! AuraTypes
                     ShowSelectForm("AuraTypes", textBoxToChange);
                     break;
-                case SmartAction.SMART_ACTION_OVERRIDE_LIGHT:
+                case SmartAction.SMART_ACTION_OVERRIDE_LIGHT: //! Zone
+                case SmartAction.SMART_ACTION_OVERRIDE_WEATHER: //! Zone
                     ShowSearchFromDatabaseForm(textBoxToChange, DatabaseSearchFormType.DatabaseSearchFormTypeAreaOrZone);
                     break;
             }
