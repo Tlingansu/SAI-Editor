@@ -767,6 +767,7 @@ namespace SAI_Editor
                 case SmartAction.SMART_ACTION_REMOVE_AURAS_BY_TYPE: //! Aura Types
                 case SmartAction.SMART_ACTION_OVERRIDE_LIGHT: //! Zone
                 case SmartAction.SMART_ACTION_OVERRIDE_WEATHER: //! Zone
+                case SmartAction.SMART_ACTION_CHECK_DUPLICATE_AND_DESPAWN: //! Creature
                     buttonActionParamOneSearch.Visible = true;
                     break;
             }
@@ -1615,6 +1616,7 @@ namespace SAI_Editor
                 case SmartAction.SMART_ACTION_KILLED_MONSTER:
                 case SmartAction.SMART_ACTION_UPDATE_TEMPLATE:
                 case SmartAction.SMART_ACTION_MOUNT_TO_ENTRY_OR_MODEL:
+                case SmartAction.SMART_ACTION_CHECK_DUPLICATE_AND_DESPAWN:
                     ShowSearchFromDatabaseForm(textBoxToChange, DatabaseSearchFormType.DatabaseSearchFormTypeCreatureEntry);
                     break;
                 case SmartAction.SMART_ACTION_GO_SET_LOOT_STATE:
