@@ -1111,133 +1111,133 @@ namespace SAI_Editor.Enumerators
 
     enum SMART_EVENT_PHASE_BITS
     {
-        SMART_EVENT_PHASE_ALWAYS_BIT   = 0,
-        SMART_EVENT_PHASE_1_BIT        = 1,
-        SMART_EVENT_PHASE_2_BIT        = 2,
-        SMART_EVENT_PHASE_3_BIT        = 4,
-        SMART_EVENT_PHASE_4_BIT        = 8,
-        SMART_EVENT_PHASE_5_BIT        = 16,
-        SMART_EVENT_PHASE_6_BIT        = 32,
-        SMART_EVENT_PHASE_7_BIT        = 64,
-        SMART_EVENT_PHASE_8_BIT        = 128,
-        SMART_EVENT_PHASE_9_BIT        = 256,
-        SMART_EVENT_PHASE_ALL          = SMART_EVENT_PHASE_1_BIT + SMART_EVENT_PHASE_2_BIT + SMART_EVENT_PHASE_3_BIT + SMART_EVENT_PHASE_4_BIT + SMART_EVENT_PHASE_5_BIT + SMART_EVENT_PHASE_6_BIT
+        SMART_EVENT_PHASE_ALWAYS_BIT      = 0,
+        SMART_EVENT_PHASE_1_BIT           = 1,
+        SMART_EVENT_PHASE_2_BIT           = 2,
+        SMART_EVENT_PHASE_3_BIT           = 4,
+        SMART_EVENT_PHASE_4_BIT           = 8,
+        SMART_EVENT_PHASE_5_BIT           = 16,
+        SMART_EVENT_PHASE_6_BIT           = 32,
+        SMART_EVENT_PHASE_7_BIT           = 64,
+        SMART_EVENT_PHASE_8_BIT           = 128,
+        SMART_EVENT_PHASE_9_BIT           = 256,
+        SMART_EVENT_PHASE_ALL             = SMART_EVENT_PHASE_1_BIT + SMART_EVENT_PHASE_2_BIT + SMART_EVENT_PHASE_3_BIT + SMART_EVENT_PHASE_4_BIT + SMART_EVENT_PHASE_5_BIT + SMART_EVENT_PHASE_6_BIT
     }
 
     public enum PowerTypes : int
     {
-        POWER_MANA                          = 0,
-        POWER_RAGE                          = 1,
-        POWER_FOCUS                         = 2,
-        POWER_ENERGY                        = 3,
-        POWER_HAPPINESS                     = 4,
-        POWER_RUNE                          = 5,
-        POWER_RUNIC_POWER                   = 6,
-        //MAX_POWERS                          = 7,
-        //POWER_ALL                           = 127,    // default for class?
-        //POWER_HEALTH                        = 0xFFFFFFFE    // (-2 as signed value)
+        POWER_MANA                        = 0,
+        POWER_RAGE                        = 1,
+        POWER_FOCUS                       = 2,
+        POWER_ENERGY                      = 3,
+        POWER_HAPPINESS                   = 4,
+        POWER_RUNE                        = 5,
+        POWER_RUNIC_POWER                 = 6,
+        //MAX_POWERS                      = 7,
+        //POWER_ALL                       = 127,    // default for class?
+        //POWER_HEALTH                    = 0xFFFFFFFE    // (-2 as signed value)
         POWER_HEALTH = -2,
     }
 
     public enum GoStates
     {
-        GO_STATE_NOT_READY                  = 0,
-        GO_STATE_READY                      = 1,
-        GO_STATE_ACTIVATED                  = 2,
-        GO_STATE_DEACTIVATED                = 3,
+        GO_STATE_NOT_READY                = 0,
+        GO_STATE_READY                    = 1,
+        GO_STATE_ACTIVATED                = 2,
+        GO_STATE_DEACTIVATED              = 3,
     }
 
     public enum SetGoStates
     {
-        GO_STATE_ACTIVE    = 0,                        // show in world as used and not reset (closed door open)
-        GO_STATE_READY     = 1,                        // show in world as ready (closed door close)
-        GO_STATE_DESTROYED = 2                         // show the object in-game as already used and not yet reset (e.g. door opened by a cannon blast)
+        GO_STATE_ACTIVE                   = 0,                        // show in world as used and not reset (closed door open)
+        GO_STATE_READY                    = 1,                        // show in world as ready (closed door close)
+        GO_STATE_DESTROYED                = 2                         // show the object in-game as already used and not yet reset (e.g. door opened by a cannon blast)
     }
 
     public enum HostilityModes
     {
-        HOSTILE_MODE_HOSTILE     = 0,                  // Enable Event if creature reacts to other creature: Hostile       
-        HOSTILE_MODE_NOT_HOSTILE = 1,                  // Enable Event if creature reacts to other creature: Not hostile (not that Friendly and Not hostile have different meanings)
-        HOSTILE_MODE_ANY         = 2                   // Enable Event if creature reacts to other creature: Any, as in both Hostile and Not hostile
+        HOSTILE_MODE_HOSTILE              = 0,                  // Enable Event if creature reacts to other creature: Hostile       
+        HOSTILE_MODE_NOT_HOSTILE          = 1,                  // Enable Event if creature reacts to other creature: Not hostile (not that Friendly and Not hostile have different meanings)
+        HOSTILE_MODE_ANY                  = 2                   // Enable Event if creature reacts to other creature: Any, as in both Hostile and Not hostile
     }
 
     public enum TeamIDs
     {
-        HORDE                      = 67,
-        ALLIANCE                   = 469,
-        //TEAM_STEAMWHEEDLE_CARTEL = 169,                       // not used in code
-        //TEAM_ALLIANCE_FORCES     = 891,
-        //TEAM_HORDE_FORCES        = 892,
-        //TEAM_SANCTUARY           = 936,
-        //TEAM_OUTLAND             = 980,
-        TEAM_ANY                   = 0                            // if ReputationListId > 0 && Flags != FACTION_FLAG_TEAM_HEADER
+        HORDE                             = 67,
+        ALLIANCE                          = 469,
+        //TEAM_STEAMWHEEDLE_CARTEL        = 169,                       // not used in code
+        //TEAM_ALLIANCE_FORCES            = 891,
+        //TEAM_HORDE_FORCES               = 892,
+        //TEAM_SANCTUARY                  = 936,
+        //TEAM_OUTLAND                    = 980,
+        TEAM_ANY                          = 0                            // if ReputationListId > 0 && Flags != FACTION_FLAG_TEAM_HEADER
     }
 
     public enum MovementGeneratorType
     {
-        IDLE_MOTION_TYPE                = 0,                  // IdleMovementGenerator.h
-        RANDOM_MOTION_TYPE              = 1,                  // RandomMovementGenerator.h
-        WAYPOINT_MOTION_TYPE            = 2,                  // WaypointMovementGenerator.h
-        MAX_DB_MOTION_TYPE              = 3,                  // Below motion types can't be set in DB.
-        CONFUSED_MOTION_TYPE            = 4,                  // ConfusedMovementGenerator.h
-        CHASE_MOTION_TYPE               = 5,                  // TargetedMovementGenerator.h
-        HOME_MOTION_TYPE                = 6,                  // HomeMovementGenerator.h
-        FLIGHT_MOTION_TYPE              = 7,                  // WaypointMovementGenerator.h
-        POINT_MOTION_TYPE               = 8,                  // PointMovementGenerator.h
-        FLEEING_MOTION_TYPE             = 9,                  // FleeingMovementGenerator.h
-        DISTRACT_MOTION_TYPE            = 10,                 // IdleMovementGenerator.h
+        IDLE_MOTION_TYPE                  = 0,                  // IdleMovementGenerator.h
+        RANDOM_MOTION_TYPE                = 1,                  // RandomMovementGenerator.h
+        WAYPOINT_MOTION_TYPE              = 2,                  // WaypointMovementGenerator.h
+        MAX_DB_MOTION_TYPE                = 3,                  // Below motion types can't be set in DB.
+        CONFUSED_MOTION_TYPE              = 4,                  // ConfusedMovementGenerator.h
+        CHASE_MOTION_TYPE                 = 5,                  // TargetedMovementGenerator.h
+        HOME_MOTION_TYPE                  = 6,                  // HomeMovementGenerator.h
+        FLIGHT_MOTION_TYPE                = 7,                  // WaypointMovementGenerator.h
+        POINT_MOTION_TYPE                 = 8,                  // PointMovementGenerator.h
+        FLEEING_MOTION_TYPE               = 9,                  // FleeingMovementGenerator.h
+        DISTRACT_MOTION_TYPE              = 10,                 // IdleMovementGenerator.h
         ASSISTANCE_MOTION_TYPE            = 11,                 // PointMovementGenerator.h
-        ASSISTANCE_DISTRACT_MOTION_TYPE = 12,                 // IdleMovementGenerator.h
-        TIMED_FLEEING_MOTION_TYPE        = 13,                 // FleeingMovementGenerator.h
-        FOLLOW_MOTION_TYPE              = 14,
-        ROTATE_MOTION_TYPE              = 15,
-        EFFECT_MOTION_TYPE              = 16,
-        SPLINE_CHAIN_MOTION_TYPE        = 17,                 // SplineChainMovementGenerator.h
+        ASSISTANCE_DISTRACT_MOTION_TYPE   = 12,                 // IdleMovementGenerator.h
+        TIMED_FLEEING_MOTION_TYPE         = 13,                 // FleeingMovementGenerator.h
+        FOLLOW_MOTION_TYPE                = 14,
+        ROTATE_MOTION_TYPE                = 15,
+        EFFECT_MOTION_TYPE                = 16,
+        SPLINE_CHAIN_MOTION_TYPE          = 17,                 // SplineChainMovementGenerator.h
     }
 
     public enum SpellSchools
     {
-        SPELL_SCHOOL_NORMAL                 = 0,
-        SPELL_SCHOOL_HOLY                   = 1,
-        SPELL_SCHOOL_FIRE                   = 2,
-        SPELL_SCHOOL_NATURE                 = 3,
-        SPELL_SCHOOL_FROST                  = 4,
-        SPELL_SCHOOL_SHADOW                 = 5,
-        SPELL_SCHOOL_ARCANE                 = 6
+        SPELL_SCHOOL_NORMAL               = 0,
+        SPELL_SCHOOL_HOLY                 = 1,
+        SPELL_SCHOOL_FIRE                 = 2,
+        SPELL_SCHOOL_NATURE               = 3,
+        SPELL_SCHOOL_FROST                = 4,
+        SPELL_SCHOOL_SHADOW               = 5,
+        SPELL_SCHOOL_ARCANE               = 6
     }
 
     public enum UnitStates
     {
-        UNIT_STATE_DIED                  = 1,                     // player has fake death aura
-        UNIT_STATE_MELEE_ATTACKING       = 2,                     // player is melee attacking someone
-        UNIT_STATE_CHARMED               = 4,                     // having any kind of charm aura on self
-        UNIT_STATE_STUNNED               = 8,
-        UNIT_STATE_ROAMING               = 16,
-        UNIT_STATE_CHASE                 = 32,
-        //UNIT_STATE_SEARCHING           = 0x00000040,
-        UNIT_STATE_FLEEING               = 128,
-        UNIT_STATE_IN_FLIGHT             = 256,                     // player is in flight mode
-        UNIT_STATE_FOLLOW                = 512,
-        UNIT_STATE_ROOT                  = 1024,
-        UNIT_STATE_CONFUSED              = 2048,
-        UNIT_STATE_DISTRACTED            = 4096,
-        UNIT_STATE_ISOLATED              = 8192,                     // area auras do not affect other players
-        UNIT_STATE_ATTACK_PLAYER         = 16384,
-        UNIT_STATE_CASTING               = 32768,
-        UNIT_STATE_POSSESSED             = 65536,
-        UNIT_STATE_CHARGING              = 131072,
-        UNIT_STATE_JUMPING               = 262144,
-        UNIT_STATE_MOVE                  = 1048576,
-        UNIT_STATE_ROTATING              = 2097152,
-        UNIT_STATE_EVADE                 = 4194304,
-        UNIT_STATE_ROAMING_MOVE          = 8388608,
-        UNIT_STATE_CONFUSED_MOVE         = 16777216,
-        UNIT_STATE_FLEEING_MOVE          = 33554432,
-        UNIT_STATE_CHASE_MOVE            = 67108864,
-        UNIT_STATE_FOLLOW_MOVE           = 134217728,
-        UNIT_STATE_IGNORE_PATHFINDING    = 268435456,                 // do not use pathfinding in any MovementGenerator
-        UNIT_STATE_DIFFERENT_PATHFINDING = 536870912,                 // do not call NormalizePath, do not add CollisioHeight
-        UNIT_STATE_WAYPOINT_PAUSED       = 1073741824,
+        UNIT_STATE_DIED                   = 1,                     // player has fake death aura
+        UNIT_STATE_MELEE_ATTACKING        = 2,                     // player is melee attacking someone
+        UNIT_STATE_CHARMED                = 4,                     // having any kind of charm aura on self
+        UNIT_STATE_STUNNED                = 8,
+        UNIT_STATE_ROAMING                = 16,
+        UNIT_STATE_CHASE                  = 32,
+        UNIT_STATE_FOCUSING               = 64,
+        UNIT_STATE_FLEEING                = 128,
+        UNIT_STATE_IN_FLIGHT              = 256,                     // player is in flight mode
+        UNIT_STATE_FOLLOW                 = 512,
+        UNIT_STATE_ROOT                   = 1024,
+        UNIT_STATE_CONFUSED               = 2048,
+        UNIT_STATE_DISTRACTED             = 4096,
+        UNIT_STATE_ISOLATED               = 8192,                     // area auras do not affect other players
+        UNIT_STATE_ATTACK_PLAYER          = 16384,
+        UNIT_STATE_CASTING                = 32768,
+        UNIT_STATE_POSSESSED              = 65536,
+        UNIT_STATE_CHARGING               = 131072,
+        UNIT_STATE_JUMPING                = 262144,
+        UNIT_STATE_MOVE                   = 1048576,
+        UNIT_STATE_ROTATING               = 2097152,
+        UNIT_STATE_EVADE                  = 4194304,
+        UNIT_STATE_ROAMING_MOVE           = 8388608,
+        UNIT_STATE_CONFUSED_MOVE          = 16777216,
+        UNIT_STATE_FLEEING_MOVE           = 33554432,
+        UNIT_STATE_CHASE_MOVE             = 67108864,
+        UNIT_STATE_FOLLOW_MOVE            = 134217728,
+        UNIT_STATE_IGNORE_PATHFINDING     = 268435456,                 // do not use pathfinding in any MovementGenerator
+        UNIT_STATE_DIFFERENT_PATHFINDING  = 536870912,                 // do not call NormalizePath, do not add CollisioHeight
+        UNIT_STATE_WAYPOINT_PAUSED        = 1073741824,
     }
 
     [Flags]
@@ -1270,9 +1270,9 @@ namespace SAI_Editor.Enumerators
     
     public enum SheathState
     {
-        SHEATH_STATE_UNARMED  = 0,                              // non prepared weapon
-        SHEATH_STATE_MELEE    = 1,                              // prepared melee weapon
-        SHEATH_STATE_RANGED   = 2                               // prepared ranged weapon
+        SHEATH_STATE_UNARMED                   = 0,                              // non prepared weapon
+        SHEATH_STATE_MELEE                     = 1,                              // prepared melee weapon
+        SHEATH_STATE_RANGED                    = 2                               // prepared ranged weapon
     }
 
     public enum TempSummonType
@@ -1289,17 +1289,17 @@ namespace SAI_Editor.Enumerators
 
     public enum UnitFieldBytes1Types
     {
-        UNIT_STAND_STAND_STATE_TYPE = 0,
-        UNIT_PET_TALENTS_TYPE       = 1,
-        UNIT_STAND_FLAGS_TYPE       = 2,
-        UNIT_BYTES1_FLAGS_TYPE      = 3,
+        UNIT_STAND_STAND_STATE_TYPE            = 0,
+        UNIT_PET_TALENTS_TYPE                  = 1,
+        UNIT_STAND_FLAGS_TYPE                  = 2,
+        UNIT_BYTES1_FLAGS_TYPE                 = 3,
     }
 
     public enum SmartActionlistTimerUpdateType
     {
-        ACTIONLIST_UPDATE_OUT_OF_COMBAT = 0,
-        ACTIONLIST_UPDATE_IN_COMBAT     = 1,
-        ACTIONLIST_UPDATE_ALWAYS        = 2,
+        ACTIONLIST_UPDATE_OUT_OF_COMBAT        = 0,
+        ACTIONLIST_UPDATE_IN_COMBAT            = 1,
+        ACTIONLIST_UPDATE_ALWAYS               = 2,
     }
 
     public enum ConditionSourceTypes
@@ -1722,34 +1722,34 @@ namespace SAI_Editor.Enumerators
 
     enum PlayerClasses
     {
-        CLASS_NONE          = 0,
-        CLASS_WARRIOR       = 1,
-        CLASS_PALADIN       = 2,
-        CLASS_HUNTER        = 3,
-        CLASS_ROGUE         = 4,
-        CLASS_PRIEST        = 5,
-        CLASS_DEATH_KNIGHT  = 6,
-        CLASS_SHAMAN        = 7,
-        CLASS_MAGE          = 8,
-        CLASS_WARLOCK       = 9,
-        //CLASS_UNK           = 10,
-        CLASS_DRUID         = 11
+        CLASS_NONE                = 0,
+        CLASS_WARRIOR             = 1,
+        CLASS_PALADIN             = 2,
+        CLASS_HUNTER              = 3,
+        CLASS_ROGUE               = 4,
+        CLASS_PRIEST              = 5,
+        CLASS_DEATH_KNIGHT        = 6,
+        CLASS_SHAMAN              = 7,
+        CLASS_MAGE                = 8,
+        CLASS_WARLOCK             = 9,
+        //CLASS_UNK               = 10,
+        CLASS_DRUID               = 11
     }
 
     enum Races
     {
-        RACE_NONE               = 0,
-        RACE_HUMAN              = 1,
-        RACE_ORC                = 2,
-        RACE_DWARF              = 3,
-        RACE_NIGHTELF           = 4,
-        RACE_UNDEAD_PLAYER      = 5,
-        RACE_TAUREN             = 6,
-        RACE_GNOME              = 7,
-        RACE_TROLL              = 8,
+        RACE_NONE                 = 0,
+        RACE_HUMAN                = 1,
+        RACE_ORC                  = 2,
+        RACE_DWARF                = 3,
+        RACE_NIGHTELF             = 4,
+        RACE_UNDEAD_PLAYER        = 5,
+        RACE_TAUREN               = 6,
+        RACE_GNOME                = 7,
+        RACE_TROLL                = 8,
         //RACE_GOBLIN             = 9,
-        RACE_BLOODELF           = 10,
-        RACE_DRAENEI            = 11
+        RACE_BLOODELF             = 10,
+        RACE_DRAENEI              = 11
         //RACE_FEL_ORC            = 12,
         //RACE_NAGA               = 13,
         //RACE_BROKEN             = 14,
@@ -1764,11 +1764,11 @@ namespace SAI_Editor.Enumerators
 
     enum Difficulty
     {
-        REGULAR_DIFFICULTY = 0,
-
-        DUNGEON_DIFFICULTY_NORMAL = 0,
-        DUNGEON_DIFFICULTY_HEROIC = 1,
-        DUNGEON_DIFFICULTY_EPIC = 2,
+        REGULAR_DIFFICULTY           = 0,
+                                     
+        DUNGEON_DIFFICULTY_NORMAL    = 0,
+        DUNGEON_DIFFICULTY_HEROIC    = 1,
+        DUNGEON_DIFFICULTY_EPIC      = 2,
 
         RAID_DIFFICULTY_10MAN_NORMAL = 0,
         RAID_DIFFICULTY_25MAN_NORMAL = 1,
@@ -1799,9 +1799,9 @@ namespace SAI_Editor.Enumerators
 
     enum Gender
     {
-        GENDER_MALE                        = 0,
-        GENDER_FEMALE                      = 1,
-        GENDER_NONE                        = 2
+        GENDER_MALE                    = 0,
+        GENDER_FEMALE                  = 1,
+        GENDER_NONE                    = 2
     }
 
     enum CreatureType
@@ -1825,29 +1825,29 @@ namespace SAI_Editor.Enumerators
 
     enum TypeID
     {
-        TYPEID_OBJECT        = 0,
-        TYPEID_ITEM          = 1,
-        TYPEID_CONTAINER     = 2,
-        TYPEID_UNIT          = 3,
-        TYPEID_PLAYER        = 4,
-        TYPEID_GAMEOBJECT    = 5,
-        TYPEID_DYNAMICOBJECT = 6,
-        TYPEID_CORPSE        = 7,
+        TYPEID_OBJECT                  = 0,
+        TYPEID_ITEM                    = 1,
+        TYPEID_CONTAINER               = 2,
+        TYPEID_UNIT                    = 3,
+        TYPEID_PLAYER                  = 4,
+        TYPEID_GAMEOBJECT              = 5,
+        TYPEID_DYNAMICOBJECT           = 6,
+        TYPEID_CORPSE                  = 7,
     }
 
     [Flags]
     enum TypeMask
     {
-        TYPEMASK_NONE           = 0x0000,
-        TYPEMASK_OBJECT         = 0x0001,
-        TYPEMASK_ITEM           = 0x0002,
-        TYPEMASK_CONTAINER      = 0x0006,                       // TYPEMASK_ITEM | 0x0004
-        TYPEMASK_UNIT           = 0x0008,                       // creature
-        TYPEMASK_PLAYER         = 0x0010,
-        TYPEMASK_GAMEOBJECT     = 0x0020,
-        TYPEMASK_DYNAMICOBJECT  = 0x0040,
-        TYPEMASK_CORPSE         = 0x0080,
-        TYPEMASK_SEER           = TYPEMASK_PLAYER | TYPEMASK_UNIT | TYPEMASK_DYNAMICOBJECT
+        TYPEMASK_NONE                  = 0x0000,
+        TYPEMASK_OBJECT                = 0x0001,
+        TYPEMASK_ITEM                  = 0x0002,
+        TYPEMASK_CONTAINER             = 0x0006,                       // TYPEMASK_ITEM | 0x0004
+        TYPEMASK_UNIT                  = 0x0008,                       // creature
+        TYPEMASK_PLAYER                = 0x0010,
+        TYPEMASK_GAMEOBJECT            = 0x0020,
+        TYPEMASK_DYNAMICOBJECT         = 0x0040,
+        TYPEMASK_CORPSE                = 0x0080,
+        TYPEMASK_SEER                  = TYPEMASK_PLAYER | TYPEMASK_UNIT | TYPEMASK_DYNAMICOBJECT
     }
 
     enum CondRelationType
