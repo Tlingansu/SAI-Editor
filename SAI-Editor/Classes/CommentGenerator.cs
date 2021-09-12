@@ -324,7 +324,7 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_CHECK_HOMEDIST_AND_EVADE, "Evade after moving _actionParamOne_ yards away from HomePosition - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_SPEED_RATE, "Set Speed Rate (Speed Walk Rate: _checkSpeedWalkActionParamOne_, Speed Run Rate: _checkSpeedRunActionParamTwo_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_LOAD_WP_PATH, "Load Waypoint-Data ID: _actionParamOne_ (AddonPath: _actionParamTwo_, _unrepeatableRepeatableActionParamThree_) - Target: _getTargetType_");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_UNUSED_210, "Set  - Target: _getTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_DELETE_THREAT_LIST, "Delete Threatlist  - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_CAST_RANDOM_SPELL, "Cast Random Spell (Spell ID 1: '_spellNameActionParamOne_', Spell ID 2: '_spellNameActionParamTwo_', Spell ID 3: '_spellNameActionParamThree_', Spell ID 4: '_spellNameActionParamFour_', Cast Flags: '_actionParamFive_', Trigger Flags: _actionParamSix_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_COMBAT_STOP_WITH_PETS, "Combat Stop with Pets - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_PAUSE_WAYPOINT_DATA_MOVEMENT, "_pauseUnPauseActionParamOne_ Waypoint-Data Movement - Target: _getTargetType_");
