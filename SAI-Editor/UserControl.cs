@@ -687,7 +687,6 @@ namespace SAI_Editor
                     break;
                 case SmartAction.SMART_ACTION_WP_STOP: //! Quest entry
                 case SmartAction.SMART_ACTION_INTERRUPT_SPELL: //! Spell entry
-                case SmartAction.SMART_ACTION_SEND_GOSSIP_MENU: //! Gossip menu id & npc_text.id
                 case SmartAction.SMART_ACTION_CALL_TIMED_ACTIONLIST: //! Timer type
                     buttonActionParamTwoSearch.Visible = true;
                     break;
@@ -1825,9 +1824,6 @@ namespace SAI_Editor
                     break;
                 case SmartAction.SMART_ACTION_WP_START:
                     ShowSearchFromDatabaseForm(textBoxToChange, DatabaseSearchFormType.DatabaseSearchFormTypeWaypoint);
-                    break;
-                case SmartAction.SMART_ACTION_SEND_GOSSIP_MENU:
-                    ShowSearchFromDatabaseForm(textBoxToChange, DatabaseSearchFormType.DatabaseSearchFormTypeNpcText);
                     break;
                 case SmartAction.SMART_ACTION_SET_UNIT_FIELD_BYTES_1:
                 case SmartAction.SMART_ACTION_REMOVE_UNIT_FIELD_BYTES_1:
