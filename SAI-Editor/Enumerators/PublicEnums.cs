@@ -519,16 +519,18 @@ namespace SAI_Editor.Enumerators
     [Flags]
     public enum GoFlags
     {
-        GO_FLAG_NONE                    = 0x00000000,
-        GO_FLAG_IN_USE                  = 0x00000001,
-        GO_FLAG_LOCKED                  = 0x00000002,
-        GO_FLAG_INTERACT_COND           = 0x00000004,
-        GO_FLAG_TRANSPORT               = 0x00000008,
-        GO_FLAG_NOT_SELECTABLE          = 0x00000010,
-        GO_FLAG_NODESPAWN               = 0x00000020,
-        GO_FLAG_TRIGGERED               = 0x00000040,
-        GO_FLAG_DAMAGED                 = 0x00000200,
-        GO_FLAG_DESTROYED               = 0x00000400,
+        GO_FLAG_IN_USE                          = 0x00000001,                   // disables interaction while animated
+        GO_FLAG_LOCKED                          = 0x00000002,                   // require key, spell, event, etc to be opened. Makes "Locked" appear in tooltip
+        GO_FLAG_INTERACT_COND                   = 0x00000004,                   // cannot interact (condition to interact - requires GO_DYNFLAG_LO_ACTIVATE to enable interaction clientside)
+        GO_FLAG_TRANSPORT                       = 0x00000008,                   // any kind of transport? Object can transport (elevator, boat, car)
+        GO_FLAG_NOT_SELECTABLE                  = 0x00000010,                   // not selectable even in GM mode
+        GO_FLAG_NODESPAWN                       = 0x00000020,                   // never despawn, typically for doors, they just change state
+        GO_FLAG_AI_OBSTACLE                     = 0x00000040,                   // makes the client register the object in something called AIObstacleMgr, unknown what it does
+        GO_FLAG_FREEZE_ANIMATION                = 0x00000080,
+        GO_FLAG_DAMAGED                         = 0x00000200,
+        GO_FLAG_DESTROYED                       = 0x00000400,
+        GO_FLAG_TRANSPORT_PHASING               = 0x00000800,                   // Enable Phasing even if the GO is a transpor
+        GO_FLAG_HUGE_SIZE                       = 0x00001000,                   // Increased Interaction Distance
     }
 
     [Flags]
@@ -597,50 +599,49 @@ namespace SAI_Editor.Enumerators
     [Flags]
     public enum UnitFlags
     {
-        UNIT_FLAG_NONE                  = 0x00000000,
-        UNIT_FLAG_SERVER_CONTROLLED     = 0x00000001,           // set only when unit movement is controlled by server - by SPLINE/MONSTER_MOVE packets, together with UNIT_FLAG_STUNNED; only set to units controlled by client; client function CGUnit_C::IsClientControlled returns false when set for owner
-        UNIT_FLAG_NON_ATTACKABLE        = 0x00000002,           // not attackable
-        UNIT_FLAG_DISABLE_MOVE          = 0x00000004,
-        UNIT_FLAG_PVP_ATTACKABLE        = 0x00000008,           // allow apply pvp rules to attackable state in addition to faction dependent state
-        UNIT_FLAG_RENAME                = 0x00000010,
-        UNIT_FLAG_PREPARATION           = 0x00000020,           // don't take reagents for spells with SPELL_ATTR5_NO_REAGENT_WHILE_PREP
-        UNIT_FLAG_UNK_6                 = 0x00000040,
-        UNIT_FLAG_NOT_ATTACKABLE_1      = 0x00000080,           // ?? (UNIT_FLAG_PVP_ATTACKABLE | UNIT_FLAG_NOT_ATTACKABLE_1) is NON_PVP_ATTACKABLE
-        UNIT_FLAG_IMMUNE_TO_PC          = 0x00000100,           // disables combat/assistance with PlayerCharacters (PC) - see Unit::_IsValidAttackTarget, Unit::_IsValidAssistTarget
-        UNIT_FLAG_IMMUNE_TO_NPC         = 0x00000200,           // disables combat/assistance with NonPlayerCharacters (NPC) - see Unit::_IsValidAttackTarget, Unit::_IsValidAssistTarget
-        UNIT_FLAG_LOOTING               = 0x00000400,           // loot animation
-        UNIT_FLAG_PET_IN_COMBAT         = 0x00000800,           // in combat?, 2.0.8
-        UNIT_FLAG_PVP                   = 0x00001000,           // changed in 3.0.3
-        UNIT_FLAG_SILENCED              = 0x00002000,           // silenced, 2.1.1
-        UNIT_FLAG_UNK_14                = 0x00004000,           // 2.0.8
-        UNIT_FLAG_UNK_15                = 0x00008000,
-        UNIT_FLAG_UNK_16                = 0x00010000,
-        UNIT_FLAG_PACIFIED              = 0x00020000,           // 3.0.3 ok
-        UNIT_FLAG_STUNNED               = 0x00040000,           // 3.0.3 ok
-        UNIT_FLAG_IN_COMBAT             = 0x00080000,
-        UNIT_FLAG_TAXI_FLIGHT           = 0x00100000,           // disable casting at client side spell not allowed by taxi flight (mounted?), probably used with 0x4 flag
-        UNIT_FLAG_DISARMED              = 0x00200000,           // 3.0.3, disable melee spells casting..., "Required melee weapon" added to melee spells tooltip.
-        UNIT_FLAG_CONFUSED              = 0x00400000,
-        UNIT_FLAG_FLEEING               = 0x00800000,
-        UNIT_FLAG_PLAYER_CONTROLLED     = 0x01000000,           // used in spell Eyes of the Beast for pet... let attack by controlled creature
-        UNIT_FLAG_NOT_SELECTABLE        = 0x02000000,
-        UNIT_FLAG_SKINNABLE             = 0x04000000,
-        UNIT_FLAG_MOUNT                 = 0x08000000,
-        UNIT_FLAG_UNK_28                = 0x10000000,
-        UNIT_FLAG_UNK_29                = 0x20000000,           // used in Feing Death spell
-        UNIT_FLAG_SHEATHE               = 0x40000000,
+        UNIT_FLAG_NONE                          = 0x00000000,
+        UNIT_FLAG_SERVER_CONTROLLED             = 0x00000001,           // set only when unit movement is controlled by server - by SPLINE/MONSTER_MOVE packets, together with UNIT_FLAG_STUNNED; only set to units controlled by client; client function CGUnit_C::IsClientControlled returns false when set for owner
+        UNIT_FLAG_NON_ATTACKABLE                = 0x00000002,           // not attackable
+        UNIT_FLAG_REMOVE_CLIENT_CONTROL         = 0x00000004,           // This is a legacy flag used to disable movement player's movement while controlling other units, SMSG_CLIENT_CONTROL replaces this functionality clientside now. CONFUSED and FLEEING flags have the same effect on client movement asDISABLE_MOVE_CONTROL in addition to preventing spell casts/autoattack (they all allow climbing steeper hills and emotes while moving)
+        UNIT_FLAG_PLAYER_CONTROLLED             = 0x00000008,           // controlled by player, use _IMMUNE_TO_PC instead of _IMMUNE_TO_NPC
+        UNIT_FLAG_RENAME                        = 0x00000010,
+        UNIT_FLAG_PREPARATION                   = 0x00000020,           // don't take reagents for spells with SPELL_ATTR5_NO_REAGENT_WHILE_PREP
+        UNIT_FLAG_UNK_6                         = 0x00000040,
+        UNIT_FLAG_NOT_ATTACKABLE_1              = 0x00000080,           // ?? (UNIT_FLAG_PVP_ATTACKABLE | UNIT_FLAG_NOT_ATTACKABLE_1) is NON_PVP_ATTACKABLE
+        UNIT_FLAG_IMMUNE_TO_PC                  = 0x00000100,           // disables combat/assistance with PlayerCharacters (PC) - see Unit::_IsValidAttackTarget, Unit::_IsValidAssistTarget
+        UNIT_FLAG_IMMUNE_TO_NPC                 = 0x00000200,           // disables combat/assistance with NonPlayerCharacters (NPC) - see Unit::_IsValidAttackTarget, Unit::_IsValidAssistTarget
+        UNIT_FLAG_LOOTING                       = 0x00000400,           // loot animation
+        UNIT_FLAG_PET_IN_COMBAT                 = 0x00000800,           // in combat?, 2.0.8
+        UNIT_FLAG_PVP                           = 0x00001000,           // changed in 3.0.3
+        UNIT_FLAG_SILENCED                      = 0x00002000,           // silenced, 2.1.1
+        UNIT_FLAG_CANNOT_SWIM                   = 0x00004000,           // 2.0.8
+        UNIT_FLAG_SWIMMING                      = 0x00008000,           // shows swim animation in water
+        UNIT_FLAG_NON_ATTACKABLE_2              = 0x00010000,           // removes attackable icon, if on yourself, cannot assist self but can cast TARGET_SELF spells - added by SPELL_AURA_MOD_UNATTACKABLE
+        UNIT_FLAG_PACIFIED                      = 0x00020000,           // 3.0.3 ok
+        UNIT_FLAG_STUNNED                       = 0x00040000,           // 3.0.3 ok
+        UNIT_FLAG_IN_COMBAT                     = 0x00080000,
+        UNIT_FLAG_TAXI_FLIGHT                   = 0x00100000,           // disable casting at client side spell not allowed by taxi flight (mounted?), probably used with 0x4 flag
+        UNIT_FLAG_DISARMED                      = 0x00200000,           // 3.0.3, disable melee spells casting..., "Required melee weapon" added to melee spells tooltip.
+        UNIT_FLAG_CONFUSED                      = 0x00400000,
+        UNIT_FLAG_FLEEING                       = 0x00800000,
+        UNIT_FLAG_POSSESSED                     = 0x01000000,           // under direct client control by a player (possess or vehicle)
+        UNIT_FLAG_NOT_SELECTABLE                = 0x02000000,
+        UNIT_FLAG_SKINNABLE                     = 0x04000000,
+        UNIT_FLAG_MOUNT                         = 0x08000000,
+        UNIT_FLAG_UNK_28                        = 0x10000000,
+        UNIT_FLAG_PREVENT_EMOTES_FROM_CHAT_TEXT = 0x20000000,           // Prevent automatically playing emotes from parsing chat text, for example "lol" in /say, ending message with ? or !, or using /yell
+        UNIT_FLAG_SHEATHE                       = 0x40000000,
     }
 
     [Flags]
     public enum UnitFlags2
     {
-        UNIT_FLAG2_NONE                         = 0x00000000,
         UNIT_FLAG2_FEIGN_DEATH                  = 0x00000001,
-        UNIT_FLAG2_UNK1                         = 0x00000002,   // Hide unit model (show only player equip)
+        UNIT_FLAG2_HIDE_BODY                    = 0x00000002, // Hide unit model (show only player equip)
         UNIT_FLAG2_IGNORE_REPUTATION            = 0x00000004,
         UNIT_FLAG2_COMPREHEND_LANG              = 0x00000008,
         UNIT_FLAG2_MIRROR_IMAGE                 = 0x00000010,
-        UNIT_FLAG2_INSTANTLY_APPEAR_MODEL       = 0x00000020,   // Unit model instantly appears when summoned (does not fade in)
+        UNIT_FLAG2_DO_NOT_FADE_IN               = 0x00000020,   // Unit model instantly appears when summoned (does not fade in)
         UNIT_FLAG2_FORCE_MOVEMENT               = 0x00000040,
         UNIT_FLAG2_DISARM_OFFHAND               = 0x00000080,
         UNIT_FLAG2_DISABLE_PRED_STATS           = 0x00000100,   // Player has disabled predicted stats (Used by raid frames)
@@ -649,7 +650,7 @@ namespace SAI_Editor.Enumerators
         UNIT_FLAG2_RESTRICT_PARTY_INTERACTION   = 0x00001000,   // Restrict interaction to party or raid
         UNIT_FLAG2_PREVENT_SPELL_CLICK          = 0x00002000,   // Prevent spellclick
         UNIT_FLAG2_ALLOW_ENEMY_INTERACT         = 0x00004000,
-        UNIT_FLAG2_DISABLE_TURN                 = 0x00008000,
+        UNIT_FLAG2_CANNOT_TURN                  = 0x00008000,
         UNIT_FLAG2_UNK2                         = 0x00010000,
         UNIT_FLAG2_PLAY_DEATH_ANIM              = 0x00020000,   // Plays special death animation upon death
         UNIT_FLAG2_ALLOW_CHEAT_SPELLS           = 0x00040000    // Allows casting spells with AttributesEx7 & SPELL_ATTR7_IS_CHEAT_SPELL
@@ -979,41 +980,44 @@ namespace SAI_Editor.Enumerators
 
     enum UnitState
     {
-        UNIT_STATE_NONE            = 0x00000000,
-        UNIT_STATE_DIED            = 0x00000001,                     // player has fake death aura
-        UNIT_STATE_MELEE_ATTACKING = 0x00000002,                     // player is melee attacking someone
-        //UNIT_STATE_MELEE_ATTACK_BY = 0x00000004,                     // player is melee attack by someone
-        UNIT_STATE_STUNNED         = 0x00000008,
-        UNIT_STATE_ROAMING         = 0x00000010,
-        UNIT_STATE_CHASE           = 0x00000020,
-        //UNIT_STATE_SEARCHING       = 0x00000040,
-        UNIT_STATE_FLEEING         = 0x00000080,
-        UNIT_STATE_IN_FLIGHT       = 0x00000100,                     // player is in flight mode
-        UNIT_STATE_FOLLOW          = 0x00000200,
-        UNIT_STATE_ROOT            = 0x00000400,
-        UNIT_STATE_CONFUSED        = 0x00000800,
-        UNIT_STATE_DISTRACTED      = 0x00001000,
-        UNIT_STATE_ISOLATED        = 0x00002000,                     // area auras do not affect other players
-        UNIT_STATE_ATTACK_PLAYER   = 0x00004000,
-        UNIT_STATE_CASTING         = 0x00008000,
-        UNIT_STATE_POSSESSED       = 0x00010000,
-        UNIT_STATE_CHARGING        = 0x00020000,
-        UNIT_STATE_JUMPING         = 0x00040000,
-        UNIT_STATE_MOVE            = 0x00100000,
-        UNIT_STATE_ROTATING        = 0x00200000,
-        UNIT_STATE_EVADE           = 0x00400000,
-        UNIT_STATE_ROAMING_MOVE    = 0x00800000,
-        UNIT_STATE_CONFUSED_MOVE   = 0x01000000,
-        UNIT_STATE_FLEEING_MOVE    = 0x02000000,
-        UNIT_STATE_CHASE_MOVE      = 0x04000000,
-        UNIT_STATE_FOLLOW_MOVE     = 0x08000000,
-        UNIT_STATE_IGNORE_PATHFINDING = 0x10000000,                 // do not use pathfinding in any MovementGenerator
+        UNIT_STATE_DIED                  = 0x00000001,                     // player has fake death aura
+        UNIT_STATE_MELEE_ATTACKING       = 0x00000002,                     // player is melee attacking someone
+        UNIT_STATE_CHARMED               = 0x00000004,                     // having any kind of charm aura on self
+        UNIT_STATE_STUNNED               = 0x00000008,
+        UNIT_STATE_ROAMING               = 0x00000010,
+        UNIT_STATE_CHASE                 = 0x00000020,
+        UNIT_STATE_FOCUSING              = 0x00000040,
+        UNIT_STATE_FLEEING               = 0x00000080,
+        UNIT_STATE_IN_FLIGHT             = 0x00000100,                     // player is in flight mode
+        UNIT_STATE_FOLLOW                = 0x00000200,
+        UNIT_STATE_ROOT                  = 0x00000400,
+        UNIT_STATE_CONFUSED              = 0x00000800,
+        UNIT_STATE_DISTRACTED            = 0x00001000,
+        UNIT_STATE_ISOLATED              = 0x00002000,                     // area auras do not affect other players
+        UNIT_STATE_ATTACK_PLAYER         = 0x00004000,
+        UNIT_STATE_CASTING               = 0x00008000,
+        UNIT_STATE_POSSESSED             = 0x00010000,
+        UNIT_STATE_CHARGING              = 0x00020000,
+        UNIT_STATE_JUMPING               = 0x00040000,
+        UNIT_STATE_MOVE                  = 0x00100000,
+        UNIT_STATE_ROTATING              = 0x00200000,
+        UNIT_STATE_EVADE                 = 0x00400000,
+        UNIT_STATE_ROAMING_MOVE          = 0x00800000,
+        UNIT_STATE_CONFUSED_MOVE         = 0x01000000,
+        UNIT_STATE_FLEEING_MOVE          = 0x02000000,
+        UNIT_STATE_CHASE_MOVE            = 0x04000000,
+        UNIT_STATE_FOLLOW_MOVE           = 0x08000000,
+        UNIT_STATE_IGNORE_PATHFINDING    = 0x10000000,                 // do not use pathfinding in any MovementGenerator
+        
+        // Custom
+        UNIT_STATE_WAYPOINT_PAUSED       = 0x40000000,                 // Pause waypoint_data movement
         UNIT_STATE_ALL_STATE_SUPPORTED = UNIT_STATE_DIED | UNIT_STATE_MELEE_ATTACKING | UNIT_STATE_STUNNED | UNIT_STATE_ROAMING | UNIT_STATE_CHASE
                                        | UNIT_STATE_FLEEING | UNIT_STATE_IN_FLIGHT | UNIT_STATE_FOLLOW | UNIT_STATE_ROOT | UNIT_STATE_CONFUSED
                                        | UNIT_STATE_DISTRACTED | UNIT_STATE_ISOLATED | UNIT_STATE_ATTACK_PLAYER | UNIT_STATE_CASTING
                                        | UNIT_STATE_POSSESSED | UNIT_STATE_CHARGING | UNIT_STATE_JUMPING | UNIT_STATE_MOVE | UNIT_STATE_ROTATING
                                        | UNIT_STATE_EVADE | UNIT_STATE_ROAMING_MOVE | UNIT_STATE_CONFUSED_MOVE | UNIT_STATE_FLEEING_MOVE
-                                       | UNIT_STATE_CHASE_MOVE | UNIT_STATE_FOLLOW_MOVE | UNIT_STATE_IGNORE_PATHFINDING,
+                                       | UNIT_STATE_CHASE_MOVE | UNIT_STATE_FOLLOW_MOVE | UNIT_STATE_IGNORE_PATHFINDING | UNIT_STATE_WAYPOINT_PAUSED,
+
         UNIT_STATE_UNATTACKABLE    = UNIT_STATE_IN_FLIGHT,
         // for real move using movegen check and stop (except unstoppable flight)
         UNIT_STATE_MOVING          = UNIT_STATE_ROAMING_MOVE | UNIT_STATE_CONFUSED_MOVE | UNIT_STATE_FLEEING_MOVE | UNIT_STATE_CHASE_MOVE | UNIT_STATE_FOLLOW_MOVE,
@@ -1024,9 +1028,6 @@ namespace SAI_Editor.Enumerators
         UNIT_STATE_CANNOT_TURN     = (UNIT_STATE_LOST_CONTROL | UNIT_STATE_ROTATING),
         // stay by different reasons
         UNIT_STATE_NOT_MOVE        = UNIT_STATE_ROOT | UNIT_STATE_STUNNED | UNIT_STATE_DIED | UNIT_STATE_DISTRACTED,
-        
-        //! Doesn't work with MultiSelectForm properly and not really needed anyway
-        //UNIT_STATE_ALL_STATE       = 0xffffffff                      //(UNIT_STATE_STOPPED | UNIT_STATE_MOVING | UNIT_STATE_IN_COMBAT | UNIT_STATE_IN_FLIGHT)
     }
 
     [Flags]
@@ -1058,7 +1059,8 @@ namespace SAI_Editor.Enumerators
         UNIT_NPC_FLAG_STABLEMASTER          = 0x00400000,       // 100%
         UNIT_NPC_FLAG_GUILD_BANKER          = 0x00800000,       // cause client to send 997 opcode
         UNIT_NPC_FLAG_SPELLCLICK            = 0x01000000,       // cause client to send 1015 opcode (spell click)
-        UNIT_NPC_FLAG_PLAYER_VEHICLE        = 0x02000000        // players with mounts that have vehicle data should have it set
+        UNIT_NPC_FLAG_PLAYER_VEHICLE        = 0x02000000,       // players with mounts that have vehicle data should have it set
+        UNIT_NPC_FLAG_MAILBOX               = 0x04000000        //
     }
 
     [Flags]
@@ -1164,24 +1166,24 @@ namespace SAI_Editor.Enumerators
 
     public enum MovementGeneratorType
     {
-        IDLE_MOTION_TYPE      = 0,                              // IdleMovementGenerator.h
-        RANDOM_MOTION_TYPE    = 1,                              // RandomMovementGenerator.h
-        WAYPOINT_MOTION_TYPE  = 2,                              // WaypointMovementGenerator.h
-        MAX_DB_MOTION_TYPE    = 3,                              // *** this and below motion types can't be set in DB.
-        ANIMAL_RANDOM_MOTION_TYPE = MAX_DB_MOTION_TYPE,         // AnimalRandomMovementGenerator.h
-        CONFUSED_MOTION_TYPE  = 4,                              // ConfusedMovementGenerator.h
-        CHASE_MOTION_TYPE     = 5,                              // TargetedMovementGenerator.h
-        HOME_MOTION_TYPE      = 6,                              // HomeMovementGenerator.h
-        FLIGHT_MOTION_TYPE    = 7,                              // WaypointMovementGenerator.h
-        POINT_MOTION_TYPE     = 8,                              // PointMovementGenerator.h
-        FLEEING_MOTION_TYPE   = 9,                              // FleeingMovementGenerator.h
-        DISTRACT_MOTION_TYPE  = 10,                             // IdleMovementGenerator.h
-        ASSISTANCE_MOTION_TYPE= 11,                             // PointMovementGenerator.h (first part of flee for assistance)
-        ASSISTANCE_DISTRACT_MOTION_TYPE = 12,                   // IdleMovementGenerator.h (second part of flee for assistance)
-        TIMED_FLEEING_MOTION_TYPE = 13,                         // FleeingMovementGenerator.h (alt.second part of flee for assistance)
-        FOLLOW_MOTION_TYPE    = 14,
-        ROTATE_MOTION_TYPE    = 15,
-        EFFECT_MOTION_TYPE    = 16,
+        IDLE_MOTION_TYPE                = 0,                  // IdleMovementGenerator.h
+        RANDOM_MOTION_TYPE              = 1,                  // RandomMovementGenerator.h
+        WAYPOINT_MOTION_TYPE            = 2,                  // WaypointMovementGenerator.h
+        MAX_DB_MOTION_TYPE              = 3,                  // Below motion types can't be set in DB.
+        CONFUSED_MOTION_TYPE            = 4,                  // ConfusedMovementGenerator.h
+        CHASE_MOTION_TYPE               = 5,                  // TargetedMovementGenerator.h
+        HOME_MOTION_TYPE                = 6,                  // HomeMovementGenerator.h
+        FLIGHT_MOTION_TYPE              = 7,                  // WaypointMovementGenerator.h
+        POINT_MOTION_TYPE               = 8,                  // PointMovementGenerator.h
+        FLEEING_MOTION_TYPE             = 9,                  // FleeingMovementGenerator.h
+        DISTRACT_MOTION_TYPE            = 10,                 // IdleMovementGenerator.h
+        ASSISTANCE_MOTION_TYPE            = 11,                 // PointMovementGenerator.h
+        ASSISTANCE_DISTRACT_MOTION_TYPE = 12,                 // IdleMovementGenerator.h
+        TIMED_FLEEING_MOTION_TYPE        = 13,                 // FleeingMovementGenerator.h
+        FOLLOW_MOTION_TYPE              = 14,
+        ROTATE_MOTION_TYPE              = 15,
+        EFFECT_MOTION_TYPE              = 16,
+        SPLINE_CHAIN_MOTION_TYPE        = 17,                 // SplineChainMovementGenerator.h
     }
 
     public enum SpellSchools
@@ -1226,6 +1228,7 @@ namespace SAI_Editor.Enumerators
         UNIT_STATE_FOLLOW_MOVE           = 134217728,
         UNIT_STATE_IGNORE_PATHFINDING    = 268435456,                 // do not use pathfinding in any MovementGenerator
         UNIT_STATE_DIFFERENT_PATHFINDING = 536870912,                 // do not call NormalizePath, do not add CollisioHeight
+        UNIT_STATE_WAYPOINT_PAUSED       = 1073741824,
     }
 
     [Flags]
@@ -1806,7 +1809,9 @@ namespace SAI_Editor.Enumerators
         CREATURE_TYPE_NOT_SPECIFIED    = 10,
         CREATURE_TYPE_TOTEM            = 11,
         CREATURE_TYPE_NON_COMBAT_PET   = 12,
-        CREATURE_TYPE_GAS_CLOUD        = 13
+        CREATURE_TYPE_GAS_CLOUD        = 13,
+        CREATURE_TYPE_BUG              = 14,
+        CREATURE_TYPE_MYSTIC_RIFT      = 15
     }
 
     enum TypeID

@@ -650,8 +650,8 @@ namespace SAI_Editor.Classes
 
                     if ((unitFlags & (int)UnitFlags.UNIT_FLAG_SERVER_CONTROLLED) != 0) commentUnitFlag += "Server Controlled & ";
                     if ((unitFlags & (int)UnitFlags.UNIT_FLAG_NON_ATTACKABLE) != 0) commentUnitFlag += "Not Attackable & ";
-                    if ((unitFlags & (int)UnitFlags.UNIT_FLAG_DISABLE_MOVE) != 0) commentUnitFlag += "Disable Movement & ";
-                    if ((unitFlags & (int)UnitFlags.UNIT_FLAG_PVP_ATTACKABLE) != 0) commentUnitFlag += "Pvp Attackable & ";
+                    if ((unitFlags & (int)UnitFlags.UNIT_FLAG_REMOVE_CLIENT_CONTROL) != 0) commentUnitFlag += "Remove Client Control & ";
+                    if ((unitFlags & (int)UnitFlags.UNIT_FLAG_PLAYER_CONTROLLED) != 0) commentUnitFlag += "player Controlled & ";
                     if ((unitFlags & (int)UnitFlags.UNIT_FLAG_RENAME) != 0) commentUnitFlag += "Rename & ";
                     if ((unitFlags & (int)UnitFlags.UNIT_FLAG_PREPARATION) != 0) commentUnitFlag += "Preparation & ";
                     if ((unitFlags & (int)UnitFlags.UNIT_FLAG_NOT_ATTACKABLE_1) != 0) commentUnitFlag += "Not Attackable & ";
@@ -1316,7 +1316,7 @@ namespace SAI_Editor.Classes
                     if ((goFlags & (int)GoFlags.GO_FLAG_TRANSPORT) != 0) commentGoFlag += "Transport & ";
                     if ((goFlags & (int)GoFlags.GO_FLAG_NOT_SELECTABLE) != 0) commentGoFlag += "Not Selectable & ";
                     if ((goFlags & (int)GoFlags.GO_FLAG_NODESPAWN) != 0) commentGoFlag += "No Despawn & ";
-                    if ((goFlags & (int)GoFlags.GO_FLAG_TRIGGERED) != 0) commentGoFlag += "Triggered & ";
+                    if ((goFlags & (int)GoFlags.GO_FLAG_AI_OBSTACLE) != 0) commentGoFlag += "AI Obstacle & ";
                     if ((goFlags & (int)GoFlags.GO_FLAG_DAMAGED) != 0) commentGoFlag += "Damaged & ";
                     if ((goFlags & (int)GoFlags.GO_FLAG_DESTROYED) != 0) commentGoFlag += "Destroyed & ";
 
@@ -1483,8 +1483,8 @@ namespace SAI_Editor.Classes
 
                     if ((unitFlags & (int)UnitFlags.UNIT_FLAG_SERVER_CONTROLLED) != 0) commentUnitFlag += "Server Controlled & ";
                     if ((unitFlags & (int)UnitFlags.UNIT_FLAG_NON_ATTACKABLE) != 0) commentUnitFlag += "Not Attackable & ";
-                    if ((unitFlags & (int)UnitFlags.UNIT_FLAG_DISABLE_MOVE) != 0) commentUnitFlag += "Disable Move & ";
-                    if ((unitFlags & (int)UnitFlags.UNIT_FLAG_PVP_ATTACKABLE) != 0) commentUnitFlag += "PvP Attackable & ";
+                    if ((unitFlags & (int)UnitFlags.UNIT_FLAG_REMOVE_CLIENT_CONTROL) != 0) commentUnitFlag += "Remove Client Control & ";
+                    if ((unitFlags & (int)UnitFlags.UNIT_FLAG_PLAYER_CONTROLLED) != 0) commentUnitFlag += "Player Controlled & ";
                     if ((unitFlags & (int)UnitFlags.UNIT_FLAG_RENAME) != 0) commentUnitFlag += "Rename & ";
                     if ((unitFlags & (int)UnitFlags.UNIT_FLAG_PREPARATION) != 0) commentUnitFlag += "Preparation & ";
                     if ((unitFlags & (int)UnitFlags.UNIT_FLAG_NOT_ATTACKABLE_1) != 0) commentUnitFlag += "Not Attackable & ";
