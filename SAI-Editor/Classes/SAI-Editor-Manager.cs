@@ -59,6 +59,7 @@ namespace SAI_Editor.Classes
             { "SmartEventFlags", typeof(MultiSelectForm<SmartEventFlags>)},
             { "SmartPhaseMasks", typeof(MultiSelectForm<SmartPhaseMasks>)},
             { "SmartCastFlags", typeof(MultiSelectForm<SmartCastFlags>)},
+            { "SmartSpawnFlags", typeof(MultiSelectForm<SmartSpawnFlags>)},
             { "SmartAiTemplates", typeof(SingleSelectForm<SmartAiTemplates>)},
             { "SmartRespawnCondition", typeof(SingleSelectForm<SmartRespawnCondition>)},
             { "SmartActionlistTimerUpdateType", typeof(SingleSelectForm<SmartActionlistTimerUpdateType>)},

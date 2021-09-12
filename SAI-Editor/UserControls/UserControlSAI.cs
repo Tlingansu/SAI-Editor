@@ -725,6 +725,7 @@ namespace SAI_Editor
                 case SmartAction.SMART_ACTION_SET_UNIT_FIELD_BYTES_1: //! Bytes1flags & Type
                 case SmartAction.SMART_ACTION_REMOVE_UNIT_FIELD_BYTES_1: //! Bytes1flags & Type
                 case SmartAction.SMART_ACTION_RANDOM_PHASE_RANGE: //! Event phase min + Event phase max
+                case SmartAction.SMART_ACTION_CROSS_CAST_IN_COMBAT:
                     buttonActionParamOneSearch.Visible = true;
                     buttonActionParamTwoSearch.Visible = true;
                     break;
@@ -771,12 +772,14 @@ namespace SAI_Editor
                     buttonActionParamFiveSearch.Visible = true; //! Item entry 3
                     break;
                 case SmartAction.SMART_ACTION_SET_UNIT_STATE:   
-                case SmartAction.SMART_ACTION_CROSS_CAST_IN_COMBAT:
                     buttonActionParamTwoSearch.Visible = true;
                     break;
                 case SmartAction.SMART_ACTION_INVOKER_CAST_:
                     buttonActionParamTwoSearch.Visible = true;
                     buttonActionParamThreeSearch.Visible = true;
+                    break;
+                case SmartAction.SMART_ACTION_SPAWN_CREATUREGROUP:
+                    buttonActionParamFourSearch.Visible = true; //! Spawnflag
                     break;
                 case SmartAction.SMART_ACTION_SET_FACTION: //! Faction entry
                 case SmartAction.SMART_ACTION_EMOTE: //! Emote entry
@@ -1651,6 +1654,7 @@ namespace SAI_Editor
                 case SmartAction.SMART_ACTION_REMOVEAURASFROMSPELL:
                 case SmartAction.SMART_ACTION_ADD_AURA:
                 case SmartAction.SMART_ACTION_CAST_RANDOM_SPELL:
+                case SmartAction.SMART_ACTION_CROSS_CAST_IN_COMBAT:
                     ShowSearchFromDatabaseForm(textBoxToChange, DatabaseSearchFormType.DatabaseSearchFormTypeSpell);
                     break;
                 case SmartAction.SMART_ACTION_SET_FACTION:
@@ -1990,6 +1994,9 @@ namespace SAI_Editor
                     break;
                 case SmartAction.SMART_ACTION_CAST_RANDOM_SPELL:
                     ShowSearchFromDatabaseForm(textBoxToChange, DatabaseSearchFormType.DatabaseSearchFormTypeSpell);
+                    break;
+                case SmartAction.SMART_ACTION_SPAWN_CREATUREGROUP:
+                    ShowSelectForm("SmartSpawnFlags", textBoxToChange);
                     break;
             }
         }

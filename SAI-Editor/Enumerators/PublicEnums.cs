@@ -484,6 +484,15 @@ namespace SAI_Editor.Enumerators
         SMARTCAST_COMBAT_MOVE = 0x40,
     }
 
+    [Flags]
+    public enum SmartSpawnFlags
+    {
+        SMARTAI_SPAWN_FLAG_NONE = 0x00,
+        SMARTAI_SPAWN_FLAG_IGNORE_RESPAWN = 0x01,
+        SMARTAI_SPAWN_FLAG_FORCE_SPAWN = 0x02,
+        SMARTAI_SPAWN_FLAG_NOSAVE_RESPAWN = 0x04,
+    }
+
     public enum ReactState
     {
         REACT_PASSIVE = 0,

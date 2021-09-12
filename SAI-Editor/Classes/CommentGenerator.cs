@@ -335,7 +335,7 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_HEALTH, "Set Health - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_STOP_MOTION, "Stop Motion (StopMovement: _actionParamOne_, MovementExpired: _actionParamTwo_) - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_LOAD_TEMPLATE, "Load SAI Template: _actionParamOne_ - Target: _getTargetType_");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_SPAWN_CREATUREGROUP, "Spawn CreatureGroup ID _actionParamOne_ (Min Secs: _actionParamTwo_, Max Secs: _actionParamThree_, Spawnflags: _actionParamFour_) - Target: _getTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_SPAWN_CREATUREGROUP, "Spawn CreatureGroup ID _actionParamOne_ (Min Secs: _actionParamTwo_, Max Secs: _actionParamThree_, _getSpawnFlags_) - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_DESPAWN_CREATUREGROUP, "Despawn CreatureGroup ID _actionParamOne_ (Min Secs: _actionParamTwo_, Max Secs: _actionParamThree_, Spawnflags: _actionParamFour_) - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SPAWN_GAMEOBJECTGROUP, "Spawn GameobjectGroup ID _actionParamOne_ (Min Secs: _actionParamTwo_, Max Secs: _actionParamThree_, Spawnflags: _actionParamFour_) - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_DESPAWN_GAMEOBJECTGROUP, "Despawn GameobjectGroup ID _actionParamOne_ (Min Secs: _actionParamTwo_, Max Secs: _actionParamThree_, Spawnflags: _actionParamFour_) - Target: _getTargetType_");
@@ -729,6 +729,23 @@ namespace SAI_Editor.Classes
                         fullLine = fullLine.Replace("_getCastFlags_", "with CastFlags_getCastFlags_");
 
                     fullLine = fullLine.Replace("_getCastFlags_", " " + commentCastFlag);
+                }
+
+                if (fullLine.Contains("_getSpawnFlags_"))
+                {
+                    string commentSpawnFlag = "";
+                    int spawnFlags = smartScript.action_param4;
+
+                    if ((spawnFlags & (int)SmartSpawnFlags.SMARTAI_SPAWN_FLAG_IGNORE_RESPAWN) != 0) commentSpawnFlag += "Ignore Respawn & ";
+                    if ((spawnFlags & (int)SmartSpawnFlags.SMARTAI_SPAWN_FLAG_FORCE_SPAWN) != 0) commentSpawnFlag += "Force Spawn & ";
+                    if ((spawnFlags & (int)SmartSpawnFlags.SMARTAI_SPAWN_FLAG_NOSAVE_RESPAWN) != 0) commentSpawnFlag += "Nosave Respawn & ";
+
+                    commentSpawnFlag = commentSpawnFlag.Trim(new[] { ' ', '&', ' ' }); //! Trim last ' & ' from the comment..
+
+                    if (commentSpawnFlag.Contains("&"))
+                        fullLine = fullLine.Replace("_getSpawnFlags_", "with SpawnFlags_getSpawnFlags_");
+
+                    fullLine = fullLine.Replace("_getSpawnFlags_", " " + commentSpawnFlag);
                 }
 
                 if (fullLine.Contains("_getNpcFlags_"))
