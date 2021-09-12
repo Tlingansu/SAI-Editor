@@ -750,6 +750,7 @@ namespace SAI_Editor
                 case SmartAction.SMART_ACTION_RANDOM_PHASE:  //! Event phase 1-6
                 case SmartAction.SMART_ACTION_RANDOM_EMOTE: //! Emote entry 1-6
                 case SmartAction.SMART_ACTION_START_CLOSEST_WAYPOINT: //! Wp 1-6
+                case SmartAction.SMART_ACTION_CAST_RANDOM_SPELL:
                     buttonActionParamOneSearch.Visible = true;
                     buttonActionParamTwoSearch.Visible = true;
                     buttonActionParamThreeSearch.Visible = true;
@@ -1649,6 +1650,7 @@ namespace SAI_Editor
                 case SmartAction.SMART_ACTION_CROSS_CAST:
                 case SmartAction.SMART_ACTION_REMOVEAURASFROMSPELL:
                 case SmartAction.SMART_ACTION_ADD_AURA:
+                case SmartAction.SMART_ACTION_CAST_RANDOM_SPELL:
                     ShowSearchFromDatabaseForm(textBoxToChange, DatabaseSearchFormType.DatabaseSearchFormTypeSpell);
                     break;
                 case SmartAction.SMART_ACTION_SET_FACTION:
@@ -1911,6 +1913,9 @@ namespace SAI_Editor
                 case SmartAction.SMART_ACTION_SET_UNIT_STATE:
                     ShowSelectForm("UnitStates", textBoxToChange);
                     break;
+                case SmartAction.SMART_ACTION_CAST_RANDOM_SPELL:
+                    ShowSearchFromDatabaseForm(textBoxToChange, DatabaseSearchFormType.DatabaseSearchFormTypeSpell);
+                    break;
             }
         }
 
@@ -1950,6 +1955,9 @@ namespace SAI_Editor
                 case SmartAction.SMART_ACTION_INVOKER_CAST_:
                     ShowSelectForm("TriggerCastFlags", textBoxToChange);
                     break;
+                case SmartAction.SMART_ACTION_CAST_RANDOM_SPELL:
+                    ShowSearchFromDatabaseForm(textBoxToChange, DatabaseSearchFormType.DatabaseSearchFormTypeSpell);
+                    break;
             }
         }
 
@@ -1980,6 +1988,9 @@ namespace SAI_Editor
                 case SmartAction.SMART_ACTION_RANDOM_SOUND:
                     ShowSearchFromDatabaseForm(textBoxToChange, DatabaseSearchFormType.DatabaseSearchFormTypeSound);
                     break;
+                case SmartAction.SMART_ACTION_CAST_RANDOM_SPELL:
+                    ShowSearchFromDatabaseForm(textBoxToChange, DatabaseSearchFormType.DatabaseSearchFormTypeSpell);
+                    break;
             }
         }
 
@@ -2001,6 +2012,9 @@ namespace SAI_Editor
                 case SmartAction.SMART_ACTION_START_CLOSEST_WAYPOINT:
                     ShowSearchFromDatabaseForm(textBoxToChange, DatabaseSearchFormType.DatabaseSearchFormTypeWaypoint);
                     break;
+                case SmartAction.SMART_ACTION_CAST_RANDOM_SPELL:
+                    ShowSelectForm("SmartCastFlags", textBoxToChange);
+                    break;
             }
         }
 
@@ -2021,6 +2035,9 @@ namespace SAI_Editor
                     break;
                 case SmartAction.SMART_ACTION_START_CLOSEST_WAYPOINT:
                     ShowSearchFromDatabaseForm(textBoxToChange, DatabaseSearchFormType.DatabaseSearchFormTypeWaypoint);
+                    break;
+                case SmartAction.SMART_ACTION_CAST_RANDOM_SPELL:
+                    ShowSelectForm("TriggerCastFlags", textBoxToChange);
                     break;
             }
         }
