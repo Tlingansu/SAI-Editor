@@ -245,8 +245,8 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_PLAY_ANIMKIT, "Play Animationkit (ID: _actionParamOne_, Type: _AnimKitTypeActionParamTwo_) - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SCENE_PLAY, "Play Scene ID _actionParamOne_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SCENE_CANCEL, "Cancel Scene ID _actionParamOne_ - Target: _getTargetType_");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_SPAWN_SPAWNGROUP, "Spawn Spawngroup ID _actionParamOne_ (Min Secs: _actionParamTwo_, Max Secs: _actionParamThree_, Spawnflags: _actionParamFour_) - Target: _getTargetType_");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_DESPAWN_SPAWNGROUP, "Despawn Spawngroup ID _actionParamOne_ (Min Secs: _actionParamTwo_, Max Secs: _actionParamThree_, Spawnflags: _actionParamFour_) - Target: _getTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_SPAWN_SPAWNGROUP, "Spawn Spawngroup ID _actionParamOne_ (Min Secs: _actionParamTwo_, Max Secs: _actionParamThree_, Spawnflags: _getSpawnFlags_) - Target: _getTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_DESPAWN_SPAWNGROUP, "Despawn Spawngroup ID _actionParamOne_ (Min Secs: _actionParamTwo_, Max Secs: _actionParamThree_, Spawnflags: _getSpawnFlags_) - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_RESPAWN_BY_SPAWNID, "Respawn SpawnID _actionParamTwo_ with SpawnType _actionParamOne_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_INVOKER_CAST_, "Cast '_spellNameActionParamOne_' _getCastFlags_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_PLAY_CINEMATIC, "Play Cinematic Entry: _actionParamOne_ - Target: _getTargetType_");

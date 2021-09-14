@@ -724,6 +724,8 @@ namespace SAI_Editor
                     buttonActionParamFiveSearch.Visible = true; //! Item entry 3
                     break;
                 case SmartAction.SMART_ACTION_SPAWN_CREATUREGROUP:
+                case SmartAction.SMART_ACTION_SPAWN_SPAWNGROUP:
+                case SmartAction.SMART_ACTION_DESPAWN_SPAWNGROUP:
                     buttonActionParamFourSearch.Visible = true; //! Spawnflag
                     break;
                 case SmartAction.SMART_ACTION_SET_FACTION: //! Faction entry
@@ -1937,6 +1939,8 @@ namespace SAI_Editor
                     ShowSearchFromDatabaseForm(textBoxToChange, DatabaseSearchFormType.DatabaseSearchFormTypeSpell);
                     break;
                 case SmartAction.SMART_ACTION_SPAWN_CREATUREGROUP:
+                case SmartAction.SMART_ACTION_SPAWN_SPAWNGROUP:
+                case SmartAction.SMART_ACTION_DESPAWN_SPAWNGROUP:
                     ShowSelectForm("SmartSpawnFlags", textBoxToChange);
                     break;
             }
