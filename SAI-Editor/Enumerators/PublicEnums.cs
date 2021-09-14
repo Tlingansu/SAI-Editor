@@ -37,10 +37,10 @@ namespace SAI_Editor.Enumerators
 
     public enum SourceTypes
     {
-        SourceTypeNone = -1,
-        SourceTypeCreature = 0,
-        SourceTypeGameobject = 1,
-        SourceTypeAreaTrigger = 2,
+        SourceTypeNone               = -1,
+        SourceTypeCreature           = 0,
+        SourceTypeGameobject         = 1,
+        SourceTypeAreaTrigger        = 2,
         SourceTypeScriptedActionlist = 9,
     }
 
@@ -440,89 +440,92 @@ namespace SAI_Editor.Enumerators
 
     public enum SmartReactState
     {
-        REACT_PASSIVE = 0,
-        REACT_DEFENSIVE = 1,
+        REACT_PASSIVE    = 0,
+        REACT_DEFENSIVE  = 1,
         REACT_AGGRESSIVE = 2
     }
 
     public enum SmartSourceType
     {
-        SMART_SCRIPT_TYPE_CREATURE = 0,
-        SMART_SCRIPT_TYPE_GAMEOBJECT = 1,
-        SMART_SCRIPT_TYPE_AREATRIGGER = 2,
-        SMART_SCRIPT_TYPE_EVENT_NYI = 3,
-        SMART_SCRIPT_TYPE_GOSSIP_NYI = 4,
-        SMART_SCRIPT_TYPE_QUEST_NYI = 5,
-        SMART_SCRIPT_TYPE_SPELL_NYI = 6,
-        SMART_SCRIPT_TYPE_TRANSPORT_NYI = 7,
-        SMART_SCRIPT_TYPE_INSTANCE_NYI = 8,
-        SMART_SCRIPT_TYPE_TIMED_ACTIONLIST = 9,
-        SMART_SCRIPT_TYPE_SCENE = 10, // RESERVED
-        SMART_SCRIPT_TYPE_AREATRIGGER_ENTITY = 11, // RESERVED
+        SMART_SCRIPT_TYPE_CREATURE                      = 0,
+        SMART_SCRIPT_TYPE_GAMEOBJECT                    = 1,
+        SMART_SCRIPT_TYPE_AREATRIGGER                   = 2,
+        SMART_SCRIPT_TYPE_EVENT_NYI                     = 3,
+        SMART_SCRIPT_TYPE_GOSSIP_NYI                    = 4,
+        SMART_SCRIPT_TYPE_QUEST_NYI                     = 5,
+        SMART_SCRIPT_TYPE_SPELL_NYI                     = 6,
+        SMART_SCRIPT_TYPE_TRANSPORT_NYI                 = 7,
+        SMART_SCRIPT_TYPE_INSTANCE_NYI                  = 8,
+        SMART_SCRIPT_TYPE_TIMED_ACTIONLIST              = 9,
+        SMART_SCRIPT_TYPE_SCENE                         = 10, // RESERVED
+        SMART_SCRIPT_TYPE_AREATRIGGER_ENTITY            = 11, // RESERVED
         SMART_SCRIPT_TYPE_AREATRIGGER_ENTITY_SERVERSIDE = 12 // RESERVED
     }
 
     public enum SmartSummonType
     {
-        TEMPSUMMON_TIMED_OR_DEAD_DESPAWN = 1,
-        TEMPSUMMON_TIMED_OR_CORPSE_DESPAWN = 2,
-        TEMPSUMMON_TIMED_DESPAWN = 3,
-        TEMPSUMMON_TIMED_DESPAWN_OUT_OF_COMBAT = 4,
-        TEMPSUMMON_CORPSE_DESPAWN = 5,
-        TEMPSUMMON_CORPSE_TIMED_DESPAWN = 6,
-        TEMPSUMMON_DEAD_DESPAWN = 7,
-        TEMPSUMMON_MANUAL_DESPAWN = 8
+        TEMPSUMMON_TIMED_OR_DEAD_DESPAWN                = 1,
+        TEMPSUMMON_TIMED_OR_CORPSE_DESPAWN              = 2,
+        TEMPSUMMON_TIMED_DESPAWN                        = 3,
+        TEMPSUMMON_TIMED_DESPAWN_OUT_OF_COMBAT          = 4,
+        TEMPSUMMON_CORPSE_DESPAWN                       = 5,
+        TEMPSUMMON_CORPSE_TIMED_DESPAWN                 = 6,
+        TEMPSUMMON_DEAD_DESPAWN                         = 7,
+        TEMPSUMMON_MANUAL_DESPAWN                       = 8
     }
 
     [Flags]
     public enum SmartCastFlags
     {
-        SMARTCAST_NONE = 0x00,
-        SMARTCAST_INTERRUPT_PREVIOUS = 0x01,
-        SMARTCAST_TRIGGERED = 0x02,
-        SMARTCAST_AURA_NOT_PRESENT = 0x20,
-        SMARTCAST_COMBAT_MOVE = 0x40,
+        SMARTCAST_NONE                                  = 0x00,
+        SMARTCAST_INTERRUPT_PREVIOUS                    = 0x01,
+        SMARTCAST_TRIGGERED                             = 0x02,
+        //SMARTCAST_FORCE_CAST                          = 0x04,                     //Forces cast even if creature is out of mana or out of range
+        //SMARTCAST_NO_MELEE_IF_OOM                     = 0x08,                     //Prevents creature from entering melee if out of mana or out of range
+        //SMARTCAST_FORCE_TARGET_SELF                   = 0x10,                     //Forces the target to cast this spell on itself
+        SMARTCAST_AURA_NOT_PRESENT                      = 0x20,
+        SMARTCAST_COMBAT_MOVE                           = 0x40,
     }
 
     [Flags]
     public enum SmartSpawnFlags
     {
-        SMARTAI_SPAWN_FLAG_NONE = 0x00,
-        SMARTAI_SPAWN_FLAG_IGNORE_RESPAWN = 0x01,
-        SMARTAI_SPAWN_FLAG_FORCE_SPAWN = 0x02,
-        SMARTAI_SPAWN_FLAG_NOSAVE_RESPAWN = 0x04,
+        SMARTAI_SPAWN_FLAG_NONE                         = 0x00,
+        SMARTAI_SPAWN_FLAG_IGNORE_RESPAWN               = 0x01,
+        SMARTAI_SPAWN_FLAG_FORCE_SPAWN                  = 0x02,
+        SMARTAI_SPAWN_FLAG_NOSAVE_RESPAWN               = 0x04,
     }
 
     public enum ReactState
     {
-        REACT_PASSIVE = 0,
-        REACT_DEFENSIVE = 1,
-        REACT_AGGRESSIVE = 2,
+        REACT_PASSIVE                                   = 0,
+        REACT_DEFENSIVE                                 = 1,
+        REACT_AGGRESSIVE                                = 2,
     }
 
     public enum SmartRespawnCondition
     {
-        RESPAWN_CONDITION_NONE = 0,
-        RESPAWN_CONDITION_MAP = 1,
-        RESPAWN_CONDITION_AREA = 2,
+        RESPAWN_CONDITION_NONE                          = 0,
+        RESPAWN_CONDITION_MAP                           = 1,
+        RESPAWN_CONDITION_AREA                          = 2,
     }
 
     public enum GoLootState
     {
-        GAMEOBJECT_NOT_READY = 0,
-        GAMEOBJECT_READY = 1,
-        GAMEOBJECT_ACTIVATED = 2,
-        GAMEOBJECT_JUST_DEACTIVATED = 3,
+        GAMEOBJECT_NOT_READY                            = 0,
+        GAMEOBJECT_READY                                = 1,
+        GAMEOBJECT_ACTIVATED                            = 2,
+        GAMEOBJECT_JUST_DEACTIVATED                     = 3,
     }
 
     public enum SmartAiTemplates
     {
-        SMARTAI_TEMPLATE_BASIC = 0,
-        SMARTAI_TEMPLATE_CASTER = 1,
-        SMARTAI_TEMPLATE_TURRET = 2,
-        SMARTAI_TEMPLATE_PASSIVE = 3,
-        SMARTAI_TEMPLATE_CAGED_GO_PART = 4,
-        SMARTAI_TEMPLATE_CAGED_NPC_PART = 5,
+        SMARTAI_TEMPLATE_BASIC                          = 0,
+        SMARTAI_TEMPLATE_CASTER                         = 1,
+        SMARTAI_TEMPLATE_TURRET                         = 2,
+        SMARTAI_TEMPLATE_PASSIVE                        = 3,
+        SMARTAI_TEMPLATE_CAGED_GO_PART                  = 4,
+        SMARTAI_TEMPLATE_CAGED_NPC_PART                 = 5,
     }
 
     [Flags]
@@ -558,51 +561,51 @@ namespace SAI_Editor.Enumerators
 
     public enum UnitStandStateType
     {
-        UNIT_STAND_STATE_STAND             = 0,
-        UNIT_STAND_STATE_SIT               = 1,
-        UNIT_STAND_STATE_SIT_CHAIR         = 2,
-        UNIT_STAND_STATE_SLEEP             = 3,
-        UNIT_STAND_STATE_SIT_LOW_CHAIR     = 4,
-        UNIT_STAND_STATE_SIT_MEDIUM_CHAIR  = 5,
-        UNIT_STAND_STATE_SIT_HIGH_CHAIR    = 6,
-        UNIT_STAND_STATE_DEAD              = 7,
-        UNIT_STAND_STATE_KNEEL             = 8,
-        UNIT_STAND_STATE_SUBMERGED         = 9
+        UNIT_STAND_STATE_STAND                  = 0,
+        UNIT_STAND_STATE_SIT                    = 1,
+        UNIT_STAND_STATE_SIT_CHAIR              = 2,
+        UNIT_STAND_STATE_SLEEP                  = 3,
+        UNIT_STAND_STATE_SIT_LOW_CHAIR          = 4,
+        UNIT_STAND_STATE_SIT_MEDIUM_CHAIR       = 5,
+        UNIT_STAND_STATE_SIT_HIGH_CHAIR         = 6,
+        UNIT_STAND_STATE_DEAD                   = 7,
+        UNIT_STAND_STATE_KNEEL                  = 8,
+        UNIT_STAND_STATE_SUBMERGED              = 9
     }
 
     [Flags]
     public enum UnitStandFlags
     {
-        UNIT_STAND_FLAGS_NONE         = 0x00,
-        UNIT_STAND_FLAGS_UNK1         = 0x01,
-        UNIT_STAND_FLAGS_CREEP        = 0x02,
-        UNIT_STAND_FLAGS_UNTRACKABLE  = 0x04,
-        UNIT_STAND_FLAGS_UNK4         = 0x08,
-        UNIT_STAND_FLAGS_UNK5         = 0x10,
-        UNIT_STAND_FLAGS_ALL          = 0xFF
+        UNIT_STAND_FLAGS_NONE                   = 0x00,
+        UNIT_STAND_FLAGS_UNK1                   = 0x01,
+        UNIT_STAND_FLAGS_CREEP                  = 0x02,
+        UNIT_STAND_FLAGS_UNTRACKABLE            = 0x04,
+        UNIT_STAND_FLAGS_UNK4                   = 0x08,
+        UNIT_STAND_FLAGS_UNK5                   = 0x10,
+        UNIT_STAND_FLAGS_ALL                    = 0xFF
     }
 
     [Flags]
     public enum UnitBytes1_Flags
     {
-        UNIT_BYTE1_FLAG_ALWAYS_STAND    = 0x01,
-        UNIT_BYTE1_FLAG_HOVER           = 0x02,
-        UNIT_BYTE1_FLAG_UNK_3           = 0x04,
-        UNIT_BYTE1_FLAG_ALL             = 0xFF
+        UNIT_BYTE1_FLAG_ALWAYS_STAND            = 0x01,
+        UNIT_BYTE1_FLAG_HOVER                   = 0x02,
+        UNIT_BYTE1_FLAG_UNK_3                   = 0x04,
+        UNIT_BYTE1_FLAG_ALL                     = 0xFF
     }
 
     [Flags]
     public enum SmartEventFlags
     {
-        EVENT_FLAG_NONE               = 0x00,
-        EVENT_FLAG_NOT_REPEATABLE     = 0x01,
-        EVENT_FLAG_NORMAL_DUNGEON     = 0x02,
-        EVENT_FLAG_HEROIC_DUNGEON     = 0x04,
-        EVENT_FLAG_NORMAL_RAID        = 0x08,
-        EVENT_FLAG_HEROIC_RAID        = 0x10,
-        EVENT_FLAG_DEBUG_ONLY         = 0x80,
-        EVENT_FLAG_DONT_RESET         = 0x100,
-        EVENT_FLAG_WHILE_CHARMED      = 0x200,
+        EVENT_FLAG_NONE                         = 0x00,
+        EVENT_FLAG_NOT_REPEATABLE               = 0x01,
+        EVENT_FLAG_NORMAL_DUNGEON               = 0x02,
+        EVENT_FLAG_HEROIC_DUNGEON               = 0x04,
+        EVENT_FLAG_NORMAL_RAID                  = 0x08,
+        EVENT_FLAG_HEROIC_RAID                  = 0x10,
+        EVENT_FLAG_DEBUG_ONLY                   = 0x80,
+        EVENT_FLAG_DONT_RESET                   = 0x100,
+        EVENT_FLAG_WHILE_CHARMED                = 0x200,
     }
 
     [Flags]
@@ -1090,154 +1093,154 @@ namespace SAI_Editor.Enumerators
     [Flags]
     public enum PhaseMasks
     {
-        PHASEMASK_NEVER    = 0x00,
-        PHASEMASK_2        = 0x02,
-        PHASEMASK_3        = 0x04,
-        PHASEMASK_4        = 0x08,
-        PHASEMASK_5        = 0x10,
-        PHASEMASK_6        = 0x20,
-        PHASEMASK_7        = 0x40,
-        PHASEMASK_8        = 0x80,
-        PHASEMASK_9        = 0x100,
-        PHASEMASK_10       = 0x200,
-        PHASEMASK_11       = 0x400,
-        PHASEMASK_12       = 0x800,
-        PHASEMASK_13       = 0x1000,
-        PHASEMASK_14       = 0x2000,
-        PHASEMASK_15       = 0x4000,
-        // etc....
-        PHASEMASK_ANYWHERE = ~0,   //! -1, 0xFFFFFFFF, etc.
+        PHASEMASK_NEVER                     = 0x00,
+        PHASEMASK_2                         = 0x02,
+        PHASEMASK_3                         = 0x04,
+        PHASEMASK_4                         = 0x08,
+        PHASEMASK_5                         = 0x10,
+        PHASEMASK_6                         = 0x20,
+        PHASEMASK_7                         = 0x40,
+        PHASEMASK_8                         = 0x80,
+        PHASEMASK_9                         = 0x100,
+        PHASEMASK_10                        = 0x200,
+        PHASEMASK_11                        = 0x400,
+        PHASEMASK_12                        = 0x800,
+        PHASEMASK_13                        = 0x1000,
+        PHASEMASK_14                        = 0x2000,
+        PHASEMASK_15                        = 0x4000,
+        // etc....                          
+        PHASEMASK_ANYWHERE                  = ~0,   //! -1, 0xFFFFFFFF, etc.
     }
 
     enum SMART_EVENT_PHASE_BITS
     {
-        SMART_EVENT_PHASE_ALWAYS_BIT      = 0,
-        SMART_EVENT_PHASE_1_BIT           = 1,
-        SMART_EVENT_PHASE_2_BIT           = 2,
-        SMART_EVENT_PHASE_3_BIT           = 4,
-        SMART_EVENT_PHASE_4_BIT           = 8,
-        SMART_EVENT_PHASE_5_BIT           = 16,
-        SMART_EVENT_PHASE_6_BIT           = 32,
-        SMART_EVENT_PHASE_7_BIT           = 64,
-        SMART_EVENT_PHASE_8_BIT           = 128,
-        SMART_EVENT_PHASE_9_BIT           = 256,
-        SMART_EVENT_PHASE_ALL             = SMART_EVENT_PHASE_1_BIT + SMART_EVENT_PHASE_2_BIT + SMART_EVENT_PHASE_3_BIT + SMART_EVENT_PHASE_4_BIT + SMART_EVENT_PHASE_5_BIT + SMART_EVENT_PHASE_6_BIT
+        SMART_EVENT_PHASE_ALWAYS_BIT        = 0,
+        SMART_EVENT_PHASE_1_BIT             = 1,
+        SMART_EVENT_PHASE_2_BIT             = 2,
+        SMART_EVENT_PHASE_3_BIT             = 4,
+        SMART_EVENT_PHASE_4_BIT             = 8,
+        SMART_EVENT_PHASE_5_BIT             = 16,
+        SMART_EVENT_PHASE_6_BIT             = 32,
+        SMART_EVENT_PHASE_7_BIT             = 64,
+        SMART_EVENT_PHASE_8_BIT             = 128,
+        SMART_EVENT_PHASE_9_BIT             = 256,
+        SMART_EVENT_PHASE_ALL               = SMART_EVENT_PHASE_1_BIT + SMART_EVENT_PHASE_2_BIT + SMART_EVENT_PHASE_3_BIT + SMART_EVENT_PHASE_4_BIT + SMART_EVENT_PHASE_5_BIT + SMART_EVENT_PHASE_6_BIT
     }
 
     public enum PowerTypes : int
     {
-        POWER_MANA                        = 0,
-        POWER_RAGE                        = 1,
-        POWER_FOCUS                       = 2,
-        POWER_ENERGY                      = 3,
-        POWER_HAPPINESS                   = 4,
-        POWER_RUNE                        = 5,
-        POWER_RUNIC_POWER                 = 6,
-        //MAX_POWERS                      = 7,
-        //POWER_ALL                       = 127,    // default for class?
-        //POWER_HEALTH                    = 0xFFFFFFFE    // (-2 as signed value)
-        POWER_HEALTH                      = -2,
+        POWER_MANA                          = 0,
+        POWER_RAGE                          = 1,
+        POWER_FOCUS                         = 2,
+        POWER_ENERGY                        = 3,
+        POWER_HAPPINESS                     = 4,
+        POWER_RUNE                          = 5,
+        POWER_RUNIC_POWER                   = 6,
+        //MAX_POWERS                        = 7,
+        //POWER_ALL                         = 127,    // default for class?
+        //POWER_HEALTH                      = 0xFFFFFFFE    // (-2 as signed value)
+        POWER_HEALTH                        = -2,
     }
 
     public enum GoStates
     {
-        GO_STATE_NOT_READY                = 0,
-        GO_STATE_READY                    = 1,
-        GO_STATE_ACTIVATED                = 2,
-        GO_STATE_DEACTIVATED              = 3,
+        GO_STATE_NOT_READY                  = 0,
+        GO_STATE_READY                      = 1,
+        GO_STATE_ACTIVATED                  = 2,
+        GO_STATE_DEACTIVATED                = 3,
     }
 
     public enum SetGoStates
     {
-        GO_STATE_ACTIVE                   = 0,                        // show in world as used and not reset (closed door open)
-        GO_STATE_READY                    = 1,                        // show in world as ready (closed door close)
-        GO_STATE_DESTROYED                = 2                         // show the object in-game as already used and not yet reset (e.g. door opened by a cannon blast)
+        GO_STATE_ACTIVE                     = 0,                        // show in world as used and not reset (closed door open)
+        GO_STATE_READY                      = 1,                        // show in world as ready (closed door close)
+        GO_STATE_DESTROYED                  = 2                         // show the object in-game as already used and not yet reset (e.g. door opened by a cannon blast)
     }
 
     public enum HostilityModes
     {
-        HOSTILE_MODE_HOSTILE              = 0,                  // Enable Event if creature reacts to other creature: Hostile       
-        HOSTILE_MODE_NOT_HOSTILE          = 1,                  // Enable Event if creature reacts to other creature: Not hostile (not that Friendly and Not hostile have different meanings)
-        HOSTILE_MODE_ANY                  = 2                   // Enable Event if creature reacts to other creature: Any, as in both Hostile and Not hostile
+        HOSTILE_MODE_HOSTILE                = 0,                  // Enable Event if creature reacts to other creature: Hostile       
+        HOSTILE_MODE_NOT_HOSTILE            = 1,                  // Enable Event if creature reacts to other creature: Not hostile (not that Friendly and Not hostile have different meanings)
+        HOSTILE_MODE_ANY                    = 2                   // Enable Event if creature reacts to other creature: Any, as in both Hostile and Not hostile
     }
 
     public enum TeamIDs
     {
-        HORDE                             = 67,
-        ALLIANCE                          = 469,
-        //TEAM_STEAMWHEEDLE_CARTEL        = 169,                       // not used in code
-        //TEAM_ALLIANCE_FORCES            = 891,
-        //TEAM_HORDE_FORCES               = 892,
-        //TEAM_SANCTUARY                  = 936,
-        //TEAM_OUTLAND                    = 980,
-        TEAM_ANY                          = 0                            // if ReputationListId > 0 && Flags != FACTION_FLAG_TEAM_HEADER
+        HORDE                               = 67,
+        ALLIANCE                            = 469,
+        //TEAM_STEAMWHEEDLE_CARTEL          = 169,                       // not used in code
+        //TEAM_ALLIANCE_FORCES              = 891,
+        //TEAM_HORDE_FORCES                 = 892,
+        //TEAM_SANCTUARY                    = 936,
+        //TEAM_OUTLAND                      = 980,
+        TEAM_ANY                            = 0                            // if ReputationListId > 0 && Flags != FACTION_FLAG_TEAM_HEADER
     }
 
     public enum MovementGeneratorType
     {
-        IDLE_MOTION_TYPE                  = 0,                  // IdleMovementGenerator.h
-        RANDOM_MOTION_TYPE                = 1,                  // RandomMovementGenerator.h
-        WAYPOINT_MOTION_TYPE              = 2,                  // WaypointMovementGenerator.h
-        MAX_DB_MOTION_TYPE                = 3,                  // Below motion types can't be set in DB.
-        CONFUSED_MOTION_TYPE              = 4,                  // ConfusedMovementGenerator.h
-        CHASE_MOTION_TYPE                 = 5,                  // TargetedMovementGenerator.h
-        HOME_MOTION_TYPE                  = 6,                  // HomeMovementGenerator.h
-        FLIGHT_MOTION_TYPE                = 7,                  // WaypointMovementGenerator.h
-        POINT_MOTION_TYPE                 = 8,                  // PointMovementGenerator.h
-        FLEEING_MOTION_TYPE               = 9,                  // FleeingMovementGenerator.h
-        DISTRACT_MOTION_TYPE              = 10,                 // IdleMovementGenerator.h
-        ASSISTANCE_MOTION_TYPE            = 11,                 // PointMovementGenerator.h
-        ASSISTANCE_DISTRACT_MOTION_TYPE   = 12,                 // IdleMovementGenerator.h
-        TIMED_FLEEING_MOTION_TYPE         = 13,                 // FleeingMovementGenerator.h
-        FOLLOW_MOTION_TYPE                = 14,
-        ROTATE_MOTION_TYPE                = 15,
-        EFFECT_MOTION_TYPE                = 16,
-        SPLINE_CHAIN_MOTION_TYPE          = 17,                 // SplineChainMovementGenerator.h
+        IDLE_MOTION_TYPE                    = 0,                  // IdleMovementGenerator.h
+        RANDOM_MOTION_TYPE                  = 1,                  // RandomMovementGenerator.h
+        WAYPOINT_MOTION_TYPE                = 2,                  // WaypointMovementGenerator.h
+        MAX_DB_MOTION_TYPE                  = 3,                  // Below motion types can't be set in DB.
+        CONFUSED_MOTION_TYPE                = 4,                  // ConfusedMovementGenerator.h
+        CHASE_MOTION_TYPE                   = 5,                  // TargetedMovementGenerator.h
+        HOME_MOTION_TYPE                    = 6,                  // HomeMovementGenerator.h
+        FLIGHT_MOTION_TYPE                  = 7,                  // WaypointMovementGenerator.h
+        POINT_MOTION_TYPE                   = 8,                  // PointMovementGenerator.h
+        FLEEING_MOTION_TYPE                 = 9,                  // FleeingMovementGenerator.h
+        DISTRACT_MOTION_TYPE                = 10,                 // IdleMovementGenerator.h
+        ASSISTANCE_MOTION_TYPE              = 11,                 // PointMovementGenerator.h
+        ASSISTANCE_DISTRACT_MOTION_TYPE     = 12,                 // IdleMovementGenerator.h
+        TIMED_FLEEING_MOTION_TYPE           = 13,                 // FleeingMovementGenerator.h
+        FOLLOW_MOTION_TYPE                  = 14,
+        ROTATE_MOTION_TYPE                  = 15,
+        EFFECT_MOTION_TYPE                  = 16,
+        SPLINE_CHAIN_MOTION_TYPE            = 17,                 // SplineChainMovementGenerator.h
     }
 
     public enum SpellSchools
     {
-        SPELL_SCHOOL_NORMAL               = 0,
-        SPELL_SCHOOL_HOLY                 = 1,
-        SPELL_SCHOOL_FIRE                 = 2,
-        SPELL_SCHOOL_NATURE               = 3,
-        SPELL_SCHOOL_FROST                = 4,
-        SPELL_SCHOOL_SHADOW               = 5,
-        SPELL_SCHOOL_ARCANE               = 6
+        SPELL_SCHOOL_NORMAL                 = 0,
+        SPELL_SCHOOL_HOLY                   = 1,
+        SPELL_SCHOOL_FIRE                   = 2,
+        SPELL_SCHOOL_NATURE                 = 3,
+        SPELL_SCHOOL_FROST                  = 4,
+        SPELL_SCHOOL_SHADOW                 = 5,
+        SPELL_SCHOOL_ARCANE                 = 6
     }
 
     public enum UnitStates
     {
-        UNIT_STATE_DIED                   = 1,                     // player has fake death aura
-        UNIT_STATE_MELEE_ATTACKING        = 2,                     // player is melee attacking someone
-        UNIT_STATE_CHARMED                = 4,                     // having any kind of charm aura on self
-        UNIT_STATE_STUNNED                = 8,
-        UNIT_STATE_ROAMING                = 16,
-        UNIT_STATE_CHASE                  = 32,
-        UNIT_STATE_FOCUSING               = 64,
-        UNIT_STATE_FLEEING                = 128,
-        UNIT_STATE_IN_FLIGHT              = 256,                     // player is in flight mode
-        UNIT_STATE_FOLLOW                 = 512,
-        UNIT_STATE_ROOT                   = 1024,
-        UNIT_STATE_CONFUSED               = 2048,
-        UNIT_STATE_DISTRACTED             = 4096,
-        UNIT_STATE_ISOLATED               = 8192,                     // area auras do not affect other players
-        UNIT_STATE_ATTACK_PLAYER          = 16384,
-        UNIT_STATE_CASTING                = 32768,
-        UNIT_STATE_POSSESSED              = 65536,
-        UNIT_STATE_CHARGING               = 131072,
-        UNIT_STATE_JUMPING                = 262144,
-        UNIT_STATE_MOVE                   = 1048576,
-        UNIT_STATE_ROTATING               = 2097152,
-        UNIT_STATE_EVADE                  = 4194304,
-        UNIT_STATE_ROAMING_MOVE           = 8388608,
-        UNIT_STATE_CONFUSED_MOVE          = 16777216,
-        UNIT_STATE_FLEEING_MOVE           = 33554432,
-        UNIT_STATE_CHASE_MOVE             = 67108864,
-        UNIT_STATE_FOLLOW_MOVE            = 134217728,
-        UNIT_STATE_IGNORE_PATHFINDING     = 268435456,                 // do not use pathfinding in any MovementGenerator
-        UNIT_STATE_DIFFERENT_PATHFINDING  = 536870912,                 // do not call NormalizePath, do not add CollisioHeight
-        UNIT_STATE_WAYPOINT_PAUSED        = 1073741824,
+        UNIT_STATE_DIED                     = 1,                     // player has fake death aura
+        UNIT_STATE_MELEE_ATTACKING          = 2,                     // player is melee attacking someone
+        UNIT_STATE_CHARMED                  = 4,                     // having any kind of charm aura on self
+        UNIT_STATE_STUNNED                  = 8,
+        UNIT_STATE_ROAMING                  = 16,
+        UNIT_STATE_CHASE                    = 32,
+        UNIT_STATE_FOCUSING                 = 64,
+        UNIT_STATE_FLEEING                  = 128,
+        UNIT_STATE_IN_FLIGHT                = 256,                     // player is in flight mode
+        UNIT_STATE_FOLLOW                   = 512,
+        UNIT_STATE_ROOT                     = 1024,
+        UNIT_STATE_CONFUSED                 = 2048,
+        UNIT_STATE_DISTRACTED               = 4096,
+        UNIT_STATE_ISOLATED                 = 8192,                     // area auras do not affect other players
+        UNIT_STATE_ATTACK_PLAYER            = 16384,
+        UNIT_STATE_CASTING                  = 32768,
+        UNIT_STATE_POSSESSED                = 65536,
+        UNIT_STATE_CHARGING                 = 131072,
+        UNIT_STATE_JUMPING                  = 262144,
+        UNIT_STATE_MOVE                     = 1048576,
+        UNIT_STATE_ROTATING                 = 2097152,
+        UNIT_STATE_EVADE                    = 4194304,
+        UNIT_STATE_ROAMING_MOVE             = 8388608,
+        UNIT_STATE_CONFUSED_MOVE            = 16777216,
+        UNIT_STATE_FLEEING_MOVE             = 33554432,
+        UNIT_STATE_CHASE_MOVE               = 67108864,
+        UNIT_STATE_FOLLOW_MOVE              = 134217728,
+        UNIT_STATE_IGNORE_PATHFINDING       = 268435456,                 // do not use pathfinding in any MovementGenerator
+        UNIT_STATE_DIFFERENT_PATHFINDING    = 536870912,                 // do not call NormalizePath, do not add CollisioHeight
+        UNIT_STATE_WAYPOINT_PAUSED          = 1073741824,
     }
 
     [Flags]
