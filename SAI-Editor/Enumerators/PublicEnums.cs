@@ -606,6 +606,15 @@ namespace SAI_Editor.Enumerators
         EVENT_FLAG_DEBUG_ONLY                   = 0x80,
         EVENT_FLAG_DONT_RESET                   = 0x100,
         EVENT_FLAG_WHILE_CHARMED                = 0x200,
+        SMART_EVENT_FLAGS_MYTHIC_1              = 0x400,                     //Event only occurs in Mythic 1 or greater
+        SMART_EVENT_FLAGS_MYTHIC_5              = 0x800,                     //Event only occurs in Mythic 5 or greater
+        SMART_EVENT_FLAGS_MYTHIC_10             = 0x1000,                    //Event only occurs in Mythic 10 or greater
+        SMART_EVENT_FLAGS_MYTHIC_15             = 0x2000,                    //Event only occurs in Mythic 15 or greater
+        SMART_EVENT_FLAGS_MYTHIC_20             = 0x4000,                    //Event only occurs in Mythic 20 or greater
+        SMART_EVENT_FLAGS_MYTHIC_25             = 0x8000,                    //Event only occurs in Mythic 25 or greater
+        SMART_EVENT_FLAGS_MYTHIC_30             = 0x10000,                   //Event only occurs in Mythic 30 or greater
+        SMART_EVENT_FLAGS_MYTHIC_35             = 0x20000,                   //Event only occurs in Mythic 35 or greater
+        SMART_EVENT_FLAGS_MYTHIC_40             = 0x40000,                   //Event only occurs in Mythic 40 or greater
     }
 
     [Flags]

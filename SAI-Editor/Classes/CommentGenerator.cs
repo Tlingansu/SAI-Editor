@@ -1701,6 +1701,33 @@ namespace SAI_Editor.Classes
 
                     if (((event_flags & SmartEventFlags.EVENT_FLAG_WHILE_CHARMED) != 0))
                         fullLine += " (While Charmed)";
+
+                    if (((event_flags & SmartEventFlags.SMART_EVENT_FLAGS_MYTHIC_1) != 0))
+                        fullLine += " (only occurs in Mythic 1 or Greater)";
+
+                    if (((event_flags & SmartEventFlags.SMART_EVENT_FLAGS_MYTHIC_5) != 0))
+                        fullLine += " (only occurs in Mythic 5 or Greater)";
+
+                    if (((event_flags & SmartEventFlags.SMART_EVENT_FLAGS_MYTHIC_10) != 0))
+                        fullLine += " (only occurs in Mythic 10 or Greater)";
+
+                    if (((event_flags & SmartEventFlags.SMART_EVENT_FLAGS_MYTHIC_15) != 0))
+                        fullLine += " (only occurs in Mythic 15 or Greater)";
+
+                    if (((event_flags & SmartEventFlags.SMART_EVENT_FLAGS_MYTHIC_20) != 0))
+                        fullLine += " (only occurs in Mythic 20 or Greater)";
+
+                    if (((event_flags & SmartEventFlags.SMART_EVENT_FLAGS_MYTHIC_25) != 0))
+                        fullLine += " (only occurs in Mythic 25 or Greater)";
+
+                    if (((event_flags & SmartEventFlags.SMART_EVENT_FLAGS_MYTHIC_30) != 0))
+                        fullLine += " (only occurs in Mythic 30 or Greater)";
+
+                    if (((event_flags & SmartEventFlags.SMART_EVENT_FLAGS_MYTHIC_35) != 0))
+                        fullLine += " (only occurs in Mythic 35 or Greater)";
+
+                    if (((event_flags & SmartEventFlags.SMART_EVENT_FLAGS_MYTHIC_40) != 0))
+                        fullLine += " (only occurs in Mythic 40 or Greater)";
                 }
 
                 return fullLine;
