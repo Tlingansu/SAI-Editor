@@ -389,6 +389,7 @@ namespace SAI_Editor.Enumerators
         SMART_ACTION_MOVE_SPAWN_POS = 245,
         SMART_ACTION_SET_FLY_MODE = 246,
         SMART_ACTION_MOVE_CIRCLE_PATH = 247,
+        SMART_ACTION_SET_FLAG_EXTRA = 248,
         SMART_ACTION_MAX,
     }
 
@@ -652,6 +653,42 @@ namespace SAI_Editor.Enumerators
         UNIT_FLAG_UNK_28                        = 0x10000000,
         UNIT_FLAG_PREVENT_EMOTES_FROM_CHAT_TEXT = 0x20000000,           // Prevent automatically playing emotes from parsing chat text, for example "lol" in /say, ending message with ? or !, or using /yell
         UNIT_FLAG_SHEATHE                       = 0x40000000,
+    }
+
+    [Flags]
+    public enum CreatureFlagsExtra
+    {
+        CREATURE_FLAG_EXTRA_INSTANCE_BIND                         = 0x00000001,       // creature kill bind instance with killer and killer's group
+        CREATURE_FLAG_EXTRA_CIVILIAN                              = 0x00000002,       // not aggro (ignore faction/reputation hostility)
+        CREATURE_FLAG_EXTRA_NO_PARRY                              = 0x00000004,       // creature can't parry
+        CREATURE_FLAG_EXTRA_NO_PARRY_HASTEN                       = 0x00000008,       // creature can't counter-attack at parry
+        CREATURE_FLAG_EXTRA_NO_BLOCK                              = 0x00000010,       // creature can't block
+        CREATURE_FLAG_EXTRA_NO_CRUSHING_BLOWS                     = 0x00000020,       // creature can't do crush attacks
+        CREATURE_FLAG_EXTRA_NO_XP                                 = 0x00000040,       // creature kill not provide XP
+        CREATURE_FLAG_EXTRA_TRIGGER                               = 0x00000080,       // trigger creature
+        CREATURE_FLAG_EXTRA_NO_TAUNT                              = 0x00000100,       // creature is immune to taunt auras and effect attack me
+        CREATURE_FLAG_EXTRA_NO_MOVE_FLAGS_UPDATE                  = 0x00000200,       // creature won't update movement flags
+        CREATURE_FLAG_EXTRA_GHOST_VISIBILITY                      = 0x00000400,       // creature will be only visible for dead players
+        CREATURE_FLAG_EXTRA_USE_OFFHAND_ATTACK                    = 0x00000800,       // creature will use offhand attacks
+        CREATURE_FLAG_EXTRA_NO_SELL_VENDOR                        = 0x00001000,       // players can't sell items to this vendor
+        CREATURE_FLAG_EXTRA_CANNOT_ENTER_COMBAT                   = 0x00002000,       // creature is not allowed to enter combat
+        CREATURE_FLAG_EXTRA_WORLDEVENT                            = 0x00004000,       // custom flag for world event creatures (left room for merging)
+        CREATURE_FLAG_EXTRA_GUARD                                 = 0x00008000,       // Creature is guard
+        CREATURE_FLAG_EXTRA_IGNORE_FEIGN_DEATH                    = 0x00010000,       // creature ignores feign death
+        CREATURE_FLAG_EXTRA_NO_CRIT                               = 0x00020000,       // creature can't do critical strikes
+        CREATURE_FLAG_EXTRA_NO_SKILLGAIN                          = 0x00040000,       // creature won't increase weapon skills
+        CREATURE_FLAG_EXTRA_OBEYS_TAUNT_DIMINISHING_RETURNS       = 0x00080000,       // Taunt is a subject to diminishing returns on this creautre
+        CREATURE_FLAG_EXTRA_ALL_DIMINISH                          = 0x00100000,       // creature is subject to all diminishing returns as player are
+        CREATURE_FLAG_EXTRA_NO_PLAYER_DAMAGE_REQ                  = 0x00200000,       // creature does not need to take player damage for kill credit
+        CREATURE_FLAG_EXTRA_IGNORE_INVISIBILITY                   = 0x00400000,       // creature can detect invisible units
+        CREATURE_FLAG_EXTRA_IGNORE_SPELL_FACING_REQ               = 0x00800000,       // players can attack this creature from all angles
+        CREATURE_FLAG_EXTRA_UNUSED_24                             = 0x01000000,
+        CREATURE_FLAG_EXTRA_UNUSED_25                             = 0x02000000,
+        CREATURE_FLAG_EXTRA_UNUSED_26                             = 0x04000000,
+        CREATURE_FLAG_EXTRA_UNUSED_27                             = 0x08000000,
+        CREATURE_FLAG_EXTRA_DUNGEON_BOSS                          = 0x10000000,       // creature is a dungeon boss (SET DYNAMICALLY, DO NOT ADD IN DB)
+        CREATURE_FLAG_EXTRA_IGNORE_PATHFINDING                    = 0x20000000,       // creature ignore pathfinding
+        CREATURE_FLAG_EXTRA_IMMUNITY_KNOCKBACK                    = 0x40000000        // creature is immune to knockback effects
     }
 
     [Flags]

@@ -362,6 +362,8 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_MOVE_SPAWN_POS, "Move to Respawn Position (PointID: _actionParamOne_, Pathfinding: _enabledDisabledActionParamThree_) - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_FLY_MODE, "_enableDisableActionParamOne_ Fly Mode - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_MOVE_CIRCLE_PATH, "Move Circle Path around Position XYZ (Radius: _actionParamOne_, Clockwise _ClockWiseActionParamTwo_, Stepcount: _actionParamThree_) - Target: _getTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_SET_FLAG_EXTRA, "Add FlagsExtra: _getFlagsExtra_, Flagextra2: _actionParamTwo_ - Target: _getTargetType_");
+            
         }
 
         public async Task<string> GenerateCommentFor(SmartScript smartScript, EntryOrGuidAndSourceType entryOrGuidAndSourceType, bool forced = false, SmartScript smartScriptLink = null)
@@ -643,42 +645,49 @@ namespace SAI_Editor.Classes
                 if (fullLine.Contains("_eventnameActionParamOne_"))
                     fullLine = fullLine.Replace("_eventnameActionParamOne_", await worldDatabase.GetEventNameById(smartScript.action_param1));
 
-                if (fullLine.Contains("_getUnitFlags_"))
+                if (fullLine.Contains("_getFlagsExtra_"))
                 {
-                    string commentUnitFlag = "";
-                    int unitFlags = smartScript.action_param1;
+                    string commentFlagsExtra = "";
+                    int flagsextra = smartScript.action_param1;
 
-                    if ((unitFlags & (int)UnitFlags.UNIT_FLAG_SERVER_CONTROLLED) != 0) commentUnitFlag += "Server Controlled & ";
-                    if ((unitFlags & (int)UnitFlags.UNIT_FLAG_NON_ATTACKABLE) != 0) commentUnitFlag += "Not Attackable & ";
-                    if ((unitFlags & (int)UnitFlags.UNIT_FLAG_REMOVE_CLIENT_CONTROL) != 0) commentUnitFlag += "Remove Client Control & ";
-                    if ((unitFlags & (int)UnitFlags.UNIT_FLAG_PLAYER_CONTROLLED) != 0) commentUnitFlag += "player Controlled & ";
-                    if ((unitFlags & (int)UnitFlags.UNIT_FLAG_RENAME) != 0) commentUnitFlag += "Rename & ";
-                    if ((unitFlags & (int)UnitFlags.UNIT_FLAG_PREPARATION) != 0) commentUnitFlag += "Preparation & ";
-                    if ((unitFlags & (int)UnitFlags.UNIT_FLAG_NOT_ATTACKABLE_1) != 0) commentUnitFlag += "Not Attackable & ";
-                    if ((unitFlags & (int)UnitFlags.UNIT_FLAG_IMMUNE_TO_PC) != 0) commentUnitFlag += "Immune To Players & ";
-                    if ((unitFlags & (int)UnitFlags.UNIT_FLAG_IMMUNE_TO_NPC) != 0) commentUnitFlag += "Immune To NPC's & ";
-                    if ((unitFlags & (int)UnitFlags.UNIT_FLAG_LOOTING) != 0) commentUnitFlag += "Looting & ";
-                    if ((unitFlags & (int)UnitFlags.UNIT_FLAG_PET_IN_COMBAT) != 0) commentUnitFlag += "Pet In Combat & ";
-                    if ((unitFlags & (int)UnitFlags.UNIT_FLAG_PVP) != 0) commentUnitFlag += "PvP & ";
-                    if ((unitFlags & (int)UnitFlags.UNIT_FLAG_SILENCED) != 0) commentUnitFlag += "Silenced & ";
-                    if ((unitFlags & (int)UnitFlags.UNIT_FLAG_PACIFIED) != 0) commentUnitFlag += "Pacified & ";
-                    if ((unitFlags & (int)UnitFlags.UNIT_FLAG_STUNNED) != 0) commentUnitFlag += "Stunned & ";
-                    if ((unitFlags & (int)UnitFlags.UNIT_FLAG_IN_COMBAT) != 0) commentUnitFlag += "In Combat & ";
-                    if ((unitFlags & (int)UnitFlags.UNIT_FLAG_DISARMED) != 0) commentUnitFlag += "Disarmed & ";
-                    if ((unitFlags & (int)UnitFlags.UNIT_FLAG_CONFUSED) != 0) commentUnitFlag += "Confused & ";
-                    if ((unitFlags & (int)UnitFlags.UNIT_FLAG_FLEEING) != 0) commentUnitFlag += "Fleeing & ";
-                    if ((unitFlags & (int)UnitFlags.UNIT_FLAG_PLAYER_CONTROLLED) != 0) commentUnitFlag += "Player Controlled & ";
-                    if ((unitFlags & (int)UnitFlags.UNIT_FLAG_NOT_SELECTABLE) != 0) commentUnitFlag += "Not Selectable & ";
-                    if ((unitFlags & (int)UnitFlags.UNIT_FLAG_SKINNABLE) != 0) commentUnitFlag += "Skinnable & ";
-                    if ((unitFlags & (int)UnitFlags.UNIT_FLAG_MOUNT) != 0) commentUnitFlag += "Mounted & ";
-                    if ((unitFlags & (int)UnitFlags.UNIT_FLAG_SHEATHE) != 0) commentUnitFlag += "Sheathed & ";
+                    if ((flagsextra & (int)CreatureFlagsExtra.CREATURE_FLAG_EXTRA_INSTANCE_BIND) != 0) commentFlagsExtra += "Instance Bind & ";
+                    if ((flagsextra & (int)CreatureFlagsExtra.CREATURE_FLAG_EXTRA_CIVILIAN) != 0) commentFlagsExtra += "Civilian & ";
+                    if ((flagsextra & (int)CreatureFlagsExtra.CREATURE_FLAG_EXTRA_NO_PARRY) != 0) commentFlagsExtra += "No Parry & ";
+                    if ((flagsextra & (int)CreatureFlagsExtra.CREATURE_FLAG_EXTRA_NO_PARRY_HASTEN) != 0) commentFlagsExtra += "No Parry Hasten & ";
+                    if ((flagsextra & (int)CreatureFlagsExtra.CREATURE_FLAG_EXTRA_NO_BLOCK) != 0) commentFlagsExtra += "No Block & ";
+                    if ((flagsextra & (int)CreatureFlagsExtra.CREATURE_FLAG_EXTRA_NO_CRUSHING_BLOWS) != 0) commentFlagsExtra += "No Crushing Blow & ";
+                    if ((flagsextra & (int)CreatureFlagsExtra.CREATURE_FLAG_EXTRA_NO_XP) != 0) commentFlagsExtra += "No XP Gain & ";
+                    if ((flagsextra & (int)CreatureFlagsExtra.CREATURE_FLAG_EXTRA_TRIGGER) != 0) commentFlagsExtra += "Trigger & ";
+                    if ((flagsextra & (int)CreatureFlagsExtra.CREATURE_FLAG_EXTRA_NO_TAUNT) != 0) commentFlagsExtra += "No Taunt & ";
+                    if ((flagsextra & (int)CreatureFlagsExtra.CREATURE_FLAG_EXTRA_NO_MOVE_FLAGS_UPDATE) != 0) commentFlagsExtra += "No Move Flag Update & ";
+                    if ((flagsextra & (int)CreatureFlagsExtra.CREATURE_FLAG_EXTRA_GHOST_VISIBILITY) != 0) commentFlagsExtra += "Ghost Visibility & ";
+                    if ((flagsextra & (int)CreatureFlagsExtra.CREATURE_FLAG_EXTRA_USE_OFFHAND_ATTACK) != 0) commentFlagsExtra += "Offhand Attack & ";
+                    if ((flagsextra & (int)CreatureFlagsExtra.CREATURE_FLAG_EXTRA_NO_SELL_VENDOR) != 0) commentFlagsExtra += "No Sell Vendor & ";
+                    if ((flagsextra & (int)CreatureFlagsExtra.CREATURE_FLAG_EXTRA_CANNOT_ENTER_COMBAT) != 0) commentFlagsExtra += "Cannot Enter Combat & ";
+                    if ((flagsextra & (int)CreatureFlagsExtra.CREATURE_FLAG_EXTRA_WORLDEVENT) != 0) commentFlagsExtra += "Worldevent & ";
+                    if ((flagsextra & (int)CreatureFlagsExtra.CREATURE_FLAG_EXTRA_GUARD) != 0) commentFlagsExtra += "Guard & ";
+                    if ((flagsextra & (int)CreatureFlagsExtra.CREATURE_FLAG_EXTRA_IGNORE_FEIGN_DEATH) != 0) commentFlagsExtra += "Ignore Feign Death & ";
+                    if ((flagsextra & (int)CreatureFlagsExtra.CREATURE_FLAG_EXTRA_NO_CRIT) != 0) commentFlagsExtra += "No Crit & ";
+                    if ((flagsextra & (int)CreatureFlagsExtra.CREATURE_FLAG_EXTRA_NO_SKILLGAIN) != 0) commentFlagsExtra += "No Skillgain & ";
+                    if ((flagsextra & (int)CreatureFlagsExtra.CREATURE_FLAG_EXTRA_OBEYS_TAUNT_DIMINISHING_RETURNS) != 0) commentFlagsExtra += "Taunt Diminish Returns & ";
+                    if ((flagsextra & (int)CreatureFlagsExtra.CREATURE_FLAG_EXTRA_ALL_DIMINISH) != 0) commentFlagsExtra += "All Diminish & ";
+                    if ((flagsextra & (int)CreatureFlagsExtra.CREATURE_FLAG_EXTRA_NO_PLAYER_DAMAGE_REQ) != 0) commentFlagsExtra += "No Player Damage Required & ";
+                    if ((flagsextra & (int)CreatureFlagsExtra.CREATURE_FLAG_EXTRA_IGNORE_INVISIBILITY) != 0) commentFlagsExtra += "Ignore Invisibility & ";
+                    if ((flagsextra & (int)CreatureFlagsExtra.CREATURE_FLAG_EXTRA_IGNORE_SPELL_FACING_REQ) != 0) commentFlagsExtra += "Spell Facing Required & ";
+                    if ((flagsextra & (int)CreatureFlagsExtra.CREATURE_FLAG_EXTRA_UNUSED_24) != 0) commentFlagsExtra += "Unused 24 & ";
+                    if ((flagsextra & (int)CreatureFlagsExtra.CREATURE_FLAG_EXTRA_UNUSED_25) != 0) commentFlagsExtra += "Unused 25 & ";
+                    if ((flagsextra & (int)CreatureFlagsExtra.CREATURE_FLAG_EXTRA_UNUSED_26) != 0) commentFlagsExtra += "Unused 26 & ";
+                    if ((flagsextra & (int)CreatureFlagsExtra.CREATURE_FLAG_EXTRA_UNUSED_27) != 0) commentFlagsExtra += "Unused 27 & ";
+                    if ((flagsextra & (int)CreatureFlagsExtra.CREATURE_FLAG_EXTRA_DUNGEON_BOSS) != 0) commentFlagsExtra += "Dungeon Boss & ";
+                    if ((flagsextra & (int)CreatureFlagsExtra.CREATURE_FLAG_EXTRA_IGNORE_PATHFINDING) != 0) commentFlagsExtra += "Ignore Pathfinding & ";
+                    if ((flagsextra & (int)CreatureFlagsExtra.CREATURE_FLAG_EXTRA_IMMUNITY_KNOCKBACK) != 0) commentFlagsExtra += "Immunity Knockback & ";
 
-                    commentUnitFlag = commentUnitFlag.Trim(new[] { ' ', '&', ' ' }); //! Trim last ' & ' from the comment..
+                    commentFlagsExtra = commentFlagsExtra.Trim(new[] { ' ', '&', ' ' }); //! Trim last ' & ' from the comment..
 
-                    if (commentUnitFlag.Contains("&"))
-                        fullLine = fullLine.Replace("_getUnitFlags_", "s_getUnitFlags_");
+                    if (commentFlagsExtra.Contains("&"))
+                        fullLine = fullLine.Replace("_getFlagsExtra_", "_getFlagsExtra_");
 
-                    fullLine = fullLine.Replace("_getUnitFlags_", " " + commentUnitFlag);
+                    fullLine = fullLine.Replace("_getFlagsExtra_", " " + commentFlagsExtra);
                 }
 
                 if (fullLine.Contains("_getTriggerCastFlags_"))
