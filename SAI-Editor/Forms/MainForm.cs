@@ -1222,6 +1222,7 @@ namespace SAI_Editor.Forms
             {"Search for unit stand state types", typeof(SingleSelectForm<UnitStandStateType>)},
             {"Search for temp summon types", typeof(SingleSelectForm<TempSummonType>)},
             {"Search for Spawn flags", typeof(MultiSelectForm<SmartSpawnFlags>)},
+            {"Search for Gameobject Action IDs", typeof(SingleSelectForm<GameObjectActions>)},
         };
 
         private void searchForFlagsMenuItem_Click(object sender, EventArgs e)

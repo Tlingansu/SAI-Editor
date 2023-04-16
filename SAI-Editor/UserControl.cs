@@ -775,6 +775,7 @@ namespace SAI_Editor
                 case SmartAction.SMART_ACTION_OVERRIDE_LIGHT: //! Zone
                 case SmartAction.SMART_ACTION_OVERRIDE_WEATHER: //! Zone
                 case SmartAction.SMART_ACTION_CHECK_DUPLICATE_AND_DESPAWN: //! Creature
+                case SmartAction.SMART_ACTION_ACTIVATE_GAMEOBJECT: //! GameObjectActions
                     buttonActionParamOneSearch.Visible = true;
                     break;
             }
@@ -1743,6 +1744,9 @@ namespace SAI_Editor
                 case SmartAction.SMART_ACTION_OVERRIDE_LIGHT: //! Zone
                 case SmartAction.SMART_ACTION_OVERRIDE_WEATHER: //! Zone
                     ShowSearchFromDatabaseForm(textBoxToChange, DatabaseSearchFormType.DatabaseSearchFormTypeAreaOrZone);
+                    break;
+                case SmartAction.SMART_ACTION_ACTIVATE_GAMEOBJECT: //! GameObjectActions
+                    ShowSelectForm("GameObjectActions", textBoxToChange);
                     break;
             }
         }
