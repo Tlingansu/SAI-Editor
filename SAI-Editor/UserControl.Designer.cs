@@ -544,7 +544,7 @@
             "ACTION_SET_HOVER",
             "ACTION_SET_HEALTH_PCT",
             "ACTION_CREATE_CONVERSATION",
-            "ACTION_UNUSED_144",
+            "ACTION_SET_IMMUNE_PC",
             "ACTION_UNUSED_145",
             "ACTION_UNUSED_146",
             "ACTION_UNUSED_147",

@@ -258,7 +258,7 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_HOVER, "Set Hover State: _onOffActionParamOne_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_HEALTH_PCT, "Set Health Percent: _actionParamOne_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_CREATE_CONVERSATION, "Create Conversation ID: _actionParamOne_ - Target: _getTargetType_");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_UNUSED_144, "Set  - Target: _getTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_SET_IMMUNE_PC, "Set Immune to PC _onOffActionParamOne_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_UNUSED_145, "Set  - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_UNUSED_146, "Set  - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_UNUSED_147, "Set  - Target: _getTargetType_");
