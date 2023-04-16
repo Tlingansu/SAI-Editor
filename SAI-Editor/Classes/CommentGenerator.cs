@@ -262,8 +262,8 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_IMMUNE_NPC, "Set Immune to NPC _onOffActionParamOne_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_UNINTERACTIBLE, "Set Uninteractible _onOffActionParamOne_  - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_ACTIVATE_GAMEOBJECT, "Activate Gameobject with Action: _GameobjectActionParamOne_ - Target: _getTargetType_");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_UNUSED_148, "Set  - Target: _getTargetType_");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_UNUSED_149, "Set  - Target: _getTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_ADD_TO_STORED_TARGET_LIST, "Add target to stored target list ID: _actionParamOne_  - Target: _getTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_BECOME_PERSONAL_CLONE_FOR_PLAYER, "Become personal clone for player  - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_UNUSED_150, "Set  - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_UNUSED_151, "Set  - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_UNUSED_152, "Set  - Target: _getTargetType_");
