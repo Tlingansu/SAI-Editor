@@ -264,8 +264,8 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_ACTIVATE_GAMEOBJECT, "Activate Gameobject with Action: _GameobjectActionParamOne_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_ADD_TO_STORED_TARGET_LIST, "Add target to stored target list ID: _actionParamOne_  - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_BECOME_PERSONAL_CLONE_FOR_PLAYER, "Become personal clone for player  - Target: _getTargetType_");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_UNUSED_150, "Set  - Target: _getTargetType_");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_UNUSED_151, "Set  - Target: _getTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_TRIGGER_GAME_EVENT, "Trigger Game Event ID: _actionParamOne_ - Target: _getTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_DO_ACTION, "Do Action ID: _actionParamOne_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_UNUSED_152, "Set  - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_UNUSED_153, "Set  - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_UNUSED_154, "Set  - Target: _getTargetType_");
