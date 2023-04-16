@@ -261,7 +261,7 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_IMMUNE_PC, "Set Immune to PC _onOffActionParamOne_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_IMMUNE_NPC, "Set Immune to NPC _onOffActionParamOne_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_UNINTERACTIBLE, "Set Uninteractible _onOffActionParamOne_  - Target: _getTargetType_");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_UNUSED_147, "Set  - Target: _getTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_ACTIVATE_GAMEOBJECT, "Activate Gameobject with Action: _GameobjectActionParamOne_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_UNUSED_148, "Set  - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_UNUSED_149, "Set  - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_UNUSED_150, "Set  - Target: _getTargetType_");
@@ -884,6 +884,88 @@ namespace SAI_Editor.Classes
                             break;
                         default:
                             fullLine = fullLine.Replace("_MovementSlotActionParamOne_", "<Unknown MovementSlot>");
+                            break;
+                    }
+                }
+
+                if (fullLine.Contains("_GameobjectActionParamOne_"))
+                {
+                    switch (smartScript.action_param1)
+                    {
+                        case 0:
+                            fullLine = fullLine.Replace("_GameobjectActionParamOne_", "None");
+                            break;
+                        case 1:
+                            fullLine = fullLine.Replace("_GameobjectActionParamOne_", "AnimateCustom0");
+                            break;
+                        case 2:
+                            fullLine = fullLine.Replace("_GameobjectActionParamOne_", "AnimateCustom1");
+                            break;
+                        case 3:
+                            fullLine = fullLine.Replace("_GameobjectActionParamOne_", "AnimateCustom2");
+                            break;
+                        case 4:
+                            fullLine = fullLine.Replace("_GameobjectActionParamOne_", "AnimateCustom3");
+                            break;
+                        case 5:
+                            fullLine = fullLine.Replace("_GameobjectActionParamOne_", "Disturb");
+                            break;
+                        case 6:
+                            fullLine = fullLine.Replace("_GameobjectActionParamOne_", "Unlock");
+                            break;
+                        case 7:
+                            fullLine = fullLine.Replace("_GameobjectActionParamOne_", "Lock");
+                            break;
+                        case 8:
+                            fullLine = fullLine.Replace("_GameobjectActionParamOne_", "Open");
+                            break;
+                        case 9:
+                            fullLine = fullLine.Replace("_GameobjectActionParamOne_", "OpenAndUnlock");
+                            break;
+                        case 10:
+                            fullLine = fullLine.Replace("_GameobjectActionParamOne_", "Close");
+                            break;
+                        case 11:
+                            fullLine = fullLine.Replace("_GameobjectActionParamOne_", "ToggleOpen");
+                            break;
+                        case 12:
+                            fullLine = fullLine.Replace("_GameobjectActionParamOne_", "Destroy");
+                            break;
+                        case 13:
+                            fullLine = fullLine.Replace("_GameobjectActionParamOne_", "Rebuild");
+                            break;
+                        case 14:
+                            fullLine = fullLine.Replace("_GameobjectActionParamOne_", "Creation");
+                            break;
+                        case 15:
+                            fullLine = fullLine.Replace("_GameobjectActionParamOne_", "Despawn");
+                            break;
+                        case 16:
+                            fullLine = fullLine.Replace("_GameobjectActionParamOne_", "MakeInert");
+                            break;
+                        case 17:
+                            fullLine = fullLine.Replace("_GameobjectActionParamOne_", "MakeActive");
+                            break;
+                        case 18:
+                            fullLine = fullLine.Replace("_GameobjectActionParamOne_", "CloseAndLock");
+                            break;
+                        case 19:
+                            fullLine = fullLine.Replace("_GameobjectActionParamOne_", "UseArtKit0");
+                            break;
+                        case 20:
+                            fullLine = fullLine.Replace("_GameobjectActionParamOne_", "UseArtKit1");
+                            break;
+                        case 21:
+                            fullLine = fullLine.Replace("_GameobjectActionParamOne_", "UseArtKit2");
+                            break;
+                        case 22:
+                            fullLine = fullLine.Replace("_GameobjectActionParamOne_", "UseArtKit3");
+                            break;
+                        case 23:
+                            fullLine = fullLine.Replace("_GameobjectActionParamOne_", "SetTapList");
+                            break;
+                        default:
+                            fullLine = fullLine.Replace("_GameobjectActionParamOne_", "<Unknown Action>");
                             break;
                     }
                 }

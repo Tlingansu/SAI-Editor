@@ -547,7 +547,7 @@
             "ACTION_SET_IMMUNE_PC",
             "ACTION_SET_IMMUNE_NPC",
             "ACTION_SET_UNINTERACTIBLE",
-            "ACTION_UNUSED_147",
+            "ACTION_ACTIVATE_GAMEOBJECT",
             "ACTION_UNUSED_148",
             "ACTION_UNUSED_149",
             "ACTION_UNUSED_150",
