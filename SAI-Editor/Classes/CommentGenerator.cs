@@ -350,7 +350,7 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_REPUTATION_GAIN, "_enableDisableActionParamOne_ Reputation Gain - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_ADD_LOOT_MODE, "Add Loot Mode: _actionParamOne_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_COUNTER_RESET_OPTION, "_OnResetOnInitializeActionParamOne_ - Target: _getTargetType_");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_GO_DELETE, "Delete Gameobject - Target: _getTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_GO_DELETE, "Delete Gameobject (DeleteDelay _actionParamOne_ ms) - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_LEVEL, "Set Level _actionParamOne_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_CREATURE_SCALE, "Set Creature Scale _actionParamOne_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_FEATHER_FALL, "Set Feather Fall _onOffActionParamOne_ - Target: _getTargetType_");
