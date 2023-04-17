@@ -319,7 +319,7 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_LOAD_GRID, "Load Grid - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_STORE_EVENT_PHASE, "Store Current Event Phase - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_STORED_EVENT_PHASE, "Load Stored Event Phase - Target: _getTargetType_");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_CHECK_DUPLICATE_AND_DESPAWN, "If more than _actionParamThree_ Creature(s): '_creatureNameActionParamOne_' in _actionParamTwo_ yards range, creature will despawn - Target: _getTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_CHECK_DUPLICATE_AND_DESPAWN, "If more than _actionParamThree_ _AliveCheckParamFour_ Creature(s): '_creatureNameActionParamOne_' in _actionParamTwo_ yards range, creature will despawn - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_DISMOUNT, "Dismount _DespawnCurrentPetsParamOne_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_CHECK_HOMEDIST_AND_EVADE, "Evade after moving _actionParamOne_ yards away from HomePosition - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_SPEED_RATE, "Set Speed Rate (Speed Walk Rate: _checkSpeedWalkActionParamOne_, Speed Run Rate: _checkSpeedRunActionParamTwo_ - Target: _getTargetType_");
@@ -850,12 +850,24 @@ namespace SAI_Editor.Classes
                         fullLine = fullLine.Replace("_ClockWiseActionParamTwo_", "Wrong Value (0/1 only)");
                 }
 
+                if (fullLine.Contains("_AliveCheckParamFour_"))
+                {
+                    if (smartScript.action_param4.ToString() == "0")
+                        fullLine = fullLine.Replace("_AliveCheckParamFour_", "Alive and Dead");
+                    else if (smartScript.action_param4.ToString() == "1")
+                        fullLine = fullLine.Replace("_AliveCheckParamFour_", "Only Alive");
+                    else
+                        fullLine = fullLine.Replace("_AliveCheckParamFour_", "Wrong Value (0/1 only)");
+                }
+
                 if (fullLine.Contains("_RespawnHomePosActionParamOne_"))
                 {
                     if (smartScript.action_param1.ToString() == "0")
                         fullLine = fullLine.Replace("_RespawnHomePosActionParamOne_", "to Respawnposition");
                     else if (smartScript.action_param1.ToString() == "1")
                         fullLine = fullLine.Replace("_RespawnHomePosActionParamOne_", "to last stored Homeposition");
+                    else
+                        fullLine = fullLine.Replace("_RespawnHomePosActionParamOne_", "Wrong Value (0/1 only)");
                 }
 
                 if (fullLine.Contains("_AddEmoteTextActionParamOne_"))
@@ -864,6 +876,8 @@ namespace SAI_Editor.Classes
                         fullLine = fullLine.Replace("_AddEmoteTextActionParamOne_", "without Emotetext");
                     else if (smartScript.action_param1.ToString() == "1")
                         fullLine = fullLine.Replace("_AddEmoteTextActionParamOne_", "With Emotetext");
+                    else
+                        fullLine = fullLine.Replace("_AddEmoteTextActionParamOne_", "Wrong Value (0/1 only)");
                 }
 
                 if (fullLine.Contains("_OnResetOnInitializeActionParamOne_"))
@@ -872,6 +886,8 @@ namespace SAI_Editor.Classes
                         fullLine = fullLine.Replace("_OnResetOnInitializeActionParamOne_", "Set Counter Reset on Reset of creature only");
                     else if (smartScript.action_param1.ToString() == "1")
                         fullLine = fullLine.Replace("_OnResetOnInitializeActionParamOne_", "Set Counter Reset on Initialize of creature only");
+                    else
+                        fullLine = fullLine.Replace("_OnResetOnInitializeActionParamOne_", "Wrong Value (0/1 only)");
                 }
 
                 if (fullLine.Contains("_incrementOrDecrementActionParamOne_"))
