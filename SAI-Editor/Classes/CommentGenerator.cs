@@ -841,8 +841,10 @@ namespace SAI_Editor.Classes
                 {
                     if (smartScript.action_param1.ToString() == "0")
                         fullLine = fullLine.Replace("_enableDisableActionParamOne_", "Disable");
-                    else
+                    else if (smartScript.action_param1.ToString() == "1")
                         fullLine = fullLine.Replace("_enableDisableActionParamOne_", "Enable");
+                    else 
+                        fullLine = fullLine.Replace("_enableDisableActionParamOne_", "Wrong Value (0/1 only)");
                 }
 
                 if (fullLine.Contains("_ClockWiseActionParamTwo_"))
@@ -878,7 +880,7 @@ namespace SAI_Editor.Classes
                 if (fullLine.Contains("_AddEmoteTextActionParamOne_"))
                 {
                     if (smartScript.action_param1.ToString() == "0")
-                        fullLine = fullLine.Replace("_AddEmoteTextActionParamOne_", "without Emotetext");
+                        fullLine = fullLine.Replace("_AddEmoteTextActionParamOne_", "Without Emotetext");
                     else if (smartScript.action_param1.ToString() == "1")
                         fullLine = fullLine.Replace("_AddEmoteTextActionParamOne_", "With Emotetext");
                     else
@@ -1092,7 +1094,7 @@ namespace SAI_Editor.Classes
                             fullLine = fullLine.Replace("_MeleeDamageSchoolActionParamOne_", "Arcane");
                             break;
                         default:
-                            fullLine = fullLine.Replace("_MeleeDamageSchoolActionParamOne_", "SPELL_SCHOOL_UNKNOWN");
+                            fullLine = fullLine.Replace("_MeleeDamageSchoolActionParamOne_", "Spell School Unkown");
                             break;
                     }
                 }
@@ -1101,8 +1103,10 @@ namespace SAI_Editor.Classes
                 {
                     if (smartScript.action_param1 == 1)
                         fullLine = fullLine.Replace("_addRemoveActionParamOne_", "Apply");
-                    else
+                    else if (smartScript.action_param1 == 0)
                         fullLine = fullLine.Replace("_addRemoveActionParamOne_", "Unapply");
+                    else
+                        fullLine = fullLine.Replace("_addRemoveActionParamOne_", "Wrong Value (0/1 only)");
                 }
 
                 if (fullLine.Contains("_UnitStateActionParamTwo_"))
@@ -1194,7 +1198,7 @@ namespace SAI_Editor.Classes
                             fullLine = fullLine.Replace("_UnitStateActionParamTwo_", "UNIT_STATE_DIFFERENT_PATHFINDING");
                             break;
                         default:
-                            fullLine = fullLine.Replace("_UnitStateActionParamTwo_", "UNIT_STATE_UNKOWN");
+                            fullLine = fullLine.Replace("_UnitStateActionParamTwo_", "Unit State Unkown");
                             break;
                     }
                 }
@@ -1223,32 +1227,40 @@ namespace SAI_Editor.Classes
                 {
                     if (smartScript.action_param1 == 1)
                         fullLine = fullLine.Replace("_onOffActionParamOne_", "On");
-                    else
+                    else if (smartScript.action_param1 == 0)
                         fullLine = fullLine.Replace("_onOffActionParamOne_", "Off");
+                    else
+                        fullLine = fullLine.Replace("_onOffActionParamOne_", "Wrong Value (0/1 only)");
                 }
 
                 if (fullLine.Contains("_onOffActionParamThree_"))
                 {
                     if (smartScript.action_param3 == 1)
                         fullLine = fullLine.Replace("_onOffActionParamThree_", "On");
-                    else
+                    else if (smartScript.action_param3 == 0)
                         fullLine = fullLine.Replace("_onOffActionParamThree_", "Off");
+                    else
+                        fullLine = fullLine.Replace("_onOffActionParamThree_", "Wrong Value (0/1 only)");
                 }
 
                 if (fullLine.Contains("_setDataSetBossStateActionParamThree_"))
                 {
                     if (smartScript.action_param3 == 1)
                         fullLine = fullLine.Replace("_setDataSetBossStateActionParamThree_", "SetBossState");
-                    else
+                    else if (smartScript.action_param3 == 0)
                         fullLine = fullLine.Replace("_setDataSetBossStateActionParamThree_", "SetData");
+                    else
+                        fullLine = fullLine.Replace("_setDataSetBossStateActionParamThree_", "Wrong Value (0/1 only)");
                 }
 
                 if (fullLine.Contains("_updateLevelActionParamTwo_"))
                 {
                     if (smartScript.action_param2 == 1)
                         fullLine = fullLine.Replace("_updateLevelActionParamTwo_", "Update Level");
-                    else
+                    else if (smartScript.action_param2 == 0)
                         fullLine = fullLine.Replace("_updateLevelActionParamTwo_", "Do not Update Level");
+                    else
+                        fullLine = fullLine.Replace("_updateLevelActionParamTwo_", "Wrong Value (0/1 only)");
                 }
 
                 if (fullLine.Contains("_addEmoteTexts_"))
@@ -1263,8 +1275,10 @@ namespace SAI_Editor.Classes
                 {
                     if (smartScript.action_param1 == 1)
                         fullLine = fullLine.Replace("_pauseUnPauseActionParamOne_", "Pause");
-                    else
+                    else if (smartScript.action_param1 == 0)
                         fullLine = fullLine.Replace("_pauseUnPauseActionParamOne_", "Resume");
+                    else
+                        fullLine = fullLine.Replace("_pauseUnPauseActionParamOne_", "Wrong Value (0/1 only)");
                 }
 
                 if (fullLine.Contains("_startStopActionParamOne_"))
@@ -1305,14 +1319,18 @@ namespace SAI_Editor.Classes
                         fullLine = fullLine.Replace("_EnableDisablePhaseResetActionParamOne_", "Enable Event-Phase-Reset on SAI-Reset");
                     else if (smartScript.action_param1 == 0)
                         fullLine = fullLine.Replace("_EnableDisablePhaseResetActionParamOne_", "Disable Event-Phase-Reset on SAI-Reset");
+                    else
+                        fullLine = fullLine.Replace("_EnableDisablePhaseResetActionParamOne_", "Wrong Value (0/1 only)");
                 }
 
                 if (fullLine.Contains("_enabledDisabledActionParamThree_"))
                 {
                     if (smartScript.action_param3 == 1)
                         fullLine = fullLine.Replace("_enabledDisabledActionParamThree_", "Disabled");
-                    else
+                    if (smartScript.action_param3 == 0)
                         fullLine = fullLine.Replace("_enabledDisabledActionParamThree_", "Enabled");
+                    else
+                        fullLine = fullLine.Replace("_enabledDisabledActionParamThree_", "Wrong Value (0/1 only)");
                 }
 
                 if (fullLine.Contains("_DespawnCurrentPetsParamOne_"))
@@ -1702,16 +1720,20 @@ namespace SAI_Editor.Classes
                 {
                     if (smartScript.action_param5 == 1)
                         fullLine = fullLine.Replace("_PlayRandomSoundTarget_", "to self");
-                    else
+                    else if (smartScript.action_param5 == 0)
                         fullLine = fullLine.Replace("_PlayRandomSoundTarget_", "to all");
+                    else
+                        fullLine = fullLine.Replace("_PlayRandomSoundTarget_", "Wrong Value (0/1 only)");
                 }
 
                 if (fullLine.Contains("_UseTalkTarget_"))
                 {
                     if (smartScript.action_param3 == 1)
                         fullLine = fullLine.Replace("_UseTalkTarget_", "with using Talktarget");
-                    else
+                    else if (smartScript.action_param3 == 0)
                         fullLine = fullLine.Replace("_UseTalkTarget_", "not using Talktarget");
+                    else
+                        fullLine = fullLine.Replace("_UseTalkTarget_", "Wrong Value (0/1 only)");
                 }
 
                 if (fullLine.Contains("_PlayRandomSoundDistance_"))
@@ -1720,6 +1742,8 @@ namespace SAI_Editor.Classes
                         fullLine = fullLine.Replace("_PlayRandomSoundDistance_", "direct random sound");
                     else if (smartScript.action_param6 == 1)
                         fullLine = fullLine.Replace("_PlayRandomSoundDistance_", "distance random sound");
+                    else
+                        fullLine = fullLine.Replace("_PlayRandomSoundDistance_", "Wrong Value (0/1 only)");
                 }
 
                 if (fullLine.Contains("_PlaySoundDistance_"))
@@ -1728,30 +1752,38 @@ namespace SAI_Editor.Classes
                         fullLine = fullLine.Replace("_PlaySoundDistance_", "direct sound");
                     else if (smartScript.action_param3 == 1)
                         fullLine = fullLine.Replace("_PlaySoundDistance_", "distance sound");
+                    else
+                        fullLine = fullLine.Replace("_PlaySoundDistance_", "Wrong Value (0/1 only)");
                 }
 
                 if (fullLine.Contains("_PlaySoundTarget_"))
                 {
                     if (smartScript.action_param2 == 1)
                         fullLine = fullLine.Replace("_PlaySoundTarget_", "to self");
-                    else
+                    else if (smartScript.action_param2 == 0)
                         fullLine = fullLine.Replace("_PlaySoundTarget_", "to all");
+                    else
+                        fullLine = fullLine.Replace("_PlaySoundTarget_", "Wrong Value (0/1 only)");
                 }
 
                 if (fullLine.Contains("_addQuestDirectly_"))
                 {
                     if (smartScript.action_param2 == 1)
                         fullLine = fullLine.Replace("_addQuestDirectly_", "directly without previous condition");
-                    else
+                    else if (smartScript.action_param2 == 0)
                         fullLine = fullLine.Replace("_addQuestDirectly_", "not directly with previous condition");
+                    else
+                        fullLine = fullLine.Replace("_addQuestDirectly_", "Wrong Value (0/1 only)");
                 }
 
                 if (fullLine.Contains("_AttackInvoker_"))
                 {
                     if (smartScript.action_param4 == 1)
                         fullLine = fullLine.Replace("_AttackInvoker_", "and attack Invoker");
+                    else if (smartScript.action_param4 == 0)
+                        fullLine = fullLine.Replace("_AttackInvoker_", "and not attack Invoker");
                     else
-                        fullLine = fullLine.Replace("_AttackInvoker_", "");
+                        fullLine = fullLine.Replace("_AttackInvoker_", "Wrong Value (0/1 only)");
                 }
 
                 if (fullLine.Contains("_startOrStopBasedOnTargetType_"))
