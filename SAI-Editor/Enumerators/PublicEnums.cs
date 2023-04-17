@@ -692,6 +692,31 @@ namespace SAI_Editor.Enumerators
     }
 
     [Flags]
+    public enum CreatureFlagsExtra2
+    {
+        CREATURE_FLAG_EXTRA_NO_CREATURE_DAMAGE_TAKEN              = 0x00000001,       // creature is immune to damage from creatures with this flag
+        CREATURE_FLAG_EXTRA_ACTIVE                                = 0x00000002,       // creature is set to active on create
+        CREATURE_FLAG_EXTRA_NO_DAZE                               = 0x00000004,       // creature can't daze
+        CREATURE_FLAG_EXTRA_GAME_MODE_DISABLE_REP_GAIN            = 0x00000008,       // creature rep gain is diabled in specific game mode
+        CREATURE_FLAG_EXTRA_DISABLE_PVE_MODE                      = 0x00000010,       // creature removes PvE Mode from victim once damage is taken
+        CREATURE_FLAG_EXTRA_USE_FANNING                           = 0x00000020,       // creature will spread around target if other creatures are nearby
+        CREATURE_FLAG_EXTRA_DUNGEON_BOSS_FINAL                    = 0x00000040,       // creature is a final dungeon boss (SET DYNAMICALLY, DO NOT ADD IN DB)
+        CREATURE_FLAG_EXTRA_NEVER_EVADE                           = 0x00000080,       // creature will not have Evade behaviors
+        CREATURE_FLAG_EXTRA_NEVER_MELEE_REPOSITION                = 0x00000100,       // creature will never melee reposition
+        CREATURE_FLAG_EXTRA_CALL_FOR_HELP_40                      = 0x00000200,       // creature will execute a 40 yard call for help on pull
+        CREATURE_FLAG_EXTRA_IGNORE_CANNOT_REACH_TARGET            = 0x00000400,       // creature will ignore cannot reach target evade call
+        CREATURE_FLAG_EXTRA_NO_FIERCE_BLOW                        = 0x00000800,       // creature will never fierce blow
+        CREATURE_FLAG_EXTRA_SCALE_AFFECTS_PET_SIZE                = 0x00001000,       // creature template will scale pet size
+        CREATURE_FLAG_EXTRA_NO_CREATURE_DAMAGE_DONE               = 0x00002000,       // creature will do 0 damage to creatures
+        CREATURE_FLAG_EXTRA_LOAD_SPAWN_ENTRY                      = 0x00004000,       // creature has id 0 and will load different ids from creature_spawn_entry
+        CREATURE_FLAG_EXTRA_MYTHIC_PROGRESS_OVERRIDE              = 0x00008000,       // creature will override the mythic progress check for whether or not the creature can give experience
+        CREATURE_FLAG_EXTRA_IS_RANDOM_VENDOR                      = 0x00010000,       // creature is a random vendor
+        CREATURE_FLAG_EXTRA_IS_PERSONALIZED_VENDOR                = 0x00020000,       // creature is a personalized vendor
+        CREATURE_FLAG_EXTRA_IS_ACCOUNT_PERSONALIZED_VENDOR        = 0x00040000,       // creature is an account personalized vendor
+        CREATURE_FLAG_EXTRA_FIXED_UPDATE_DIFF                     = 0x00080000        // creature will use fixed update diff, it will not update at a different rate out of combat
+    }
+
+    [Flags]
     public enum UnitFlags2
     {
         UNIT_FLAG2_FEIGN_DEATH                  = 0x00000001,

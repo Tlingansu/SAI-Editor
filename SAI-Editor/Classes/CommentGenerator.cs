@@ -265,7 +265,7 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_ADD_TO_STORED_TARGET_LIST, "Add target to stored target list ID: _actionParamOne_  - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_BECOME_PERSONAL_CLONE_FOR_PLAYER, "Become personal clone for player  - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_TRIGGER_GAME_EVENT, "Trigger Game Event ID: _actionParamOne_ - Target: _getTargetType_");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_DO_ACTION, "Do Action ID: _actionParamOne_ - Target: _getTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_DO_ACTION, "Trigger Action ID: _actionParamOne_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_UNUSED_152, "Set  - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_UNUSED_153, "Set  - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_UNUSED_154, "Set  - Target: _getTargetType_");
@@ -362,7 +362,7 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_MOVE_SPAWN_POS, "Move to Respawn Position (PointID: _actionParamOne_, Pathfinding: _enabledDisabledActionParamThree_) - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_FLY_MODE, "_enableDisableActionParamOne_ Fly Mode - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_MOVE_CIRCLE_PATH, "Move Circle Path around Position XYZ (Radius: _actionParamOne_, Clockwise _ClockWiseActionParamTwo_, Stepcount: _actionParamThree_) - Target: _getTargetType_");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_SET_FLAG_EXTRA, "Add FlagsExtra: _getFlagsExtra_, Flagextra2: _actionParamTwo_ - Target: _getTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_SET_FLAG_EXTRA, "Add FlagsExtra: _getFlagsExtra_, Flagextra2: _getFlagsExtra2_ - Target: _getTargetType_");
             
         }
 
@@ -688,6 +688,40 @@ namespace SAI_Editor.Classes
                         fullLine = fullLine.Replace("_getFlagsExtra_", "_getFlagsExtra_");
 
                     fullLine = fullLine.Replace("_getFlagsExtra_", " " + commentFlagsExtra);
+                }
+
+                if (fullLine.Contains("_getFlagsExtra2_"))
+                {
+                    string commentFlagsExtra2 = "";
+                    int flagsextra2 = smartScript.action_param2;
+
+                    if ((flagsextra2 & (int)CreatureFlagsExtra2.CREATURE_FLAG_EXTRA_NO_CREATURE_DAMAGE_TAKEN) != 0) commentFlagsExtra2 += "No Creature Damage Taken & ";
+                    if ((flagsextra2 & (int)CreatureFlagsExtra2.CREATURE_FLAG_EXTRA_ACTIVE) != 0) commentFlagsExtra2 += "Active & ";
+                    if ((flagsextra2 & (int)CreatureFlagsExtra2.CREATURE_FLAG_EXTRA_NO_DAZE) != 0) commentFlagsExtra2 += "No Daze & ";
+                    if ((flagsextra2 & (int)CreatureFlagsExtra2.CREATURE_FLAG_EXTRA_GAME_MODE_DISABLE_REP_GAIN) != 0) commentFlagsExtra2 += "Game Mode Disable Rep Gain & ";
+                    if ((flagsextra2 & (int)CreatureFlagsExtra2.CREATURE_FLAG_EXTRA_DISABLE_PVE_MODE) != 0) commentFlagsExtra2 += "Disable PvE Mode & ";
+                    if ((flagsextra2 & (int)CreatureFlagsExtra2.CREATURE_FLAG_EXTRA_USE_FANNING) != 0) commentFlagsExtra2 += "Enable Fanning & ";
+                    if ((flagsextra2 & (int)CreatureFlagsExtra2.CREATURE_FLAG_EXTRA_DUNGEON_BOSS_FINAL) != 0) commentFlagsExtra2 += "Final Dungeon Boss & ";
+                    if ((flagsextra2 & (int)CreatureFlagsExtra2.CREATURE_FLAG_EXTRA_NEVER_EVADE) != 0) commentFlagsExtra2 += "Never Evade & ";
+                    if ((flagsextra2 & (int)CreatureFlagsExtra2.CREATURE_FLAG_EXTRA_NEVER_MELEE_REPOSITION) != 0) commentFlagsExtra2 += "Never Melee Reposition & ";
+                    if ((flagsextra2 & (int)CreatureFlagsExtra2.CREATURE_FLAG_EXTRA_CALL_FOR_HELP_40) != 0) commentFlagsExtra2 += "Call For Help 40 yards & ";
+                    if ((flagsextra2 & (int)CreatureFlagsExtra2.CREATURE_FLAG_EXTRA_IGNORE_CANNOT_REACH_TARGET) != 0) commentFlagsExtra2 += "Ignore Cannot Reach Target & ";
+                    if ((flagsextra2 & (int)CreatureFlagsExtra2.CREATURE_FLAG_EXTRA_NO_FIERCE_BLOW) != 0) commentFlagsExtra2 += "No Fierce Blow & ";
+                    if ((flagsextra2 & (int)CreatureFlagsExtra2.CREATURE_FLAG_EXTRA_SCALE_AFFECTS_PET_SIZE) != 0) commentFlagsExtra2 += "Scale Pet Size & ";
+                    if ((flagsextra2 & (int)CreatureFlagsExtra2.CREATURE_FLAG_EXTRA_NO_CREATURE_DAMAGE_DONE) != 0) commentFlagsExtra2 += "No Creature Damage & ";
+                    if ((flagsextra2 & (int)CreatureFlagsExtra2.CREATURE_FLAG_EXTRA_LOAD_SPAWN_ENTRY) != 0) commentFlagsExtra2 += "Load spawn entry & ";
+                    if ((flagsextra2 & (int)CreatureFlagsExtra2.CREATURE_FLAG_EXTRA_MYTHIC_PROGRESS_OVERRIDE) != 0) commentFlagsExtra2 += "Mythic Progress Override & ";
+                    if ((flagsextra2 & (int)CreatureFlagsExtra2.CREATURE_FLAG_EXTRA_IS_RANDOM_VENDOR) != 0) commentFlagsExtra2 += "Random Vendor & ";
+                    if ((flagsextra2 & (int)CreatureFlagsExtra2.CREATURE_FLAG_EXTRA_IS_PERSONALIZED_VENDOR) != 0) commentFlagsExtra2 += "Personalized Vendor & ";
+                    if ((flagsextra2 & (int)CreatureFlagsExtra2.CREATURE_FLAG_EXTRA_IS_ACCOUNT_PERSONALIZED_VENDOR) != 0) commentFlagsExtra2 += "Account Personalized Vendor & ";
+                    if ((flagsextra2 & (int)CreatureFlagsExtra2.CREATURE_FLAG_EXTRA_FIXED_UPDATE_DIFF) != 0) commentFlagsExtra2 += "Fixed Update Diff & ";
+
+                    commentFlagsExtra2 = commentFlagsExtra2.Trim(new[] { ' ', '&', ' ' }); //! Trim last ' & ' from the comment..
+
+                    if (commentFlagsExtra2.Contains("&"))
+                        fullLine = fullLine.Replace("_getFlagsExtra2_", "_getFlagsExtra2_");
+
+                    fullLine = fullLine.Replace("_getFlagsExtra2_", " " + commentFlagsExtra2);
                 }
 
                 if (fullLine.Contains("_getTriggerCastFlags_"))
