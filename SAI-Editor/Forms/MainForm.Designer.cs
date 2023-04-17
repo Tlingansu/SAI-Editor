@@ -1927,7 +1927,11 @@
             "EVENT_SCENE_START",
             "EVENT_SCENE_CANCEL",
             "EVENT_SCENE_COMPLETE",
-            "EVENT_SUMMONED_UNIT_DIES"});
+            "EVENT_SUMMONED_UNIT_DIES",
+            "EVENT_ON_SPELL_CAST",
+            "EVENT_ON_SPELL_FAILED",
+            "EVENT_ON_SPELL_START",
+            "EVENT_ON_DESPAWN"});
             this.comboBoxEventType.Location = new System.Drawing.Point(59, 18);
             this.comboBoxEventType.Name = "comboBoxEventType";
             this.comboBoxEventType.Size = new System.Drawing.Size(235, 21);

@@ -111,6 +111,10 @@ namespace SAI_Editor.Classes
             smartEventStrings.Add(SmartEvent.SMART_EVENT_SCENE_CANCEL, "On Scene _eventParamOne_ Cancel");
             smartEventStrings.Add(SmartEvent.SMART_EVENT_SCENE_COMPLETE, "On Scene _eventParamOne_ Completed");
             smartEventStrings.Add(SmartEvent.SMART_EVENT_SUMMONED_UNIT_DIES, "On Summoned Unit _npcNameFirstParam_ Dies");
+            smartEventStrings.Add(SmartEvent.SMART_EVENT_ON_SPELL_CAST, "On Spell Cast '_spellNameEventParamOne_'");
+            smartEventStrings.Add(SmartEvent.SMART_EVENT_ON_SPELL_FAILED, "On Spell Failed '_spellNameEventParamOne_'");
+            smartEventStrings.Add(SmartEvent.SMART_EVENT_ON_SPELL_START, "On Spell Start '_spellNameEventParamOne_'");
+            smartEventStrings.Add(SmartEvent.SMART_EVENT_ON_DESPAWN, "On Despawn");
             smartEventStrings.Add(SmartEvent.SMART_EVENT_LINK, "_previousLineComment_");
 
             //! Filling up actions
