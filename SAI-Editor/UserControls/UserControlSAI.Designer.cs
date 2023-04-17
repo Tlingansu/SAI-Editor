@@ -652,7 +652,8 @@
             "ACTION_MOVE_SPAWN_POS",
             "ACTION_SET_FLY_MODE",
             "ACTION_MOVE_CIRCLE_PATH",
-            "ACTION_SET_FLAG_EXTRA"});
+            "ACTION_SET_FLAG_EXTRA",
+            "ACTION_REMOVE_FLAG_EXTRA"});
             this.comboBoxActionType.Location = new System.Drawing.Point(59, 45);
             this.comboBoxActionType.Name = "comboBoxActionType";
             this.comboBoxActionType.Size = new System.Drawing.Size(235, 21);

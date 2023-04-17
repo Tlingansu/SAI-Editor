@@ -363,7 +363,7 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_FLY_MODE, "_enableDisableActionParamOne_ Fly Mode - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_MOVE_CIRCLE_PATH, "Move Circle Path around Position XYZ (Radius: _actionParamOne_, Clockwise _ClockWiseActionParamTwo_, Stepcount: _actionParamThree_) - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_FLAG_EXTRA, "Add FlagsExtra: _getFlagsExtra_, Flagextra2: _getFlagsExtra2_ - Target: _getTargetType_");
-            
+            smartActionStrings.Add(SmartAction.SMART_ACTION_REMOVE_FLAG_EXTRA, "Remove FlagsExtra: _getFlagsExtra_, Flagextra2: _getFlagsExtra2_ - Target: _getTargetType_");
         }
 
         public async Task<string> GenerateCommentFor(SmartScript smartScript, EntryOrGuidAndSourceType entryOrGuidAndSourceType, bool forced = false, SmartScript smartScriptLink = null)
