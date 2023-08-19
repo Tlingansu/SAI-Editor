@@ -107,37 +107,6 @@ namespace SAI_Editor.Forms
             timerCheckForInternetConnection.Tick += timerCheckForInternetConnection_Tick;
             timerCheckForInternetConnection.Enabled = false;
 
-            if (!Settings.Default.InformedAboutSurvey)
-            {
-                string termsArgeementString = "By clicking 'Yes' you agree to the application keeping a record of the usage in a remote database. Keep " +
-                                                "in mind that this data will not be disclosed to a third party.";
-
-                DialogResult result = MessageBox.Show(termsArgeementString, "Agree to the terms", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-
-                if (result != DialogResult.Yes)
-                {
-                    //! Not running this in a diff thread because we want this to complete before exiting.
-                    using (WebClient client = new WebClient())
-                    {
-                        try
-                        {
-                            client.DownloadData("http://www.jasper-rietrae.com/SAI-Editor/survey.php?agreed=false");
-                        }
-                        catch
-                        {
-
-                        }
-                    }
-                }
-
-                Settings.Default.InformedAboutSurvey = true;
-                Settings.Default.AgreedToSurvey = result == DialogResult.Yes;
-                Settings.Default.Save();
-            }
-
-            updateSurveyThread = new Thread(UpdateSurvey);
-            updateSurveyThread.Start();
-
             checkIfUpdatesAvailableThread = new Thread(CheckIfUpdatesAvailable);
             checkIfUpdatesAvailableThread.Start();
 
@@ -304,44 +273,6 @@ namespace SAI_Editor.Forms
                 return;
 
             base.WndProc(ref m);
-        }
-
-        private void UpdateSurvey()
-        {
-            using (WebClient client = new WebClient())
-            {
-                try
-                {
-                    string url = "http://www.jasper-rietrae.com/SAI-Editor/survey.php?";
-
-                    if (!Settings.Default.AgreedToSurvey)
-                        url += "agreed=false";
-                    else
-                        url += "version=" + applicationVersion.Replace('.', '-');
-
-                    client.DownloadData(url);
-                }
-                catch (ThreadAbortException)
-                {
-
-                }
-                catch (WebException)
-                {
-                    //! Try to connect to google.com. If it can't connect, it means no internet connection
-                    //! is available. We then start a timer which checks for an internet connection every
-                    //! 10 minutes.
-                    if (!SAI_Editor_Manager.Instance.HasInternetConnection())
-                        timerCheckForInternetConnection.Enabled = true;
-                }
-                catch (Exception ex)
-                {
-                    //! Run the messagebox on the mainthread
-                    Invoke(new Action(() =>
-                    {
-                        MessageBox.Show("Something went wrong while attempting to keep track of the use count. Please report the following message to developers:\n\n" + ex.ToString(), "Something went wrong!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }));
-                }
-            }
         }
 
         private void CheckIfUpdatesAvailable()
