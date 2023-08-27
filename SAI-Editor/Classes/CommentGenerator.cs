@@ -369,6 +369,7 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_FLAG_EXTRA, "Add FlagsExtra: _getFlagsExtra_, Flagextra2: _getFlagsExtra2_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_REMOVE_FLAG_EXTRA, "Remove FlagsExtra: _getFlagsExtra_, Flagextra2: _getFlagsExtra2_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_FAR_VISIBLE, "_enableDisableActionParamOne_ Object Far Visibility - Target: _getTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_PAUSE_RND_MOVEMENT, "_pauseUnPauseActionParamOne_ Random Movement - Target: _getTargetType_");
         }
 
         public async Task<string> GenerateCommentFor(SmartScript smartScript, EntryOrGuidAndSourceType entryOrGuidAndSourceType, bool forced = false, SmartScript smartScriptLink = null)
