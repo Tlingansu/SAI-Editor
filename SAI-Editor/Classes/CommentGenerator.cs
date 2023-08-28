@@ -453,7 +453,7 @@ namespace SAI_Editor.Classes
                 if (fullLine.Contains("_spellNameEventParamOne_"))
                 {
                     if (smartScript.event_param1 > 0)
-                        fullLine = fullLine.Replace("_spellNameEventParamOne_", await worldDatabase.GetSpellNameById(smartScript.event_param1));
+                        fullLine = fullLine.Replace("_spellNameEventParamOne_", await sqliteDatabase.GetSpellNameById(smartScript.event_param1));
                     else
                         fullLine = fullLine.Replace(" '_spellNameEventParamOne_'", String.Empty);
                 }
@@ -461,7 +461,7 @@ namespace SAI_Editor.Classes
                 if (fullLine.Contains("_targetCastingSpellName_"))
                 {
                     if (smartScript.event_param3.ToString() != "0")
-                        fullLine = fullLine.Replace("_targetCastingSpellName_", await worldDatabase.GetSpellNameById(smartScript.event_param3));
+                        fullLine = fullLine.Replace("_targetCastingSpellName_", await sqliteDatabase.GetSpellNameById(smartScript.event_param3));
                     else
                         fullLine = fullLine.Replace(" '_targetCastingSpellName_'", String.Empty);
                 }
@@ -542,7 +542,7 @@ namespace SAI_Editor.Classes
                 if (fullLine.Contains("_spellNameActionParamOne_"))
                 {
                     if (smartScript.action_param1.ToString() != "0")
-                        fullLine = fullLine.Replace("_spellNameActionParamOne_", await worldDatabase.GetSpellNameById(smartScript.action_param1));
+                        fullLine = fullLine.Replace("_spellNameActionParamOne_", await sqliteDatabase.GetSpellNameById(smartScript.action_param1));
                     else
                         fullLine = fullLine.Replace(" '_spellNameActionParamOne_'", String.Empty);
                 }
@@ -550,7 +550,7 @@ namespace SAI_Editor.Classes
                 if (fullLine.Contains("_spellNameActionParamTwo_"))
                 {
                     if (smartScript.action_param2.ToString() != "0")
-                        fullLine = fullLine.Replace("_spellNameActionParamTwo_", await worldDatabase.GetSpellNameById(smartScript.action_param2));
+                        fullLine = fullLine.Replace("_spellNameActionParamTwo_", await sqliteDatabase.GetSpellNameById(smartScript.action_param2));
                     else
                         fullLine = fullLine.Replace(" '_spellNameActionParamTwo_'", String.Empty);
                 }
@@ -558,7 +558,7 @@ namespace SAI_Editor.Classes
                 if (fullLine.Contains("_spellNameActionParamThree_"))
                 {
                     if (smartScript.action_param3.ToString() != "0")
-                        fullLine = fullLine.Replace("_spellNameActionParamThree_", await worldDatabase.GetSpellNameById(smartScript.action_param3));
+                        fullLine = fullLine.Replace("_spellNameActionParamThree_", await sqliteDatabase.GetSpellNameById(smartScript.action_param3));
                     else
                         fullLine = fullLine.Replace(" '_spellNameActionParamThree_'", String.Empty);
                 }
@@ -566,7 +566,7 @@ namespace SAI_Editor.Classes
                 if (fullLine.Contains("_spellNameActionParamFour_"))
                 {
                     if (smartScript.action_param4.ToString() != "0")
-                        fullLine = fullLine.Replace("_spellNameActionParamFour_", await worldDatabase.GetSpellNameById(smartScript.action_param4));
+                        fullLine = fullLine.Replace("_spellNameActionParamFour_", await sqliteDatabase.GetSpellNameById(smartScript.action_param4));
                     else
                         fullLine = fullLine.Replace(" '_spellNameActionParamFour_'", String.Empty);
                 }
@@ -574,7 +574,7 @@ namespace SAI_Editor.Classes
                 if (fullLine.Contains("_spellNameActionParamFive_"))
                 {
                     if (smartScript.action_param5.ToString() != "0")
-                        fullLine = fullLine.Replace("_spellNameActionParamFive_", await worldDatabase.GetSpellNameById(smartScript.action_param5));
+                        fullLine = fullLine.Replace("_spellNameActionParamFive_", await sqliteDatabase.GetSpellNameById(smartScript.action_param5));
                     else
                         fullLine = fullLine.Replace(" '_spellNameActionParamFive_'", String.Empty);
                 }
