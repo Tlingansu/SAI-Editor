@@ -29,11 +29,11 @@ namespace SAI_Editor.Classes
 
         public CommentGenerator()
         {
-            smartEventStrings.Add(SmartEvent.SMART_EVENT_SPELLHIT, "On Spellhit '_spellNameEventParamOne_'");
-            smartEventStrings.Add(SmartEvent.SMART_EVENT_HAS_AURA, "On _hasAuraEventParamOne_ '_spellNameEventParamOne_'");
-            smartEventStrings.Add(SmartEvent.SMART_EVENT_TARGET_BUFFED, "On Target Buffed With '_spellNameEventParamOne_'");
-            smartEventStrings.Add(SmartEvent.SMART_EVENT_SPELLHIT_TARGET, "On Target Spellhit '_spellNameEventParamOne_'");
-            smartEventStrings.Add(SmartEvent.SMART_EVENT_FRIENDLY_MISSING_BUFF, "On Friendly Unit Missing Buff '_spellNameEventParamOne_'");
+            smartEventStrings.Add(SmartEvent.SMART_EVENT_SPELLHIT, "On Spellhit _spellNameEventParamOne_");
+            smartEventStrings.Add(SmartEvent.SMART_EVENT_HAS_AURA, "On _hasAuraEventParamOne_ _spellNameEventParamOne_");
+            smartEventStrings.Add(SmartEvent.SMART_EVENT_TARGET_BUFFED, "On Target Buffed With _spellNameEventParamOne_");
+            smartEventStrings.Add(SmartEvent.SMART_EVENT_SPELLHIT_TARGET, "On Target Spellhit _spellNameEventParamOne_");
+            smartEventStrings.Add(SmartEvent.SMART_EVENT_FRIENDLY_MISSING_BUFF, "On Friendly Unit Missing Buff _spellNameEventParamOne_");
             smartEventStrings.Add(SmartEvent.SMART_EVENT_HEALT_PCT, "Between _eventParamOne_-_eventParamTwo_% Health");
             smartEventStrings.Add(SmartEvent.SMART_EVENT_MANA_PCT, "Between _eventParamOne_-_eventParamTwo_% Mana");
             smartEventStrings.Add(SmartEvent.SMART_EVENT_RANGE, "Within _eventParamOne_-_eventParamTwo_ Range");
@@ -64,7 +64,7 @@ namespace SAI_Editor.Classes
             smartEventStrings.Add(SmartEvent.SMART_EVENT_DEATH, "On Just Died");
             smartEventStrings.Add(SmartEvent.SMART_EVENT_EVADE, "On Evade");
             smartEventStrings.Add(SmartEvent.SMART_EVENT_RESPAWN, "On Respawn");
-            smartEventStrings.Add(SmartEvent.SMART_EVENT_VICTIM_CASTING, "On Victim Casting '_targetCastingSpellName_'");
+            smartEventStrings.Add(SmartEvent.SMART_EVENT_VICTIM_CASTING, "On Victim Casting _targetCastingSpellName_");
             smartEventStrings.Add(SmartEvent.SMART_EVENT_FRIENDLY_IS_CC, "On Friendly Crowd Controlled");
             smartEventStrings.Add(SmartEvent.SMART_EVENT_SUMMONED_UNIT, "On Summoned Unit");
             smartEventStrings.Add(SmartEvent.SMART_EVENT_ACCEPTED_QUEST, "On Quest '_questNameEventParamOne_' Taken");
@@ -111,9 +111,9 @@ namespace SAI_Editor.Classes
             smartEventStrings.Add(SmartEvent.SMART_EVENT_SCENE_CANCEL, "On Scene _eventParamOne_ Cancel");
             smartEventStrings.Add(SmartEvent.SMART_EVENT_SCENE_COMPLETE, "On Scene _eventParamOne_ Completed");
             smartEventStrings.Add(SmartEvent.SMART_EVENT_SUMMONED_UNIT_DIES, "On Summoned Unit _npcNameFirstParam_ Dies");
-            smartEventStrings.Add(SmartEvent.SMART_EVENT_ON_SPELL_CAST, "On Spell Cast '_spellNameEventParamOne_'");
-            smartEventStrings.Add(SmartEvent.SMART_EVENT_ON_SPELL_FAILED, "On Spell Failed '_spellNameEventParamOne_'");
-            smartEventStrings.Add(SmartEvent.SMART_EVENT_ON_SPELL_START, "On Spell Start '_spellNameEventParamOne_'");
+            smartEventStrings.Add(SmartEvent.SMART_EVENT_ON_SPELL_CAST, "On Spell Cast _spellNameEventParamOne_");
+            smartEventStrings.Add(SmartEvent.SMART_EVENT_ON_SPELL_FAILED, "On Spell Failed _spellNameEventParamOne_");
+            smartEventStrings.Add(SmartEvent.SMART_EVENT_ON_SPELL_START, "On Spell Start _spellNameEventParamOne_");
             smartEventStrings.Add(SmartEvent.SMART_EVENT_ON_DESPAWN, "On Despawn");
             smartEventStrings.Add(SmartEvent.SMART_EVENT_LINK, "_previousLineComment_");
 
@@ -129,7 +129,7 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_REACT_STATE, "Set Reactstate _reactStateParamOne_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_ACTIVATE_GOBJECT, "Activate Gameobject - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_RANDOM_EMOTE, "Play Random Emote (_actionRandomParameters_) - Target: _getTargetType_");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_CAST, "Cast '_spellNameActionParamOne_' _getCastFlags_ - Target: _getTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_CAST, "Cast _spellNameActionParamOne_ _getCastFlags_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SUMMON_CREATURE, "Summon Creature '_creatureNameActionParamOne_' for _actionParamThree_ milliseconds _AttackInvoker_, Path-ID: _actionParamFive_, SpawnCount: _actionParamSix_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_THREAT_SINGLE_PCT, "Set Threat _actionParamOne_-_actionParamTwo_ on single target - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_THREAT_ALL_PCT, "Set Threat _actionParamOne_-_actionParamTwo_ on all units in threatlist - Target: _getTargetType_");
@@ -146,7 +146,7 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_FLEE_FOR_ASSIST, "Flee For Assist _AddEmoteTextActionParamOne_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_CALL_GROUPEVENTHAPPENS, "Call GroupEventHappens for quest: '_questNameActionParamOne_' - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_COMBAT_STOP, "Stop Combat - Target: _getTargetType_");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_REMOVEAURASFROMSPELL, "Remove Aura '_spellNameActionParamOne_' Charges: _actionParamTwo_ - Target: _getTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_REMOVEAURASFROMSPELL, "Remove Aura _spellNameActionParamOne_ Charges: _actionParamTwo_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_FOLLOW, "_startOrStopBasedOnTargetType_ Follow _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_RANDOM_PHASE, "Set Random Phase(_actionRandomParameters_) - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_RANDOM_PHASE_RANGE, "Set Phase Random Between _actionParamOne_-_actionParamTwo_ - Target: _getTargetType_");
@@ -193,7 +193,7 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_CLOSE_GOSSIP, "Close Gossip - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_TRIGGER_TIMED_EVENT, "Trigger Timed Event _actionParamOne_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_REMOVE_TIMED_EVENT, "Remove Timed Event _actionParamOne_ - Target: _getTargetType_");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_ADD_AURA, "Add Aura '_spellNameActionParamOne_' - Target: _getTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_ADD_AURA, "Add Aura _spellNameActionParamOne_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_OVERRIDE_SCRIPT_BASE_OBJECT, "Override Script Base Object - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_RESET_SCRIPT_BASE_OBJECT, "Reset Script Base Object - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_CALL_SCRIPT_RESET, "Reset All Scripts - Target: _getTargetType_");
@@ -203,14 +203,14 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_ADD_NPC_FLAG, "Add Npc Flag_getNpcFlags_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_REMOVE_NPC_FLAG, "Remove Npc Flag_getNpcFlags_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SIMPLE_TALK, "Simple Talk Line _actionParamOne_ - Target: _getTargetType_");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_INVOKER_CAST, "Invoker Cast '_spellNameActionParamOne_' _getCastFlags_ - Target: _getTargetType_");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_CROSS_CAST, "Cross Cast '_spellNameActionParamOne_' _getCastFlags_ - Target: _getTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_INVOKER_CAST, "Invoker Cast _spellNameActionParamOne_ _getCastFlags_ - Target: _getTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_CROSS_CAST, "Cross Cast _spellNameActionParamOne_ _getCastFlags_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_CALL_RANDOM_TIMED_ACTIONLIST, "Run Random Script - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_CALL_RANDOM_RANGE_TIMED_ACTIONLIST, "Run Random Script between Script: _actionParamOne_ and Script: _actionParamTwo_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_RANDOM_MOVE, "_startStopActionParamOne_ Random Movement (Radius: _actionParamOne_) - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_UNIT_FIELD_BYTES_1, "Set Flag _getBytes1Flags_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_REMOVE_UNIT_FIELD_BYTES_1, "Remove Flag _getBytes1Flags_ - Target: _getTargetType_");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_INTERRUPT_SPELL, "Interrupt Spell '_spellNameActionParamTwo_' _SpellInterruptDelayActionParamOne_ _SpellInterruptInstanceActionParamOne_  - Target: _getTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_INTERRUPT_SPELL, "Interrupt Spell _spellNameActionParamTwo_ _SpellInterruptDelayActionParamOne_ _SpellInterruptInstanceActionParamOne_  - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SEND_GO_CUSTOM_ANIM, "Send Custom Animation _actionParamOne_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_DYNAMIC_FLAG, "Set Dynamic Flag_getDynamicFlags_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_ADD_DYNAMIC_FLAG, "Add Dynamic Flag_getDynamicFlags_ - Target: _getTargetType_");
@@ -252,7 +252,7 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_SPAWN_SPAWNGROUP, "Spawn Spawngroup ID _actionParamOne_ (Min Secs: _actionParamTwo_, Max Secs: _actionParamThree_, Spawnflags: _getSpawnFlags_) - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_DESPAWN_SPAWNGROUP, "Despawn Spawngroup ID _actionParamOne_ (Min Secs: _actionParamTwo_, Max Secs: _actionParamThree_, Spawnflags: _getSpawnFlags_) - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_RESPAWN_BY_SPAWNID, "Respawn SpawnID _actionParamTwo_ with SpawnType _actionParamOne_ - Target: _getTargetType_");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_INVOKER_CAST_, "Cast '_spellNameActionParamOne_' _getCastFlags_ - Target: _getTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_INVOKER_CAST_, "Cast _spellNameActionParamOne_ _getCastFlags_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_PLAY_CINEMATIC, "Play Cinematic Entry: _actionParamOne_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_MOVEMENT_SPEED, "Set Creature Movement Speed (MovementType: _actionParamOne_, SpeedInteger: _actionParamTwo_, SpeedFraction: _actionParamThree_) - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_PLAY_SPELL_VISUAL_KIT, "Play Spell Visual Kit ID: _actionParamOne_ - Target: _getTargetType_");
@@ -329,12 +329,12 @@ namespace SAI_Editor.Classes
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_SPEED_RATE, "Set Speed Rate (Speed Walk Rate: _checkSpeedWalkActionParamOne_, Speed Run Rate: _checkSpeedRunActionParamTwo_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_LOAD_WP_PATH, "Load Waypoint-Data ID: _actionParamOne_ (AddonPath: _actionParamTwo_, _unrepeatableRepeatableActionParamThree_) - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_DELETE_THREAT_LIST, "Delete Threatlist  - Target: _getTargetType_");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_CAST_RANDOM_SPELL, "Cast Random Spell (Spell ID 1: '_spellNameActionParamOne_', Spell ID 2: '_spellNameActionParamTwo_', Spell ID 3: '_spellNameActionParamThree_', Spell ID 4: '_spellNameActionParamFour_', Cast Flags: '_actionParamFive_', Trigger Flags: _actionParamSix_ - Target: _getTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_CAST_RANDOM_SPELL, "Cast Random Spell (Spell ID 1: _spellNameActionParamOne_, Spell ID 2: _spellNameActionParamTwo_, Spell ID 3: _spellNameActionParamThree_, Spell ID 4: _spellNameActionParamFour_, Cast Flags: _actionParamFive_, Trigger Flags: _actionParamSix_ - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_COMBAT_STOP_WITH_PETS, "Combat Stop with Pets - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_PAUSE_WAYPOINT_DATA_MOVEMENT, "_pauseUnPauseActionParamOne_ Waypoint-Data Movement - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_MOVE_TO_POS_TARGET, "Move selected target to Position - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SAVE_CHECKPOINT, "Save Checkpoint Position - Target: _getTargetType_");
-            smartActionStrings.Add(SmartAction.SMART_ACTION_CROSS_CAST_IN_COMBAT, "Cross Cast '_spellNameActionParamOne_' _getCastFlags_ in Combat - Target: _getTargetType_");
+            smartActionStrings.Add(SmartAction.SMART_ACTION_CROSS_CAST_IN_COMBAT, "Cross Cast _spellNameActionParamOne_ _getCastFlags_ in Combat - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_EXIT_VEHICLE, "Exit Vehicle - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_SET_HEALTH, "Set Health - Target: _getTargetType_");
             smartActionStrings.Add(SmartAction.SMART_ACTION_STOP_MOTION, "Stop Motion (StopMovement: _actionParamOne_, MovementExpired: _actionParamTwo_) - Target: _getTargetType_");
@@ -455,7 +455,7 @@ namespace SAI_Editor.Classes
                     if (smartScript.event_param1 > 0)
                         fullLine = fullLine.Replace("_spellNameEventParamOne_", await sqliteDatabase.GetSpellNameById(smartScript.event_param1));
                     else
-                        fullLine = fullLine.Replace(" '_spellNameEventParamOne_'", String.Empty);
+                        fullLine = fullLine.Replace(" _spellNameEventParamOne_", String.Empty);
                 }
 
                 if (fullLine.Contains("_targetCastingSpellName_"))
@@ -463,7 +463,7 @@ namespace SAI_Editor.Classes
                     if (smartScript.event_param3.ToString() != "0")
                         fullLine = fullLine.Replace("_targetCastingSpellName_", await sqliteDatabase.GetSpellNameById(smartScript.event_param3));
                     else
-                        fullLine = fullLine.Replace(" '_targetCastingSpellName_'", String.Empty);
+                        fullLine = fullLine.Replace(" _targetCastingSpellName_", String.Empty);
                 }
 
                 if (fullLine.Contains("_questNameEventParamOne_"))
@@ -544,7 +544,7 @@ namespace SAI_Editor.Classes
                     if (smartScript.action_param1.ToString() != "0")
                         fullLine = fullLine.Replace("_spellNameActionParamOne_", await sqliteDatabase.GetSpellNameById(smartScript.action_param1));
                     else
-                        fullLine = fullLine.Replace(" '_spellNameActionParamOne_'", String.Empty);
+                        fullLine = fullLine.Replace(" _spellNameActionParamOne_", String.Empty);
                 }
 
                 if (fullLine.Contains("_spellNameActionParamTwo_"))
@@ -552,7 +552,7 @@ namespace SAI_Editor.Classes
                     if (smartScript.action_param2.ToString() != "0")
                         fullLine = fullLine.Replace("_spellNameActionParamTwo_", await sqliteDatabase.GetSpellNameById(smartScript.action_param2));
                     else
-                        fullLine = fullLine.Replace(" '_spellNameActionParamTwo_'", String.Empty);
+                        fullLine = fullLine.Replace(" _spellNameActionParamTwo_", String.Empty);
                 }
 
                 if (fullLine.Contains("_spellNameActionParamThree_"))
@@ -560,7 +560,7 @@ namespace SAI_Editor.Classes
                     if (smartScript.action_param3.ToString() != "0")
                         fullLine = fullLine.Replace("_spellNameActionParamThree_", await sqliteDatabase.GetSpellNameById(smartScript.action_param3));
                     else
-                        fullLine = fullLine.Replace(" '_spellNameActionParamThree_'", String.Empty);
+                        fullLine = fullLine.Replace(" _spellNameActionParamThree_", String.Empty);
                 }
 
                 if (fullLine.Contains("_spellNameActionParamFour_"))
@@ -568,7 +568,7 @@ namespace SAI_Editor.Classes
                     if (smartScript.action_param4.ToString() != "0")
                         fullLine = fullLine.Replace("_spellNameActionParamFour_", await sqliteDatabase.GetSpellNameById(smartScript.action_param4));
                     else
-                        fullLine = fullLine.Replace(" '_spellNameActionParamFour_'", String.Empty);
+                        fullLine = fullLine.Replace(" _spellNameActionParamFour_", String.Empty);
                 }
 
                 if (fullLine.Contains("_spellNameActionParamFive_"))
@@ -576,7 +576,7 @@ namespace SAI_Editor.Classes
                     if (smartScript.action_param5.ToString() != "0")
                         fullLine = fullLine.Replace("_spellNameActionParamFive_", await sqliteDatabase.GetSpellNameById(smartScript.action_param5));
                     else
-                        fullLine = fullLine.Replace(" '_spellNameActionParamFive_'", String.Empty);
+                        fullLine = fullLine.Replace(" _spellNameActionParamFive_", String.Empty);
                 }
 
                 if (fullLine.Contains("_questNameActionParamOne_"))
