@@ -42,6 +42,7 @@
             // 
             // groupBoxSearchInfo
             // 
+            this.groupBoxSearchInfo.BackColor = System.Drawing.Color.DimGray;
             this.groupBoxSearchInfo.Controls.Add(this.buttonStopSearching);
             this.groupBoxSearchInfo.Controls.Add(this.checkBoxFieldContainsCriteria);
             this.groupBoxSearchInfo.Controls.Add(this.textBoxCriteria);
@@ -128,7 +129,9 @@
             this.listViewEntryResults.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.listViewEntryResults.BackColor = System.Drawing.Color.DimGray;
             this.listViewEntryResults.FullRowSelect = true;
+            this.listViewEntryResults.HideSelection = false;
             this.listViewEntryResults.Location = new System.Drawing.Point(12, 121);
             this.listViewEntryResults.MultiSelect = false;
             this.listViewEntryResults.Name = "listViewEntryResults";

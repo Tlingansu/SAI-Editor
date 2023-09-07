@@ -45,9 +45,11 @@
             // 
             // listViewScripts
             // 
+            this.listViewScripts.BackColor = System.Drawing.Color.DimGray;
             this.listViewScripts.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader});
             this.listViewScripts.FullRowSelect = true;
+            this.listViewScripts.HideSelection = false;
             this.listViewScripts.Location = new System.Drawing.Point(257, 18);
             this.listViewScripts.MultiSelect = false;
             this.listViewScripts.Name = "listViewScripts";
@@ -76,6 +78,7 @@
             // 
             // calenderScriptsToRevert
             // 
+            this.calenderScriptsToRevert.BackColor = System.Drawing.Color.DimGray;
             this.calenderScriptsToRevert.Location = new System.Drawing.Point(18, 18);
             this.calenderScriptsToRevert.MaxSelectionCount = 30;
             this.calenderScriptsToRevert.Name = "calenderScriptsToRevert";
@@ -137,6 +140,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(628, 217);
             this.Controls.Add(this.labelWarningSettingOff);
             this.Controls.Add(this.calenderScriptsToRevert);

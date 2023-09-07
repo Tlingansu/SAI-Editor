@@ -89,9 +89,9 @@
             this.buttonDuplicateCondition = new System.Windows.Forms.Button();
             this.buttonDeleteCondition = new System.Windows.Forms.Button();
             this.groupBoxConditionInformation = new System.Windows.Forms.GroupBox();
+            this.lineSeparator1 = new SAI_Editor.Classes.CustomControls.LineSeparator();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.listViewConditions = new SAI_Editor.Classes.CustomControls.ConditionListView();
-            this.lineSeparator1 = new SAI_Editor.Classes.CustomControls.LineSeparator();
             this.groupBoxConditionInformation.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -726,6 +726,7 @@
             // 
             // groupBoxConditionInformation
             // 
+            this.groupBoxConditionInformation.BackColor = System.Drawing.Color.DimGray;
             this.groupBoxConditionInformation.Controls.Add(this.labelSourceType);
             this.groupBoxConditionInformation.Controls.Add(this.comboBoxConditionTarget);
             this.groupBoxConditionInformation.Controls.Add(this.checkBoxNegativeCondition);
@@ -790,8 +791,18 @@
             this.groupBoxConditionInformation.TabStop = false;
             this.groupBoxConditionInformation.Text = "Condition information";
             // 
+            // lineSeparator1
+            // 
+            this.lineSeparator1.Location = new System.Drawing.Point(-3, 131);
+            this.lineSeparator1.MaximumSize = new System.Drawing.Size(2000, 2);
+            this.lineSeparator1.MinimumSize = new System.Drawing.Size(0, 2);
+            this.lineSeparator1.Name = "lineSeparator1";
+            this.lineSeparator1.Size = new System.Drawing.Size(900, 2);
+            this.lineSeparator1.TabIndex = 13;
+            // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.DimGray;
             this.groupBox2.Controls.Add(this.listViewConditions);
             this.groupBox2.Controls.Add(this.buttonDuplicateCondition);
             this.groupBox2.Controls.Add(this.buttonDeleteCondition);
@@ -805,6 +816,7 @@
             // 
             // listViewConditions
             // 
+            this.listViewConditions.BackColor = System.Drawing.Color.DimGray;
             this.listViewConditions.FullRowSelect = true;
             this.listViewConditions.HideSelection = false;
             this.listViewConditions.Location = new System.Drawing.Point(6, 19);
@@ -816,19 +828,11 @@
             this.listViewConditions.View = System.Windows.Forms.View.Details;
             this.listViewConditions.SelectedIndexChanged += new System.EventHandler(this.listViewConditions_SelectedIndexChanged);
             // 
-            // lineSeparator1
-            // 
-            this.lineSeparator1.Location = new System.Drawing.Point(-3, 131);
-            this.lineSeparator1.MaximumSize = new System.Drawing.Size(2000, 2);
-            this.lineSeparator1.MinimumSize = new System.Drawing.Size(0, 2);
-            this.lineSeparator1.Name = "lineSeparator1";
-            this.lineSeparator1.Size = new System.Drawing.Size(900, 2);
-            this.lineSeparator1.TabIndex = 13;
-            // 
             // ConditionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(905, 574);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBoxConditionInformation);

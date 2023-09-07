@@ -57,8 +57,10 @@
             // 
             // listViewScripts
             // 
+            this.listViewScripts.BackColor = System.Drawing.Color.DimGray;
             this.listViewScripts.EnablePhaseHighlighting = false;
             this.listViewScripts.FullRowSelect = true;
+            this.listViewScripts.HideSelection = false;
             this.listViewScripts.Location = new System.Drawing.Point(12, 12);
             this.listViewScripts.MultiSelect = false;
             this.listViewScripts.Name = "listViewScripts";
@@ -74,6 +76,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(975, 225);
             this.Controls.Add(this.listViewScripts);
             this.Controls.Add(this.buttonCancel);

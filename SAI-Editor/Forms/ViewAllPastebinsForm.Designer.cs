@@ -37,6 +37,7 @@
             // 
             // listViewPastebins
             // 
+            this.listViewPastebins.BackColor = System.Drawing.Color.DimGray;
             this.listViewPastebins.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeaderName,
             this.columnHeaderURL});
@@ -77,6 +78,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(495, 613);
             this.Controls.Add(this.buttonVisitSelectedPastebin);
             this.Controls.Add(this.listViewPastebins);

@@ -48,13 +48,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.richTextBoxSqlOutput.AutoScrollMinSize = new System.Drawing.Size(27, 14);
             this.richTextBoxSqlOutput.BackBrush = null;
+            this.richTextBoxSqlOutput.BackColor = System.Drawing.Color.DimGray;
             this.richTextBoxSqlOutput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.richTextBoxSqlOutput.CharHeight = 14;
             this.richTextBoxSqlOutput.CharWidth = 8;
             this.richTextBoxSqlOutput.CommentPrefix = "--";
             this.richTextBoxSqlOutput.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.richTextBoxSqlOutput.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.richTextBoxSqlOutput.Font = new System.Drawing.Font("Courier New", 9.75F);
             this.richTextBoxSqlOutput.IsReplaceMode = false;
             this.richTextBoxSqlOutput.Language = FastColoredTextBoxNS.Language.SQL;
             this.richTextBoxSqlOutput.LeftBracket = '(';
@@ -135,6 +135,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(843, 368);
             this.Controls.Add(this.buttonAppendToFile);
             this.Controls.Add(this.buttonViewPastebins);

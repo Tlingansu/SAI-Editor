@@ -57,7 +57,9 @@ namespace SAI_Editor.Forms.SearchForms
             // 
             // listViewSelectableItems
             // 
+            this.listViewSelectableItems.BackColor = System.Drawing.Color.DimGray;
             this.listViewSelectableItems.FullRowSelect = true;
+            this.listViewSelectableItems.HideSelection = false;
             this.listViewSelectableItems.Location = new System.Drawing.Point(12, 12);
             this.listViewSelectableItems.MultiSelect = false;
             this.listViewSelectableItems.Name = "listViewSelectableItems";
@@ -73,6 +75,7 @@ namespace SAI_Editor.Forms.SearchForms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(353, 344);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonContinue);

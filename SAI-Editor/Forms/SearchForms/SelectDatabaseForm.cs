@@ -79,5 +79,10 @@ namespace SAI_Editor.Forms.SearchForms
         {
             buttonContinue.Enabled = listViewDatabases.SelectedItems.Count > 0;
         }
+
+        private void SelectDatabaseForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
