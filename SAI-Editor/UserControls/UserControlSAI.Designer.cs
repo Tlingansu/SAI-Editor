@@ -162,7 +162,6 @@
             // 
             // groupBoxStaticScriptInfo
             // 
-            this.groupBoxStaticScriptInfo.BackColor = System.Drawing.Color.DimGray;
             this.groupBoxStaticScriptInfo.Controls.Add(this.pictureBoxCreateScript);
             this.groupBoxStaticScriptInfo.Controls.Add(this.pictureBoxLoadScript);
             this.groupBoxStaticScriptInfo.Controls.Add(this.buttonSearchForEntryOrGuid);
@@ -270,7 +269,6 @@
             // 
             // groupBoxScriptInfo
             // 
-            this.groupBoxScriptInfo.BackColor = System.Drawing.Color.DimGray;
             this.groupBoxScriptInfo.Controls.Add(this.buttonLinkTo);
             this.groupBoxScriptInfo.Controls.Add(this.buttonLinkFrom);
             this.groupBoxScriptInfo.Controls.Add(this.comboBoxTargetType);
@@ -1049,7 +1047,6 @@
             // 
             // groupBoxParameters
             // 
-            this.groupBoxParameters.BackColor = System.Drawing.Color.DimGray;
             this.groupBoxParameters.Controls.Add(this.tabControlParameters);
             this.groupBoxParameters.Location = new System.Drawing.Point(640, 3);
             this.groupBoxParameters.Name = "groupBoxParameters";
@@ -1071,7 +1068,7 @@
             // 
             // tabPageEvent
             // 
-            this.tabPageEvent.BackColor = System.Drawing.Color.DimGray;
+            this.tabPageEvent.BackColor = System.Drawing.SystemColors.Window;
             this.tabPageEvent.Controls.Add(this.buttonEventParamFourSearch);
             this.tabPageEvent.Controls.Add(this.buttonEventParamThreeSearch);
             this.tabPageEvent.Controls.Add(this.buttonEventParamTwoSearch);
@@ -1183,7 +1180,6 @@
             // 
             // textBoxEventParam5
             // 
-            this.textBoxEventParam5.BackColor = System.Drawing.Color.White;
             this.textBoxEventParam5.Location = new System.Drawing.Point(144, 108);
             this.textBoxEventParam5.Name = "textBoxEventParam5";
             this.textBoxEventParam5.Size = new System.Drawing.Size(70, 20);
@@ -1652,7 +1648,6 @@
             // 
             // groupBoxPreferences
             // 
-            this.groupBoxPreferences.BackColor = System.Drawing.Color.DimGray;
             this.groupBoxPreferences.Controls.Add(this.checkBoxUseStaticTooltips);
             this.groupBoxPreferences.Controls.Add(this.checkBoxUsePhaseColors);
             this.groupBoxPreferences.Controls.Add(this.checkBoxAllowChangingEntryAndSourceType);
@@ -1843,9 +1838,7 @@
             // 
             // customObjectListView
             // 
-            this.customObjectListView.BackColor = System.Drawing.Color.DimGray;
             this.customObjectListView.FullRowSelect = true;
-            this.customObjectListView.HideSelection = false;
             this.customObjectListView.List = null;
             this.customObjectListView.Location = new System.Drawing.Point(3, 217);
             this.customObjectListView.MultiSelect = false;
@@ -1861,7 +1854,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DimGray;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.customObjectListView);
             this.Controls.Add(this.groupBoxStaticScriptInfo);
             this.Controls.Add(this.buttonGenerateComments);

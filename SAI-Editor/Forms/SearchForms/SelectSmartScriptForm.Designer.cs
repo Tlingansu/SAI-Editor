@@ -37,7 +37,6 @@
             // 
             // listBoxGuids
             // 
-            this.listBoxGuids.BackColor = System.Drawing.Color.DimGray;
             this.listBoxGuids.FormattingEnabled = true;
             this.listBoxGuids.Location = new System.Drawing.Point(12, 25);
             this.listBoxGuids.Name = "listBoxGuids";
@@ -51,10 +50,8 @@
             this.listViewSmartScripts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.listViewSmartScripts.BackColor = System.Drawing.Color.DimGray;
             this.listViewSmartScripts.EnablePhaseHighlighting = false;
             this.listViewSmartScripts.FullRowSelect = true;
-            this.listViewSmartScripts.HideSelection = false;
             this.listViewSmartScripts.Location = new System.Drawing.Point(67, 25);
             this.listViewSmartScripts.MultiSelect = false;
             this.listViewSmartScripts.Name = "listViewSmartScripts";
@@ -89,7 +86,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(1040, 298);
             this.Controls.Add(this.buttonLoadScript);
             this.Controls.Add(this.label1);

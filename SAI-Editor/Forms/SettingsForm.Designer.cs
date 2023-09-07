@@ -95,7 +95,6 @@
             // 
             // tabPageGeneral
             // 
-            this.tabPageGeneral.BackColor = System.Drawing.Color.DimGray;
             this.tabPageGeneral.Controls.Add(this.label1);
             this.tabPageGeneral.Controls.Add(this.comboBoxWowExpansion);
             this.tabPageGeneral.Controls.Add(this.checkBoxDuplicatePrimaryFields);
@@ -117,6 +116,7 @@
             this.tabPageGeneral.Size = new System.Drawing.Size(511, 173);
             this.tabPageGeneral.TabIndex = 0;
             this.tabPageGeneral.Text = "General";
+            this.tabPageGeneral.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -238,7 +238,7 @@
             // 
             // trackBarAnimationSpeed
             // 
-            this.trackBarAnimationSpeed.BackColor = System.Drawing.Color.DimGray;
+            this.trackBarAnimationSpeed.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.trackBarAnimationSpeed.Location = new System.Drawing.Point(243, 144);
             this.trackBarAnimationSpeed.Maximum = 12;
             this.trackBarAnimationSpeed.Minimum = 1;
@@ -293,7 +293,6 @@
             // 
             // tabPageConnection
             // 
-            this.tabPageConnection.BackColor = System.Drawing.Color.DimGray;
             this.tabPageConnection.Controls.Add(this.radioButtonDontUseDatabase);
             this.tabPageConnection.Controls.Add(this.radioButtonConnectToMySql);
             this.tabPageConnection.Controls.Add(this.buttonTestConnection);
@@ -315,6 +314,7 @@
             this.tabPageConnection.Size = new System.Drawing.Size(511, 173);
             this.tabPageConnection.TabIndex = 1;
             this.tabPageConnection.Text = "Connection";
+            this.tabPageConnection.UseVisualStyleBackColor = true;
             // 
             // radioButtonDontUseDatabase
             // 
@@ -494,7 +494,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(543, 247);
             this.Controls.Add(this.buttonResetEverything);
             this.Controls.Add(this.buttonDefaultSettings);
