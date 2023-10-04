@@ -609,7 +609,7 @@ namespace SAI_Editor.Classes
 
                 if (fullLine.Contains("_reactStateParamSix_"))
                 {
-                    switch (smartScript.action_param1)
+                    switch (smartScript.action_param6)
                     {
                         case 0:
                             fullLine = fullLine.Replace("_reactStateParamSix_", "Passive");

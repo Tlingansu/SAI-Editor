@@ -1610,7 +1610,7 @@ namespace SAI_Editor
                     ShowSearchFromDatabaseForm(textBoxToChange, DatabaseSearchFormType.DatabaseSearchFormTypeEmote);
                     break;
                 case SmartAction.SMART_ACTION_FAIL_QUEST:
-                case SmartAction.SMART_ACTION_ADD_QUEST:
+                case SmartAction.SMART_ACTION_OFFER_QUEST:
                 case SmartAction.SMART_ACTION_CALL_AREAEXPLOREDOREVENTHAPPENS:
                 case SmartAction.SMART_ACTION_CALL_GROUPEVENTHAPPENS:
                     ShowSearchFromDatabaseForm(textBoxToChange, DatabaseSearchFormType.DatabaseSearchFormTypeQuest);
